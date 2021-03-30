@@ -3,6 +3,7 @@
 // #include <bloom_filter/basic.hpp>
 
 #include <bf/all.hpp>
+#include <cassert>
 #include <fstream>
 #include <string>
 
@@ -29,6 +30,7 @@ bf::bloom_filter* indexFastas(const std::vector<std::string>& filenames, const u
     for (auto const& filename : filenames) {
         n += extractMeaningfullLineFromFasta(filename).length() - k + 1;
     }
+    //TODO n'est pas bon du tout ! il est bien trop surestimé
 
     // now that we have the size, let's index those files
     unsigned long long m = -(n / log(1 - ((double)epsilon_percent / (double)100)));
@@ -121,6 +123,8 @@ std::vector<bool> qtf(bf::bloom_filter* filter, const std::string& s, unsigned i
 
     unsigned long long stretchLength = 0;  // number of consecutive positives kmers
 
+    long nb_strechs = 0;
+
     for (unsigned long long j = 0; j < size - k + 1; j++) {
         if (filter->lookup(s.substr(j, k))) {
             stretchLength++;
@@ -130,6 +134,7 @@ std::vector<bool> qtf(bf::bloom_filter* filter, const std::string& s, unsigned i
                 bool responseToAdd = false;
                 if (stretchLength > nbNeighboursMin) {
                     responseToAdd = true;
+                    nb_strechs++;
                 }
                 for (unsigned long long k = 0; k < stretchLength; k++) {
                     response[i] = responseToAdd;
@@ -142,10 +147,11 @@ std::vector<bool> qtf(bf::bloom_filter* filter, const std::string& s, unsigned i
         }
     }
     for (unsigned long long j = 0; j < stretchLength; j++) {
-        response[i] = 1;
+        response[i] = stretchLength > nbNeighboursMin ? true : false;  //TODO do that everywhere
         i++;
     }
-    // std::cout << "number of query " << i << std::endl;
+    std::cout << "number of query " << i << " nb stretchs " << nb_strechs << std::endl;
+    assert(i == size - k + 1);
     return response;
 }
 
