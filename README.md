@@ -18,6 +18,8 @@ sudo make install
 git clone https://github.com/simongog/sdsl-lite.git
 cd sdsl-lite
 sudo ./install.sh /usr/local/ -->
+git submodule add https://github.com/jarro2783/cxxopts thirdparty/cxxopts
+git submodule add https://github.com/martinus/robin-hood-hashing thirdparty/robinHoodHashing
 
 ## install libbf
 ```
