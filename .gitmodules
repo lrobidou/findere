@@ -1,0 +1,6 @@
+[submodule "thirdparty/robinHoodHashing"]
+	path = thirdparty/robinHoodHashing
+	url = https://github.com/martinus/robin-hood-hashing
+[submodule "thirdparty/cxxopts"]
+	path = thirdparty/cxxopts
+	url = https://github.com/jarro2783/cxxopts
