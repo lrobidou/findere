@@ -90,8 +90,8 @@ std::vector<bool> query(bf::bloom_filter* filter, const std::string& s, const un
         nbQuery++;
     }
 
-    std::cout << "query " << nbQuery << std::endl;
-    std::cout << std::endl;
+    // std::cout << "query " << nbQuery << std::endl;
+    // std::cout << std::endl;
     return response;
 }
 
@@ -145,7 +145,7 @@ std::vector<bool> qtf(bf::bloom_filter* filter, const std::string& s, unsigned i
         response[i] = 1;
         i++;
     }
-    std::cout << "number of query " << i << std::endl;
+    // std::cout << "number of query " << i << std::endl;
     return response;
 }
 
@@ -207,8 +207,9 @@ std::vector<bool> qtfSkip(bf::bloom_filter* filter, const std::string& s, unsign
         i++;
     }
     // TODO remove those cout
-    std::cout << "number of query expected" << i << std::endl;
-    std::cout << "number of query actaullly made" << nbQuery << std::endl;
+    std::cout << "number of query expected: " << i << std::endl;
+    std::cout << "number of query actaullly made: " << nbQuery << std::endl;
+    std::cout << "( " << (((double)(i - nbQuery)) / (double)i) * 100 << " %less)" << std::endl;
     return response;
 }
 
@@ -264,7 +265,7 @@ std::vector<bool> qtfIndexKPlusZ(bf::bloom_filter* filter, const std::string& s,
         stretchLength = 0;
     }
 
-    std::cout << "number of query / size of qtfplus response " << i << std::endl;
+    // std::cout << "number of query / size of qtfplus response " << i << std::endl;
     return response;
 }
 
