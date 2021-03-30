@@ -20,21 +20,29 @@ cd sdsl-lite
 sudo ./install.sh /usr/local/ -->
 
 ## install libbf
+```
 git clone https://github.com/mavam/libbf
 git checkout v1.0.0
 ./configure
 make
 sudo make install
+```
+
 
 
 
 ## install QTF
 ### build QTF
+```
 git clone --recursive https://gitlab.inria.fr/lrobidou/qtf
 cd qtf
 chmod +x build.sh
 ./build.sh
+```
+
 ### execute QTF
+```
 ./build/src/main
+```
 
 
