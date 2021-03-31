@@ -81,10 +81,10 @@ int main() {
     const int epsilon_percent = 5;
     const unsigned long long nbNeighboursMin = 6;
 
-    std::vector<std::string> input_filenames = {"data/ecoli1.fasta", "data/ecoli2.fasta", "data/ecoli3.fasta"};
-
-    std::string querySeq = extractMeaningfullLineFromFasta("data/ecoli4.fasta");
-
+    // std::vector<std::string> input_filenames = {"data/ecoli1.fasta", "data/ecoli2.fasta", "data/ecoli3.fasta"};
+    // std::string querySeq = extractMeaningfullLineFromFasta("data/ecoli4.fasta");
+    std::vector<std::string> input_filenames = {"data/ecoli2.fasta", "data/ecoli3.fasta", "data/Listeria phage.fasta", "data/Penicillium chrysogenum.fasta"};
+    std::string querySeq = extractMeaningfullLineFromFasta("data/Salmonella enterica.fasta");
     /* *****TRUTH***** */
     // // create ground truth
     robin_hood::unordered_set<std::string> truth;
