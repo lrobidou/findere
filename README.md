@@ -27,6 +27,7 @@ git submodule add https://github.com/martinus/robin-hood-hashing thirdparty/robi
 ## install libbf
 ```
 git clone https://github.com/mavam/libbf
+cd libbf
 git checkout v1.0.0
 ./configure
 make
