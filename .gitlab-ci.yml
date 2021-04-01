@@ -18,7 +18,7 @@ cmake:
     - sudo make install
     - cd ..
     #
-    ./build.sh
+    - ./build.sh
   artifacts:
     paths:
       - build/src/main
