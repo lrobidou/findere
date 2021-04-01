@@ -22,9 +22,9 @@ set(THIRDPARTY_BUILD_DIR ${PROJECT_BINARY_DIR}/thirdparty)
 include_directories(SYSTEM thirdparty/json/include)
 include_directories(SYSTEM thirdparty/cxxopts/include)
 
-add_library(qtf_truth_lib src/truth.cpp)  # QTF library
+add_library(qtf_truth_lib src/truth.cpp src/utils.cpp)  # QTF library
 add_library(qtf_utils_lib src/utils.cpp)  # QTF library
-add_library(qtf_fileIndexer_lib src/FileIndexer.cpp src/utils.cpp)  # QTF library
+add_library(qtf_fileIndexer_lib src/FileIndexer.cpp src/utils.cpp src/truth.cpp)  # QTF library
 
 # build src qtf
 add_subdirectory(src)
