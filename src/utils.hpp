@@ -12,7 +12,9 @@ typedef std::vector<std::string> strvect;
 
 // nlohmann::json load_json(std::string filename);
 std::string changeFilenameExtensionIfAnyOrAddOne(std::string filename, std::string newExtension);
-std::string extractMeaningfullLineFromFasta(std::string filename);
+std::string extractContentFromFasta(std::string filename);
+
+void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN);
 
 inline bool thisFilenameExists(const std::string& name);
 // inline bool query(BloomFilter bf, const std::string& seq, int numHashes, int k);
