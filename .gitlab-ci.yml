@@ -19,7 +19,7 @@ cmake:
     - cd ..
     #
     ./build.sh
-  artifact:
+  artifacts:
     paths:
       - build/src/main
       - build/tests/QTF_tests
