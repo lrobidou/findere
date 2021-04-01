@@ -7,7 +7,9 @@
 #include <fstream>
 #include <string>
 
+#include "truth.hpp"
 #include "utils.hpp"
+
 inline int countLines(const std::string& filename) {
     std::ifstream inFile(filename);
     return std::count(std::istreambuf_iterator<char>(inFile), std::istreambuf_iterator<char>(), '\n');
@@ -25,33 +27,36 @@ void insertStringToBloomFilter(bf::bloom_filter* filter, const std::string& s, u
     }
 }
 
-bf::bloom_filter* indexFastas(const std::vector<std::string>& filenames, const unsigned numHashes, const unsigned int& k, const int& epsilon_percent) {
-    unsigned long long n = 0;
-    for (auto const& filename : filenames) {
-        n += extractMeaningfullLineFromFasta(filename).length() - k + 1;
-    }
-    //TODO n'est pas bon du tout ! il est bien trop surestimé
-
-    // now that we have the size, let's index those files
+bf::bloom_filter* indexFastasGivenTruth(const std::vector<std::string>& filenames, const robin_hood::unordered_set<std::string>& truth, const unsigned numHashes, const unsigned int& k, const int& epsilon_percent) {
+    // number of *unique* elements to add in that filter
+    const unsigned long long n = truth.size();
+    // size (in b**i**t) required for that filter
     unsigned long long m = -(n / log(1 - ((double)epsilon_percent / (double)100)));
     // oops, maybe m is not a multiple of 8
-    // this is required by this implementation of Bloom filters
+    // this is required by most implementation of Bloom filters
     // let's fix that
     m = m + 8 - (m % 8);
-    std::cout << "n = " << n << std::endl;
 
-    std::cout << "m = " << m << std::endl;
+    // TODO do not use cout but a log library (do that everywhere too)
+    // std::cout << "n = " << n << std::endl;
+    // std::cout << "m = " << m << std::endl;
 
+    // now that we have the size, let's index those files
     bf::bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), m);
-
     for (auto const& filename : filenames) {
-        std::cout << "Indexing " << filename << "." << std::endl;
-        insertStringToBloomFilter(filter, extractMeaningfullLineFromFasta(filename), k);
+        // std::cout << "Indexing " << filename << "." << std::endl;
+        insertStringToBloomFilter(filter, extractContentFromFasta(filename), k);
     }
-    std::cout << "exiting indexFastas" << std::endl;
     return filter;
 }
 
+std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*> indexFastas(const std::vector<std::string>& filenames, const unsigned numHashes, const unsigned int& k, const int& epsilon_percent) {
+    // create ground truth
+    robin_hood::unordered_set<std::string> truth;
+    computeTruth(filenames, k, truth);
+    bf::bloom_filter* filter = indexFastasGivenTruth(filenames, truth, numHashes, k, epsilon_percent);
+    return {truth, filter};
+}
 // TODO: remove that function
 // take a file (ex: abundance_1.txt) and return its bloom filter
 // BloomFilter* toBloomFilterFromFilename(const std::string& filename,
@@ -113,8 +118,8 @@ std::vector<bool> query(bf::bloom_filter* filter, const std::string& s, const un
 //     return (nbHits * 1.0) / (i * 1.0);
 // }
 
-std::vector<bool> qtf(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin) {
-    checknonNull(filter, "Nullptr passed to qtf function.");
+std::vector<bool> qtfNoSkip(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin) {
+    checknonNull(filter, "Nullptr passed to qtfNoSkip function.");
     unsigned long long size = s.size();
 
     std::vector<bool> response(size - k + 1);
@@ -171,8 +176,8 @@ unsigned long long getNextPositiveKmerPositionInTheQuery(bf::bloom_filter* filte
     return j;
 }
 
-std::vector<bool> qtfSkip(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin) {
-    checknonNull(filter, "Nullptr passed to qtfSkip function.");
+std::vector<bool> qtf(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin) {
+    checknonNull(filter, "Nullptr passed to qtf function.");
     unsigned long long size = s.size();
 
     std::vector<bool> response(size - k + 1);
@@ -280,7 +285,6 @@ std::tuple<int, int, int, int> getScore(const std::vector<bool>& truth, const st
         std::cerr << "The vectors do not have the same size" << std::endl;
         std::cerr << "truth.size()" << truth.size() << std::endl;
         std::cerr << "queryResult.size()" << queryResult.size() << std::endl;
-
         exit(1);
     }
 
@@ -305,8 +309,6 @@ std::tuple<int, int, int, int> getScore(const std::vector<bool>& truth, const st
             }
         }
     }
-    std::cout << "TP: " << TP << ", TN :" << TN << ", FP :" << FP << ", FN :" << FN << std::endl;
-    std::cout << "FPR: " << (double)(100 * FP) / (double)(FP + TN) << "%." << std::endl;
-    std::cout << "FNR: " << (double)(100 * FN) / (double)(FN + TP) << "%." << std::endl;
+
     return {TP, TN, FP, FN};
 }
