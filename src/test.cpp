@@ -88,39 +88,31 @@ int main() {
     std::string querySeq = extractContentFromFasta("data/Salmonella enterica.fasta");
     /* *****TRUTH***** */
     // // create ground truth
-    robin_hood::unordered_set<std::string> truthKPlusZ;
-    computeTruth(input_filenames, k + nbNeighboursMin, truthKPlusZ);
+    // robin_hood::unordered_set<std::string> truthKPlusZ;
+    // computeTruth(input_filenames, k + nbNeighboursMin, truthKPlusZ);
 
     /* *****BLOOM_FILTERS***** */
     const auto& [truth, filter] = indexFastas(input_filenames, numHashes, k, epsilon_percent);  // // query it
 
     // // query it
     std::vector<bool> truthQuery = queryTruth(truth, querySeq, k);
-    std::vector<bool> truthQueryKPlusZ = queryTruth(truthKPlusZ, querySeq, k + nbNeighboursMin);
-    std::vector<bool> responseQuery = query(filter, querySeq, k);
-    std::vector<bool> responseQTFNoSkip = qtfNoSkip(filter, querySeq, k, nbNeighboursMin);
-    std::vector<bool> responseQTF = qtf(filter, querySeq, k, nbNeighboursMin);
-    std::vector<bool> responseQTFPlus = qtfIndexKPlusZ(filter, querySeq, k, nbNeighboursMin);
-    std::cout << std::endl
-              << std::endl;
+    // std::vector<bool> truthQueryKPlusZ = queryTruth(truthKPlusZ, querySeq, k + nbNeighboursMin);
+    unsigned long long nbStretch = 0;
+    std::vector<bool> responseQTF = qtf(filter, querySeq, k, nbNeighboursMin, nbStretch);
+    // std::vector<bool> responseQTFPlus = qtfIndexKPlusZ(filter, querySeq, k, nbNeighboursMin);
     /* *****SCORE***** */
-    std::cout << "getScore(truthQuery, responseQuery)" << std::endl;
-    printScore(getScore(truthQuery, responseQuery));
-    std::cout << std::endl;
-
-    // const auto& [TP, TN, FP, FN] = getScore(truthQuery, responseQuery);
-    std::cout << "getScore(truthQuery, responseQTFNoSkip);" << std::endl;
-    printScore(getScore(truthQuery, responseQTFNoSkip));
-    std::cout << std::endl;
+    // std::cout << "getScore(truthQuery, responseQuery)" << std::endl;
+    // printScore(getScore(truthQuery, responseQuery));
+    // std::cout << std::endl;
 
     std::cout << "getScore(truthQuery, responseQTF);" << std::endl;
     printScore(getScore(truthQuery, responseQTF));
     std::cout << std::endl;
 
-    // getScore(truthQuery, responseQTFPlus);//TODO FPR supr bas, pourquoi ?
-    std::cout << "getScore(truthQueryKPlusZ, responseQTFPlus)" << std::endl;
-    printScore(getScore(truthQueryKPlusZ, responseQTFPlus));
-    std::cout << std::endl;
+    // // getScore(truthQuery, responseQTFPlus);//TODO FPR supr bas, pourquoi ?
+    // std::cout << "getScore(truthQueryKPlusZ, responseQTFPlus)" << std::endl;
+    // printScore(getScore(truthQueryKPlusZ, responseQTFPlus));
+    // std::cout << std::endl;
 
     // toFileTXT("responseQTFNoSkip.txt", responseQTFNoSkip);
     // toFileTXT("responseQTF.txt", responseQTF);

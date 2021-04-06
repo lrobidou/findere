@@ -22,11 +22,10 @@ TEST(TestQTF, TestQTFNoSkipEqualsQTF) {
     std::vector<std::string> input_filenames = {"data/ecoli2.fasta", "data/ecoli3.fasta", "data/Listeria phage.fasta", "data/Penicillium chrysogenum.fasta"};
     std::string querySeq = extractContentFromFasta("data/Salmonella enterica.fasta");
 
-    // create a truth and filter
     const auto& [truth, filter] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
 
-    // std::vector<bool> truthQuery = queryTruth(truth, querySeq, k);
     std::vector<bool> responseQTFNoSkip = qtfNoSkip(filter, querySeq, k, nbNeighboursMin);
     std::vector<bool> responseQTF = qtf(filter, querySeq, k, nbNeighboursMin);
+
     ASSERT_EQ(responseQTFNoSkip, responseQTF);
 }
