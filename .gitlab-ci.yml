@@ -13,7 +13,7 @@ cmake:
     # install libbf
     - git clone https://github.com/mavam/libbf
     - cd libbf
-    - git checkout v1.0.0
+    #- git checkout v1.0.0
     - ./configure
     - make
     - sudo make install
