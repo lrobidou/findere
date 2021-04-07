@@ -176,7 +176,7 @@ unsigned long long getNextPositiveKmerPositionInTheQuery(bf::bloom_filter* filte
     return j;
 }
 
-std::vector<bool> qtf(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin) {
+std::vector<bool> qtf(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, unsigned long long& nbStretch) {
     checknonNull(filter, "Nullptr passed to qtf function.");
     unsigned long long size = s.size();
 
@@ -195,6 +195,7 @@ std::vector<bool> qtf(bf::bloom_filter* filter, const std::string& s, unsigned i
                 bool responseToAdd = false;
                 if (stretchLength > nbNeighboursMin) {
                     responseToAdd = true;
+                    nbStretch++;
                 }
                 for (unsigned long long k = 0; k < stretchLength; k++) {
                     response[i] = responseToAdd;
@@ -204,6 +205,7 @@ std::vector<bool> qtf(bf::bloom_filter* filter, const std::string& s, unsigned i
             }
             response[i] = 0;
             i++;
+            // skip queries between current position and the next positive kmer
             unsigned long long nextPositivePosition = getNextPositiveKmerPositionInTheQuery(filter, s, k, nbNeighboursMin, j, nbQuery);
             // let's fill nextPositivePosition-i-1 negative resuls
             while (i < nextPositivePosition) {
@@ -213,8 +215,13 @@ std::vector<bool> qtf(bf::bloom_filter* filter, const std::string& s, unsigned i
             j = i;
         }
     }
+    if (stretchLength > nbNeighboursMin) {
+        nbStretch++;
+    }
+
+    // let's not forget the last stretch if it exists
     for (unsigned long long j = 0; j < stretchLength; j++) {
-        response[i] = 1;
+        response[i] = stretchLength > nbNeighboursMin ? true : false;  //TODO do that everywhere
         i++;
     }
     // TODO remove those cout
@@ -224,7 +231,12 @@ std::vector<bool> qtf(bf::bloom_filter* filter, const std::string& s, unsigned i
     return response;
 }
 
-std::vector<bool> qtfIndexKPlusZ(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin) {
+std::vector<bool> qtf(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin) {
+    unsigned long long dontCare = 0;
+    return qtf(filter, s, k, nbNeighboursMin, dontCare);
+}
+
+std::vector<bool> qtfIndexKPlusZ(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, unsigned long long& nbStretch) {
     unsigned long long size = s.size();
     std::vector<bool> response(size - k + 1 - nbNeighboursMin);
     unsigned long long i = 0;              // index of the response vector
@@ -236,6 +248,7 @@ std::vector<bool> qtfIndexKPlusZ(bf::bloom_filter* filter, const std::string& s,
         } else {
             if (stretchLength != 0) {
                 if (stretchLength > nbNeighboursMin) {
+                    nbStretch++;
                     for (unsigned long long k = 0; k < stretchLength - nbNeighboursMin; k++) {
                         response[i] = true;
                         i++;
@@ -259,6 +272,7 @@ std::vector<bool> qtfIndexKPlusZ(bf::bloom_filter* filter, const std::string& s,
 
     if (stretchLength != 0) {
         if (stretchLength > nbNeighboursMin) {
+            nbStretch++;
             for (unsigned long long k = 0; k < stretchLength - nbNeighboursMin; k++) {
                 response[i] = true;
                 i++;
@@ -278,6 +292,11 @@ std::vector<bool> qtfIndexKPlusZ(bf::bloom_filter* filter, const std::string& s,
 
     // std::cout << "number of query / size of qtfplus response " << i << std::endl;
     return response;
+}
+
+std::vector<bool> qtfIndexKPlusZ(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin) {
+    unsigned long long dontCare = 0;
+    return qtfIndexKPlusZ(filter, s, k, nbNeighboursMin, dontCare);
 }
 
 std::tuple<int, int, int, int> getScore(const std::vector<bool>& truth, const std::vector<bool>& queryResult) {
@@ -311,4 +330,55 @@ std::tuple<int, int, int, int> getScore(const std::vector<bool>& truth, const st
     }
 
     return {TP, TN, FP, FN};
+}
+
+std::tuple<int, int> count0And1InAray(std::vector<bool> array) {
+    int T = 0;
+    int N = 0;
+    for (auto const& x : array) {
+        if (x) {
+            T++;
+        } else {
+            N++;
+        }
+    }
+    return {T, N};
+}
+
+int computeNumberOfExpectedFP(const unsigned int& epsilon_percent, int iteration) {
+    double numberOfExpectedFP = 0;
+    // only compute the five first terms
+    for (int i = 0; i < iteration; i++) {
+        numberOfExpectedFP += i * pow(((double)epsilon_percent) / 100.0, i);
+    }
+    std::cout << "proba" << 95 * numberOfExpectedFP / 100 << "." << std::endl;
+    return std::round(95 * numberOfExpectedFP / 100);
+}
+
+std::tuple<int, int> computeSimilarityQTF(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, const unsigned int& epsilon_percent) {
+    std::vector<bool> qtfResponse = qtf(filter, s, k, nbNeighboursMin);
+    return count0And1InAray(qtfResponse);
+}
+
+std::tuple<int, int> computeSimilarityQTFCorrected(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, const unsigned int& epsilon_percent) {
+    unsigned long long nbStretch = 0;
+    std::vector<bool> qtfResponse = qtf(filter, s, k, nbNeighboursMin, nbStretch);
+    int numberOfFPExpected = nbStretch * 2 * computeNumberOfExpectedFP(epsilon_percent, 5);
+    const auto& [P, N] = count0And1InAray(qtfResponse);
+    int pToBeRemoved = std::min(P, numberOfFPExpected);
+    return {P - pToBeRemoved, N + pToBeRemoved};
+}
+
+std::tuple<int, int> computeSimilarityQTFKPlusZ(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, const unsigned int& epsilon_percent) {
+    std::vector<bool> responseQTFKPlusZ = qtfIndexKPlusZ(filter, s, k, nbNeighboursMin);
+    return count0And1InAray(responseQTFKPlusZ);
+}
+
+std::tuple<int, int> computeSimilarityQTFKPlusZCorrected(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, const unsigned int& epsilon_percent) {
+    unsigned long long nbStretch = 0;
+    std::vector<bool> responseQTFKPlusZ = qtfIndexKPlusZ(filter, s, k, nbNeighboursMin, nbStretch);
+    int numberOfFPExpected = nbStretch * 2 * computeNumberOfExpectedFP(epsilon_percent, 5);
+    const auto& [P, N] = count0And1InAray(responseQTFKPlusZ);
+    int pToBeRemoved = std::min(P, numberOfFPExpected);
+    return {P - pToBeRemoved, N + pToBeRemoved};
 }
