@@ -16,7 +16,7 @@ cmake:
     #- git checkout v1.0.0
     - ./configure
     - make
-    - sudo make install
+    - make install
     - cd ..
     #
     - ./build.sh
