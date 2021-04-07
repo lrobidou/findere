@@ -1,4 +1,4 @@
-image: python:3.9-slim  # python >= 3.9 is mandatory
+image: alpine:3.13.4  # python >= 3.9 is mandatory
 
 stages:
   - build
@@ -9,6 +9,7 @@ stages:
 cmake:
   stage: build
   script:
+    - apk add git
     # install libbf
     - git clone https://github.com/mavam/libbf
     - cd libbf
