@@ -9,7 +9,7 @@ stages:
 cmake:
   stage: build
   script:
-    - apk add git
+    - apk add git cmake
     # install libbf
     - git clone https://github.com/mavam/libbf
     - cd libbf
