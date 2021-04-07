@@ -1,5 +1,8 @@
 image: alpine:3.13.4  # python >= 3.9 is mandatory
 
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
 stages:
   - build
   - test
