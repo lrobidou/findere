@@ -36,6 +36,20 @@ inline void checknonNull(T x, std::string msg) {
     }
 }
 
+template <typename T>
+void inline toFileTXT(std::string outfilename, T x) {
+    if (remove(outfilename.c_str()) != 0) {
+        perror("Error deleting file");
+    } else {
+        puts("File successfully deleted");
+    }
+
+    std::ofstream outFile(outfilename);
+    for (const auto& e : x) {
+        outFile << e;
+    }
+}
+
 // template <typename T>
 // inline void printVector(T x) {
 //     std::cout << "printv:";
