@@ -16,12 +16,21 @@ cmake:
     # install libbf
     - git clone https://github.com/mavam/libbf
     - cd libbf
-    #- git checkout v1.0.0
+    #- git checkout v1.0.0  # does not work, raise an exception about 'runtime_error' not being a member of 'std'
     - ./configure
     - make
     - make install
     - cd ..
-    #
+
+    # install googletest
+    - git clone https://github.com/google/googletest
+    - cd googletest
+    - cmake .
+    - make
+    - make install
+    - cd ..
+
+    # compile QTF
     - ./build.sh
   artifacts:
     paths:
