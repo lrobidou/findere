@@ -7,20 +7,6 @@
 #include "../src/utils.hpp"
 #include "../thirdparty/robinHoodHashing/src/include/robin_hood.h"  // TODO faire de beaux imports
 
-template <typename T>
-void toFileTXT(std::string outfilename, T x) {
-    if (remove(outfilename.c_str()) != 0) {
-        perror("Error deleting file");
-    } else {
-        puts("File successfully deleted");
-    }
-
-    std::ofstream outFile(outfilename);
-    for (const auto& e : x) {
-        outFile << e;
-    }
-}
-
 // TEST(TestSuiteName, TestName) {
 //     robin_hood::unordered_set<std::string> truth;
 //     robin_hood::unordered_set<std::string> truthPlusK;
