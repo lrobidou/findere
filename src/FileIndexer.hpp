@@ -30,7 +30,7 @@ std::tuple<int, int, int, int> getScore(const std::vector<bool>& truth, const st
 
 std::tuple<int, int> count0And1InAray(std::vector<bool> array);
 
-int computeNumberOfExpectedFP(const unsigned int& epsilon_percent, int iteration);
+double computeNumberOfExpectedFPPerStretch(const unsigned int& epsilon_percent, int iteration);
 
 std::tuple<int, int> computeSimilarityQTF(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, const unsigned int& epsilon_percent);
 
