@@ -53,6 +53,7 @@ void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN) {
     const auto& [TP, TN, FP, FN] = TP_TN_FP_FN;
     std::cout << "TP: " << TP << ", TN :" << TN << ", FP :" << FP << ", FN :" << FN << std::endl;
     std::cout << "FPR: " << (double)(100 * FP) / (double)(FP + TN) << "%." << std::endl;
+    // std::cout << (double)(100 * FN) << "          " << (double)(FN + TP) << std::endl;
     std::cout << "FNR: " << (double)(100 * FN) / (double)(FN + TP) << "%." << std::endl;
 }
 
