@@ -26,5 +26,8 @@ include_directories(SYSTEM thirdparty/cxxopts/include)
 # add libbf
 add_subdirectory(thirdparty/libbf)
 
+# add googletest
+add_subdirectory(thirdparty/googletest)
+
 # build src qtf
 add_subdirectory(src)

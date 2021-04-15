@@ -7,3 +7,6 @@
 [submodule "thirdparty/libbf"]
 	path = thirdparty/libbf
 	url = https://github.com/mavam/libbf
+[submodule "thirdparty/googletest"]
+	path = thirdparty/googletest
+	url = https://github.com/google/googletest
