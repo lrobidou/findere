@@ -19,8 +19,12 @@ set(THIRDPARTY_DIR ${PROJECT_SOURCE_DIR}/thirdparty)
 # thirdparty build directories
 set(THIRDPARTY_BUILD_DIR ${PROJECT_BINARY_DIR}/thirdparty)
 
+include_directories(SYSTEM thirdparty/libbf)
 include_directories(SYSTEM thirdparty/json/include)
 include_directories(SYSTEM thirdparty/cxxopts/include)
+
+# add libbf
+add_subdirectory(thirdparty/libbf)
 
 # build src qtf
 add_subdirectory(src)
