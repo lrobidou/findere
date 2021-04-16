@@ -15,10 +15,6 @@ inline int countLines(const std::string& filename) {
     return std::count(std::istreambuf_iterator<char>(inFile), std::istreambuf_iterator<char>(), '\n');
 }
 
-// BloomFilter* index(const std::string& filename, const unsigned int& k, const int& epsilon_percent) {  // TODO type k ?
-//     const unsigned long long n = countLines(filename);
-//     return toBloomFilterFromFilename(filename, k, epsilon_percent, n);
-// }
 void insertStringToBloomFilter(bf::bloom_filter* filter, const std::string& s, unsigned int k) {
     checknonNull(filter);
     unsigned long long size = s.size();
@@ -57,34 +53,6 @@ std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*> indexFasta
     bf::bloom_filter* filter = indexFastasGivenTruth(filenames, truth, numHashes, k, epsilon_percent);
     return {truth, filter};
 }
-// TODO: remove that function
-// take a file (ex: abundance_1.txt) and return its bloom filter
-// BloomFilter* toBloomFilterFromFilename(const std::string& filename,
-//                                        const unsigned int& k,
-//                                        const int& epsilon_percent,
-//                                        const unsigned long long& n) {
-//     std::ifstream file(filename);
-//     if (file.is_open()) {
-//         unsigned long long m =
-//             -(n / log(1 - ((double)epsilon_percent / (double)100)));
-//         // oops, maybe m is not a multiple of 8
-//         // this is required by this implementation of Bloom filters
-//         // let's fix that
-//         m = m + 8 - (m % 8);
-
-//         BloomFilter* bloom = new BloomFilter(m, 1, k);
-//         std::string line;
-//         // store everyting into the BF
-//         while (std::getline(file, line)) {
-//             insertSeq(*bloom, line, 1, k);
-//         }
-//         file.close();
-//         return bloom;
-//     } else {
-//         std::cerr << "No file named \"" << filename << "\" found." << std::endl;
-//         exit(-1);
-//     }
-// }
 
 std::vector<bool> query(bf::bloom_filter* filter, const std::string& s, const unsigned int& k) {
     checknonNull(filter, "Nullptr passed to query function.");
@@ -101,22 +69,6 @@ std::vector<bool> query(bf::bloom_filter* filter, const std::string& s, const un
     // std::cout << std::endl;
     return response;
 }
-
-// double computeSimilarity(BloomFilter* bf, const std::string& seq, int numHashes,
-//                          int k) {
-//     checknonNull(bf, "Nullptr passed to computeSimilarity function.");
-//     ntHashIterator itr(seq, numHashes, k);
-//     unsigned long long nbHits = 0;
-//     int i = 0;
-//     while (itr != itr.end()) {
-//         if (bf->contains(*itr)) {
-//             nbHits++;
-//         }
-//         i++;
-//         ++itr;
-//     }
-//     return (nbHits * 1.0) / (i * 1.0);
-// }
 
 std::vector<bool> qtfNoSkip(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin) {
     checknonNull(filter, "Nullptr passed to qtfNoSkip function.");
