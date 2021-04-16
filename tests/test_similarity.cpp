@@ -8,6 +8,8 @@
 #include <string>
 
 #include "../src/FileIndexer.hpp"
+#include "../src/querier.cpp"
+#include "../src/similarity.hpp"
 #include "../src/truth.hpp"
 #include "../src/utils.hpp"
 #include "../thirdparty/robinHoodHashing/src/include/robin_hood.h"  // TODO faire de beaux imports

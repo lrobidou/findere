@@ -9,6 +9,7 @@
 
 #include "../thirdparty/robinHoodHashing/src/include/robin_hood.h"  // TODO faire de beaux imports
 #include "FileIndexer.hpp"
+#include "querier.hpp"
 #include "truth.hpp"
 #include "utils.hpp"
 
