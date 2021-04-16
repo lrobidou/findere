@@ -1,11 +1,11 @@
 #include <gtest/gtest.h>
+#include <robin_hood.h>
 
 #include <filesystem>
 #include <string>
 
 #include "../src/FileIndexer.hpp"
 #include "../src/utils.hpp"
-#include "../thirdparty/robinHoodHashing/src/include/robin_hood.h"  // TODO faire de beaux imports
 
 // TEST(TestSuiteName, TestName) {
 //     robin_hood::unordered_set<std::string> truth;

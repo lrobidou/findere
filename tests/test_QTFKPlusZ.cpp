@@ -1,16 +1,12 @@
 #include <gtest/gtest.h>
+#include <robin_hood.h>
 
 #include <bf/all.hpp>
-// #include <filesystem>
-// #include <fstream>
-// #include <iostream>
-// #include <random>
 #include <string>
 
 #include "../src/FileIndexer.hpp"
 #include "../src/truth.hpp"
 #include "../src/utils.hpp"
-#include "../thirdparty/robinHoodHashing/src/include/robin_hood.h"  // TODO faire de beaux imports
 
 std::vector<bool> QTFToQTFKPlusZ(std::vector<bool> qtfed, unsigned int k, const unsigned long long& nbNeighboursMin) {
     unsigned long long size = qtfed.size();

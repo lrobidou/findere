@@ -1,9 +1,10 @@
 #include "truth.hpp"
 
+#include <robin_hood.h>
+
 #include <string>
 #include <vector>
 
-#include "../thirdparty/robinHoodHashing/src/include/robin_hood.h"  // TODO faire de beaux imports
 #include "utils.hpp"
 
 void computeTruth(std::vector<std::string> filenames, int k, robin_hood::unordered_set<std::string>& output) {

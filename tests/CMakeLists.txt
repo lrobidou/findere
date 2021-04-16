@@ -7,4 +7,4 @@ add_executable(QTF_tests "main.cpp" ${TEST_FILES})
 
 
 
-target_link_libraries(QTF_tests gtest gtest_main qtf_truth_lib qtf_utils_lib qtf_fileIndexer_lib bf pthread)
+target_link_libraries(QTF_tests gtest gtest_main qtf_truth_lib qtf_utils_lib qtf_fileIndexer_lib qtf_similarity_lib bf pthread)

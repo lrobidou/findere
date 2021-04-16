@@ -1,17 +1,12 @@
-// #include <BloomFilterUtil.h>
 #include <gtest/gtest.h>
+#include <robin_hood.h>
 
 #include <bf/all.hpp>
-
-#include "testutils.hpp"
-// #include <filesystem>
-// #include <nlohmann/json.hpp>
-// #include <string>
 
 #include "../src/FileIndexer.hpp"
 #include "../src/truth.hpp"
 #include "../src/utils.hpp"
-#include "../thirdparty/robinHoodHashing/src/include/robin_hood.h"  // TODO faire de beaux imports
+#include "testutils.hpp"
 
 // template <typename T>
 // void toFileTXT(std::string outfilename, T x) {

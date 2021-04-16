@@ -22,12 +22,13 @@ set(THIRDPARTY_BUILD_DIR ${PROJECT_BINARY_DIR}/thirdparty)
 include_directories(SYSTEM thirdparty/libbf)
 include_directories(SYSTEM thirdparty/json/include)
 include_directories(SYSTEM thirdparty/cxxopts/include)
+include_directories(SYSTEM thirdparty/robinHoodHashing/src/include)
 
-# add libbf
-add_subdirectory(thirdparty/libbf)
-
-# add googletest
-add_subdirectory(thirdparty/googletest)
+add_library(qtf_truth_lib src/truth.cpp src/utils.cpp)  # QTF library
+add_library(qtf_utils_lib src/utils.cpp)  # QTF library
+add_library(qtf_fileIndexer_lib src/FileIndexer.cpp src/utils.cpp src/truth.cpp)  # QTF library
+add_library(qtf_querier_lib src/querier.cpp)# src/utils.cpp src/truth.cpp)  # QTF library
+add_library(qtf_similarity_lib src/similarity.cpp)# src/utils.cpp src/truth.cpp)  # QTF library
 
 # build src qtf
 add_subdirectory(src)
