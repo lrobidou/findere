@@ -1,4 +1,4 @@
-// #include <gtest/gtest.h>
+#include <robin_hood.h>
 
 #include <bf/all.hpp>
 #include <filesystem>
@@ -7,7 +7,6 @@
 #include <random>
 #include <string>
 
-#include "../thirdparty/robinHoodHashing/src/include/robin_hood.h"  // TODO faire de beaux imports
 #include "FileIndexer.hpp"
 #include "querier.hpp"
 #include "truth.hpp"

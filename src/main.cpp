@@ -1,11 +1,11 @@
+#include <robin_hood.h>
+
 #include <cstdlib>
 #include <cxxopts.hpp>
 #include <filesystem>
 #include <fstream>
 #include <iostream>
-// #include <nlohmann/json.hpp>
 
-#include "../thirdparty/robinHoodHashing/src/include/robin_hood.h"  // TODO faire de beaux import
 #include "utils.hpp"
 cxxopts::ParseResult parseArgv(int argc, char* argv[]) {
     cxxopts::Options options("index", "indexer of multifilter");

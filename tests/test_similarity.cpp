@@ -1,10 +1,7 @@
 #include <gtest/gtest.h>
+#include <robin_hood.h>
 
 #include <bf/all.hpp>
-// #include <filesystem>
-// #include <fstream>
-// #include <iostream>
-// #include <random>
 #include <string>
 
 #include "../src/FileIndexer.hpp"
@@ -12,7 +9,6 @@
 #include "../src/similarity.hpp"
 #include "../src/truth.hpp"
 #include "../src/utils.hpp"
-#include "../thirdparty/robinHoodHashing/src/include/robin_hood.h"  // TODO faire de beaux imports
 
 TEST(TestQTF, TestSimilarity) {
     robin_hood::unordered_set<std::string> truthPlusK;
