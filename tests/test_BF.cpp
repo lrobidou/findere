@@ -1,37 +1,37 @@
 #include <gtest/gtest.h>
 
-#include <filesystem>
+#include <bf/all.hpp>
+// #include <filesystem>
+// #include <fstream>
+// #include <iostream>
+// #include <random>
 #include <string>
 
-// #include "../src/FileIndexer.hpp"
+#include "../src/FileIndexer.hpp"
+#include "../src/truth.hpp"
 #include "../src/utils.hpp"
 #include "../thirdparty/robinHoodHashing/src/include/robin_hood.h"  // TODO faire de beaux imports
 
-TEST(TestBF, _FPR) {
-    // robin_hood::unordered_set<std::string> truthPlusK;
-    // const unsigned k = 32;         // k-mer size
-    // const unsigned numHashes = 1;  // number of hash functions
-    // const int epsilon_percent = 5;
+TEST(TestBF, TestFPR) {
+    robin_hood::unordered_set<std::string> truthPlusK;
+    const unsigned k = 32;         // k-mer size
+    const unsigned numHashes = 1;  // number of hash functions
+    const int epsilon_percent = 5;
 
-    // std::vector<std::string> input_filenames = {"data/ecoli1.fasta", "data/ecoli2.fasta", "data/ecoli3.fasta"};
+    std::vector<std::string> input_filenames = {"data/ecoli2.fasta", "data/ecoli3.fasta", "data/Listeria phage.fasta", "data/Penicillium chrysogenum.fasta"};
+    std::string querySeq = extractContentFromFasta("data/Salmonella enterica.fasta");
 
-    // // create ground truth
-    // robin_hood::unordered_set<std::string> truth;
-    // computeTruth(input_filenames, k, truth);
-    // // query it
-    // std::vector<bool> truthQuery = queryTruth(truth, seq, k);
+    // create a truth and filter
+    const auto& [truth, filter] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
 
-    // // create a BF
-    // BloomFilter* bf = indexFastas(input_filenames, k, epsilon_percent);
-    // // query it
-    // std::vector<bool> responseQuery = query(bf, seq, numHashes, k);
-    // responseQuery = query(bf, seq, numHashes, k);
-    // responseQuery = query(bf, seq, numHashes, k);
-    // responseQuery = query(bf, seq, numHashes, k);
+    std::vector<bool> truthQuery = queryTruth(truth, querySeq, k);
+    std::vector<bool> responseQuery = query(filter, querySeq, k);
 
-    // const auto& [TP, TN, FP, FN] = getScore(truthQuery, responseQuery);
-
+    const auto& [TP, TN, FP, FN] = getScore(truthQuery, responseQuery);
+    double fpr = (double)(100 * FP) / (double)(FP + TN);
+    double fnr = (double)(100 * FN) / (double)(FN + TP);
     // std::cout << "TP: " << TP << ", TN :" << TN << ", FP :" << FP << ", FN :" << FN << std::endl;
-    // std::cout << "FPR: " << (double)(100 * FP) / (double)(FP + TN) << "%." << std::endl;
-    // std::cout << "FNR: " << (double)(100 * FN) / (double)(FN + TP) << "%." << std::endl;
+    ASSERT_LT(fpr, 5.1);
+    ASSERT_GT(fpr, 4.9);
+    ASSERT_EQ(fnr, 0);
 }

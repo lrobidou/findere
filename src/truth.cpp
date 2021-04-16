@@ -8,7 +8,7 @@
 
 void computeTruth(std::vector<std::string> filenames, int k, robin_hood::unordered_set<std::string>& output) {
     for (auto const& filename : filenames) {
-        std::string line = extractMeaningfullLineFromFasta(filename);
+        std::string line = extractContentFromFasta(filename);
         unsigned long long start = 0;
         unsigned long long l = line.length();
         while ((start + k) <= l) {

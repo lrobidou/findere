@@ -31,3 +31,4 @@ add_subdirectory(thirdparty/googletest)
 
 # build src qtf
 add_subdirectory(src)
+add_subdirectory(tests)

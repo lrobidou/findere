@@ -1,6 +1,7 @@
 #include "utils.hpp"
 
 #include <iostream>
+#include <tuple>
 
 // #include <BloomFilter.hpp>
 // nlohmann::json load_json(std::string filename) {
@@ -30,26 +31,14 @@ std::string changeFilenameExtensionIfAnyOrAddOne(std::string filename, std::stri
     }
     return filename + "." + newExtension;
 }
-std::string extractMeaningfullLineFromFasta(std::string filename) {
+std::string extractContentFromFasta(std::string filename) {
     std::ifstream myfile(filename);
-    bool validLineAlreadyEncountered = false;
     std::string line;
-    std::string validLine;
+    std::string content;
     if (myfile.is_open()) {
         while (std::getline(myfile, line)) {
             if ((line[0] != '>') && (line[0] != '#')) {
-                if (validLineAlreadyEncountered) {
-                    std::cerr << "The file \""
-                              << filename
-                              << "\" contains more than one line of information"
-                              << " (more than one line is starting differently than \">\" or \"#\")."
-                              << " This is not allowed."
-                              << std::endl;
-                    exit(1);
-                } else {
-                    validLineAlreadyEncountered = true;
-                    validLine = line;
-                }
+                content += line;
             }
         }
         myfile.close();
@@ -57,12 +46,17 @@ std::string extractMeaningfullLineFromFasta(std::string filename) {
         std::cerr << "The file " << filename << " does not exist." << std::endl;
         exit(1);
     }
-    if (!validLineAlreadyEncountered) {
-        std::cerr << "The file " << filename << " does not contains a valid sequence." << std::endl;
-        exit(1);
-    }
-    return validLine;
+    return content;
 }
+
+void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN) {
+    const auto& [TP, TN, FP, FN] = TP_TN_FP_FN;
+    std::cout << "TP: " << TP << ", TN :" << TN << ", FP :" << FP << ", FN :" << FN << std::endl;
+    std::cout << "FPR: " << (double)(100 * FP) / (double)(FP + TN) << "%." << std::endl;
+    // std::cout << (double)(100 * FN) << "          " << (double)(FN + TP) << std::endl;
+    std::cout << "FNR: " << (double)(100 * FN) / (double)(FN + TP) << "%." << std::endl;
+}
+
 // inline bool thisFilenameExists(const std::string& name) {
 //     struct stat buffer;
 //     return (stat(name.c_str(), &buffer) == 0);
