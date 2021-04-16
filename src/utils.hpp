@@ -12,7 +12,9 @@ typedef std::vector<std::string> strvect;
 
 // nlohmann::json load_json(std::string filename);
 std::string changeFilenameExtensionIfAnyOrAddOne(std::string filename, std::string newExtension);
-std::string extractMeaningfullLineFromFasta(std::string filename);
+std::string extractContentFromFasta(std::string filename);
+
+void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN);
 
 inline bool thisFilenameExists(const std::string& name);
 // inline bool query(BloomFilter bf, const std::string& seq, int numHashes, int k);
@@ -34,11 +36,21 @@ inline void checknonNull(T x, std::string msg) {
     }
 }
 
-// template <typename T>
-// inline void printVector(T x) {
-//     std::cout << "printv:";
-//     for (auto const& i : std::as_const(x)) {
-//         std::cout << i << ' ';
-//     }
-//     std::cout << std::endl;
-// }
+template <typename T>
+void inline toFileTXT(std::string outfilename, T x) {
+    remove(outfilename.c_str());
+
+    std::ofstream outFile(outfilename);
+    for (const auto& e : x) {
+        outFile << e;
+    }
+}
+
+template <typename T>
+inline void printVector(T x) {
+    std::cout << "printv:";
+    for (auto const& i : std::as_const(x)) {
+        std::cout << i << ' ';
+    }
+    std::cout << std::endl;
+}

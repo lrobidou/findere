@@ -1,0 +1,76 @@
+image: alpine:3.13.4  # python >= 3.9 is mandatory
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+stages:
+  #- build
+  #- test
+  - sonar
+  - deploy
+
+# cmake:
+#   stage: build
+#   script:
+#     - apk add git g++ make cmake
+#     # install libbf
+#     - git clone https://github.com/mavam/libbf
+#     - cd libbf
+#     #- git checkout v1.0.0  # does not work, raise an exception about 'runtime_error' not being a member of 'std'
+#     - ./configure
+#     - make
+#     - make install
+#     - cd ..
+
+#     # install googletest
+#     - git clone https://github.com/google/googletest
+#     - cd googletest
+#     - cmake .
+#     - make
+#     - make install
+#     - cd ..
+
+#     # compile QTF
+#     - ./build.sh
+#     # run tests
+#     - ./build/tests/QTF_tests
+#   artifacts:
+#     paths:
+#       - build/src/main
+#       - build/tests/QTF_tests
+
+
+
+#gooleTest:
+#  stage: test
+#  script:
+#    - ./build/tests/QTF_tests
+  # artifacts:
+  #   reports:
+  #     junit: cov.xml
+  #   paths:
+  #     - cov.xml
+
+sonar:
+  image: sonarsource/sonar-scanner-cli
+  stage: sonar
+  script:
+    - ls -la
+    - ProjectKey=$([[ -n "$CI_COMMIT_TAG" ]] && echo master || echo "$CI_COMMIT_REF_NAME")
+    - ProjectKey="$SonarProjectKey:$ProjectKey"
+    - echo $ProjectKey
+    # - sonar-scanner -Dsonar.projectKey="$ProjectKey" -Dsonar.host.url="$SonarHostUrl" -Dsonar.login="$SonarLogin" -Dsonar.python.coverage.reportPaths="cov.xml" -Dsonar.sources="src/" -Dsonar.coverage.exclusions="src/tests/**, src/plot.py, src/main.py"
+    - sonar-scanner -Dsonar.projectKey="$ProjectKey" -Dsonar.host.url="$SonarHostUrl" -Dsonar.login="$SonarLogin" -Dsonar.sources="src/" -Dsonar.coverage.exclusions="tests/**"
+    - echo ok
+
+
+
+#deploy
+
+deployment:
+  stage: deploy
+  only:
+    variables:
+      - $CI_COMMIT_BRANCH == "master"
+  script:
+    - echo deployed

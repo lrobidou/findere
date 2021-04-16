@@ -14,5 +14,5 @@ def diff(filename1, filename2):
 
 
 if __name__ == "__main__":
-    print(diff("responseQTF.txt", "responseQTFSkip.txt"))
+    print(diff("responseQTFNoSkip.txt", "responseQTF.txt"))
 

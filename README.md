@@ -27,6 +27,7 @@ git submodule add https://github.com/martinus/robin-hood-hashing thirdparty/robi
 ## install libbf
 ```
 git clone https://github.com/mavam/libbf
+cd libbf
 git checkout v1.0.0
 ./configure
 make
@@ -34,6 +35,14 @@ sudo make install
 ```
 
 
+## install googletest
+```
+git clone https://github.com/google/googletest
+cd googletest
+cmake .
+make
+make install
+```
 
 
 ## install QTF
