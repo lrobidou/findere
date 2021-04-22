@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-#include "utils.hpp"
+#include "../utils/utils.hpp"
 
 void computeTruth(std::vector<std::string> filenames, int k, robin_hood::unordered_set<std::string>& output) {
     for (auto const& filename : filenames) {
@@ -15,7 +15,6 @@ void computeTruth(std::vector<std::string> filenames, int k, robin_hood::unorder
         while ((start + k) <= l) {
             output.insert(line.substr(start, k));
             start++;
-            // std::cout << start * 1.0 / l << std::endl;
         }
     }
 }

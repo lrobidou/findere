@@ -4,10 +4,10 @@
 #include <bf/all.hpp>
 #include <string>
 
-#include "../src/FileIndexer.hpp"
-#include "../src/querier.hpp"
-#include "../src/truth.hpp"
-#include "../src/utils.hpp"
+#include "../src/libraries/indexer/indexer.hpp"
+#include "../src/libraries/querier/querier.hpp"
+#include "../src/libraries/truth/truth.hpp"
+#include "../src/libraries/utils/utils.hpp"
 
 TEST(TestQTF, TestQTFNoSkipEqualsQTF) {
     robin_hood::unordered_set<std::string> truthPlusK;

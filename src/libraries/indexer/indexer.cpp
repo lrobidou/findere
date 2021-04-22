@@ -1,12 +1,12 @@
-#include "FileIndexer.hpp"
+#include "indexer.hpp"
 
 // #include <bloom_filter/basic.hpp>
 
 #include <fstream>
 #include <string>
 
-#include "truth.hpp"
-#include "utils.hpp"
+#include "../truth/truth.hpp"
+#include "../utils/utils.hpp"
 
 inline int countLines(const std::string& filename) {
     std::ifstream inFile(filename);
@@ -51,37 +51,3 @@ std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*> indexFasta
     bf::bloom_filter* filter = indexFastasGivenTruth(filenames, truth, numHashes, k, epsilon_percent);
     return {truth, filter};
 }
-
-std::tuple<int, int, int, int> getScore(const std::vector<bool>& truth, const std::vector<bool>& queryResult) {
-    if (truth.size() != queryResult.size()) {
-        std::cerr << "The vectors do not have the same size" << std::endl;
-        std::cerr << "truth.size()" << truth.size() << std::endl;
-        std::cerr << "queryResult.size()" << queryResult.size() << std::endl;
-        exit(1);
-    }
-
-    unsigned long long size = truth.size();
-    unsigned long long TP = 0;
-    unsigned long long TN = 0;
-    unsigned long long FP = 0;
-    unsigned long long FN = 0;
-
-    for (unsigned long long i = 0; i < size; i++) {
-        if (truth[i] == true) {
-            if (queryResult[i] == true) {
-                TP++;
-            } else {
-                FN++;
-            }
-        } else {  // truth[i] == false
-            if (queryResult[i] == true) {
-                FP++;
-            } else {
-                TN++;
-            }
-        }
-    }
-
-    return {TP, TN, FP, FN};
-}
-

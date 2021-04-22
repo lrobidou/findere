@@ -1,0 +1,1 @@
+add_library(qtf_utils_lib utils.cpp)

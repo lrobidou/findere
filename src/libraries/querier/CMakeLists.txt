@@ -1,0 +1,1 @@
+add_library(qtf_querier_lib querier.cpp)

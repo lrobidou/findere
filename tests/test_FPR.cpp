@@ -3,9 +3,9 @@
 
 #include <bf/all.hpp>
 
-#include "../src/FileIndexer.hpp"
-#include "../src/truth.hpp"
-#include "../src/utils.hpp"
+#include "../src/libraries/indexer/indexer.hpp"
+#include "../src/libraries/truth/truth.hpp"
+#include "../src/libraries/utils/utils.hpp"
 #include "testutils.hpp"
 
 // template <typename T>

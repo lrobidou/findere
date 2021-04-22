@@ -1,0 +1,6 @@
+add_subdirectory(evaluation)
+add_subdirectory(indexer)
+add_subdirectory(querier)
+add_subdirectory(similarity)
+add_subdirectory(truth)
+add_subdirectory(utils)

@@ -5,7 +5,7 @@
 #include <tuple>
 #include <vector>
 
-#include "querier.hpp"
+#include "../querier/querier.hpp"
 std::tuple<int, int> count0And1InAray(std::vector<bool> array) {
     int T = 0;
     int N = 0;
