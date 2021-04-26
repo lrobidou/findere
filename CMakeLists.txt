@@ -30,6 +30,8 @@ add_subdirectory(thirdparty/libbf)
 # add googletest
 add_subdirectory(thirdparty/googletest)
 
+add_subdirectory(thirdparty/json)
+
 
 # build src qtf
 add_subdirectory(src)
