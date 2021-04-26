@@ -44,10 +44,15 @@ bf::bloom_filter* indexFastasGivenTruth(const std::vector<std::string>& filename
     return filter;
 }
 
-std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*> indexFastas(const std::vector<std::string>& filenames, const unsigned numHashes, const unsigned int& k, const int& epsilon_percent) {
+std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*> indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const int& epsilon_percent) {
     // create ground truth
     robin_hood::unordered_set<std::string> truth;
     computeTruth(filenames, k, truth);
     bf::bloom_filter* filter = indexFastasGivenTruth(filenames, truth, numHashes, k, epsilon_percent);
     return {truth, filter};
+}
+
+std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*> QTF::indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const int& epsilon_percent, const unsigned& nbNeighboursMin) {
+    // indexing for QTF is esay: just index as usual, but with k = k - nbNeighboursMin
+    return ::indexFastas(filenames, numHashes, k - nbNeighboursMin, epsilon_percent);
 }

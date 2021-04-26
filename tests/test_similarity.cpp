@@ -6,7 +6,7 @@
 
 #include "../src/libraries/evaluation/evaluation.hpp"
 #include "../src/libraries/indexer/indexer.hpp"
-#include "../src/libraries/querier/querier.cpp"
+#include "../src/libraries/querier/querier.hpp"
 #include "../src/libraries/similarity/similarity.hpp"
 #include "../src/libraries/truth/truth.hpp"
 #include "../src/libraries/utils/utils.hpp"
@@ -34,8 +34,8 @@ TEST(TestQTF, TestSimilarity) {
     computeTruth(input_filenames, k + nbNeighboursMin, truthKPlusZ);
     std::vector<bool> truthKPlusZQuery = queryTruth(truthKPlusZ, querySeq, k + nbNeighboursMin);
 
-    std::vector<bool> responseQTF = qtf(filter, querySeq, k, nbNeighboursMin);
-    std::vector<bool> responseQTFKPlusZ = qtfIndexKPlusZ(filter, querySeq, k, nbNeighboursMin);
+    std::vector<bool> responseQTF = QTFNoSplitKmer::query(filter, querySeq, k, nbNeighboursMin);
+    std::vector<bool> responseQTFKPlusZ = QTF::query(filter, querySeq, k, nbNeighboursMin);
 
     const auto& [truth_P, truth_N] = count0And1InAray(truthQuery);
     const auto& [qtf_P, qtf_N] = computeSimilarityQTFKPlusZ(filter, querySeq, k, nbNeighboursMin, epsilon_percent);

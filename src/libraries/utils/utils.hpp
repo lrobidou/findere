@@ -1,14 +1,13 @@
 #pragma once
 
-#include <iostream>
-// #include <nlohmann/json.hpp>
+#include <robin_hood.h>
+
+#include <bf/all.hpp>
 #include <fstream>
+#include <iostream>
 #include <string>
 #include <utility>
 #include <vector>
-typedef std::vector<std::string> strvect;
-// typedef std::unordered_map<int, std::tuple<std::string, unsigned long long>> map_int_tuple;
-// typedef std::unordered_map<int, std::string> map_int_string;
 
 // nlohmann::json load_json(std::string filename);
 std::string changeFilenameExtensionIfAnyOrAddOne(std::string filename, std::string newExtension);
@@ -53,4 +52,28 @@ inline void printVector(T x) {
         std::cout << i << ' ';
     }
     std::cout << std::endl;
+}
+
+inline unsigned long long getNextPositiveKmerPositionInTheQuery(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, unsigned long long j, unsigned long long& nbQuery) {
+    unsigned long long size = s.size();
+    while ((j + nbNeighboursMin < size - k + 1) && (!filter->lookup(s.substr(j + nbNeighboursMin, k)))) {
+        j += nbNeighboursMin;  //TODO si on veut *>=* nbnbNeighboursMin, enlever 1
+        nbQuery++;
+    }
+    unsigned long long i = 1;
+    //TODO eviter dernier query
+    while ((j + i < size - k + 1) && (!filter->lookup(s.substr(j + i, k)))) {
+        i++;
+        nbQuery++;
+    }
+    j += i;
+    return j;
+}
+
+inline bool oneQuery(bf::bloom_filter* filter, const std::string s) {
+    return filter->lookup(s);
+}
+
+inline bool oneQuery(const robin_hood::unordered_set<std::string>& hashSet, const std::string& s) {
+    return hashSet.contains(s);
 }

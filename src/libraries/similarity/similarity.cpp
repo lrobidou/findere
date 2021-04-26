@@ -29,14 +29,14 @@ double computeNumberOfExpectedFP(const unsigned int& epsilon_percent, int iterat
     return std::round(95 * numberOfExpectedFP / 100);
 }
 
-std::tuple<int, int> computeSimilarityQTF(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, const unsigned int& epsilon_percent) {
-    std::vector<bool> qtfResponse = qtf(filter, s, k, nbNeighboursMin);
+std::tuple<int, int> computeSimilarityUsingQTFNoSplitKmer(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, const unsigned int& epsilon_percent) {
+    std::vector<bool> qtfResponse = QTFNoSplitKmer::query(filter, s, k, nbNeighboursMin);
     return count0And1InAray(qtfResponse);
 }
 
 std::tuple<int, int> computeSimilarityQTFCorrected(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, const unsigned int& epsilon_percent) {
     unsigned long long nbStretch = 0;
-    std::vector<bool> qtfResponse = qtf(filter, s, k, nbNeighboursMin, nbStretch);
+    std::vector<bool> qtfResponse = QTFNoSplitKmer::query(filter, s, k, nbNeighboursMin, nbStretch);
     int numberOfFPExpected = nbStretch * 2 * computeNumberOfExpectedFP(epsilon_percent, 5);
     const auto& [P, N] = count0And1InAray(qtfResponse);
     int pToBeRemoved = std::min(P, numberOfFPExpected);
@@ -44,13 +44,13 @@ std::tuple<int, int> computeSimilarityQTFCorrected(bf::bloom_filter* filter, con
 }
 
 std::tuple<int, int> computeSimilarityQTFKPlusZ(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, const unsigned int& epsilon_percent) {
-    std::vector<bool> responseQTFKPlusZ = qtfIndexKPlusZ(filter, s, k, nbNeighboursMin);
+    std::vector<bool> responseQTFKPlusZ = QTF::query(filter, s, k, nbNeighboursMin);
     return count0And1InAray(responseQTFKPlusZ);
 }
 
 std::tuple<int, int> computeSimilarityQTFKPlusZCorrected(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, const unsigned int& epsilon_percent) {
     unsigned long long nbStretch = 0;
-    std::vector<bool> responseQTFKPlusZ = qtfIndexKPlusZ(filter, s, k, nbNeighboursMin, nbStretch);
+    std::vector<bool> responseQTFKPlusZ = QTF::query(filter, s, k, nbNeighboursMin, nbStretch);
     int numberOfFPExpected = nbStretch * 2 * computeNumberOfExpectedFP(epsilon_percent, 5);
     const auto& [P, N] = count0And1InAray(responseQTFKPlusZ);
     int pToBeRemoved = std::min(P, numberOfFPExpected);

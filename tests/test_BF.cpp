@@ -24,12 +24,12 @@ TEST(TestBF, TestFPR) {
     const auto& [truth, filter] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
 
     std::vector<bool> truthQuery = queryTruth(truth, querySeq, k);
-    std::vector<bool> responseQuery = query(filter, querySeq, k);
+    std::vector<bool> responseQuery = noQTF::query(filter, querySeq, k);
 
     const auto& [TP, TN, FP, FN] = getScore(truthQuery, responseQuery);
     double fpr = (double)(100 * FP) / (double)(FP + TN);
     double fnr = (double)(100 * FN) / (double)(FN + TP);
-    // std::cout << "TP: " << TP << ", TN :" << TN << ", FP :" << FP << ", FN :" << FN << std::endl;
+
     ASSERT_LT(fpr, 5.1);
     ASSERT_GT(fpr, 4.9);
     ASSERT_EQ(fnr, 0);
