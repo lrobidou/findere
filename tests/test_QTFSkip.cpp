@@ -21,8 +21,8 @@ TEST(TestQTF, TestQTFNoSkipEqualsQTF) {
 
     const auto& [truth, filter] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
 
-    std::vector<bool> responseQTFNoSkip = qtfNoSkip(filter, querySeq, k, nbNeighboursMin);
-    std::vector<bool> responseQTF = qtf(filter, querySeq, k, nbNeighboursMin);
+    std::vector<bool> responseQTFNoSkip = QTFNoSplitKmer::queryNoSkip(filter, querySeq, k, nbNeighboursMin);
+    std::vector<bool> responseQTF = QTFNoSplitKmer::query(filter, querySeq, k, nbNeighboursMin);
 
     ASSERT_EQ(responseQTFNoSkip, responseQTF);
 }

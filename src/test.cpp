@@ -14,34 +14,28 @@
 #include "libraries/utils/utils.hpp"
 
 int main() {
-    robin_hood::unordered_set<std::string> truthBigK;
-
-    unsigned int bigK = 32;
-    unsigned int smallK = bigK - 6;
-    unsigned long long nbNeighboursMin = bigK - smallK;
-
     std::vector<std::string> input_filenames = {"data/ecoli2.fasta", "data/ecoli3.fasta", "data/Listeria phage.fasta", "data/Penicillium chrysogenum.fasta"};
     std::string querySeq = extractContentFromFasta("data/Salmonella enterica.fasta");
-    computeTruth(input_filenames, bigK, truthBigK);
 
-    const auto& [truthSmallK, smallFilter] = indexFastas(input_filenames, 1, smallK, 10);
+    unsigned int bigK = 32;
+    // unsigned int smallK = bigK - 6;
+    unsigned long long nbNeighboursMin = 6;
+    robin_hood::unordered_set<std::string> truthBigK = computeTruth(input_filenames, bigK);
 
-    std::vector<bool> bigKEmulatedFromQTF = qtfIndexKPlusZ(truthSmallK, querySeq, smallK, nbNeighboursMin);
-    std::vector<bool> bigKEmulatedFromQTFBloomFilter = qtfIndexKPlusZ(smallFilter, querySeq, smallK, nbNeighboursMin);
+    const auto& [truthSmallK, smallFilter] = QTF::indexFastas(input_filenames, 1, bigK, 10, nbNeighboursMin);
+    std::vector<bool> QTFOnTruth = QTF::query(truthSmallK, querySeq, bigK, nbNeighboursMin);
+    std::vector<bool> QTFOnBloomFilter = QTF::query(smallFilter, querySeq, bigK, nbNeighboursMin);
     std::vector<bool> bigTruth = queryTruth(truthBigK, querySeq, bigK);
 
-    printScore(getScore(bigTruth, bigKEmulatedFromQTFBloomFilter));
+    printScore(getScore(bigTruth, QTFOnBloomFilter));
     // TP: 98412, TN :4757970, FP :1123, FN :0
     // FPR: 0.0235969%.
     // FNR: 0%.
 
-    printScore(getScore(bigTruth, bigKEmulatedFromQTF));
+    printScore(getScore(bigTruth, QTFOnTruth));
     // TP: 98412, TN :4758947, FP :146, FN :0
     // FPR: 0.00306781%.
     // FNR: 0%.
-
-    // toFileTXT("bigTruth.txt", bigTruth);
-    // toFileTXT("bigKEmulatedFromQTFBloomFilter.txt", bigKEmulatedFromQTFBloomFilter);
 
     return 0;
 }

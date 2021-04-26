@@ -1,1 +1,1 @@
-add_library(qtf_querier_lib querier.cpp)
+add_library(qtf_querier_lib noQTF.cpp QTFNoSplitKmer.cpp)
