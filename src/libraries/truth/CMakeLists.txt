@@ -1,1 +1,0 @@
-add_library(qtf_truth_lib truth.cpp ../utils/utils.cpp)

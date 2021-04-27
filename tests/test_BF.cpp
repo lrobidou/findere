@@ -8,7 +8,6 @@
 #include "../src/libraries/indexer/indexer.hpp"
 #include "../src/libraries/querier/querier.hpp"
 #include "../src/libraries/similarity/similarity.hpp"
-#include "../src/libraries/truth/truth.hpp"
 #include "../src/libraries/utils/utils.hpp"
 
 TEST(TestBF, TestFPR) {
@@ -23,7 +22,7 @@ TEST(TestBF, TestFPR) {
     // create a truth and filter
     const auto& [truth, filter] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
 
-    std::vector<bool> truthQuery = queryTruth(truth, querySeq, k);
+    std::vector<bool> truthQuery = truth::queryTruth(truth, querySeq, k);
     std::vector<bool> responseQuery = noQTF::query(filter, querySeq, k);
 
     const auto& [TP, TN, FP, FN] = getScore(truthQuery, responseQuery);

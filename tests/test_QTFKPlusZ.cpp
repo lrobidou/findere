@@ -6,7 +6,6 @@
 
 #include "../src/libraries/indexer/indexer.hpp"
 #include "../src/libraries/querier/querier.hpp"
-#include "../src/libraries/truth/truth.hpp"
 #include "../src/libraries/utils/utils.hpp"
 
 // TODO : debug that function, seems to be buggy :(

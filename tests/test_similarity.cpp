@@ -8,7 +8,6 @@
 #include "../src/libraries/indexer/indexer.hpp"
 #include "../src/libraries/querier/querier.hpp"
 #include "../src/libraries/similarity/similarity.hpp"
-#include "../src/libraries/truth/truth.hpp"
 #include "../src/libraries/utils/utils.hpp"
 
 TEST(TestQTF, TestSimilarity) {
@@ -28,14 +27,13 @@ TEST(TestQTF, TestSimilarity) {
 
     // std::string querySeq = extractContentFromFasta("data/Salmonella enterica.fasta");
     const auto& [truth, filter] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
-    std::vector<bool> truthQuery = queryTruth(truth, querySeq, k);
+    std::vector<bool> truthQuery = truth::queryTruth(truth, querySeq, k);
 
-    robin_hood::unordered_set<std::string> truthKPlusZ;
-    computeTruth(input_filenames, k + nbNeighboursMin, truthKPlusZ);
-    std::vector<bool> truthKPlusZQuery = queryTruth(truthKPlusZ, querySeq, k + nbNeighboursMin);
+    robin_hood::unordered_set<std::string> truthKPlusZ = truth::indexFastas(input_filenames, k + nbNeighboursMin);
+    std::vector<bool> truthKPlusZQuery = truth::queryTruth(truthKPlusZ, querySeq, k + nbNeighboursMin);
 
     std::vector<bool> responseQTF = QTFNoSplitKmer::query(filter, querySeq, k, nbNeighboursMin);
-    std::vector<bool> responseQTFKPlusZ = QTF::query(filter, querySeq, k, nbNeighboursMin);
+    std::vector<bool> responseQTFKPlusZ = QTF::query(filter, querySeq, k + nbNeighboursMin, nbNeighboursMin);
 
     const auto& [truth_P, truth_N] = count0And1InAray(truthQuery);
     const auto& [qtf_P, qtf_N] = computeSimilarityQTFKPlusZ(filter, querySeq, k, nbNeighboursMin, epsilon_percent);

@@ -1,1 +1,1 @@
-add_library(qtf_indexer_lib indexer.cpp ../utils/utils.cpp ../truth/truth.cpp)
+add_library(qtf_indexer_lib indexer.cpp ../utils/utils.cpp)
