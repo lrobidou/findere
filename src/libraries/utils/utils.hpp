@@ -9,16 +9,13 @@
 #include <utility>
 #include <vector>
 
-// nlohmann::json load_json(std::string filename);
 std::string changeFilenameExtensionIfAnyOrAddOne(std::string filename, std::string newExtension);
 std::string extractContentFromFasta(std::string filename);
 
 void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN);
 
 inline bool thisFilenameExists(const std::string& name);
-// inline bool query(BloomFilter bf, const std::string& seq, int numHashes, int k);
-// std::unordered_map<int, std::tuple<std::string, unsigned long long>> splitfile(std::string filename);
-// void insertSeq(BloomFilter& bloom, const string& seq, unsigned hashNum, unsigned kmerSize);
+
 template <typename T>
 inline void checknonNull(T x) {
     if (x == nullptr) {
@@ -47,7 +44,6 @@ void inline toFileTXT(std::string outfilename, T x) {
 
 template <typename T>
 inline void printVector(T x) {
-    std::cout << "printv:";
     for (auto const& i : std::as_const(x)) {
         std::cout << i << ' ';
     }

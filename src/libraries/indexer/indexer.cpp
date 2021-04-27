@@ -2,26 +2,27 @@
 
 // #include <bloom_filter/basic.hpp>
 
-#include <fstream>
-#include <string>
+#include <robin_hood.h>
 
-#include "../truth/truth.hpp"
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <vector>
+
 #include "../utils/utils.hpp"
 
-inline int countLines(const std::string& filename) {
-    std::ifstream inFile(filename);
-    return std::count(std::istreambuf_iterator<char>(inFile), std::istreambuf_iterator<char>(), '\n');
-}
-
-void insertStringToBloomFilter(bf::bloom_filter* filter, const std::string& s, unsigned int k) {
+inline void insertStringToBloomFilter(bf::bloom_filter* filter, const std::string& s, unsigned int k) {
     checknonNull(filter);
-    unsigned long long size = s.size();
-    for (unsigned long long i = 0; i < size - k + 1; i++) {
-        filter->add(s.substr(i, k));
+
+    unsigned long long start = 0;
+    unsigned long long l = s.length();
+    while ((start + k) <= l) {
+        filter->add(s.substr(start, k));
+        start++;
     }
 }
 
-bf::bloom_filter* indexFastasGivenTruth(const std::vector<std::string>& filenames, const robin_hood::unordered_set<std::string>& truth, const unsigned numHashes, const unsigned int& k, const int& epsilon_percent) {
+inline bf::bloom_filter* indexFastasGivenTruth(const std::vector<std::string>& filenames, const robin_hood::unordered_set<std::string>& truth, const unsigned numHashes, const unsigned int& k, const int& epsilon_percent) {
     // number of *unique* elements to add in that filter
     const unsigned long long n = truth.size();
     // size (in b**i**t) required for that filter
@@ -31,23 +32,31 @@ bf::bloom_filter* indexFastasGivenTruth(const std::vector<std::string>& filename
     // let's fix that
     m = m + 8 - (m % 8);
 
-    // TODO do not use cout but a log library (do that everywhere too)
-    // std::cout << "n = " << n << std::endl;
-    // std::cout << "m = " << m << std::endl;
-
     // now that we have the size, let's index those files
     bf::bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), m);
+
+    std::string line;
     for (auto const& filename : filenames) {
-        // std::cout << "Indexing " << filename << "." << std::endl;
-        insertStringToBloomFilter(filter, extractContentFromFasta(filename), k);
+        std::ifstream myfile(filename);
+        if (myfile.is_open()) {
+            while (std::getline(myfile, line)) {
+                if ((line[0] != '>') && (line[0] != '#')) {
+                    insertStringToBloomFilter(filter, line, k);
+                }
+            }
+            myfile.close();
+        } else {
+            std::cerr << "The file " << filename << " does not exist." << std::endl;
+            exit(1);
+        }
     }
+
     return filter;
 }
 
 std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*> indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const int& epsilon_percent) {
     // create ground truth
-    robin_hood::unordered_set<std::string> truth;
-    computeTruth(filenames, k, truth);
+    robin_hood::unordered_set<std::string> truth = truth::indexFastas(filenames, k);
     bf::bloom_filter* filter = indexFastasGivenTruth(filenames, truth, numHashes, k, epsilon_percent);
     return {truth, filter};
 }
