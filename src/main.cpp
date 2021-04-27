@@ -1,4 +1,5 @@
 #include <robin_hood.h>
+#include <zlib.h>
 
 #include <cxxopts.hpp>
 #include <string>
@@ -9,13 +10,9 @@
 #include "libraries/querier/querier.hpp"
 #include "libraries/utils/argsUtils.hpp"
 #include "libraries/utils/utils.hpp"
-
 void read_fastq(std::string filename) {
     std::ifstream myfile(filename);
     zstr::istream is(myfile);
-    //
-    // Main loop
-    //
     std::string s;
     while (getline(is, s)) {
         std::cout << s << std::endl;
@@ -23,7 +20,7 @@ void read_fastq(std::string filename) {
 }
 
 int main(int argc, char* argv[]) {
-    read_fastq("data/ecoli1.fasta");
+    // read_fastq("data/ecoli1.fasta");
     // system("mkdir -p output/txt");  // TODO use parameter
     // system("mkdir -p output/bf");
     const unsigned numHashes = 1;  // number of hash functions
