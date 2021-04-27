@@ -23,6 +23,7 @@ include_directories(SYSTEM thirdparty/libbf)
 include_directories(SYSTEM thirdparty/json/include)
 include_directories(SYSTEM thirdparty/cxxopts/include)
 include_directories(SYSTEM thirdparty/robinHoodHashing/src/include)
+include_directories(SYSTEM thirdparty/zstr/src)
 
 # add libbf
 add_subdirectory(thirdparty/libbf)
