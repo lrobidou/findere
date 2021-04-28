@@ -15,11 +15,11 @@ cxxopts::ParseResult parseArgv(int argc, char* argv[]) {
     options.add_options()                                                           //
         ("i,input", "txt input files", cxxopts::value<std::vector<std::string>>())  //
         // ("o,output", "output directory", cxxopts::value<std::string>())                            //
-        ("q,query", "fasta file containing the query", cxxopts::value<std::string>())              // use fastq.gz
-        ("k", "length of k-mers", cxxopts::value<unsigned long long>())                            //
-        ("z", "number of sub-k-mers per kmer", cxxopts::value<unsigned long long>())               //
-        ("epsilonpercent", "false positive rate of original Bloom filter", cxxopts::value<int>())  //
-        ("s,scenario", "JSON parameter file", cxxopts::value<std::string>())                       //
+        ("q,query", "fasta file containing the query", cxxopts::value<std::string>())                 // use fastq.gz
+        ("k", "length of k-mers", cxxopts::value<unsigned long long>())                               //
+        ("z", "number of sub-k-mers per kmer", cxxopts::value<unsigned long long>())                  //
+        ("epsilonpercent", "false positive rate of original Bloom filter", cxxopts::value<double>())  //
+        ("s,scenario", "JSON parameter file", cxxopts::value<std::string>())                          //
         ;
     return options.parse(argc, argv);
 }
@@ -63,7 +63,7 @@ std::tuple<std::vector<std::string>, std::string, unsigned long long, unsigned l
     std::string queryFile = getOneArg<std::string>(arguments, json, "q");
     const unsigned long long k = getOneArg<unsigned long long>(arguments, json, "k");
     const unsigned long long z = getOneArg<unsigned long long>(arguments, json, "z");
-    const int epsilon = getOneArg<int>(arguments, json, "epsilonpercent");
+    const double epsilon = getOneArg<double>(arguments, json, "epsilonpercent");
 
     // return {input_filenames, output, queryFile, k, z, epsilon};
     return {input_filenames, queryFile, k, z, epsilon};

@@ -21,7 +21,7 @@ void read_fastq(std::string filename) {
     }
 }
 
-void printContext(const unsigned long long& k, const unsigned long long& z, const int& epsilon) {
+void printContext(const unsigned long long& k, const unsigned long long& z, const double& epsilon) {
     std::cout << "    {" << std::endl;
     std::cout << "        \"param\": {" << std::endl;
     std::cout << "            \"k\" : " << k << "," << std::endl;
@@ -54,9 +54,9 @@ int main(int argc, char* argv[]) {
     std::string querySeq = extractContentFromFasta(queryFile);
 
     std::cout << "[" << std::endl;
-    for (unsigned long long k_iter = k; k_iter > z; k_iter -= 1) {
+    for (unsigned long long k_iter = k; k_iter > z; k_iter -= 3) {
         for (unsigned long long z_iter = 0; z_iter < z; z_iter++) {
-            for (double epsilonPercent_iter = 0.1; epsilonPercent_iter <= epsilonPercent; epsilonPercent_iter += 0.2) {
+            for (double epsilonPercent_iter = 0.5; epsilonPercent_iter <= epsilonPercent; epsilonPercent_iter += 0.5) {
                 printContext(k_iter, z_iter, epsilonPercent_iter);
 
                 auto t0 = std::chrono::high_resolution_clock::now();

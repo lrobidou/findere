@@ -14,7 +14,7 @@ def from_tuple_to_nested_dict(list_of_tuples):
 
 
 def main():
-    with open("results.json", "r") as fichier:
+    with open("resultsPrecise.json", "r") as fichier:
         runs = json.load(fichier)
 
     list_of_tuples = []

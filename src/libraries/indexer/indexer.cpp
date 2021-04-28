@@ -23,7 +23,7 @@ inline void insertStringToBloomFilter(bf::bloom_filter* filter, const std::strin
     }
 }
 
-inline bf::bloom_filter* indexFastasGivenTruth(const std::vector<std::string>& filenames, const robin_hood::unordered_set<std::string>& truth, const unsigned numHashes, const unsigned int& k, const int& epsilon_percent) {
+inline bf::bloom_filter* indexFastasGivenTruth(const std::vector<std::string>& filenames, const robin_hood::unordered_set<std::string>& truth, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent) {
     // number of *unique* elements to add in that filter
     const unsigned long long n = truth.size();
     // size (in b**i**t) required for that filter
@@ -55,7 +55,7 @@ inline bf::bloom_filter* indexFastasGivenTruth(const std::vector<std::string>& f
     return filter;
 }
 
-std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int> indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const int& epsilon_percent) {
+std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int> indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent) {
     // create ground truth
     robin_hood::unordered_set<std::string> truth = truth::indexFastas(filenames, k);
     auto t0 = std::chrono::high_resolution_clock::now();
@@ -64,7 +64,7 @@ std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int> index
     return {truth, filter, std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count()};
 }
 
-std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int> QTF::indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const int& epsilon_percent, const unsigned& nbNeighboursMin) {
+std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int> QTF::indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, const unsigned& nbNeighboursMin) {
     // indexing for QTF is esay: just index as usual, but with k = k - nbNeighboursMin
     return ::indexFastas(filenames, numHashes, k - nbNeighboursMin, epsilon_percent);
 }
