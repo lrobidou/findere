@@ -5,7 +5,7 @@
         "data/Listeria phage.fasta",
         "data/Penicillium chrysogenum.fasta"
     ],
-    "k": 32,
+    "k": 20,
     "z": 6,
     "epsilonpercent": 5
 }

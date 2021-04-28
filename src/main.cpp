@@ -54,9 +54,9 @@ int main(int argc, char* argv[]) {
     std::string querySeq = extractContentFromFasta(queryFile);
 
     std::cout << "[" << std::endl;
-    for (unsigned long long k_iter = k; k_iter > z; k_iter = (k_iter - k_iter % 5) - 5) {
+    for (unsigned long long k_iter = k; k_iter > z; k_iter -= 1) {
         for (unsigned long long z_iter = 0; z_iter < z; z_iter++) {
-            for (int epsilonPercent_iter = 1; epsilonPercent_iter <= epsilonPercent; epsilonPercent_iter++) {
+            for (double epsilonPercent_iter = 0.1; epsilonPercent_iter <= epsilonPercent; epsilonPercent_iter += 0.2) {
                 printContext(k_iter, z_iter, epsilonPercent_iter);
 
                 auto t0 = std::chrono::high_resolution_clock::now();
