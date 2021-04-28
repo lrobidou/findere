@@ -26,20 +26,19 @@ def main():
 
     # print(json.dumps(sorted_results, indent=4, sort_keys=True))
     # for k in results:
-    for k in range(32, 33):
+    for k in results:
         for z in results[k]:
-            print(z)
             les_x = []
             les_y = []
             for epsilon in results[k][z]:
-                les_x.append(les_x)
-                les_y.append(results[k][z][epsilon])
-            print("plot...")
-            plt.plot(les_x, les_y)
-            print("plotted")
-        print("ok")
-        plt.show()
-        # print(results[k][z][epsilon])
+                les_x.append(epsilon)
+                les_y.append(results[k][z][epsilon]["results"]["FPR"])
+            plt.plot(les_x, les_y, label="z = " + str(z))
+        plt.legend(loc="best")
+        plt.title("K = " + str(k))
+        plt.savefig("K = " + str(k) + ".png")
+        plt.clf()
+        # plt.show()
 
 
 if __name__ == "__main__":
