@@ -33,7 +33,7 @@ T getOneArg(const cxxopts::ParseResult& arguments, const nlohmann::json& json, c
             try {
                 return json[argName];
             } catch (const nlohmann::detail::type_error& e) {
-                std::cerr << "When tryong to get argument \"" << argName << "\":" << std::endl;
+                std::cerr << "When trying to get argument \"" << argName << "\":" << std::endl;
                 std::cerr << e.what() << std::endl;
                 exit(-1);
             }
