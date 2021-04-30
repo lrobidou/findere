@@ -3,12 +3,17 @@ project(qtf VERSION 0.1.0)
 
 set(CONTACT "lucas.robidou@inria.fr")
 
+
+set(CMAKE_CXX_COMPILER /home/genouest/genscale/lrobidou/.conda/envs/mygcc/bin/x86_64-conda_cos6-linux-gnu-g++ CACHE PATH "" FORCE)
 set(CMAKE_CXX_STANDARD 17)  # TODO: find why this does not work if I overwrite CMAKE_CXX_COMPILER (even before)
+
 if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror --std=c++17")  # I have to specify the standard version here...
+
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror --std=c++17")  # I have to specify the standard version here...
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Izlib-1.2.11 --std=c++17")
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
