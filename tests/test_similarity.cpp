@@ -26,7 +26,7 @@ TEST(TestQTF, TestSimilarity) {
     //     "data/Penicillium chrysogenum.fasta"};
 
     // std::string querySeq = extractContentFromFasta("data/Salmonella enterica.fasta");
-    const auto& [truth, filter, _] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
+    const auto& [truth, filter, x, y] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
     std::vector<bool> truthQuery = truth::queryTruth(truth, querySeq, k);
 
     robin_hood::unordered_set<std::string> truthKPlusZ = truth::indexFastas(input_filenames, k + nbNeighboursMin);

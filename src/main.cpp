@@ -61,22 +61,22 @@ int main(int argc, char* argv[]) {
         auto t2 = std::chrono::high_resolution_clock::now();
 
         for (unsigned long long z_iter = 0; z_iter < z; z_iter++) {
+            robin_hood::unordered_set<std::string> truthSmallK = truth::indexFastas(input_filenames, k_iter - z);
             for (double epsilonPercent_iter = 0.5; epsilonPercent_iter <= epsilonPercent; epsilonPercent_iter += 0.5) {
                 printContext(k_iter, z_iter, epsilonPercent_iter);
-                const auto& [truthSmallK, smallFilter, timeTakenMs] = QTF::indexFastas(input_filenames, numHashes, k_iter, epsilonPercent_iter, z_iter);
+                const auto& [truthSmallK, smallFilter, timeTakenMs, sizeOfBloomFilter] = QTF::indexFastas(input_filenames, numHashes, k_iter, epsilonPercent_iter, z_iter);
                 auto t3 = std::chrono::high_resolution_clock::now();
                 std::vector<bool> QTFOnBloomFilter = QTF::query(smallFilter, querySeq, k_iter, z_iter);
                 auto t4 = std::chrono::high_resolution_clock::now();
+                std::vector<bool> QTFOnSmallTruth = QTF::query(truthSmallK, querySeq, k_iter, z_iter);
 
                 printTime(t0, t1, t2, t3, t4, timeTakenMs);
-                printScore(getScore(bigTruth, QTFOnBloomFilter));
+                printScore(getScore(bigTruth, QTFOnBloomFilter), sizeOfBloomFilter);
+                std::cout << "," << std::endl;
+                printScore(getScore(bigTruth, QTFOnSmallTruth), "resultsOnSmallFilter");
+
                 std::cout << "    }," << std::endl;
                 delete smallFilter;
-                // 38m 39s
-
-                // TP: 98412, TN :4757970, FP :1123, FN :0
-                // FPR: 0.0235969%.
-                // FNR: 0%.
             }
         }
     }

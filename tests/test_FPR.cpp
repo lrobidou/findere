@@ -20,7 +20,7 @@ TEST(TestSuiteName, TestName2) {
 
     std::string querySeq = extractContentFromFasta("data/ecoli4.fasta");
 
-    const auto &[truth, filter, _] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
+    const auto &[truth, filter, x, y] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
     robin_hood::unordered_set<std::string> truthKPlusZ = truth::indexFastas(input_filenames, k + nbNeighboursMin);
 
     // query truth

@@ -20,7 +20,7 @@ TEST(TestBF, TestFPR) {
     std::string querySeq = extractContentFromFasta("data/Salmonella enterica.fasta");
 
     // create a truth and filter
-    const auto& [truth, filter, _] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
+    const auto& [truth, filter, x, y] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
 
     std::vector<bool> truthQuery = truth::queryTruth(truth, querySeq, k);
     std::vector<bool> responseQuery = noQTF::query(filter, querySeq, k);

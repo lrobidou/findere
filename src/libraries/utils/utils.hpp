@@ -12,7 +12,8 @@
 std::string changeFilenameExtensionIfAnyOrAddOne(std::string filename, std::string newExtension);
 std::string extractContentFromFasta(std::string filename);
 
-void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN);
+void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN, unsigned long long sizeOfBloomFilterInBits = 0);
+void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN, const std::string& key);
 
 inline bool thisFilenameExists(const std::string& name);
 

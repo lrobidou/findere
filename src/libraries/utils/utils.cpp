@@ -29,9 +29,21 @@ std::string extractContentFromFasta(std::string filename) {
     return content;
 }
 
-void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN) {
+void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN, unsigned long long sizeOfBloomFilterInBits) {
     const auto& [TP, TN, FP, FN] = TP_TN_FP_FN;
     std::cout << "        \"results\": {" << std::endl;
+    if (sizeOfBloomFilterInBits > 0) {
+        std::cout << "            \"BFSize(bits)\": " << sizeOfBloomFilterInBits << "," << std::endl;
+    }
+    std::cout << "            \"TP\": " << TP << ", \"TN\":" << TN << ", \"FP\":" << FP << ", \"FN\":" << FN << "," << std::endl;
+    std::cout << "            \"FPR\": " << (double)(100 * FP) / (double)(FP + TN) << "," << std::endl;
+    std::cout << "            \"FNR\": " << (double)(100 * FN) / (double)(FN + TP) << std::endl;
+    std::cout << "        }" << std::endl;
+}
+
+void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN, const std::string& key) {
+    const auto& [TP, TN, FP, FN] = TP_TN_FP_FN;
+    std::cout << "        \"" << key << "\": {" << std::endl;
     std::cout << "            \"TP\": " << TP << ", \"TN\":" << TN << ", \"FP\":" << FP << ", \"FN\":" << FN << "," << std::endl;
     std::cout << "            \"FPR\": " << (double)(100 * FP) / (double)(FP + TN) << "," << std::endl;
     std::cout << "            \"FNR\": " << (double)(100 * FN) / (double)(FN + TP) << std::endl;

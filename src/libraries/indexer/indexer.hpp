@@ -8,10 +8,9 @@
 #include <string>
 #include <unordered_set>
 
-std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int> indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent);
+std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int, unsigned long long> indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent);
 
 namespace truth {
-
 inline robin_hood::unordered_set<std::string> indexFastas(std::vector<std::string> filenames, int k) {
     robin_hood::unordered_set<std::string> output;
     std::string line;
@@ -40,5 +39,5 @@ inline robin_hood::unordered_set<std::string> indexFastas(std::vector<std::strin
 }  // namespace truth
 
 namespace QTF {
-std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int> indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, const unsigned& nbNeighboursMin);
+std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int, unsigned long long> indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, const unsigned& nbNeighboursMin);
 }

@@ -18,7 +18,7 @@ TEST(TestQTF, TestQTFNoSkipEqualsQTF) {
     std::vector<std::string> input_filenames = {"data/ecoli2.fasta", "data/ecoli3.fasta", "data/Listeria phage.fasta", "data/Penicillium chrysogenum.fasta"};
     std::string querySeq = extractContentFromFasta("data/Salmonella enterica.fasta");
 
-    const auto& [truth, filter, _] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
+    const auto& [truth, filter, x, y] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
 
     std::vector<bool> responseQTFNoSkip = QTFNoSplitKmer::queryNoSkip(filter, querySeq, k, nbNeighboursMin);
     std::vector<bool> responseQTF = QTFNoSplitKmer::query(filter, querySeq, k, nbNeighboursMin);

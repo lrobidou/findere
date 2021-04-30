@@ -23,7 +23,7 @@ inline void insertStringToBloomFilter(bf::bloom_filter* filter, const std::strin
     }
 }
 
-inline bf::bloom_filter* indexFastasGivenTruth(const std::vector<std::string>& filenames, const robin_hood::unordered_set<std::string>& truth, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent) {
+inline std::tuple<bf::bloom_filter*, unsigned long long> indexFastasGivenTruth(const std::vector<std::string>& filenames, const robin_hood::unordered_set<std::string>& truth, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent) {
     // number of *unique* elements to add in that filter
     const unsigned long long n = truth.size();
     // size (in bit) required for that filter
@@ -52,19 +52,19 @@ inline bf::bloom_filter* indexFastasGivenTruth(const std::vector<std::string>& f
         }
     }
 
-    return filter;
+    return {filter, m};
 }
 
-std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int> indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent) {
+std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int, unsigned long long> indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent) {
     // create ground truth
     robin_hood::unordered_set<std::string> truth = truth::indexFastas(filenames, k);
     auto t0 = std::chrono::high_resolution_clock::now();
-    bf::bloom_filter* filter = indexFastasGivenTruth(filenames, truth, numHashes, k, epsilon_percent);
+    const auto& [filter, sizeOfFilter] = indexFastasGivenTruth(filenames, truth, numHashes, k, epsilon_percent);
     auto t1 = std::chrono::high_resolution_clock::now();
-    return {truth, filter, std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count()};
+    return {truth, filter, std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count(), sizeOfFilter};
 }
 
-std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int> QTF::indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, const unsigned& nbNeighboursMin) {
+std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int, unsigned long long> QTF::indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, const unsigned& nbNeighboursMin) {
     // indexing for QTF is esay: just index as usual, but with k = k - nbNeighboursMin
     return ::indexFastas(filenames, numHashes, k - nbNeighboursMin, epsilon_percent);
 }
