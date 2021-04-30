@@ -71,6 +71,7 @@ int main(int argc, char* argv[]) {
                 printTime(t0, t1, t2, t3, t4, timeTakenMs);
                 printScore(getScore(bigTruth, QTFOnBloomFilter));
                 std::cout << "    }," << std::endl;
+                delete smallFilter;
                 // 38m 39s
 
                 // TP: 98412, TN :4757970, FP :1123, FN :0

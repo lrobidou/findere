@@ -26,7 +26,7 @@ inline void insertStringToBloomFilter(bf::bloom_filter* filter, const std::strin
 inline bf::bloom_filter* indexFastasGivenTruth(const std::vector<std::string>& filenames, const robin_hood::unordered_set<std::string>& truth, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent) {
     // number of *unique* elements to add in that filter
     const unsigned long long n = truth.size();
-    // size (in b**i**t) required for that filter
+    // size (in bit) required for that filter
     unsigned long long m = -(n / log(1 - ((double)epsilon_percent / (double)100)));
     // oops, maybe m is not a multiple of 8
     // this is required by most implementation of Bloom filters
