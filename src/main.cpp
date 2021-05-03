@@ -51,7 +51,7 @@ int main(int argc, char* argv[]) {
                 QTF_internal::printTime(t0, t1, t2, t3, t4, timeTakenMs);
                 QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnBloomFilter), sizeOfBloomFilter);
                 std::cout << "," << std::endl;
-                QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnSmallTruth), "resultsOnSmallFilter");
+                QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnSmallTruth), "resultsOnSmallTruth");
 
                 std::cout << "    }," << std::endl;
                 delete smallFilter;
