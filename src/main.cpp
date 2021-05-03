@@ -43,6 +43,9 @@ int main(int argc, char* argv[]) {
 
                 std::cout << "    }," << std::endl;
                 delete smallFilter;
+
+                std::cout << "]" << std::endl;
+                return 0;
             }
         }
     }
