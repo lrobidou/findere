@@ -42,17 +42,24 @@ inline robin_hood::unordered_set<std::string> indexFastqGz(std::vector<std::stri
     robin_hood::unordered_set<std::string> output;
     std::string line;
     for (auto const& filename : filenames) {
+        dbg("truth::indexFastqGz before declaring std::ifstream");
         std::ifstream myfilegz(filename);
+        dbg("truth::indexFastqGz before declaring zstr::istream");
         zstr::istream myfile(myfilegz);
+        dbg("truth::indexFastqGz starting iterating");
         int i = 0;
         while (std::getline(myfile, line)) {
+            dbg("truth::indexFastqGz one new line");
             if (i == 1) {
+                dbg("truth::indexFastqGz the line is relevant");
                 unsigned long long start = 0;
                 unsigned long long l = line.length();
                 while ((start + k) <= l) {
+                    dbg("truth::indexFastqGz one kmer inserted");
                     output.insert(line.substr(start, k));
                     start++;
                 }
+                dbg("truth::indexFastqGz the line is indexed");
             }
             i++;
             i = i % 4;
