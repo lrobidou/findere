@@ -1,0 +1,9 @@
+{
+    "i": [
+        "/groups/genscale/NGSdatasets/metagenomics/hmp/data/SRS014107/SRS014107.denovo_duplicates_marked.trimmed.1.fastq.gz"
+    ],
+    "q": "/groups/genscale/NGSdatasets/metagenomics/hmp/data/SRS014107/SRS014107.denovo_duplicates_marked.trimmed.2.fastq.gz",
+    "k": 32,
+    "z": 6,
+    "epsilonpercent": 5
+}
