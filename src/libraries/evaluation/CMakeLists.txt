@@ -1,1 +1,0 @@
-add_library(qtf_evaluation_lib evaluation.cpp)

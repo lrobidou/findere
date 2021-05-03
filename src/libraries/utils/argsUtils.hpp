@@ -52,8 +52,8 @@ std::tuple<std::vector<std::string>, std::string, unsigned long long, unsigned l
         json = loadJson(jsonPath);
     } catch (const std::domain_error& e) {
         // do nothing
-    } catch (const cxxopts::option_has_no_value_exception& e) {
-        //do nothing
+        // } catch (const cxxopts::option_has_no_value_exception& e) {
+        //     //do nothing
     } catch (const nlohmann::detail::parse_error& e) {
         // the file do not exists
     }
