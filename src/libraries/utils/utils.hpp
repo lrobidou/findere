@@ -18,6 +18,38 @@ inline void dbg(std::string s) {
     std::cout << s;
 }
 
+inline std::string make_canonical(std::string kmer) {
+    std::string reverseComplement(kmer.rbegin(), kmer.rend());
+    int l = kmer.length();
+    for (int i = 0; i < l; i++) {
+        switch (reverseComplement[i]) {
+            case 'A':
+                reverseComplement[i] = 'T';
+                break;
+            case 'C':
+                reverseComplement[i] = 'G';
+                break;
+            case 'T':
+                reverseComplement[i] = 'A';
+                break;
+            case 'G':
+                reverseComplement[i] = 'C';
+                break;
+            case 'N':
+                reverseComplement[i] = 'N';
+                break;
+            default:
+                std::cerr << reverseComplement[i] << "encountered in a kmer. this is not alloex. Exiting." << std::endl;
+                exit(1);
+                break;
+        }
+        if (reverseComplement[i] > kmer[i]) {
+            return kmer;
+        }
+    }
+    return reverseComplement;
+}
+
 inline std::string extractContentFromFastqGz(std::string filename) {
     std::ifstream myfilegz(filename);
     zstr::istream myfile(myfilegz);
