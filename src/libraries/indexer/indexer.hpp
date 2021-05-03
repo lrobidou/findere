@@ -123,15 +123,12 @@ inline std::tuple<bf::bloom_filter*, unsigned long long> indexFastaqGZGivenTruth
         int i = 0;
         while (std::getline(myfile, line)) {
             if (i == 1) {
-                std::cout << "accept: " << line << std::endl;
                 unsigned long long start = 0;
                 unsigned long long l = line.length();
                 while ((start + k) <= l) {
                     filter->add(line.substr(start, k));
                     start++;
                 }
-            } else {
-                std::cout << "reject: " << line << std::endl;
             }
             i++;
             i = i % 4;
