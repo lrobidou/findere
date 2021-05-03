@@ -11,40 +11,7 @@
 #include "libraries/utils/argsUtils.hpp"
 #include "libraries/utils/utils.hpp"
 
-void read_fastq(std::string filename) {
-    std::ifstream myfile(filename);
-    zstr::istream is(myfile);
-    std::string s;
-    while (getline(is, s)) {
-        std::cout << s << std::endl;
-    }
-}
-
-void printContext(const unsigned long long& k, const unsigned long long& z, const double& epsilon) {
-    std::cout << "    {" << std::endl;
-    std::cout << "        \"param\": {" << std::endl;
-    std::cout << "            \"k\" : " << k << "," << std::endl;
-    std::cout << "            \"z\" : " << z << "," << std::endl;
-    std::cout << "            \"epsilon\" : " << epsilon << std::endl;
-    std::cout << "        }," << std::endl;
-}
-
-void printTime(std::chrono::_V2::system_clock::time_point t0,
-               std::chrono::_V2::system_clock::time_point t1,
-               std::chrono::_V2::system_clock::time_point t2,
-               std::chrono::_V2::system_clock::time_point t3,
-               std::chrono::_V2::system_clock::time_point t4,
-               int taimeTakenByIndexingBf) {
-    std::cout << "        \"time\": {" << std::endl;
-    std::cout << "            \"computeTruth\":" << std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count() << "," << std::endl;
-    std::cout << "            \"computeBf\":" << taimeTakenByIndexingBf << "," << std::endl;
-    std::cout << "            \"queryTruth\":" << std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count() << "," << std::endl;
-    std::cout << "            \"queryBf\":" << std::chrono::duration_cast<std::chrono::milliseconds>(t4 - t3).count() << std::endl;
-    std::cout << "        }," << std::endl;
-}
-
 int main(int argc, char* argv[]) {
-    // read_fastq("data/ecoli1.fasta");
     const unsigned numHashes = 1;  // number of hash functions
 
     cxxopts::ParseResult arguments = parseArgv(argc, argv);
@@ -61,19 +28,19 @@ int main(int argc, char* argv[]) {
         auto t2 = std::chrono::high_resolution_clock::now();
 
         for (unsigned long long z_iter = 0; z_iter < z; z_iter++) {
-            robin_hood::unordered_set<std::string> truthSmallK = truth::indexFastas(input_filenames, k_iter - z);
+            // robin_hood::unordered_set<std::string> truthSmallK = truth::indexFastas(input_filenames, k_iter - z);
             for (double epsilonPercent_iter = 0.5; epsilonPercent_iter <= epsilonPercent; epsilonPercent_iter += 0.5) {
-                printContext(k_iter, z_iter, epsilonPercent_iter);
-                const auto& [truthSmallK, smallFilter, timeTakenMs, sizeOfBloomFilter] = QTF::indexFastas(input_filenames, numHashes, k_iter, epsilonPercent_iter, z_iter);
+                QTF_internal::printContext(k_iter, z_iter, epsilonPercent_iter);
+                const auto& [truthSmallK, smallFilter, timeTakenMs, sizeOfBloomFilter] = QTF::indexFastqGz(input_filenames, numHashes, k_iter, epsilonPercent_iter, z_iter);
                 auto t3 = std::chrono::high_resolution_clock::now();
                 std::vector<bool> QTFOnBloomFilter = QTF::query(smallFilter, querySeq, k_iter, z_iter);
                 auto t4 = std::chrono::high_resolution_clock::now();
                 std::vector<bool> QTFOnSmallTruth = QTF::query(truthSmallK, querySeq, k_iter, z_iter);
 
-                printTime(t0, t1, t2, t3, t4, timeTakenMs);
-                printScore(getScore(bigTruth, QTFOnBloomFilter), sizeOfBloomFilter);
+                QTF_internal::printTime(t0, t1, t2, t3, t4, timeTakenMs);
+                QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnBloomFilter), sizeOfBloomFilter);
                 std::cout << "," << std::endl;
-                printScore(getScore(bigTruth, QTFOnSmallTruth), "resultsOnSmallFilter");
+                QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnSmallTruth), "resultsOnSmallFilter");
 
                 std::cout << "    }," << std::endl;
                 delete smallFilter;
