@@ -8,11 +8,37 @@
 #include <string>
 #include <utility>
 #include <vector>
-
+#include <zstr.hpp>
 std::string changeFilenameExtensionIfAnyOrAddOne(std::string filename, std::string newExtension);
 std::string extractContentFromFasta(std::string filename);
 
 inline bool thisFilenameExists(const std::string& name);
+
+inline void dbg(std::string s) {
+    std::cout << s;
+}
+
+inline std::string extractContentFromFastqGz(std::string filename) {
+    std::ifstream myfilegz(filename);
+    zstr::istream myfile(myfilegz);
+
+    std::string line;
+    std::string content;
+
+    int i = 0;
+    while (std::getline(myfile, line)) {
+        if (i == 1) {
+            std::cout << "accept: " << line << std::endl;
+            content += line;
+        } else {
+            std::cout << "reject: " << line << std::endl;
+        }
+        i++;
+        i = i % 4;
+    }
+
+    return content;
+}
 
 template <typename T>
 inline void checknonNull(T x) {
