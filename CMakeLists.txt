@@ -4,7 +4,6 @@ project(qtf VERSION 0.1.0)
 set(CONTACT "lucas.robidou@inria.fr")
 
 
-set(CMAKE_CXX_COMPILER /home/genouest/genscale/lrobidou/.conda/envs/mygcc/bin/x86_64-conda_cos6-linux-gnu-g++ CACHE PATH "" FORCE)
 set(CMAKE_CXX_STANDARD 17)  # TODO: find why this does not work if I overwrite CMAKE_CXX_COMPILER (even before)
 
 if (NOT CMAKE_BUILD_TYPE)
