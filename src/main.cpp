@@ -1,4 +1,5 @@
 #include <robin_hood.h>
+#include <stdio.h>
 
 #include <chrono>
 #include <cxxopts.hpp>
@@ -9,14 +10,25 @@
 #include "libraries/querier/querier.hpp"
 #include "libraries/utils/argsUtils.hpp"
 #include "libraries/utils/utils.hpp"
+void read_fastq(std::string filename) {
+    std::ifstream myfile(filename);
+    zstr::istream is(myfile);
+    std::string s;
+    unsigned long long i = 0;
+    while (getline(is, s)) {
+        std::cout << i << std::endl;
+        i++;
+    }
+}
 
 int main(int argc, char* argv[]) {
     const unsigned numHashes = 1;  // number of hash functions
 
     cxxopts::ParseResult arguments = parseArgv(argc, argv);
     const auto& [input_filenames, queryFile, k, z, epsilonPercent] = getArgs(arguments);
+    //read_fastq(input_filenames[0]);
 
-    std::string querySeq = extractContentFromFasta(queryFile);
+    std::string querySeq = extractContentFromFastqGz(queryFile);
 
     std::cout << "[" << std::endl;
     for (unsigned long long k_iter = k; k_iter > z; k_iter -= 1) {
