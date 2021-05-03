@@ -3,7 +3,6 @@
 #include <chrono>
 #include <cxxopts.hpp>
 #include <string>
-#include <zstr.hpp>
 
 #include "libraries/evaluation/evaluation.hpp"
 #include "libraries/indexer/indexer.hpp"
