@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
     std::cout << "[" << std::endl;
     for (unsigned long long k_iter = k; k_iter > z; k_iter -= 1) {
         auto t0 = std::chrono::high_resolution_clock::now();
-        robin_hood::unordered_set<std::string> truthBigK = truth::indexFastas(input_filenames, k_iter);
+        robin_hood::unordered_set<std::string> truthBigK = truth::indexFastqGz(input_filenames, k_iter);
         auto t1 = std::chrono::high_resolution_clock::now();
         std::vector<bool> bigTruth = truth::queryTruth(truthBigK, querySeq, k_iter);
         auto t2 = std::chrono::high_resolution_clock::now();
@@ -57,6 +57,9 @@ int main(int argc, char* argv[]) {
                 delete smallFilter;
 
                 std::cout << "]" << std::endl;
+//toFileTXT("qtfonbf.txt", QTFOnBloomFilter);
+//toFileTXT("truth.txt", bigTruth);
+//toFileTXT("qtfOnTruth.txt", QTFOnSmallTruth);
                 return 0;
             }
         }
