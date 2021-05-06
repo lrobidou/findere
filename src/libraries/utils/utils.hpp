@@ -15,7 +15,7 @@ std::string extractContentFromFasta(std::string filename);
 inline bool thisFilenameExists(const std::string& name);
 
 inline void dbg(std::string s) {
-    std::cout << s;
+    //std::cout << s;
 }
 
 inline std::string make_canonical(std::string kmer) {
@@ -60,10 +60,10 @@ inline std::string extractContentFromFastqGz(std::string filename) {
     int i = 0;
     while (std::getline(myfile, line)) {
         if (i == 1) {
-            std::cout << "accept: " << line << std::endl;
+            dbg("accept: " + line);
             content += line;
         } else {
-            std::cout << "reject: " << line << std::endl;
+            dbg("reject: " + line);
         }
         i++;
         i = i % 4;
