@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
     const unsigned numHashes = 1;  // number of hash functions
 
     cxxopts::ParseResult arguments = parseArgv(argc, argv);
-    const auto& [input_filenames, queryFile, k, z, epsilonPercent] = getArgs(arguments);
+    const auto& [input_filenames, queryFile, k, z, epsilonPercent, canonical] = getArgs(arguments);
 
     std::string querySeq = extractContentFromFastqGz(queryFile);
 

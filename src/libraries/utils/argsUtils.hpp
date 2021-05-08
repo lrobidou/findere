@@ -20,7 +20,7 @@ cxxopts::ParseResult parseArgv(int argc, char* argv[]) {
         ("z", "number of sub-k-mers per kmer", cxxopts::value<unsigned long long>())                  //
         ("epsilonpercent", "false positive rate of original Bloom filter", cxxopts::value<double>())  //
         ("s,scenario", "JSON parameter file", cxxopts::value<std::string>())                          //
-        ;
+        ("c,canonical", "do you want to index cannonical kmers ?", cxxopts::value<bool>()->default_value("false")->implicit_value("true"));
     return options.parse(argc, argv);
 }
 
@@ -45,15 +45,13 @@ T getOneArg(const cxxopts::ParseResult& arguments, const nlohmann::json& json, c
     }
 }
 
-std::tuple<std::vector<std::string>, std::string, unsigned long long, unsigned long long, int> getArgs(const cxxopts::ParseResult& arguments) {
+std::tuple<std::vector<std::string>, std::string, unsigned long long, unsigned long long, int, bool> getArgs(const cxxopts::ParseResult& arguments) {
     nlohmann::json json;
     try {
         std::string jsonPath = arguments["s"].as<std::string>();
         json = loadJson(jsonPath);
     } catch (const std::domain_error& e) {
         // do nothing
-        // } catch (const cxxopts::option_has_no_value_exception& e) {
-        //     //do nothing
     } catch (const nlohmann::detail::parse_error& e) {
         // the file do not exists
     }
@@ -64,9 +62,9 @@ std::tuple<std::vector<std::string>, std::string, unsigned long long, unsigned l
     const unsigned long long k = getOneArg<unsigned long long>(arguments, json, "k");
     const unsigned long long z = getOneArg<unsigned long long>(arguments, json, "z");
     const double epsilon = getOneArg<double>(arguments, json, "epsilonpercent");
+    const bool canonical = getOneArg<bool>(arguments, json, "c");
 
-    // return {input_filenames, output, queryFile, k, z, epsilon};
-    return {input_filenames, queryFile, k, z, epsilon};
+    return {input_filenames, queryFile, k, z, epsilon, canonical};
 }
 
 void printArgs(std::vector<std::string> input_filenames, std::string queryFile, unsigned long long k, unsigned long long z, int epsilon) {
