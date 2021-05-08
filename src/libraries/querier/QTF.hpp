@@ -13,10 +13,12 @@ inline std::vector<bool> queryFilterOrTruth(T filterOrTruth, const std::string& 
     std::vector<bool> response(size - smallK + 1 - nbNeighboursMin);
     unsigned long long i = 0;              // index of the response vector
     unsigned long long stretchLength = 0;  // number of consecutive positives kmers
+    unsigned long long j = 0;              // index of the query vector
 
-    for (unsigned long long j = 0; j < size - smallK + 1; j++) {
+    while (j < size - k + 1) {
         if (oneQuery(filterOrTruth, s.substr(j, smallK))) {
             stretchLength++;
+            j++;
         } else {
             if (stretchLength != 0) {
                 if (stretchLength > nbNeighboursMin) {
@@ -39,6 +41,16 @@ inline std::vector<bool> queryFilterOrTruth(T filterOrTruth, const std::string& 
             }
             response[i] = 0;
             i++;
+
+            // skip queries between current position and the next positive kmer
+            unsigned long long dontCare = 0;
+            unsigned long long nextPositivePosition = getNextPositiveKmerPositionInTheQuery(filterOrTruth, s, k, nbNeighboursMin, j, dontCare);
+            // let's fill nextPositivePosition-i-1 negative resuls
+            while (i < nextPositivePosition) {
+                response[i] = 0;
+                i++;
+            }
+            j = i;
         }
     }
 

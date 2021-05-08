@@ -106,26 +106,27 @@ inline void printVector(T x) {
     std::cout << std::endl;
 }
 
-inline unsigned long long getNextPositiveKmerPositionInTheQuery(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, unsigned long long j, unsigned long long& nbQuery) {
-    unsigned long long size = s.size();
-    while ((j + nbNeighboursMin < size - k + 1) && (!filter->lookup(s.substr(j + nbNeighboursMin, k)))) {
-        j += nbNeighboursMin;  //TODO si on veut *>=* nbnbNeighboursMin, enlever 1
-        nbQuery++;
-    }
-    unsigned long long i = 1;
-    //TODO eviter dernier query
-    while ((j + i < size - k + 1) && (!filter->lookup(s.substr(j + i, k)))) {
-        i++;
-        nbQuery++;
-    }
-    j += i;
-    return j;
-}
-
 inline bool oneQuery(bf::bloom_filter* filter, const std::string s) {
     return filter->lookup(s);
 }
 
 inline bool oneQuery(const robin_hood::unordered_set<std::string>& hashSet, const std::string& s) {
     return hashSet.contains(s);
+}
+
+template <typename T>
+inline unsigned long long getNextPositiveKmerPositionInTheQuery(T filterOrTruth, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, unsigned long long j, unsigned long long& nbQuery) {
+    unsigned long long size = s.size();
+    while ((j + nbNeighboursMin < size - k + 1) && (!oneQuery(filterOrTruth, s.substr(j + nbNeighboursMin, k)))) {
+        j += nbNeighboursMin;  //TODO si on veut *>=* nbnbNeighboursMin, enlever 1
+        nbQuery++;
+    }
+    unsigned long long i = 1;
+    //TODO eviter dernier query
+    while ((j + i < size - k + 1) && (!oneQuery(filterOrTruth, s.substr(j + i, k)))) {
+        i++;
+        nbQuery++;
+    }
+    j += i;
+    return j;
 }
