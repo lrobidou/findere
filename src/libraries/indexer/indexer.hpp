@@ -13,7 +13,7 @@
 #include "../utils/utils.hpp"
 
 namespace truth {
-inline robin_hood::unordered_set<std::string> indexFastas(std::vector<std::string> filenames, int k) {
+inline robin_hood::unordered_set<std::string> indexFastas(std::vector<std::string> filenames, int k, bool canonical = false) {
     robin_hood::unordered_set<std::string> output;
     std::string line;
     for (auto const& filename : filenames) {
@@ -23,9 +23,16 @@ inline robin_hood::unordered_set<std::string> indexFastas(std::vector<std::strin
                 if ((line[0] != '>') && (line[0] != '#')) {
                     unsigned long long start = 0;
                     unsigned long long l = line.length();
-                    while ((start + k) <= l) {
-                        output.insert(line.substr(start, k));
-                        start++;
+                    if (canonical) {
+                        while ((start + k) <= l) {
+                            output.insert(make_canonical(line.substr(start, k)));
+                            start++;
+                        }
+                    } else {
+                        while ((start + k) <= l) {
+                            output.insert(line.substr(start, k));
+                            start++;
+                        }
                     }
                 }
             }
@@ -38,7 +45,7 @@ inline robin_hood::unordered_set<std::string> indexFastas(std::vector<std::strin
     return output;
 }
 
-inline robin_hood::unordered_set<std::string> indexFastqGz(std::vector<std::string> filenames, int k, bool canonical) {
+inline robin_hood::unordered_set<std::string> indexFastqGz(std::vector<std::string> filenames, int k, bool canonical = false) {
     robin_hood::unordered_set<std::string> output;
     std::string line;
     for (auto const& filename : filenames) {
@@ -79,7 +86,7 @@ inline robin_hood::unordered_set<std::string> indexFastqGz(std::vector<std::stri
 }  // namespace truth
 
 namespace QTF_internal {
-inline std::tuple<bf::bloom_filter*, unsigned long long> indexFastasGivenTruth(const std::vector<std::string>& filenames, const robin_hood::unordered_set<std::string>& truth, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent) {
+inline std::tuple<bf::bloom_filter*, unsigned long long> indexFastasGivenTruth(const std::vector<std::string>& filenames, const robin_hood::unordered_set<std::string>& truth, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent, bool canonical = false) {
     // number of *unique* elements to add in that filter
     const unsigned long long n = truth.size();
     // size (in bit) required for that filter
@@ -100,9 +107,16 @@ inline std::tuple<bf::bloom_filter*, unsigned long long> indexFastasGivenTruth(c
                 if ((line[0] != '>') && (line[0] != '#')) {
                     unsigned long long start = 0;
                     unsigned long long l = line.length();
-                    while ((start + k) <= l) {
-                        filter->add(line.substr(start, k));
-                        start++;
+                    if (canonical) {
+                        while ((start + k) <= l) {
+                            filter->add(make_canonical(line.substr(start, k)));
+                            start++;
+                        }
+                    } else {
+                        while ((start + k) <= l) {
+                            filter->add(line.substr(start, k));
+                            start++;
+                        }
                     }
                 }
             }
@@ -157,11 +171,11 @@ inline std::tuple<bf::bloom_filter*, unsigned long long> indexFastaqGZGivenTruth
 }
 }  // namespace QTF_internal
 
-inline std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int, unsigned long long> indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent) {
+inline std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int, unsigned long long> indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, bool canonical = false) {
     // create ground truth
-    robin_hood::unordered_set<std::string> truth = truth::indexFastas(filenames, k);
+    robin_hood::unordered_set<std::string> truth = truth::indexFastas(filenames, k, canonical);
     auto t0 = std::chrono::high_resolution_clock::now();
-    const auto& [filter, sizeOfFilter] = QTF_internal::indexFastasGivenTruth(filenames, truth, numHashes, k, epsilon_percent);
+    const auto& [filter, sizeOfFilter] = QTF_internal::indexFastasGivenTruth(filenames, truth, numHashes, k, epsilon_percent, canonical);
     auto t1 = std::chrono::high_resolution_clock::now();
     return {truth, filter, std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count(), sizeOfFilter};
 }
@@ -176,9 +190,9 @@ inline std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int
 }
 
 namespace QTF {
-inline std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int, unsigned long long> indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, const unsigned& nbNeighboursMin) {
+inline std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int, unsigned long long> indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, const unsigned& nbNeighboursMin, bool canonical = false) {
     // indexing for QTF is esay: just index as usual, but with k = k - nbNeighboursMin
-    return ::indexFastas(filenames, numHashes, k - nbNeighboursMin, epsilon_percent);
+    return ::indexFastas(filenames, numHashes, k - nbNeighboursMin, epsilon_percent, canonical);
 }
 
 inline std::tuple<robin_hood::unordered_set<std::string>, bf::bloom_filter*, int, unsigned long long> indexFastqGz(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, const unsigned& nbNeighboursMin, bool canonical = false) {
