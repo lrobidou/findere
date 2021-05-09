@@ -16,15 +16,15 @@ inline std::vector<bool> queryFilterOrTruth(T filterOrTruth, const std::string& 
     unsigned long long j = 0;              // index of the query vector
 
     while (j < size - k + 1) {
-        std::cout << "start loop j = " << j << "; i = " << i << std ::endl;
+        // std::cout << "start loop j = " << j << "; i = " << i << std ::endl;
 
         if (oneQuery(filterOrTruth, s.substr(j, smallK))) {
-            std::cout << "start if j = " << j << "; i = " << i << std ::endl;
+            // std::cout << "start if j = " << j << "; i = " << i << std ::endl;
             stretchLength++;
             j++;
-            std::cout << "end if j = " << j << "; i = " << i << std ::endl;
+            // std::cout << "end if j = " << j << "; i = " << i << std ::endl;
         } else {
-            std::cout << "start else j = " << j << "; i = " << i << std ::endl;
+            // std::cout << "start else j = " << j << "; i = " << i << std ::endl;
             if (stretchLength != 0) {
                 if (stretchLength > nbNeighboursMin) {
                     nbStretch++;
@@ -44,18 +44,18 @@ inline std::vector<bool> queryFilterOrTruth(T filterOrTruth, const std::string& 
                 }
                 stretchLength = 0;
             }
-            std::cout << "after emptied stretchlength j = " << j << "; i = " << i << std ::endl;
+            // std::cout << "after emptied stretchlength j = " << j << "; i = " << i << std ::endl;
 
             // skip queries between current position and the next positive kmer
             unsigned long long dontCare = 0;
             unsigned long long numberOfJumps = getNextPositiveKmerPositionInTheQuery(filterOrTruth, s, smallK, nbNeighboursMin, j, dontCare);
-            std::cout << "numberOfJumps = " << numberOfJumps << std::endl;
+            // std::cout << "numberOfJumps = " << numberOfJumps << std::endl;
             for (unsigned long long temp = 0; temp < nbNeighboursMin * numberOfJumps; temp++) {
                 response[i] = false;
                 i++;
                 j++;
             }
-            std::cout << "after skip j = " << j << "; i = " << i << std ::endl;
+            // std::cout << "after skip j = " << j << "; i = " << i << std ::endl;
             response[i] = 0;
             i++;
             j++;
@@ -65,9 +65,9 @@ inline std::vector<bool> queryFilterOrTruth(T filterOrTruth, const std::string& 
             //     i++;
             //     j++;
             // }
-            std::cout << "end else j = " << j << "; i = " << i << std ::endl;
+            // std::cout << "end else j = " << j << "; i = " << i << std ::endl;
         }
-        std::cout << "end loop j = " << j << "; i = " << i << std ::endl;
+        // std::cout << "end loop j = " << j << "; i = " << i << std ::endl;
     }
 
     if (stretchLength != 0) {

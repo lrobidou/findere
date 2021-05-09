@@ -116,16 +116,16 @@ inline bool oneQuery(const robin_hood::unordered_set<std::string>& hashSet, cons
 
 template <typename T>
 inline unsigned long long getNextPositiveKmerPositionInTheQuery(T filterOrTruth, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, unsigned long long j, unsigned long long& nbQuery) {
-    std::cout << "getNextPositiveKmerPositionInTheQuery: " << k << " " << j << std::endl;
+    // std::cout << "getNextPositiveKmerPositionInTheQuery: " << k << " " << j << std::endl;
     unsigned long long numberOfJumps = 0;
     unsigned long long size = s.size();
     do {
-        std::cout << j + numberOfJumps * nbNeighboursMin << " is false." << std::endl;
+        // std::cout << j + numberOfJumps * nbNeighboursMin << " is false." << std::endl;
         numberOfJumps += 1;
         nbQuery++;
     } while ((j + numberOfJumps * nbNeighboursMin < size - k + 1) && (oneQuery(filterOrTruth, s.substr(j + numberOfJumps * nbNeighboursMin, k))) == false);
     numberOfJumps -= 1;
-    std::cout << "returning numberOfJumps = numberOfJumps" << numberOfJumps << std::endl;
+    // std::cout << "returning numberOfJumps = numberOfJumps" << numberOfJumps << std::endl;
     // if (!(j + nbNeighboursMin < size - k + 1)) {
     //     // no positive kmer next
     //     std::cout << "j + nbNeighboursMin if after the end of the query" << std::endl;

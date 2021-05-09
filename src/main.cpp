@@ -37,12 +37,12 @@ int main(int argc, char* argv[]) {
                 auto t3 = std::chrono::high_resolution_clock::now();
                 std::vector<bool> QTFOnBloomFilter = QTF::query(smallFilter, querySeq, k_iter, z_iter);
                 auto t4 = std::chrono::high_resolution_clock::now();
-                std::vector<bool> QTFOnSmallTruth = QTF::query(truthSmallK, querySeq, k_iter, z_iter);
+                // std::vector<bool> QTFOnSmallTruth = QTF::query(truthSmallK, querySeq, k_iter, z_iter);
 
                 QTF_internal::printTime(t0, t1, t2, t3, t4, timeTakenMs);
                 QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnBloomFilter), sizeOfBloomFilter);
                 std::cout << "," << std::endl;
-                QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnSmallTruth), "resultsOnSmallTruth");
+                // QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnSmallTruth), "resultsOnSmallTruth");
 
                 std::cout << "    }," << std::endl;
                 delete smallFilter;
