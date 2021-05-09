@@ -50,7 +50,7 @@ std::tuple<int, int> computeSimilarityQTFKPlusZ(bf::bloom_filter* filter, const 
 
 std::tuple<int, int> computeSimilarityQTFKPlusZCorrected(bf::bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, const unsigned int& epsilon_percent) {
     unsigned long long nbStretch = 0;
-    std::vector<bool> responseQTFKPlusZ = QTF::query(filter, s, k, nbNeighboursMin, nbStretch);
+    std::vector<bool> responseQTFKPlusZ = QTF::query(filter, s, k, nbNeighboursMin, nbStretch, false);
     int numberOfFPExpected = nbStretch * 2 * computeNumberOfExpectedFP(epsilon_percent, 5);
     const auto& [P, N] = count0And1InAray(responseQTFKPlusZ);
     int pToBeRemoved = std::min(P, numberOfFPExpected);

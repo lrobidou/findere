@@ -7,7 +7,7 @@
 #include "../utils/utils.hpp"
 
 template <typename T>
-inline std::vector<bool> queryFilterOrTruth(T filterOrTruth, const std::string& s, const unsigned int& k, const unsigned int& nbNeighboursMin, unsigned long long& nbStretch) {
+inline std::vector<bool> queryFilterOrTruth(T filterOrTruth, const std::string& s, const unsigned int& k, const unsigned int& nbNeighboursMin, unsigned long long& nbStretch, bool skip = false) {
     const unsigned int smallK = k - nbNeighboursMin;
     unsigned long long size = s.size();
     std::vector<bool> response(size - smallK + 1 - nbNeighboursMin);
@@ -47,14 +47,17 @@ inline std::vector<bool> queryFilterOrTruth(T filterOrTruth, const std::string& 
             // std::cout << "after emptied stretchlength j = " << j << "; i = " << i << std ::endl;
 
             // skip queries between current position and the next positive kmer
-            unsigned long long dontCare = 0;
-            unsigned long long numberOfJumps = getNextPositiveKmerPositionInTheQuery(filterOrTruth, s, smallK, nbNeighboursMin, j, dontCare);
-            // std::cout << "numberOfJumps = " << numberOfJumps << std::endl;
-            for (unsigned long long temp = 0; temp < nbNeighboursMin * numberOfJumps; temp++) {
-                response[i] = false;
-                i++;
-                j++;
+            if (skip) {
+                unsigned long long dontCare = 0;
+                unsigned long long numberOfJumps = getNextPositiveKmerPositionInTheQuery(filterOrTruth, s, smallK, nbNeighboursMin, j, dontCare);
+                // std::cout << "numberOfJumps = " << numberOfJumps << std::endl;
+                for (unsigned long long temp = 0; temp < nbNeighboursMin * numberOfJumps; temp++) {
+                    response[i] = false;
+                    i++;
+                    j++;
+                }
             }
+
             // std::cout << "after skip j = " << j << "; i = " << i << std ::endl;
             response[i] = 0;
             i++;
@@ -94,22 +97,22 @@ inline std::vector<bool> queryFilterOrTruth(T filterOrTruth, const std::string& 
 
 namespace QTF {
 
-std::vector<bool> inline query(bf::bloom_filter* filter, const std::string& s, const unsigned int& k, const unsigned int& nbNeighboursMin, unsigned long long& nbStretch) {
-    return queryFilterOrTruth(filter, s, k, nbNeighboursMin, nbStretch);
+std::vector<bool> inline query(bf::bloom_filter* filter, const std::string& s, const unsigned int& k, const unsigned int& nbNeighboursMin, unsigned long long& nbStretch, bool skip = false) {
+    return queryFilterOrTruth(filter, s, k, nbNeighboursMin, nbStretch, skip);
 }
 
-std::vector<bool> inline query(const robin_hood::unordered_set<std::string>& truth, const std::string& s, const unsigned int& k, const unsigned int& nbNeighboursMin, unsigned long long& nbStretch) {
-    return queryFilterOrTruth(truth, s, k, nbNeighboursMin, nbStretch);
+std::vector<bool> inline query(const robin_hood::unordered_set<std::string>& truth, const std::string& s, const unsigned int& k, const unsigned int& nbNeighboursMin, unsigned long long& nbStretch, bool skip = false) {
+    return queryFilterOrTruth(truth, s, k, nbNeighboursMin, nbStretch, skip);
 }
 
-std::vector<bool> inline query(bf::bloom_filter* filter, const std::string& s, const unsigned int& k, const unsigned long long& nbNeighboursMin) {
+std::vector<bool> inline query(bf::bloom_filter* filter, const std::string& s, const unsigned int& k, const unsigned long long& nbNeighboursMin, bool skip = false) {
     unsigned long long dontCare = 0;
-    return queryFilterOrTruth(filter, s, k, nbNeighboursMin, dontCare);
+    return queryFilterOrTruth(filter, s, k, nbNeighboursMin, dontCare, skip);
 }
 
-std::vector<bool> inline query(const robin_hood::unordered_set<std::string>& truth, const std::string& s, const unsigned int& k, const unsigned int& nbNeighboursMin) {
+std::vector<bool> inline query(const robin_hood::unordered_set<std::string>& truth, const std::string& s, const unsigned int& k, const unsigned int& nbNeighboursMin, bool skip = false) {
     unsigned long long dontCare = 0;
-    return queryFilterOrTruth(truth, s, k, nbNeighboursMin, dontCare);
+    return queryFilterOrTruth(truth, s, k, nbNeighboursMin, dontCare, skip);
 }
 
 }  // namespace QTF
