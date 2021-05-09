@@ -46,10 +46,10 @@ int main(int argc, char* argv[]) {
                 std::vector<bool> QTFOnSmallTruth = QTF::query(truthSmallK, querySeq, k_iter, z_iter);
 
                 QTF_internal::printTime(t0, t1, t2, t3, t4, t5, t6, timeTakenMs);
-                QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnBloomFilter), "queryBF", sizeOfBloomFilter);
-                QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnBloomFilterSkip), "queryBFSkip", sizeOfBloomFilter);
+                QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnBloomFilter), "queryBF", false, sizeOfBloomFilter);
+                QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnBloomFilterSkip), "queryBFSkip", false, sizeOfBloomFilter);
                 std::cout << "," << std::endl;
-                QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnSmallTruth), "resultsOnSmallTruth");
+                QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnSmallTruth), "resultsOnSmallTruth", true);
 
                 std::cout << "    }," << std::endl;
                 delete smallFilter;
