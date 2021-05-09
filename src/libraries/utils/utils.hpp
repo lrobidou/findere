@@ -118,26 +118,26 @@ template <typename T>
 inline unsigned long long getNextPositiveKmerPositionInTheQuery(T filterOrTruth, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, unsigned long long j, unsigned long long& nbQuery) {
     std::cout << "getNextPositiveKmerPositionInTheQuery: " << k << " " << j << std::endl;
     unsigned long long size = s.size();
-    while ((j + nbNeighboursMin < size - k + 1) && (!oneQuery(filterOrTruth, s.substr(j + nbNeighboursMin, k)))) {
+    while ((j + nbNeighboursMin < size - k + 1) && (oneQuery(filterOrTruth, s.substr(j + nbNeighboursMin, k))) == false) {
         j += nbNeighboursMin;  //TODO si on veut *>=* nbnbNeighboursMin, enlever 1
         nbQuery++;
     }
-    if (!(j + nbNeighboursMin < size - k + 1)) {
-        // no positive kmer next
-        std::cout << "j + nbNeighboursMin if after the end of the query" << std::endl;
-        return j;
-    }
-    std::cout << "j=" << j << " si a positive" << std::endl;
+    // if (!(j + nbNeighboursMin < size - k + 1)) {
+    //     // no positive kmer next
+    //     std::cout << "j + nbNeighboursMin if after the end of the query" << std::endl;
+    //     return j;
+    // }
+    // std::cout << "j=" << j << " si a positive" << std::endl;
 
     // j is now the index of a posiive kmer in the query. Let's backtrack, one kmer by one kmer, until we fond a negative kmer.
 
     //TODO eviter dernier query
-    while (oneQuery(filterOrTruth, s.substr(j - 1, k))) {
-        std::cout << j - 1 << " is a positive" << std::endl;
-        j--;
-        nbQuery++;
-    }
+    // while (oneQuery(filterOrTruth, s.substr(j - 1, k))) {
+    //     std::cout << j - 1 << " is a positive" << std::endl;
+    //     j--;
+    //     nbQuery++;
+    // }
 
-    nbQuery++;
+    // nbQuery++;
     return j;
 }
