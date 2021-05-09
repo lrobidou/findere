@@ -27,12 +27,12 @@ int main(int argc, char* argv[]) {
         std::vector<bool> bigTruth = truth::queryTruth(truthBigK, querySeq, k_iter);
         auto t2 = std::chrono::high_resolution_clock::now();
         for (double epsilonPercent_iter = 0.5; epsilonPercent_iter <= epsilonPercent; epsilonPercent_iter += 0.5) {
+            epsilonPercent_iter = 5;
             const auto& [normalfilter, numberOfIndexedElements] = QTF_internal::indexFastaqGZGivenTruth(input_filenames, truthBigK, 1, k_iter, epsilonPercent_iter, false);
             auto t6 = std::chrono::high_resolution_clock::now();
             std::vector<bool> noQTFSimpleQuery = noQTF::query(normalfilter, querySeq, k_iter);
             auto t7 = std::chrono::high_resolution_clock::now();
             for (unsigned long long z_iter = 0; z_iter < z; z_iter++) {
-                epsilonPercent_iter = 5;
                 z_iter = 5;
 
                 QTF_internal::printContext(k_iter, z_iter, epsilonPercent_iter);
