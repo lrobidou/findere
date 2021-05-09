@@ -121,12 +121,18 @@ inline unsigned long long getNextPositiveKmerPositionInTheQuery(T filterOrTruth,
         j += nbNeighboursMin;  //TODO si on veut *>=* nbnbNeighboursMin, enlever 1
         nbQuery++;
     }
-    unsigned long long i = 1;
+    if (!(j + nbNeighboursMin < size - k + 1)) {
+        // no positive kmer next
+        return j;
+    }
+
+    // j is now the index of a posiive kmer in the query. Let's backtrack, one kmer by one kmer, until we fond a negative kmer.
+
     //TODO eviter dernier query
-    while ((j + i < size - k + 1) && (!oneQuery(filterOrTruth, s.substr(j + i, k)))) {
-        i++;
+    while (oneQuery(filterOrTruth, s.substr(j - 1, k))) {
+        j--;
         nbQuery++;
     }
-    j += i;
+    nbQuery++;
     return j;
 }
