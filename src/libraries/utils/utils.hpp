@@ -119,9 +119,11 @@ inline unsigned long long getNextPositiveKmerPositionInTheQuery(T filterOrTruth,
     std::cout << "getNextPositiveKmerPositionInTheQuery: " << k << " " << j << std::endl;
     unsigned long long size = s.size();
     while ((j + nbNeighboursMin < size - k + 1) && (oneQuery(filterOrTruth, s.substr(j + nbNeighboursMin, k))) == false) {
+        std::cout << j + nbNeighboursMin << " is false." << std::endl;
         j += nbNeighboursMin;  //TODO si on veut *>=* nbnbNeighboursMin, enlever 1
         nbQuery++;
     }
+    std::cout << "returning j=" << j << std::endl;
     // if (!(j + nbNeighboursMin < size - k + 1)) {
     //     // no positive kmer next
     //     std::cout << "j + nbNeighboursMin if after the end of the query" << std::endl;
