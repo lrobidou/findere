@@ -32,6 +32,8 @@ int main(int argc, char* argv[]) {
                 epsilonPercent_iter = 5;
                 z_iter = 5;
 
+                const auto& [normalfilter, numberOfIndexedElements] = QTF_internal::indexFastaqGZGivenTruth(input_filenames, truthBigK, 1, k_iter, epsilonPercent_iter, false);
+
                 QTF_internal::printContext(k_iter, z_iter, epsilonPercent_iter);
                 const auto& [truthSmallK, smallFilter, timeTakenMs, sizeOfBloomFilter] = QTF::indexFastqGz(input_filenames, numHashes, k_iter, epsilonPercent_iter, z_iter);
                 auto t3 = std::chrono::high_resolution_clock::now();
@@ -39,9 +41,11 @@ int main(int argc, char* argv[]) {
                 auto t4 = std::chrono::high_resolution_clock::now();
                 std::vector<bool> QTFOnBloomFilterSkip = QTF::query(smallFilter, querySeq, k_iter, z_iter, true);
                 auto t5 = std::chrono::high_resolution_clock::now();
+                std::vector<bool> noQTFSimpleQuery = noQTF::query(normalfilter, querySeq, k_iter);
+                auto t6 = std::chrono::high_resolution_clock::now();
                 std::vector<bool> QTFOnSmallTruth = QTF::query(truthSmallK, querySeq, k_iter, z_iter);
 
-                QTF_internal::printTime(t0, t1, t2, t3, t4, t5, timeTakenMs);
+                QTF_internal::printTime(t0, t1, t2, t3, t4, t5, t6, timeTakenMs);
                 QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnBloomFilter), "queryBF", sizeOfBloomFilter);
                 QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnBloomFilterSkip), "queryBFSkip", sizeOfBloomFilter);
                 std::cout << "," << std::endl;

@@ -53,6 +53,7 @@ inline void printTime(std::chrono::_V2::system_clock::time_point t0,
                       std::chrono::_V2::system_clock::time_point t3,
                       std::chrono::_V2::system_clock::time_point t4,
                       std::chrono::_V2::system_clock::time_point t5,
+                      std::chrono::_V2::system_clock::time_point t6,
                       int taimeTakenByIndexingBf) {
     std::cout << "        \"time\": {" << std::endl;
     std::cout << "            \"computeTruth\":" << std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count() << "," << std::endl;
@@ -60,10 +61,11 @@ inline void printTime(std::chrono::_V2::system_clock::time_point t0,
     std::cout << "            \"queryTruth\":" << std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count() << "," << std::endl;
     std::cout << "            \"queryBf\":" << std::chrono::duration_cast<std::chrono::milliseconds>(t4 - t3).count() << std::endl;
     std::cout << "            \"queryBfSkip\":" << std::chrono::duration_cast<std::chrono::milliseconds>(t5 - t4).count() << std::endl;
+    std::cout << "            \"queryNormalFilter\":" << std::chrono::duration_cast<std::chrono::milliseconds>(t6 - t5).count() << std::endl;
     std::cout << "        }," << std::endl;
 }
 
-inline void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN, const std::string& key = "", unsigned long long sizeOfBloomFilterInBits = 0) {
+inline void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN, const std::string& key = "", bool end = false, unsigned long long sizeOfBloomFilterInBits = 0) {
     const auto& [TP, TN, FP, FN] = TP_TN_FP_FN;
     std::cout << "        \"" << key << "\": {" << std::endl;
     if (sizeOfBloomFilterInBits > 0) {
@@ -72,7 +74,11 @@ inline void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN, const 
     std::cout << "            \"TP\": " << TP << ", \"TN\":" << TN << ", \"FP\":" << FP << ", \"FN\":" << FN << "," << std::endl;
     std::cout << "            \"FPR\": " << (double)(100 * FP) / (double)(FP + TN) << "," << std::endl;
     std::cout << "            \"FNR\": " << (double)(100 * FN) / (double)(FN + TP) << std::endl;
-    std::cout << "        }" << std::endl;
+    std::cout << "        }";
+    if (!end) {
+        std::cout << ",";
+    }
+    std::cout << std::endl;
 }
 
 // inline void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN, const std::string& key) {
