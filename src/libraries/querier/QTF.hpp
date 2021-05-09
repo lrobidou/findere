@@ -41,6 +41,7 @@ inline std::vector<bool> queryFilterOrTruth(T filterOrTruth, const std::string& 
             }
             response[i] = 0;
             i++;
+            j++;
 
             // skip queries between current position and the next positive kmer
             unsigned long long dontCare = 0;
