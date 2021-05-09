@@ -47,7 +47,7 @@ inline std::vector<bool> queryFilterOrTruth(T filterOrTruth, const std::string& 
             // std::cout << "after emptied stretchlength j = " << j << "; i = " << i << std ::endl;
 
             // skip queries between current position and the next positive kmer
-            if (skip) {
+            if (skip && (nbNeighboursMin > 0)) {
                 unsigned long long dontCare = 0;
                 unsigned long long numberOfJumps = getNextPositiveKmerPositionInTheQuery(filterOrTruth, s, smallK, nbNeighboursMin, j, dontCare);
                 // std::cout << "numberOfJumps = " << numberOfJumps << std::endl;
