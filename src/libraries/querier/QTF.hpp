@@ -16,29 +16,35 @@ inline std::vector<bool> queryFilterOrTruth(T filterOrTruth, const std::string& 
     unsigned long long j = 0;              // index of the query vector
 
     while (j < size - k + 1) {
+        std::cout << "start loop j = " << j << "; i = " << i << std ::endl;
+
         if (oneQuery(filterOrTruth, s.substr(j, smallK))) {
+            std::cout << "start if j = " << j << "; i = " << i << std ::endl;
             stretchLength++;
             j++;
+            std::cout << "end if j = " << j << "; i = " << i << std ::endl;
         } else {
+            std::cout << "start else j = " << j << "; i = " << i << std ::endl;
             if (stretchLength != 0) {
                 if (stretchLength > nbNeighboursMin) {
                     nbStretch++;
-                    for (unsigned long long j = 0; j < stretchLength - nbNeighboursMin; j++) {
+                    for (unsigned long long t = 0; t < stretchLength - nbNeighboursMin; t++) {
                         response[i] = true;
                         i++;
                     }
-                    for (unsigned long long j = 0; j < nbNeighboursMin; j++) {
+                    for (unsigned long long t = 0; t < nbNeighboursMin; t++) {
                         response[i] = false;
                         i++;
                     }
                 } else {
-                    for (unsigned long long j = 0; j < stretchLength; j++) {
+                    for (unsigned long long t = 0; t < stretchLength; t++) {
                         response[i] = false;
                         i++;
                     }
                 }
                 stretchLength = 0;
             }
+            std::cout << "after emptied stretchlength j = " << j << "; i = " << i << std ::endl;
 
             // skip queries between current position and the next positive kmer
             unsigned long long dontCare = 0;
@@ -49,18 +55,19 @@ inline std::vector<bool> queryFilterOrTruth(T filterOrTruth, const std::string& 
                 i++;
                 j++;
             }
+            std::cout << "after skip j = " << j << "; i = " << i << std ::endl;
             response[i] = 0;
             i++;
             j++;
-            std::cout << "j = " << j << "; i= " << i << std::endl;
             // while (i < nextPositivePosition) {
             //     std::cout << "incrementingiand j" << std::endl;
             //     response[i] = 0;
             //     i++;
             //     j++;
             // }
-            std::cout << "and after skip j=" << j << "; i= " << i << std::endl;
+            std::cout << "end else j = " << j << "; i = " << i << std ::endl;
         }
+        std::cout << "end loop j = " << j << "; i = " << i << std ::endl;
     }
 
     if (stretchLength != 0) {
