@@ -13,3 +13,6 @@
 [submodule "thirdparty/zstr"]
 	path = thirdparty/zstr
 	url = https://github.com/mateidavid/zstr
+[submodule "thirdparty/libbf"]
+	path = thirdparty/libbf
+	url = https://github.com/lrobidou/libbf
