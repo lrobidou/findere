@@ -130,7 +130,7 @@ inline std::tuple<bf::bloom_filter*, unsigned long long> indexFastasGivenTruth(c
     return {filter, m};
 }
 
-inline std::tuple<bf::bloom_filter*, unsigned long long> indexFastaqGZGivenTruth(const std::vector<std::string>& filenames, const robin_hood::unordered_set<std::string>& truth, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent, bool canonical = false) {
+inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexFastaqGZGivenTruth(const std::vector<std::string>& filenames, const robin_hood::unordered_set<std::string>& truth, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent, bool canonical = false) {
     // number of *unique* elements to add in that filter
     const unsigned long long n = truth.size();
     // size (in bit) required for that filter
@@ -139,8 +139,7 @@ inline std::tuple<bf::bloom_filter*, unsigned long long> indexFastaqGZGivenTruth
     // this is required by most implementation of Bloom filters
     // let's fix that
     m = m + 8 - (m % 8);
-
-    bf::bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), m);
+    bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), m);
 
     std::string line;
     for (auto const& filename : filenames) {
