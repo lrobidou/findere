@@ -249,15 +249,18 @@ def kze_to_tab(the_dic):
 
 
 def kez_frp_en_fonction_de_z_u(the_dic):
-
     for k in the_dic:
         the_k = the_dic[k]
         for epsilon in the_k:
             the_epsilon = the_k[epsilon]
 
-            tab = "\\begin{tabular}{|*{4}{c|}}\n"
-            tab += "    \\hline\n"
-            tab += "    z & FPR of QTF\\hline\n"
+            # if you want he output to be in latex:
+            # tab = "\\begin{tabular}{|*{4}{c|}}\n"
+            # tab += "    \\hline\n"
+            # tab += "    z & FPR of QTF\\hline\n"
+
+            # if not:
+            tab = ""
 
             liste_z = []
             queryBf = []

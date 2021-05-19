@@ -89,7 +89,12 @@ int main(int argc, char* argv[]) {
                 QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnSmallTruth), "resultsOnSmallTruth", false);
                 QTF_internal::printScore(QTF_internal::getScore(bigTruth, noQTFSimpleQuery), "normalfilter", true, numberOfIndexedElements);
 
-                std::cout << "    }," << std::endl;
+                std::cout << "    }";
+                if (z_iter < z - 1) {
+                    std::cout << ",";
+                }
+                std::cout << std::endl;
+
                 delete smallFilter;
 
                 // std::cout << "]" << std::endl;
@@ -97,6 +102,7 @@ int main(int argc, char* argv[]) {
                 //toFileTXT("truth.txt", bigTruth);
                 //toFileTXT("qtfOnTruth.txt", QTFOnSmallTruth);
             }
+            std::cout << "]" << std::endl;
             return 0;
         }
     }
