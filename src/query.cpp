@@ -78,17 +78,21 @@ int main(int argc, char* argv[]) {
     // printVector(response); // beware the huge print
 
     // or print common parts between the query and the index
-    printCommon(response, querySeq, k);
+    // printCommon(response, querySeq, k); // nice french poetry
 
-    // you can also reconstruct the truth to see if everything worked well:
-    // std::vector<std::string> filenames = {"data/contemplations.txt",
-    //                                       "data/Horace.txt",
-    //                                       "data/Le_Cid.txt",
-    //                                       "data/Maastricht.txt",
-    //                                       "data/Othon.txt",
-    //                                       "data/Lettres_persanes.txt"};
+    // you can also reconstruct the truth to see if everything worked well :
+    // of course, the lines below only works if you indexed those files:
+    std::vector<std::string> filenames = {"data/texts/contemplations.txt",
+                                          "data/texts/Horace.txt",
+                                          "data/texts/Le_Cid.txt",
+                                          "data/texts/Maastricht.txt",
+                                          "data/texts/Othon.txt",
+                                          "data/texts/Lettres_persanes.txt"};
+    // so be sure to change the filenames variable accordingly, to cumpute the correct truth
+    // but in real life, you do not reconstruct the truth, because it wont fit in your memory
+    // this is just here to test findere
 
-    // std::vector<bool> truthQuery = truth::queryTruth(truth::indexText(filenames, k, canonical), querySeq, k);
-    // QTF_internal::printScore(QTF_internal::getScore(truthQuery, response));
+    std::vector<bool> truthQuery = truth::queryTruth(truth::indexText(filenames, k, canonical), querySeq, k);
+    QTF_internal::printScore(QTF_internal::getScore(truthQuery, response));
     return 0;
 }
