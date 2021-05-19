@@ -1,0 +1,3152 @@
+[
+    {
+        "param": {
+            "k": 32,
+            "z": 0,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 4107,
+            "computeBf": 1847,
+            "queryTruth": 2709,
+            "queryBf": 918
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4734677,
+            "FP": 47439,
+            "FN": 0,
+            "FPR": 0.992009,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 0,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 6035,
+            "computeBf": 1726,
+            "queryTruth": 2713,
+            "queryBf": 874
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4686413,
+            "FP": 95703,
+            "FN": 0,
+            "FPR": 2.00127,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 0,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 5964,
+            "computeBf": 1609,
+            "queryTruth": 2665,
+            "queryBf": 824
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4638454,
+            "FP": 143662,
+            "FN": 0,
+            "FPR": 3.00415,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 0,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 5657,
+            "computeBf": 1631,
+            "queryTruth": 2316,
+            "queryBf": 792
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4590830,
+            "FP": 191286,
+            "FN": 0,
+            "FPR": 4.00003,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 0,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 6009,
+            "computeBf": 1439,
+            "queryTruth": 2178,
+            "queryBf": 722
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4542193,
+            "FP": 239923,
+            "FN": 0,
+            "FPR": 5.01709,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 1,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 5251,
+            "computeBf": 1884,
+            "queryTruth": 2747,
+            "queryBf": 887
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781466,
+            "FP": 650,
+            "FN": 0,
+            "FPR": 0.0135923,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 1,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 6128,
+            "computeBf": 1768,
+            "queryTruth": 2245,
+            "queryBf": 787
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4779962,
+            "FP": 2154,
+            "FN": 0,
+            "FPR": 0.0450428,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 1,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 6176,
+            "computeBf": 1643,
+            "queryTruth": 2738,
+            "queryBf": 820
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4777491,
+            "FP": 4625,
+            "FN": 0,
+            "FPR": 0.0967145,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 1,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 5965,
+            "computeBf": 1517,
+            "queryTruth": 2747,
+            "queryBf": 784
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4773991,
+            "FP": 8125,
+            "FN": 0,
+            "FPR": 0.169904,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 1,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 6107,
+            "computeBf": 1498,
+            "queryTruth": 2793,
+            "queryBf": 737
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4769659,
+            "FP": 12457,
+            "FN": 0,
+            "FPR": 0.260491,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 2,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 6191,
+            "computeBf": 1935,
+            "queryTruth": 2882,
+            "queryBf": 911
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781879,
+            "FP": 237,
+            "FN": 0,
+            "FPR": 0.00495597,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 2,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 6281,
+            "computeBf": 1835,
+            "queryTruth": 2884,
+            "queryBf": 883
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781744,
+            "FP": 372,
+            "FN": 0,
+            "FPR": 0.00777898,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 2,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 6083,
+            "computeBf": 1727,
+            "queryTruth": 2880,
+            "queryBf": 831
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781567,
+            "FP": 549,
+            "FN": 0,
+            "FPR": 0.0114803,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 2,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 6135,
+            "computeBf": 1568,
+            "queryTruth": 2272,
+            "queryBf": 753
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781274,
+            "FP": 842,
+            "FN": 0,
+            "FPR": 0.0176073,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 2,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 5463,
+            "computeBf": 1533,
+            "queryTruth": 2797,
+            "queryBf": 725
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4780930,
+            "FP": 1186,
+            "FN": 0,
+            "FPR": 0.0248007,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 3,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 6159,
+            "computeBf": 1744,
+            "queryTruth": 2797,
+            "queryBf": 917
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781840,
+            "FP": 276,
+            "FN": 0,
+            "FPR": 0.0057715,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 3,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 5317,
+            "computeBf": 1830,
+            "queryTruth": 2814,
+            "queryBf": 853
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781738,
+            "FP": 378,
+            "FN": 0,
+            "FPR": 0.00790445,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 3,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 6070,
+            "computeBf": 1712,
+            "queryTruth": 2833,
+            "queryBf": 805
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781628,
+            "FP": 488,
+            "FN": 0,
+            "FPR": 0.0102047,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 3,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 6073,
+            "computeBf": 1621,
+            "queryTruth": 2853,
+            "queryBf": 762
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781503,
+            "FP": 613,
+            "FN": 0,
+            "FPR": 0.0128186,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 3,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 6190,
+            "computeBf": 1593,
+            "queryTruth": 2822,
+            "queryBf": 711
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781438,
+            "FP": 678,
+            "FN": 0,
+            "FPR": 0.0141778,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 4,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 6047,
+            "computeBf": 2003,
+            "queryTruth": 2877,
+            "queryBf": 902
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781768,
+            "FP": 348,
+            "FN": 0,
+            "FPR": 0.00727711,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 4,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 6044,
+            "computeBf": 1885,
+            "queryTruth": 2873,
+            "queryBf": 859
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781651,
+            "FP": 465,
+            "FN": 0,
+            "FPR": 0.00972373,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 4,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 6067,
+            "computeBf": 1753,
+            "queryTruth": 2872,
+            "queryBf": 815
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781623,
+            "FP": 493,
+            "FN": 0,
+            "FPR": 0.0103092,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 4,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 6053,
+            "computeBf": 1655,
+            "queryTruth": 2869,
+            "queryBf": 764
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781483,
+            "FP": 633,
+            "FN": 0,
+            "FPR": 0.0132368,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 4,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 6058,
+            "computeBf": 1565,
+            "queryTruth": 2871,
+            "queryBf": 729
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781408,
+            "FP": 708,
+            "FN": 0,
+            "FPR": 0.0148052,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 5,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 6114,
+            "computeBf": 2079,
+            "queryTruth": 2924,
+            "queryBf": 911
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781632,
+            "FP": 484,
+            "FN": 0,
+            "FPR": 0.010121,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 5,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 6067,
+            "computeBf": 1919,
+            "queryTruth": 2931,
+            "queryBf": 858
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781553,
+            "FP": 563,
+            "FN": 0,
+            "FPR": 0.011773,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 5,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 6054,
+            "computeBf": 1828,
+            "queryTruth": 2932,
+            "queryBf": 817
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781516,
+            "FP": 600,
+            "FN": 0,
+            "FPR": 0.0125467,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 5,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 6070,
+            "computeBf": 1687,
+            "queryTruth": 2900,
+            "queryBf": 761
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781414,
+            "FP": 702,
+            "FN": 0,
+            "FPR": 0.0146797,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 32,
+            "z": 5,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 6057,
+            "computeBf": 1596,
+            "queryTruth": 2916,
+            "queryBf": 713
+        },
+        "results": {
+            "TP": 75389,
+            "TN": 4781251,
+            "FP": 865,
+            "FN": 0,
+            "FPR": 0.0180882,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 0,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 6645,
+            "computeBf": 2146,
+            "queryTruth": 3192,
+            "queryBf": 911
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4693085,
+            "FP": 47231,
+            "FN": 0,
+            "FPR": 0.996368,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 0,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 7322,
+            "computeBf": 2014,
+            "queryTruth": 3192,
+            "queryBf": 864
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4645445,
+            "FP": 94871,
+            "FN": 0,
+            "FPR": 2.00136,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 0,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 6990,
+            "computeBf": 1873,
+            "queryTruth": 3177,
+            "queryBf": 813
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4597921,
+            "FP": 142395,
+            "FN": 0,
+            "FPR": 3.00391,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 0,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 7005,
+            "computeBf": 1818,
+            "queryTruth": 3196,
+            "queryBf": 768
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4550787,
+            "FP": 189529,
+            "FN": 0,
+            "FPR": 3.99824,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 0,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 7019,
+            "computeBf": 1682,
+            "queryTruth": 3189,
+            "queryBf": 731
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4502836,
+            "FP": 237480,
+            "FN": 0,
+            "FPR": 5.00979,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 1,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 7008,
+            "computeBf": 2162,
+            "queryTruth": 3240,
+            "queryBf": 903
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4739664,
+            "FP": 652,
+            "FN": 0,
+            "FPR": 0.0137544,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 1,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 7027,
+            "computeBf": 2028,
+            "queryTruth": 3242,
+            "queryBf": 847
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4738060,
+            "FP": 2256,
+            "FN": 0,
+            "FPR": 0.0475918,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 1,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 7044,
+            "computeBf": 1949,
+            "queryTruth": 3249,
+            "queryBf": 835
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4735567,
+            "FP": 4749,
+            "FN": 0,
+            "FPR": 0.100183,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 1,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 7005,
+            "computeBf": 1809,
+            "queryTruth": 3237,
+            "queryBf": 764
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4731980,
+            "FP": 8336,
+            "FN": 0,
+            "FPR": 0.175853,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 1,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 7039,
+            "computeBf": 1702,
+            "queryTruth": 3243,
+            "queryBf": 720
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4727817,
+            "FP": 12499,
+            "FN": 0,
+            "FPR": 0.263674,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 2,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 7039,
+            "computeBf": 2201,
+            "queryTruth": 3124,
+            "queryBf": 903
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4739987,
+            "FP": 329,
+            "FN": 0,
+            "FPR": 0.00694047,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 2,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 7015,
+            "computeBf": 2049,
+            "queryTruth": 3106,
+            "queryBf": 853
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4739816,
+            "FP": 500,
+            "FN": 0,
+            "FPR": 0.0105478,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 2,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 7001,
+            "computeBf": 1924,
+            "queryTruth": 3117,
+            "queryBf": 801
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4739504,
+            "FP": 812,
+            "FN": 0,
+            "FPR": 0.0171297,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 2,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 7009,
+            "computeBf": 1809,
+            "queryTruth": 3122,
+            "queryBf": 762
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4739153,
+            "FP": 1163,
+            "FN": 0,
+            "FPR": 0.0245342,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 2,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 7014,
+            "computeBf": 1723,
+            "queryTruth": 3140,
+            "queryBf": 716
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4738702,
+            "FP": 1614,
+            "FN": 0,
+            "FPR": 0.0340484,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 3,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 7026,
+            "computeBf": 2243,
+            "queryTruth": 3175,
+            "queryBf": 902
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4739749,
+            "FP": 567,
+            "FN": 0,
+            "FPR": 0.0119612,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 3,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 7011,
+            "computeBf": 2085,
+            "queryTruth": 3167,
+            "queryBf": 845
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4739596,
+            "FP": 720,
+            "FN": 0,
+            "FPR": 0.0151889,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 3,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 7006,
+            "computeBf": 1945,
+            "queryTruth": 3132,
+            "queryBf": 799
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4739372,
+            "FP": 944,
+            "FN": 0,
+            "FPR": 0.0199143,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 3,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 7013,
+            "computeBf": 1840,
+            "queryTruth": 3161,
+            "queryBf": 759
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4739143,
+            "FP": 1173,
+            "FN": 0,
+            "FPR": 0.0247452,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 3,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 7000,
+            "computeBf": 1743,
+            "queryTruth": 3155,
+            "queryBf": 717
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4739020,
+            "FP": 1296,
+            "FN": 0,
+            "FPR": 0.0273399,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 4,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 7013,
+            "computeBf": 2252,
+            "queryTruth": 3204,
+            "queryBf": 891
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4739609,
+            "FP": 707,
+            "FN": 0,
+            "FPR": 0.0149146,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 4,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 7022,
+            "computeBf": 2114,
+            "queryTruth": 3190,
+            "queryBf": 846
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4739411,
+            "FP": 905,
+            "FN": 0,
+            "FPR": 0.0190916,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 4,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 7004,
+            "computeBf": 2003,
+            "queryTruth": 3195,
+            "queryBf": 801
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4739283,
+            "FP": 1033,
+            "FN": 0,
+            "FPR": 0.0217918,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 4,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 7007,
+            "computeBf": 1873,
+            "queryTruth": 3188,
+            "queryBf": 765
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4739051,
+            "FP": 1265,
+            "FN": 0,
+            "FPR": 0.026686,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 4,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 7015,
+            "computeBf": 1801,
+            "queryTruth": 3200,
+            "queryBf": 714
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4738921,
+            "FP": 1395,
+            "FN": 0,
+            "FPR": 0.0294284,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 5,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 7016,
+            "computeBf": 2331,
+            "queryTruth": 3225,
+            "queryBf": 892
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4739379,
+            "FP": 937,
+            "FN": 0,
+            "FPR": 0.0197666,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 5,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 7018,
+            "computeBf": 2172,
+            "queryTruth": 3237,
+            "queryBf": 856
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4739204,
+            "FP": 1112,
+            "FN": 0,
+            "FPR": 0.0234584,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 5,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 7020,
+            "computeBf": 2038,
+            "queryTruth": 3243,
+            "queryBf": 810
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4739030,
+            "FP": 1286,
+            "FN": 0,
+            "FPR": 0.027129,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 5,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 7007,
+            "computeBf": 1964,
+            "queryTruth": 3270,
+            "queryBf": 766
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4738856,
+            "FP": 1460,
+            "FN": 0,
+            "FPR": 0.0307996,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 25,
+            "z": 5,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 7002,
+            "computeBf": 1809,
+            "queryTruth": 3232,
+            "queryBf": 712
+        },
+        "results": {
+            "TP": 117196,
+            "TN": 4738706,
+            "FP": 1610,
+            "FN": 0,
+            "FPR": 0.033964,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 0,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 6899,
+            "computeBf": 2317,
+            "queryTruth": 3277,
+            "queryBf": 892
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4635786,
+            "FP": 46758,
+            "FN": 0,
+            "FPR": 0.99856,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 0,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 6967,
+            "computeBf": 2161,
+            "queryTruth": 3266,
+            "queryBf": 847
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4588923,
+            "FP": 93621,
+            "FN": 0,
+            "FPR": 1.99936,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 0,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 6958,
+            "computeBf": 2049,
+            "queryTruth": 3283,
+            "queryBf": 809
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4542409,
+            "FP": 140135,
+            "FN": 0,
+            "FPR": 2.99271,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 0,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 6948,
+            "computeBf": 1929,
+            "queryTruth": 3259,
+            "queryBf": 767
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4495963,
+            "FP": 186581,
+            "FN": 0,
+            "FPR": 3.98461,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 0,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 6972,
+            "computeBf": 2063,
+            "queryTruth": 3341,
+            "queryBf": 724
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4449015,
+            "FP": 233529,
+            "FN": 0,
+            "FPR": 4.98722,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 1,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 7041,
+            "computeBf": 2363,
+            "queryTruth": 3325,
+            "queryBf": 887
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4681693,
+            "FP": 851,
+            "FN": 0,
+            "FPR": 0.0181739,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 1,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 6983,
+            "computeBf": 2203,
+            "queryTruth": 3316,
+            "queryBf": 840
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4679919,
+            "FP": 2625,
+            "FN": 0,
+            "FPR": 0.0560593,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 1,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 6971,
+            "computeBf": 2086,
+            "queryTruth": 3262,
+            "queryBf": 805
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4677249,
+            "FP": 5295,
+            "FN": 0,
+            "FPR": 0.11308,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 1,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 7006,
+            "computeBf": 1960,
+            "queryTruth": 3294,
+            "queryBf": 763
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4673727,
+            "FP": 8817,
+            "FN": 0,
+            "FPR": 0.188295,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 1,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 6979,
+            "computeBf": 1873,
+            "queryTruth": 3290,
+            "queryBf": 724
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4668990,
+            "FP": 13554,
+            "FN": 0,
+            "FPR": 0.289458,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 2,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 6985,
+            "computeBf": 2392,
+            "queryTruth": 3324,
+            "queryBf": 892
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4681701,
+            "FP": 843,
+            "FN": 0,
+            "FPR": 0.018003,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 2,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 6999,
+            "computeBf": 2257,
+            "queryTruth": 3324,
+            "queryBf": 840
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4681287,
+            "FP": 1257,
+            "FN": 0,
+            "FPR": 0.0268444,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 2,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 6982,
+            "computeBf": 2175,
+            "queryTruth": 3336,
+            "queryBf": 797
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4680834,
+            "FP": 1710,
+            "FN": 0,
+            "FPR": 0.0365186,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 2,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 6995,
+            "computeBf": 2004,
+            "queryTruth": 3329,
+            "queryBf": 763
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4680262,
+            "FP": 2282,
+            "FN": 0,
+            "FPR": 0.0487342,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 2,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 7003,
+            "computeBf": 2085,
+            "queryTruth": 3253,
+            "queryBf": 764
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4679647,
+            "FP": 2897,
+            "FN": 0,
+            "FPR": 0.0618681,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 3,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 7020,
+            "computeBf": 2394,
+            "queryTruth": 3331,
+            "queryBf": 894
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4681376,
+            "FP": 1168,
+            "FN": 0,
+            "FPR": 0.0249437,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 3,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 7049,
+            "computeBf": 2286,
+            "queryTruth": 3339,
+            "queryBf": 852
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4680979,
+            "FP": 1565,
+            "FN": 0,
+            "FPR": 0.033422,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 3,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 7001,
+            "computeBf": 2173,
+            "queryTruth": 3384,
+            "queryBf": 804
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4680647,
+            "FP": 1897,
+            "FN": 0,
+            "FPR": 0.0405122,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 3,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 7003,
+            "computeBf": 2070,
+            "queryTruth": 3374,
+            "queryBf": 767
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4680216,
+            "FP": 2328,
+            "FN": 0,
+            "FPR": 0.0497166,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 3,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 7040,
+            "computeBf": 1953,
+            "queryTruth": 3376,
+            "queryBf": 726
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4679805,
+            "FP": 2739,
+            "FN": 0,
+            "FPR": 0.0584938,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 4,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 7006,
+            "computeBf": 2477,
+            "queryTruth": 3391,
+            "queryBf": 881
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4680476,
+            "FP": 2068,
+            "FN": 0,
+            "FPR": 0.044164,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 4,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 7021,
+            "computeBf": 2306,
+            "queryTruth": 3398,
+            "queryBf": 839
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4680109,
+            "FP": 2435,
+            "FN": 0,
+            "FPR": 0.0520016,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 4,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 7033,
+            "computeBf": 2175,
+            "queryTruth": 3388,
+            "queryBf": 794
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4679772,
+            "FP": 2772,
+            "FN": 0,
+            "FPR": 0.0591986,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 4,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 6981,
+            "computeBf": 2077,
+            "queryTruth": 3398,
+            "queryBf": 752
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4679368,
+            "FP": 3176,
+            "FN": 0,
+            "FPR": 0.0678264,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 4,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 7018,
+            "computeBf": 1980,
+            "queryTruth": 3398,
+            "queryBf": 723
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4678949,
+            "FP": 3595,
+            "FN": 0,
+            "FPR": 0.0767745,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 5,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 7020,
+            "computeBf": 2326,
+            "queryTruth": 763,
+            "queryBf": 850
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4678510,
+            "FP": 4034,
+            "FN": 0,
+            "FPR": 0.0861498,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 5,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 6917,
+            "computeBf": 2197,
+            "queryTruth": 754,
+            "queryBf": 795
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4678080,
+            "FP": 4464,
+            "FN": 0,
+            "FPR": 0.0953328,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 5,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 6954,
+            "computeBf": 2052,
+            "queryTruth": 755,
+            "queryBf": 755
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4677696,
+            "FP": 4848,
+            "FN": 0,
+            "FPR": 0.103533,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 5,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 6972,
+            "computeBf": 1931,
+            "queryTruth": 755,
+            "queryBf": 718
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4677315,
+            "FP": 5229,
+            "FN": 0,
+            "FPR": 0.11167,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 20,
+            "z": 5,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 6931,
+            "computeBf": 1828,
+            "queryTruth": 755,
+            "queryBf": 676
+        },
+        "results": {
+            "TP": 174973,
+            "TN": 4676865,
+            "FP": 5679,
+            "FN": 0,
+            "FPR": 0.12128,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 0,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 5577,
+            "computeBf": 2320,
+            "queryTruth": 377,
+            "queryBf": 846
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 4403234,
+            "FP": 44227,
+            "FN": 0,
+            "FPR": 0.994433,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 0,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 3215,
+            "computeBf": 2161,
+            "queryTruth": 379,
+            "queryBf": 790
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 4358575,
+            "FP": 88886,
+            "FN": 0,
+            "FPR": 1.99858,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 0,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 3219,
+            "computeBf": 2057,
+            "queryTruth": 374,
+            "queryBf": 743
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 4314150,
+            "FP": 133311,
+            "FN": 0,
+            "FPR": 2.99746,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 0,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 3200,
+            "computeBf": 1948,
+            "queryTruth": 382,
+            "queryBf": 710
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 4270066,
+            "FP": 177395,
+            "FN": 0,
+            "FPR": 3.98868,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 0,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 3183,
+            "computeBf": 1831,
+            "queryTruth": 385,
+            "queryBf": 683
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 4224785,
+            "FP": 222676,
+            "FN": 0,
+            "FPR": 5.00681,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 1,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 3144,
+            "computeBf": 2359,
+            "queryTruth": 383,
+            "queryBf": 826
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 4406116,
+            "FP": 41345,
+            "FN": 0,
+            "FPR": 0.929632,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 1,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 3230,
+            "computeBf": 2200,
+            "queryTruth": 363,
+            "queryBf": 772
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 4399285,
+            "FP": 48176,
+            "FN": 0,
+            "FPR": 1.08322,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 1,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 3201,
+            "computeBf": 2079,
+            "queryTruth": 385,
+            "queryBf": 728
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 4391731,
+            "FP": 55730,
+            "FN": 0,
+            "FPR": 1.25307,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 1,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 3135,
+            "computeBf": 1976,
+            "queryTruth": 382,
+            "queryBf": 690
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 4383072,
+            "FP": 64389,
+            "FN": 0,
+            "FPR": 1.44777,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 1,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 3166,
+            "computeBf": 1843,
+            "queryTruth": 380,
+            "queryBf": 654
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 4374320,
+            "FP": 73141,
+            "FN": 0,
+            "FPR": 1.64456,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 2,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 3195,
+            "computeBf": 2369,
+            "queryTruth": 380,
+            "queryBf": 846
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 4200952,
+            "FP": 246509,
+            "FN": 0,
+            "FPR": 5.54269,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 2,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 3176,
+            "computeBf": 2195,
+            "queryTruth": 375,
+            "queryBf": 775
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 4193615,
+            "FP": 253846,
+            "FN": 0,
+            "FPR": 5.70766,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 2,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 3203,
+            "computeBf": 2073,
+            "queryTruth": 383,
+            "queryBf": 734
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 4185000,
+            "FP": 262461,
+            "FN": 0,
+            "FPR": 5.90137,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 2,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 3209,
+            "computeBf": 1944,
+            "queryTruth": 380,
+            "queryBf": 685
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 4176224,
+            "FP": 271237,
+            "FN": 0,
+            "FPR": 6.09869,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 2,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 3186,
+            "computeBf": 1825,
+            "queryTruth": 374,
+            "queryBf": 647
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 4167439,
+            "FP": 280022,
+            "FN": 0,
+            "FPR": 6.29622,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 3,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 3198,
+            "computeBf": 2336,
+            "queryTruth": 378,
+            "queryBf": 818
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 3224373,
+            "FP": 1223088,
+            "FN": 0,
+            "FPR": 27.5008,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 3,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 3184,
+            "computeBf": 2131,
+            "queryTruth": 382,
+            "queryBf": 747
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 3212212,
+            "FP": 1235249,
+            "FN": 0,
+            "FPR": 27.7743,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 3,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 3170,
+            "computeBf": 1948,
+            "queryTruth": 380,
+            "queryBf": 685
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 3198657,
+            "FP": 1248804,
+            "FN": 0,
+            "FPR": 28.079,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 3,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 3181,
+            "computeBf": 1799,
+            "queryTruth": 383,
+            "queryBf": 637
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 3186381,
+            "FP": 1261080,
+            "FN": 0,
+            "FPR": 28.3551,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 3,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 3219,
+            "computeBf": 1634,
+            "queryTruth": 376,
+            "queryBf": 580
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 3172825,
+            "FP": 1274636,
+            "FN": 0,
+            "FPR": 28.6599,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 4,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 3222,
+            "computeBf": 2094,
+            "queryTruth": 381,
+            "queryBf": 689
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 908272,
+            "FP": 3539189,
+            "FN": 0,
+            "FPR": 79.5777,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 4,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 3203,
+            "computeBf": 1741,
+            "queryTruth": 374,
+            "queryBf": 564
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 900930,
+            "FP": 3546531,
+            "FN": 0,
+            "FPR": 79.7428,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 4,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 3194,
+            "computeBf": 1461,
+            "queryTruth": 381,
+            "queryBf": 475
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 893792,
+            "FP": 3553669,
+            "FN": 0,
+            "FPR": 79.9033,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 4,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 3158,
+            "computeBf": 1183,
+            "queryTruth": 366,
+            "queryBf": 385
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 887659,
+            "FP": 3559802,
+            "FN": 0,
+            "FPR": 80.0412,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 4,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 3149,
+            "computeBf": 887,
+            "queryTruth": 379,
+            "queryBf": 322
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 880182,
+            "FP": 3567279,
+            "FN": 0,
+            "FPR": 80.2093,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 5,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 3199,
+            "computeBf": 1258,
+            "queryTruth": 384,
+            "queryBf": 392
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 17091,
+            "FP": 4430370,
+            "FN": 0,
+            "FPR": 99.6157,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 5,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 3199,
+            "computeBf": 675,
+            "queryTruth": 377,
+            "queryBf": 218
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 16868,
+            "FP": 4430593,
+            "FN": 0,
+            "FPR": 99.6207,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 5,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 3236,
+            "computeBf": 663,
+            "queryTruth": 379,
+            "queryBf": 215
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 16696,
+            "FP": 4430765,
+            "FN": 0,
+            "FPR": 99.6246,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 5,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 3197,
+            "computeBf": 667,
+            "queryTruth": 380,
+            "queryBf": 213
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 16627,
+            "FP": 4430834,
+            "FN": 0,
+            "FPR": 99.6261,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 15,
+            "z": 5,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 3223,
+            "computeBf": 660,
+            "queryTruth": 367,
+            "queryBf": 212
+        },
+        "results": {
+            "TP": 410061,
+            "TN": 16344,
+            "FP": 4431117,
+            "FN": 0,
+            "FPR": 99.6325,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 0,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 2128,
+            "computeBf": 1247,
+            "queryTruth": 336,
+            "queryBf": 386
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 3067,
+            "FP": 29,
+            "FN": 0,
+            "FPR": 0.936693,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 0,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 2157,
+            "computeBf": 678,
+            "queryTruth": 339,
+            "queryBf": 217
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 3022,
+            "FP": 74,
+            "FN": 0,
+            "FPR": 2.39018,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 0,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 2127,
+            "computeBf": 662,
+            "queryTruth": 338,
+            "queryBf": 212
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 2989,
+            "FP": 107,
+            "FN": 0,
+            "FPR": 3.45607,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 0,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 2111,
+            "computeBf": 663,
+            "queryTruth": 336,
+            "queryBf": 211
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 2978,
+            "FP": 118,
+            "FN": 0,
+            "FPR": 3.81137,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 0,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 2129,
+            "computeBf": 661,
+            "queryTruth": 335,
+            "queryBf": 212
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 2927,
+            "FP": 169,
+            "FN": 0,
+            "FPR": 5.45866,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 1,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 2109,
+            "computeBf": 665,
+            "queryTruth": 339,
+            "queryBf": 213
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 88,
+            "FP": 3008,
+            "FN": 0,
+            "FPR": 97.1576,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 1,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 2092,
+            "computeBf": 660,
+            "queryTruth": 344,
+            "queryBf": 208
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 87,
+            "FP": 3009,
+            "FN": 0,
+            "FPR": 97.1899,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 1,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 2115,
+            "computeBf": 655,
+            "queryTruth": 343,
+            "queryBf": 207
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 88,
+            "FP": 3008,
+            "FN": 0,
+            "FPR": 97.1576,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 1,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 2167,
+            "computeBf": 650,
+            "queryTruth": 336,
+            "queryBf": 204
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 88,
+            "FP": 3008,
+            "FN": 0,
+            "FPR": 97.1576,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 1,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 2124,
+            "computeBf": 646,
+            "queryTruth": 353,
+            "queryBf": 204
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 88,
+            "FP": 3008,
+            "FN": 0,
+            "FPR": 97.1576,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 2,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 2122,
+            "computeBf": 642,
+            "queryTruth": 335,
+            "queryBf": 200
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 2,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 2116,
+            "computeBf": 629,
+            "queryTruth": 335,
+            "queryBf": 198
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 2,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 2145,
+            "computeBf": 626,
+            "queryTruth": 340,
+            "queryBf": 197
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 2,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 2120,
+            "computeBf": 620,
+            "queryTruth": 332,
+            "queryBf": 197
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 2,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 2127,
+            "computeBf": 622,
+            "queryTruth": 340,
+            "queryBf": 197
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 3,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 2123,
+            "computeBf": 627,
+            "queryTruth": 341,
+            "queryBf": 195
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 3,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 2103,
+            "computeBf": 629,
+            "queryTruth": 341,
+            "queryBf": 197
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 3,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 2108,
+            "computeBf": 626,
+            "queryTruth": 340,
+            "queryBf": 209
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 3,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 2119,
+            "computeBf": 625,
+            "queryTruth": 342,
+            "queryBf": 195
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 3,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 2149,
+            "computeBf": 625,
+            "queryTruth": 340,
+            "queryBf": 194
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 4,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 2164,
+            "computeBf": 623,
+            "queryTruth": 338,
+            "queryBf": 191
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 4,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 2144,
+            "computeBf": 627,
+            "queryTruth": 343,
+            "queryBf": 193
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 4,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 2169,
+            "computeBf": 623,
+            "queryTruth": 340,
+            "queryBf": 192
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 4,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 2168,
+            "computeBf": 624,
+            "queryTruth": 340,
+            "queryBf": 192
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 4,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 2176,
+            "computeBf": 624,
+            "queryTruth": 341,
+            "queryBf": 193
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 5,
+            "epsilon": 1
+        },
+        "time": {
+            "computeTruth": 2140,
+            "computeBf": 637,
+            "queryTruth": 342,
+            "queryBf": 191
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 5,
+            "epsilon": 2
+        },
+        "time": {
+            "computeTruth": 2175,
+            "computeBf": 630,
+            "queryTruth": 342,
+            "queryBf": 192
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 5,
+            "epsilon": 3
+        },
+        "time": {
+            "computeTruth": 2135,
+            "computeBf": 631,
+            "queryTruth": 339,
+            "queryBf": 192
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 5,
+            "epsilon": 4
+        },
+        "time": {
+            "computeTruth": 2116,
+            "computeBf": 633,
+            "queryTruth": 332,
+            "queryBf": 192
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    },
+    {
+        "param": {
+            "k": 10,
+            "z": 5,
+            "epsilon": 5
+        },
+        "time": {
+            "computeTruth": 2135,
+            "computeBf": 635,
+            "queryTruth": 345,
+            "queryBf": 193
+        },
+        "results": {
+            "TP": 4854431,
+            "TN": 86,
+            "FP": 3010,
+            "FN": 0,
+            "FPR": 97.2222,
+            "FNR": 0
+        }
+    }
+]
