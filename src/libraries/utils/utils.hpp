@@ -9,6 +9,9 @@
 #include <utility>
 #include <vector>
 #include <zstr.hpp>
+
+#include "../utils/customAMQ.hpp"
+
 std::string changeFilenameExtensionIfAnyOrAddOne(std::string filename, std::string newExtension);
 std::string extractContentFromFasta(std::string filename);
 
@@ -127,6 +130,10 @@ inline bool oneQuery(bf::bloom_filter* filter, const std::string s) {
 
 inline bool oneQuery(const robin_hood::unordered_set<std::string>& hashSet, const std::string& s) {
     return hashSet.contains(s);
+}
+
+inline bool oneQuery(const customAMQ& amq, const std::string& s) {
+    return amq.contains(s);
 }
 
 template <typename T>
