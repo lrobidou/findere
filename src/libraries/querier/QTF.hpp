@@ -72,16 +72,11 @@ inline std::vector<bool> queryFilterOrTruth(T filterOrTruth, const std::string& 
         }
         // std::cout << "end loop j = " << j << "; i = " << i << std ::endl;
     }
-
     if (stretchLength != 0) {
         if (stretchLength > nbNeighboursMin) {
             nbStretch++;
-            for (unsigned long long k = 0; k < stretchLength - nbNeighboursMin; k++) {
+            for (unsigned long long k = 0; k < stretchLength; k++) {
                 response[i] = true;
-                i++;
-            }
-            for (unsigned long long j = 0; j < nbNeighboursMin; j++) {
-                response[i] = false;
                 i++;
             }
         } else {
@@ -97,7 +92,7 @@ inline std::vector<bool> queryFilterOrTruth(T filterOrTruth, const std::string& 
 
 namespace QTF {
 
-std::vector<bool> inline query(bf::bloom_filter* filter, const std::string& s, const unsigned int& k, const unsigned int& nbNeighboursMin, unsigned long long& nbStretch, bool skip = false) {
+std::vector<bool> inline query(bf::basic_bloom_filter* filter, const std::string& s, const unsigned int& k, const unsigned int& nbNeighboursMin, unsigned long long& nbStretch, bool skip = false) {
     return queryFilterOrTruth(filter, s, k, nbNeighboursMin, nbStretch, skip);
 }
 
@@ -105,7 +100,7 @@ std::vector<bool> inline query(const robin_hood::unordered_set<std::string>& tru
     return queryFilterOrTruth(truth, s, k, nbNeighboursMin, nbStretch, skip);
 }
 
-std::vector<bool> inline query(bf::bloom_filter* filter, const std::string& s, const unsigned int& k, const unsigned long long& nbNeighboursMin, bool skip = false) {
+std::vector<bool> inline query(bf::basic_bloom_filter* filter, const std::string& s, const unsigned int& k, const unsigned long long& nbNeighboursMin, bool skip = false) {
     unsigned long long dontCare = 0;
     return queryFilterOrTruth(filter, s, k, nbNeighboursMin, dontCare, skip);
 }
