@@ -72,6 +72,21 @@ inline std::string extractContentFromFastqGz(std::string filename) {
     return content;
 }
 
+inline std::string extractContentFromText(std::string filename) {
+    std::ifstream myfilegz(filename);
+    zstr::istream myfile(myfilegz);
+
+    std::string line;
+    std::string content;
+
+    while (std::getline(myfile, line)) {
+        content += line;
+    }
+    // std::cout << content.length() << std::endl; 100539
+
+    return content;
+}
+
 template <typename T>
 inline void checknonNull(T x) {
     if (x == nullptr) {
