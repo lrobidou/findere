@@ -25,7 +25,7 @@ TEST(TestBF, TestFPR) {
     std::vector<bool> truthQuery = truth::queryTruth(truth, querySeq, k);
     std::vector<bool> responseQuery = noQTF::query(filter, querySeq, k);
 
-    const auto& [TP, TN, FP, FN] = getScore(truthQuery, responseQuery);
+    const auto& [TP, TN, FP, FN] = QTF_internal::getScore(truthQuery, responseQuery);
     double fpr = (double)(100 * FP) / (double)(FP + TN);
     double fnr = (double)(100 * FN) / (double)(FN + TP);
 

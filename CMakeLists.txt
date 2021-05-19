@@ -4,7 +4,6 @@ project(qtf VERSION 0.1.0)
 set(CONTACT "lucas.robidou@inria.fr")
 
 
-set(CMAKE_CXX_COMPILER /home/genouest/genscale/lrobidou/.conda/envs/mygcc/bin/x86_64-conda_cos6-linux-gnu-g++ CACHE PATH "" FORCE)
 set(CMAKE_CXX_STANDARD 17)  # TODO: find why this does not work if I overwrite CMAKE_CXX_COMPILER (even before)
 
 if (NOT CMAKE_BUILD_TYPE)
@@ -24,12 +23,15 @@ set(THIRDPARTY_DIR ${PROJECT_SOURCE_DIR}/thirdparty)
 # thirdparty build directories
 set(THIRDPARTY_BUILD_DIR ${PROJECT_BINARY_DIR}/thirdparty)
 
+# include thridparty directories
 include_directories(SYSTEM thirdparty/libbf)
 include_directories(SYSTEM thirdparty/json/include)
 include_directories(SYSTEM thirdparty/cxxopts/include)
 include_directories(SYSTEM thirdparty/robinHoodHashing/src/include)
 include_directories(SYSTEM thirdparty/zstr/src)
 include_directories(SYSTEM /usr/include)
+
+
 # add libbf
 add_subdirectory(thirdparty/libbf)
 

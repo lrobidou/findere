@@ -36,20 +36,20 @@ TEST(TestSuiteName, TestName2) {
               << std::endl;
     /* *****SCORE***** */
     std::cout << "getScore(truthQuery, responseQuery)" << std::endl;
-    printScore(getScore(truthQuery, responseQuery));
+    QTF_internal::printScore(QTF_internal::getScore(truthQuery, responseQuery));
     std::cout << std::endl;
 
     // const auto& [TP, TN, FP, FN] = getScore(truthQuery, responseQuery);
     std::cout << "getScore(truthQuery, responseQTFNoSkip);" << std::endl;
-    printScore(getScore(truthQuery, responseQTFNoSkip));
+    QTF_internal::printScore(QTF_internal::getScore(truthQuery, responseQTFNoSkip));
     std::cout << std::endl;
 
     std::cout << "getScore(truthQuery, responseQTF);" << std::endl;
-    printScore(getScore(truthQuery, responseQTF));
+    QTF_internal::printScore(QTF_internal::getScore(truthQuery, responseQTF));
     std::cout << std::endl;
 
     // getScore(truthQuery, responseQTFPlus);//TODO FPR supr bas, pourquoi ?
     std::cout << "getScore(truthQueryKPlusZ, responseQTFPlus)" << std::endl;
-    printScore(getScore(truthQueryKPlusZ, responseQTFPlus));
+    QTF_internal::printScore(QTF_internal::getScore(truthQueryKPlusZ, responseQTFPlus));
     std::cout << std::endl;
 }

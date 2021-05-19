@@ -43,8 +43,8 @@ TEST(TestQTF, TestSimilarity) {
     std::cout << "qtf:           P: " << qtf_P << " ,N: " << qtf_N << std::endl;
     std::cout << "qtf_corrected: P: " << qtf_corr_P << " ,N: " << qtf_corr_N << std::endl;
 
-    printScore(getScore(truthQuery, responseQTF));
-    printScore(getScore(truthKPlusZQuery, responseQTFKPlusZ));
+    QTF_internal::printScore(QTF_internal::getScore(truthQuery, responseQTF));
+    QTF_internal::printScore(QTF_internal::getScore(truthKPlusZQuery, responseQTFKPlusZ));
     toFileTXT("truthQuery.txt", truthQuery);
     toFileTXT("responseQTF.txt", responseQTF);
     toFileTXT("truthKPlusZQuery.txt", truthKPlusZQuery);
