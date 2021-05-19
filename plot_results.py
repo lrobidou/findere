@@ -294,13 +294,13 @@ def kez_frp_en_fonction_de_z_u(the_dic):
                     + "\n"
                     # + "\\\\\n"
                 )
-            plt.plot(liste_z, queryBf, label="FPR - QTF")
+            plt.plot(liste_z, queryBf, label="FPR - findere")
             plt.plot(liste_z, normQuery, label="FRP - bloom filter")
             plt.title("K = " + str(k) + "; $\epsilon$ = " + str(epsilon) + "%")
             plt.xlabel("z")
             plt.ylabel("FPR (\%)")
             plt.legend(loc="best")
-            # plt.show()
+            plt.show()
             tab += "\\hline"
             print(tab)
 

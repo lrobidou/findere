@@ -33,11 +33,11 @@ int main(int argc, char* argv[]) {
         auto t0 = std::chrono::high_resolution_clock::now();
 
         if (typeInput == "fastq") {
-            querySeq = extractContentFromFastqGz(queryFile);
-        } else if (typeInput == "fasta") {
             truthBigK = truth::indexFastqGz(input_filenames, k_iter, canonical);
+        } else if (typeInput == "fasta") {
+            truthBigK = truth::indexFastas(input_filenames, k_iter, canonical);
         } else if (typeInput == "text") {
-            querySeq = extractContentFromText(queryFile);
+            truthBigK = truth::indexText(input_filenames, k_iter, canonical);
         } else {
             std::cerr << "The given type of input input '" << typeInput << "' is not recognised." << std::endl;
             exit(1);
