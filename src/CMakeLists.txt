@@ -1,7 +1,9 @@
-add_library(qtf_truth_lib truth.cpp)  # QTF library
-add_library(qtf_utils_lib utils.cpp)  # QTF library
-add_library(qtf_fileIndexer_lib FileIndexer.cpp utils.cpp)  # QTF library
+add_executable(paper mainPaper.cpp)
+add_executable(index index.cpp)
+add_executable(query query.cpp)
 
-add_executable(main test.cpp)
+add_subdirectory(libraries)
 
-target_link_libraries(main qtf_truth_lib qtf_utils_lib qtf_fileIndexer_lib  libbf_static)
+target_link_libraries(paper qtf_utils_lib qtf_querier_lib libbf_static z)
+target_link_libraries(index qtf_utils_lib qtf_querier_lib libbf_static z)
+target_link_libraries(query qtf_utils_lib qtf_querier_lib libbf_static z)

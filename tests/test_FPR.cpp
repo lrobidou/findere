@@ -1,81 +1,55 @@
-// #include <BloomFilterUtil.h>
 #include <gtest/gtest.h>
+#include <robin_hood.h>
 
 #include <bf/all.hpp>
+#include <iostream>
 
+#include "../src/libraries/evaluation/evaluation.hpp"
+#include "../src/libraries/indexer/indexer.hpp"
+#include "../src/libraries/querier/querier.hpp"
+#include "../src/libraries/utils/utils.hpp"
 #include "testutils.hpp"
-// #include <filesystem>
-// #include <nlohmann/json.hpp>
-// #include <string>
+TEST(TestSuiteName, TestName2) {
+    robin_hood::unordered_set<std::string> truthPlusK;
+    const unsigned k = 32;         // k-mer size
+    const unsigned numHashes = 1;  // number of hash functions
+    const int epsilon_percent = 5;
+    const unsigned long long nbNeighboursMin = 6;
 
-#include "../src/FileIndexer.hpp"
-#include "../src/truth.hpp"
-#include "../src/utils.hpp"
-#include "../thirdparty/robinHoodHashing/src/include/robin_hood.h"  // TODO faire de beaux imports
+    std::vector<std::string> input_filenames = {"data/ecoli1.fasta", "data/ecoli2.fasta", "data/ecoli3.fasta"};
 
-// template <typename T>
-// void toFileTXT(std::string outfilename, T x) {
-//     if (remove(outfilename.c_str()) != 0) {
-//         perror("Error deleting file");
-//     } else {
-//         puts("File successfully deleted");
-//     }
+    std::string querySeq = extractContentFromFasta("data/ecoli4.fasta");
 
-//     std::ofstream outFile(outfilename);
-//     for (const auto& e : x) {
-//         outFile << e;
-//     }
-// }
+    const auto &[truth, filter, x, y] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
+    robin_hood::unordered_set<std::string> truthKPlusZ = truth::indexFastas(input_filenames, k + nbNeighboursMin);
 
-// #include "vendor/ntHashIterator.hpp"
+    // query truth
+    std::vector<bool> truthQuery = truth::queryTruth(truth, querySeq, k);
+    std::vector<bool> truthQueryKPlusZ = truth::queryTruth(truthKPlusZ, querySeq, k + nbNeighboursMin);
 
-// TEST(TestSuiteName, TestName2) {
-//     robin_hood::unordered_set<std::string> truthPlusK;
-//     const unsigned k = 32;         // k-mer size
-//     const unsigned numHashes = 1;  // number of hash functions
-//     const int epsilon_percent = 5;
-//     const unsigned long long nbNeighboursMin = 6;
+    // query BF
+    std::vector<bool> responseQuery = noQTF::query(filter, querySeq, k);
+    std::vector<bool> responseQTFNoSkip = QTFNoSplitKmer::queryNoSkip(filter, querySeq, k, nbNeighboursMin);
+    std::vector<bool> responseQTF = QTFNoSplitKmer::query(filter, querySeq, k, nbNeighboursMin);
+    std::vector<bool> responseQTFPlus = QTF::query(filter, querySeq, k, nbNeighboursMin);
+    std::cout << std::endl
+              << std::endl;
+    /* *****SCORE***** */
+    std::cout << "getScore(truthQuery, responseQuery)" << std::endl;
+    QTF_internal::printScore(QTF_internal::getScore(truthQuery, responseQuery));
+    std::cout << std::endl;
 
-//     std::vector<std::string> input_filenames = {"data/ecoli1.fasta", "data/ecoli2.fasta", "data/ecoli3.fasta"};
+    // const auto& [TP, TN, FP, FN] = getScore(truthQuery, responseQuery);
+    std::cout << "getScore(truthQuery, responseQTFNoSkip);" << std::endl;
+    QTF_internal::printScore(QTF_internal::getScore(truthQuery, responseQTFNoSkip));
+    std::cout << std::endl;
 
-//     std::string querySeq = extractMeaningfullLineFromFasta("data/ecoli4.fasta");
+    std::cout << "getScore(truthQuery, responseQTF);" << std::endl;
+    QTF_internal::printScore(QTF_internal::getScore(truthQuery, responseQTF));
+    std::cout << std::endl;
 
-//     /* *****TRUTH***** */
-//     // // create ground truth
-//     robin_hood::unordered_set<std::string> truth;
-//     computeTruth(input_filenames, k, truth);
-//     robin_hood::unordered_set<std::string> truthKPlusZ;
-//     computeTruth(input_filenames, k + nbNeighboursMin, truthKPlusZ);
-//     // // query it
-//     std::vector<bool> truthQuery = queryTruth(truth, querySeq, k);
-//     std::vector<bool> truthQueryKPlusZ = queryTruth(truthKPlusZ, querySeq, k + nbNeighboursMin);
-
-//     /* *****BLOOM_FILTERS***** */
-//     // create a BF
-//     bf::bloom_filter* filter = indexFastas(input_filenames, numHashes, k, epsilon_percent);
-//     // // query it
-//     std::vector<bool> responseQuery = query(filter, querySeq, k);
-//     std::vector<bool> responseQTFNoSkip = qtfNoSkip(filter, querySeq, k, nbNeighboursMin);
-//     std::vector<bool> responseQTF = qtf(filter, querySeq, k, nbNeighboursMin);
-//     std::vector<bool> responseQTFPlus = qtfIndexKPlusZ(filter, querySeq, k, nbNeighboursMin);
-//     std::cout << std::endl
-//               << std::endl;
-//     /* *****SCORE***** */
-//     std::cout << "getScore(truthQuery, responseQuery)" << std::endl;
-//     getScore(truthQuery, responseQuery);
-//     std::cout << std::endl;
-
-//     // const auto& [TP, TN, FP, FN] = getScore(truthQuery, responseQuery);
-//     std::cout << "getScore(truthQuery, responseQTFNoSkip);" << std::endl;
-//     getScore(truthQuery, responseQTFNoSkip);
-//     std::cout << std::endl;
-
-//     std::cout << "getScore(truthQuery, responseQTF);" << std::endl;
-//     getScore(truthQuery, responseQTF);
-//     std::cout << std::endl;
-
-//     // getScore(truthQuery, responseQTFPlus);//TODO FPR supr bas, pourquoi ?
-//     std::cout << "getScore(truthQueryKPlusZ, responseQTFPlus)" << std::endl;
-//     getScore(truthQueryKPlusZ, responseQTFPlus);
-//     std::cout << std::endl;
-// }
+    // getScore(truthQuery, responseQTFPlus);//TODO FPR supr bas, pourquoi ?
+    std::cout << "getScore(truthQueryKPlusZ, responseQTFPlus)" << std::endl;
+    QTF_internal::printScore(QTF_internal::getScore(truthQueryKPlusZ, responseQTFPlus));
+    std::cout << std::endl;
+}

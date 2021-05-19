@@ -1,0 +1,11 @@
+{
+    "i": [
+        "data/ecoli2.fasta",
+        "data/ecoli3.fasta",
+        "data/Listeria phage.fasta",
+        "data/Penicillium chrysogenum.fasta"
+    ],
+    "k": 20,
+    "z": 10,
+    "epsilonpercent": 7
+}

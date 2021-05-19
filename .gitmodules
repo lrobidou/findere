@@ -4,9 +4,15 @@
 [submodule "thirdparty/cxxopts"]
 	path = thirdparty/cxxopts
 	url = https://github.com/jarro2783/cxxopts
-[submodule "thirdparty/libbf"]
-	path = thirdparty/libbf
-	url = https://github.com/mavam/libbf
 [submodule "thirdparty/googletest"]
 	path = thirdparty/googletest
 	url = https://github.com/google/googletest
+[submodule "thirdparty/json"]
+	path = thirdparty/json
+	url = https://github.com/nlohmann/json
+[submodule "thirdparty/zstr"]
+	path = thirdparty/zstr
+	url = https://github.com/mateidavid/zstr
+[submodule "thirdparty/libbf"]
+	path = thirdparty/libbf
+	url = https://github.com/lrobidou/libbf

@@ -1,0 +1,6061 @@
+Andromaque. Tragédie
+
+
+					Jean Racine
+
+
+
+
+
+Th. Girard, Paris, 1668
+
+
+
+
+
+Exporté de Wikisource le 18 mai 2021
+
+
+
+
+
+TABLE DES MATIÈRES
+
+
+
+
+
+ANDROMAQUE, tragédie
+
+
+
+À Madame
+
+
+
+Préface
+
+
+
+Acteurs
+
+
+
+Acte I
+
+
+
+Acte II
+
+
+
+Acte III
+
+
+
+Acte IV
+
+
+
+Acte V
+
+
+
+Privilège
+
+
+
+
+
+* * *
+
+
+
+
+
+À
+
+
+
+
+
+MADAME
+
+
+
+
+
+Madame,
+
+
+
+
+
+Ce n’eſt pas ſans sujet que ie mets voſtre illuſtre Nom à la teſte de cet Ouurage. Et de quel autre nom pourrois-ie eſbloüir les yeux de mes Lecteurs, que de celuy dont mes Spectateurs ont eſté ſi heureuſement eſbloüis ? On ſçauoit que VOSTRE ALTESSE ROYALE auoit daigné prendre ſoin de la conduite de ma Tragedie. On ſçauoit que vous m’auiez preſté quelques-unes de vos lumieres, pour y adjoûter de nouueaux ornemens. On ſçauoit enfin que vous l’auiez honnorée de quelques larmes, dés la premiere lecture que ie vous en fis. Pardonnez-moy, MADAME, ſi i’oſe me vanter de cet heureux commencement de ſa deſtinée. Il me conſole bien glorieuſement de la duretè de ceux qui ne voudroient pas s’en laiſſer toucher. Ie leur permets de condamner l’Andromaque tant qu’ils voudront, pourueû qu’il me ſoit permis d’apeller de toutes les ſubtiliteZ de leur eſprit, au Cœur de V. A. R.
+
+
+
+Mais, MADAME, ce n’eſt pas ſeulement du cœur que vous iugez de la bonté d’vn Ouurage, c’eſt auec vne intelligence, qu’aucune fauſſe lueur ne ſçauroit tromper. Pouuons-nous mettre ſur la Scene vne Hiſtoire que vous ne poſſediez auſſi bien que Nous ? Pouuons- nous faire joüer vne intrigue, dont vous ne penetriez tous les reſſorts ? Et pouuons-nous conceuoir des ſentimens ſi nobles & ſi delicats, qui ne ſoient infiniment au deſſous de la nobleſſe & de la delicateſſe de vos penſées ?
+
+On ſçait, MADAME, & V. A. R. a beau s’en cacher, que dans ce haut degré de gloire où la Nature & la Fortune ont pris plaiſir de vous eſleuer, Vous ne dédaignez pas cette gloire obſcure que les gens de lettres s’eſtoient reſeruée. Et il ſemble que vous ayez voulu auoir autant d’auantage ſur noſtre Sexe par les connoiſſances & par la ſolidité de voſtre eſprit, que vous excellez dans le voſtre par toutes les grâces qui vous enuironnent. La Cour vous regarde comme l’Arbitre de tout ce qui ſe fait d’agreable. Et nous qui trauaillons pour plaire au public, nous n’auons plus que faire de demander aux Sçauans ſi nous trauaillons ſelon les Regles. La Regle ſouueraine, eſt de plaire à V. A. R.
+
+Voila ſans doute la moindre de vos excellentes qualitez. Mais, MADAME, c’eſt la ſeule dont i’ay pû parler auec quelque connoiſſance ; les autres ſont trop éleuées au deſſus de moy. Ie n’en puis parler ſans les rabaiſſer par la foibleſſe de mes penſées, & ſans ſortir de la profonde veneration auec laquelle ie ſuis,
+
+
+
+
+
+MADAME,
+
+
+
+
+
+DE VOSTRE ALTESSE ROYALE,
+
+
+
+
+
+Le tres-humble, tres-obeïſſant, & tres-fidelle ſeruiteur, RACINE.
+
+
+
+
+
+* * *
+
+
+
+
+
+VIRGILE
+
+
+
+
+
+av troisieme livre
+
+
+
+
+
+DE L’ENEIDE.
+
+
+
+
+
+C’eſt Énée qui parle.
+
+
+
+
+
+Littoraque Epeiri legimus, portuque ſubimus
+
+Chaonio, & celſam Buthroti aſcendimus Vrbem.
+
+Sollemnes tum forte dapes, & triſtia dona
+
+Libabat cineri Andromache, Maneſque vocabat
+
+Hectoreū ad tumulū, viridi quem ceſpite inanē,
+
+Et geminas, causā lachrymis, ſacrauerat Aras…
+
+Dejecit vultum, & demiſsa voce locuta eſt.
+
+O felix vna ante alias Priameïa Virgo,
+
+Hoſtilem ad tumulum, Trojæ ſub mœnibus altis
+
+Iuſſa mori ! quæ ſortitus non pertulit vllos,
+
+Nec victoris heri tetigit Captiua cubile.
+
+Nos patria incenſa ; diuerſa per æquora, vectæ,
+
+Stirpis Achilleæ faſtus, Iuuenemque ſuperbum
+
+Seruitio enixæ tulimus, qui deinde ſecutus
+
+Ledæam Hermionem, Lacedæmonioſque hymenæos…
+
+
+
+Aſt illum, ereptæ magno inflammatus amore
+
+Conjugis, & ſcelerum Furiis agitatus, Oreſtes
+
+Excipit incautum, patriaſque obtruncat ad Aras.
+
+
+
+Voila en peu de Vers tout le ſujet de cette Tragedie. Voila le lieu de la Scene, l’Action qui s’y paſſe, les quatre principaux Acteurs, & meſme leurs Caracteres. Excepté celuy d’Hermionne, dont la jalouſie & les emportemens ſont aſſez marquez dans l’Andromaque d’Euripide.
+
+Mais veritablement mes Perſonnages ſont ſi fameux dans l’Antiquité, que pour peu qu’on la connoiſſe, on verra fort bien que je les ay rendus tels que les anciens Poëtes nous les ont donnez. Auſſi n’ay-je pas penſé qu’il me fuſt permis de rien changer à leurs mœurs. Toute la liberté que j’ay priſe, ç’a eſté d’adoucir vn peu la férocité de Pyrrhus, que Seneque, dans ſa Troade, & Virgile, dans le ſecond de l’Eneïde, ont pouſſée beaucoup plus loin que je n’ay crû le deuoir faire.
+
+Encore s’eſt-il trouué des gens qui ſe ſont plaints qu’il s’emportaſt contre Andromaque, & qu’il vouluſt épouſer cette Captiue à quelque prix que ce fuſt. I’auouë qu’il n’eſt pas aſſez reſigné à la volonté de ſa Maiſtreſſe, & que Celadon a mieux connu que luy le parfait Amour. Mais que faire ? Pyrrhus n’auoit pas lû nos Romans. Il eſtoit violent de ſon naturel. Et tous les Heros ne ſont pas faits pour eſtre des Celadons.
+
+Quoy qu’il en ſoit, le public m’a eſté trop fauorable pour m’embarraſſer du chagrin particulier de deux ou trois perſonnes qui voudroient qu’on reformaſt tous les Heros de l’Antiquité pour en faire des Heros parfaits. Je trouue leur intention fort bonne, de vouloir qu’on ne mette ſur la Scene que des hommes impeccables. Mais je les prie de ſe ſouuenir que ce n’est pas à moi de changer les regles du Theatre. Horace nous recommande de dépeindre Achille, farouche, inexorable, violent, tel qu’il eſtoit, & tel qu’on dépeint ſon fils. Et Ariſtote, bien éloigné de nous demander des Heros parfaits, veut au contraire que les Perſonnages tragiques, c’eſt à dire ceux dont le mal-heur fait la cataſtrophe de la Tragedie, ne ſoient ny tout à fait bons, ny tout à fait méchants. Il ne veut pas qu’ils ſoient extremément bons, parce que la punition d’vn homme de bien exciteroit plûtoſt l’indignation, que la pitié du ſpectateur ; ny qu’ils ſoient méchans auec excès, parce qu’on n’a point pitié d’un ſcelerat. Il faut donc qu’ils ayent vne bonté mediocre, c’eſt à dire, vne vertu capable de foibleſſe, & qu’ils tombent dans le mal-heur par quelque faute qui les faſſe plaindre ſans les faire déteſter.
+
+
+
+
+
+* * *
+
+
+
+
+
+ACTEVRS.
+
+ANDROMAQVE, Veuue d’Hector, Captiue de Pyrrhus.
+
+PYRRHVS, Fils d’Achille, Roy d’Epire.
+
+ORESTE, Fils d’Agamemnon, Amant d’Hermionne.
+
+HERMIONNE, Fille d’Helene, accordée auec Pyrrhus.
+
+PYLADE, Amy d’Oreſte.
+
+CLEONNE, Confidente d’Hermionne.
+
+CEPHISE, Confidente d’Andromaque.
+
+PHOENIX, Gouuerneur d’Achille, & enſuite de Pyrrhus.
+
+Suite d’ORESTE.
+
+
+
+
+
+La Scene eſt à Buthrot, ville d’Epire, dans vne Salle du Palais de Pyrrhus.
+
+
+
+
+
+* * *
+
+
+
+
+
+ANDROMAQVE.
+
+TRAGEDIE.
+
+
+
+* * *
+
+
+
+
+
+ACTE PREMIER.
+
+
+
+
+
+Scène PREMIÈRE.
+
+
+
+
+ORESTE, PYLADE.
+
+
+
+
+
+ORESTE.
+
+
+
+
+
+O
+
+
+
+vy, puis que ie retrouue vn Amy ſi fidelle,
+
+Ma Fortune va prendre vne face nouuelle ;
+
+Et déja ſon courroux ſemble s’eſtre adouci,
+
+Depuis qu’elle a pris ſoin de nous rejoindre ici.
+
+
+
+Qui m’euſt dit, qu’vn riuage à mes vœux ſi funeſte,
+
+Préſenteroit d’abord Pylade aux yeux d’Oreſte,
+
+Qu’apres plus de ſix mois que je t’auois perdu,
+
+À la cour de Pyrrhus tu me ſerois rendu !
+
+
+
+
+
+PYLADE.
+
+I’en rends graces au Ciel, qui m’arreſtant ſans ceſſe
+
+Sembloit m’auoir fermé le chemin de la Gréce,
+
+Depuis le jour fatal que la fureur des Eaux,
+
+Preſque aux yeux de Mycéne, écarta nos Vaiſſeaux.
+
+Combien dans cét exil ay-je ſouffert d’allarmes ?
+
+Combien à vos malheurs ay-je donné de larmes ?
+
+Craignant toujours pour vous quelque nouveau danger
+
+Que ma triſte Amitié ne pouuoit partager,
+
+Rome, l’unique objet de mon ressentiment !
+
+Surtout ie redoutois cette Mélancolie
+
+Où j’ay veu ſi long-temps voſtre Ame enſeelie.
+
+Ie craignois que le Ciel, par vn cruel ſecours,
+
+Ne vous offrît la mort que vous cherchiez toûjours.
+
+Mais je vous voy, Seigneur, & ſi j’oſe le dire,
+
+Vn Deſtin plus heureux vous conduit en Épire.
+
+Le pompeux Appareil qui ſuit icy vos pas,
+
+Rome, à qui vient ton bras d’immoler mon amant !
+
+N’eſt point d’vn Malheureux qui cherche le trépas.
+
+
+
+
+
+ORESTE.
+
+Hlas ! qui peut ſçauoir le Deſtin qui m’ameine ?
+
+L’Amour me fait icy chercher vne Inhumaine.
+
+Mais qui ſçait ce qu’il doit ordonner de mon Sort,
+
+Et ſi ie viens chercher, ou la vie, ou la mort ?
+
+
+
+
+
+PYLADE.
+
+Quoy ! voſtre Ame à l’Amour, en Eſclaue aſſeruie,
+
+Rome qui t’a vu naître, et que ton cœur adore !
+
+Se repoſe ſur luy du ſoin de voſtre vie ?
+
+
+
+Par quels charmes, apres tant de tourmens ſoufferts,
+
+Peut-il vous inuiter à rentrer dans ſes fers ?
+
+Rome enfin que je hais parce qu’elle t’honore !
+
+Penſez-vous qu’Hermionne, à Sparte inéxorable,
+
+Vous prépare en Épire vn Sort plus fauorable ?
+
+Honteux d’auoir pouſsé tant de vœux ſuperflus,
+
+Vous l’abhorriez. Enfin vous ne m’en parliez plus,
+
+Vous me trompiez, Seigneur.
+
+
+
+
+
+ORESTE.
+
+Ie me trompois moy-même.
+
+Amy, n’inſulte point uv Malheureux qui t’aime.
+
+T’ay-je iamais caché mon cœur & mes déſirs ?
+
+Tu vis naiſtre ma flâme & mes premiers ſoûpirs.
+
+Enfin, quand Menelas diſpoſa de ſa Fille
+
+En faueur de Pyrrhus, vangeur de ſa Famille,
+
+Tu vis mon deſeſpoir, & tu m’as veu depuis
+
+Traîner de Mers en Mers ma chaîne & mes ennuis.
+
+Ie te vis à regret, en cet eſtat funeſte,
+
+Preſt à ſuiure partout le déplorable Oreſte,
+
+Toûjours de ma fureur interrompre le cours,
+
+Et de moy-meſme enfin me ſauuer tous les jours.
+
+Mais quand ie me ſouuins, que parmy tant d’alarmes
+
+Hermionne à Pyrrhus prodiguoit tous ſes charmes,
+
+Tu ſçais de quel courroux mon cœur alors épris
+
+Voulut, en l’oubliant, vanger tous ſes mépris.
+
+Ie fis croire, & ie crûs ma victoire certaine.
+
+Ie pris tous mes tranſports pour des tranſports de haine ;
+
+Déteſtant ſes rigueurs, rabaiſſant ſes attraits,
+
+Ie défiois ſes yeux de me troubler iamais.
+
+Voilà comme ie crûs étouffer ma tendreſſe.
+
+Dans ce calme trompeur j’arriuay dans la Gréce ;
+
+Et ie trouvay d’abord ſes Princes raſſemblez,
+
+Qu’vn péril aſſez grand ſembloit auoir troublez.
+
+
+
+I’y courus. Ie penſay que la Guerre & la Gloire,
+
+De ſoins plus importans rempliroient ma memoire ;
+
+Que mes ſens reprenant leur premiere vigueur,
+
+L’Amour acheueroit de ſortir de mon Cœur.
+
+Mais admire auec moy le Sort, dont la pourſuite
+
+Me fait courir moy-meſme au piege que j’éuite,
+
+I’entends de tous coſtez qu’on menace Pyrrhus.
+
+Toute la Gréce éclate en murmures confus ;
+
+On ſe plaint qu’oubliant ſon Sang & ſa promeſſe,
+
+Il éleue en ſa Cour l’Ennemy de la Gréce,
+
+Aſtyanax, d’Hector jeune & malheureux Fils,
+
+Reſte de tant de Roys ſous Troye enſeuelis.
+
+I’apprends, que pour rauir ſon enfance au Suplice
+
+Andromaque trompa l’ingénieux Ulyſſe,
+
+Tandis qu’vn autre Enfant arraché de ſes bras,
+
+Sous le nom de ſon Fils, fut conduit au trépas.
+
+On dit, que peu ſenſible aux charmes d’Hermionne,
+
+Mon Riual porte ailleurs ſon Cœur & ſa Couronne ;
+
+Ménelas, ſans le croire, en paroiſt affligé,
+
+Et ſe plaint d’vn Hymen ſi long-temps negligé.
+
+Parmy les déplaiſirs où ſon Ame ſe noye,
+
+Il s’éleue en la mienne vne ſecrete joye :
+
+Ie triomphe ; & pourtant ie me flatte d’abord
+
+Que la ſeule vengeance excite ce tranſport.
+
+Mais l’Ingrate en mō Cœur reprit bientoſt ſa place,
+
+De mes feux mal éteints ie reconnus la trace,
+
+Ie ſentis que ma haine alloit finir ſon cours,
+
+Ou plûtoſt ie ſentis que ie l’aimois toûjours.
+
+Ainſi de tous les Grecs ie brigue le ſuffrage.
+
+On m’enuoye à Pyrrhus. I’entreprens ce voyage.
+
+Ie viens voir ſi l’on peut arracher de ſes bras
+
+Cet Enfant, dont la vie allarme tant d’Eſtats.
+
+Heureux, ſi je pouuois dans l’ardeur qui me preſſe,
+
+Au lieu d’Aſtyanax, luy rauir ma Princeſſe.
+
+Car enfin n’attens pas que mes feux redoublez,
+
+Des périls les plus grands, puiſſent eſtre troublez.
+
+
+
+Puis qu’apres tant d’efforts ma reſiſtance eſt vaine,
+
+Ie me liure en aueugle au tranſport qui m’entraîne,
+
+I’aime, ie viens chercher Hermionne en ces lieux,
+
+La fléchir, l’enleuer, ou mourir à ſes yeux.
+
+Toy qui connois Pyrrhus, que penſes-tu qu’il faſſe ?
+
+Dans ſa Cour, dans ſon Cœur, dy-moy ce qui ſe paſſe.
+
+Mon Hermionne encor le tient-elle aſſeruy ?
+
+Me rendra-t-il, Pylade, vn Cœur qu’il m’a rauy ?
+
+
+
+
+
+PYLADE.
+
+Ie vous abuſerois ſi i’oſois vous promettre
+
+Qu’entre vos mains, Seigneur, il voulut la remettre.
+
+Puissent tous ses voisins ensemble conjurés
+
+Non, que de ſa Conqueſte il paroiſſe flaté.
+
+Pour la Veuue d’Hector ſes feux ont éclaté.
+
+Il l’aime. Mais enfin cette Veuue inhumaine
+
+N’a payé jusqu’icy ſon amour que de haine,
+
+Et chaque jour encore on luy voit tout tenter
+
+Pour fléchir ſa Captive, ou pour l’épouuanter.
+
+Il luy cache ſon Fils, il menaſſe ſa teſte,
+
+Et fait couler des pleurs, qu’auſſi-toſt il arreſte.
+
+Hermionne elle-meſme a veu plus de cent fois
+
+Cet Amant irrité reuenir ſous ſes loix,
+
+Et de ſes vœux troublez luy rapportant l’hommage,
+
+Soûpirer à ſes pieds moins d’amour, que de rage.
+
+Ainſi n’attendez pas, que l’on puiſſe aujourd’huy
+
+Vous répondre d’vn Cœur, ſi peu maiſtre de luy.
+
+Il peut, Seigneur, il peut dans ce deſordre extrême,
+
+Épouſer ce qu’il hait, & perdre ce qu’il aime.
+
+
+
+
+
+ORESTE.
+
+Mais dy-moy, de quel œil Hermionne peut voir
+
+Ses attraits oſſenſez, & ſes yeux ſans pouuoir
+
+
+
+
+
+PYLADE.
+
+Hermionne, Seigneur, au moins eu apparance,
+
+Semble de ſon Amant dédaigner l’inconſtance,
+
+Et croit que trop heureux d’apaiſer ſa rigueur,
+
+Il la viendra preſſer de reprendre ſon Cœur.
+
+Mais ie l’ay veuë enfin me confier ſes larmes.
+
+Elle pleure en ſecret le mépris de ſes charmes.
+
+Toûjours preſte à partir, & demeurant toûjours,
+
+Quelquefois elle appelle Oreſte à ſon ſecours.
+
+
+
+
+
+ORESTE.
+
+Ah ! ſi ie le croyois, i’irois bientoſt, Pylade,
+
+Me jetter…
+
+
+
+
+
+PYLADE.
+
+Acheuez, Seigneur, voſtre Ambaſſade.
+
+Vous attendez le Roy. Parlez, & lui montrez
+
+Contre le Fils d’Hector tous les Grecs conjurez.
+
+Loin de leur accorder ce Fils de ſa Maiſtreſſe,
+
+Leur haine ne fera qu’irriter ſa tendreſſe.
+
+Plus on les veut broüiller, plus on va les vnir.
+
+Preſſez. Demandez tout, pour ne rien obtenir.
+
+Il vient.
+
+
+
+
+
+ORESTE.
+
+Hé bien ! va donc diſpoſer la Cruelle
+
+À reuoir vn Amant qui ne vient que pour elle.
+
+
+
+
+
+Scène II.
+
+
+
+
+PYRRHVS, ORESTE, PHOENIX.
+
+
+
+
+
+ORESTE.
+
+
+
+
+
+A
+
+
+
+vant que tous les Grecs vous parlent par ma voix,
+
+Souffrez que ie me flate en ſecret de leur choix,
+
+Et qu’à vos yeux, Seigneur, je montre quelque joye
+
+De voir le Fils d’Achille, & le Vainqueur de Troye.
+
+Oüy : Comme ſes exploits, nous admirons vos coups ;
+
+Hector tomba ſous lui, Troye expira ſous vous ;
+
+Et vous auez montré, par vne heureuſe audace,
+
+Que le Fils ſeul d’Achille a pû remplir ſa place.
+
+Mais ce qu’il n’euſt point fait, la Gréce auec douleur
+
+Vous voit du Sang Troyen releuer le malheur,
+
+Et vous laiſſant toucher d’vne pitié funeſte,
+
+D’vne Guerre ſi longue entretenir le reſte.
+
+Ne vous ſouuient-il plus, Seigneur, quel fut Hector ?
+
+Nos peuples affoiblis s’en ſouuiennent encor.
+
+Son nom ſeul fait frémir nos Veuues, & nos Filles ;
+
+Et dans toute la Gréce, il n’eſt point de Familles,
+
+Qui ne demandent conte à ce malheureux Fils,
+
+D’vn Pere, ou d’vn Epoux, qu’Hector leur a rauis.
+
+Saper ses fondements encor mal assurés !
+
+Et qui ſçait ce qu’vn jour ce Fils peut entreprendre ?
+
+Peut-eſtre dans nos Ports nous le verrons deſcēdre,
+
+
+
+Tel qu’on a veu ſon Pere embrazer nos Vaiſſeaux,
+
+Et la flâme à la main, les ſuiure ſur les Eaux.
+
+Oſeray-je, Seigneur, dire ce que ie penſe ?
+
+Vous-meſme de vos ſoins craignez la recompenſe,
+
+Et que dans voſtre ſein ce Serpent éleué
+
+Ne vous puniſſe un jour de l’auoir conſerué.
+
+Enfin, de tous les Grecs ſatisfaites l’enuie,
+
+Aſſurez leur vangeance, aſſurez voſtre vie.
+
+Perdez vn Ennemi d’autant plus dangereux,
+
+Qu’il s’eſſayra ſur vous à combattre contre eux.
+
+
+
+
+
+PYRRHVS.
+
+La Grèce en ma faueur eſt trop inquiétée.
+
+De ſoins plus importans ie l’ay cruë agitée,
+
+Seigneur ; & ſur le nom de ſon Ambaſſadeur,
+
+I’auois dans ſes projets conceu plus de grandeur.
+
+Qui croiroit en effet, qu’vne telle entrepriſe
+
+Du Fils d’Agamemnon meritaſt l’entremiſe,
+
+Qu’vn Peuple tout entier, tant de fois triomphant,
+
+N’euſt daigné conſpirer que la mort d’vn Enfant ?
+
+Mais à qui pretend-on que ie le ſacrifie ?
+
+La Gréce a-t-elle encor quelque droit ſur ſa vie ?
+
+Et ſeul de tous les Grecs ne m’eſt-il pas permis
+
+D’ordonner des Captifs que le Sort m’a ſoûmis ?
+
+Oüy, Seigneur, lors qu’au pied des murs fumans de Troye,
+
+Les Vainqueurs tout ſanglans partagerēt leur Proye,
+
+Le Sort, dont les Arreſts furent alors ſuiuis,
+
+Fit tomber en mes mains Andromaque & ſon Fils.
+
+Hécube, pres d’Vlyſſe, acheua ſa miſere ;
+
+Caſſandre, dans Argos, a ſuiuy voſtre Pere.
+
+Sur eux, ſur leurs Captifs, ay-je étendu mes droicts ?
+
+Ay-je enfin diſpoſé du fruit de leurs Exploits ?
+
+
+
+On craint, qu’auec Hector Troye vn jour ne renaiſſe
+
+Son Fils peut me rauir le jour que ie luy laiſſe :
+
+Seigneur, tant de prudence entraiſne trop de ſoin.
+
+Ie ne ſçais point préuoir les malheurs de ſi loin.
+
+Ie ſonge quelle eſtoit autrefois cette Ville,
+
+Si ſuperbe en Rampars, en Héros ſi fertile,
+
+Maiſtreſſe de l’Aſie, & je regarde enfin
+
+Quel fut le Sort de Troye, & quel eſt ſon Deſtin.
+
+Ie ne voy que des Tours, que la cendre a couuertes,
+
+Vn fleuue teint de ſang, des Campagnes deſertes,
+
+Vn Enfant dans les fers, & je ne puis ſonger
+
+Que Troye en cet eſtat aſpire à ſe vanger.
+
+Ah ! ſi du Fils d’Hector la perte eſtoit jurée,
+
+Pourquoy d’vn an entier l’auons-nous différée ?
+
+Dans le ſein de Priam n’a-t-on pû l’immoler ?
+
+Sous tant de Morts, ſous Troye, il falloit l’accabler.
+
+Tout eſtoit juſte alors. La Vieilleſſe & l’Enfance
+
+En vain ſur leur foibleſſe appuyoient leur defance.
+
+La Victoire, & la Nuit, plus cruelles que nous,
+
+Nous excitoient au meurtre, & confondoient nos coups.
+
+Mon courroux aux Vaincus ne fut que trop ſeuere.
+
+Mais que ma Cruauté ſuruiue à ma Colere ?
+
+Que malgré la pitié dont ie me ſens ſaiſir,
+
+Dans le ſang d’vn Enfant ie me baigne à loiſir ?
+
+Non, Seigneur. Que les Grecs cherchent quelque autre Proye ;
+
+Qu’ils pourſuiuent ailleurs ce qui reſte de Troye,
+
+De mes inimitiez le cours eſt acheué,
+
+L’Épire ſauuera ce que Troye a ſauué
+
+
+
+
+
+ORESTE.
+
+Seigneur, vous ſçauez trop, auec quel artifice
+
+Vn faux Aſtyanax fut offert au Suplice
+
+
+
+Où le ſeul Fils d’Hector deuoit eſtre conduit.
+
+Ce n’eſt pas les Troyens, c’eſt Hector qu’on pourſuit.
+
+Oüy, les Grecs ſur le Fils perſecutent le Pere.
+
+Il a par trop de ſang acheté leur colere.
+
+Ce n’eſt que dans le ſien qu’elle peut expirer,
+
+Et si ce n’est assez de toute l’Italie,
+
+Et juſques dans l’Epire il les peut attirer.
+
+Préuenez les.
+
+
+
+
+
+PYRRHVS.
+
+Non, non. I’y conſens auec joye.
+
+Qu’ils cherchent dans l’Epire vne ſeconde Troye.
+
+Qu’ils confondent leur haine, & ne diſtinguent plus
+
+Le ſang qui les fit vaincre, & celuy des Vaincus.
+
+Auſſi-bien ce n’eſt pas la premiere injuſtice,
+
+Dont la Gréce, d’Achille a payé le ſeruice.
+
+Hector en profita, Seigneur, & quelque jour
+
+Son Fils en pourroit bien profiter à ſon tour.
+
+
+
+
+
+ORESTE.
+
+Ainſi la Gréce en vous trouve vn Enfant rebelle ?
+
+
+
+
+
+PYRRHVS.
+
+Et ie n’ay donc vaincu que pour dépendre d’elle ?
+
+
+
+
+
+ORESTE.
+
+Hermionne, Seigneur, arreſtera vos coups ;
+
+Ses yeux s’oppoſeront entre ſon Pere & vous.
+
+
+
+
+
+PYRRHVS.
+
+Hermionne, Seigneur, peut m’eſtre toûjours chere
+
+Ie puis l’aimer, ſans eſtre Eſclave de ſon Pere.
+
+
+
+Et ie ſçauray peut-eſtre accorder quelque jour
+
+Les ſoins de ma grandeur, & ceux de mon amour.
+
+Vous pouuez cependant voir la Fille d’Helene.
+
+Du ſang qui vous vnit ie ſais l’étroite chaîne
+
+Apres cela, Seigneur, ie ne vous retiens plus,
+
+Et vous pourrez aux Grecs annoncer mon refus.
+
+
+
+
+
+Scène III.
+
+
+
+
+PYRRHVS, PHOENIX.
+
+
+
+
+
+PHOENIX.
+
+
+
+
+
+A
+
+
+
+inſi vous l’enuoyez aux pieds de ſa Maiſtreſſe ?
+
+
+
+
+
+PYRRHVS.
+
+On dit qu’il a long-temps brûlé pour la Princeſſe.
+
+
+
+
+
+PHOENIX.
+
+Mais ſi ce feu, Seigneur, vient à ſe rallumer,
+
+S’il luy rendoit ſon Cœur, s’il s’en faiſoit aimer ?
+
+
+
+
+
+PYRRHVS.
+
+Ah ! qu’ils s’aiment, Phœnix, i’y conſens. Qu’elle parte.
+
+Que charmez l’vn de l’autre, ils retournẽt à Sparte.
+
+Tous nos Ports ſont ouuerts & pour elle & pour luy.
+
+Qu’elle m’épargneroit de contrainte & d’ennuy !
+
+
+
+
+
+PHOENIX.
+
+Seigneur…
+
+
+
+
+
+PYRRHVS.
+
+Vne autre fois ie t’ouuriray mon Ame,
+
+Andromaque paroiſt.
+
+
+
+
+
+Scène IV.
+
+
+
+
+PYRRHVS, ANDROMAQVE, CEPHISE.
+
+
+
+
+
+PYRRHVS.
+
+
+
+
+
+M
+
+
+
+e cherchiez-vous, Madame ?
+
+Vn eſpoir ſi charmant me ſeroit-il permis ?
+
+
+
+
+
+ANDROMAQVE.
+
+Ie paſſois juſqu’aux lieux où l’on garde mon Fils.
+
+Puis qu’vne fois le jour vous ſouffrez que ie voye
+
+Le ſeul bien qui me reſte, & d’Hector & de Troye,
+
+I’allois, Seigneur, pleurer vn moment auec luy,
+
+Ie ne l’ay point encore embraſſé d’aujourd’huy.
+
+
+
+
+
+PYRRHVS.
+
+Ah ! Madame, les Grecs, ſi i’en croy leurs allarmes,
+
+Vous donneront bientoſt d’autres ſujets de larmes.
+
+
+
+
+
+ANDROMAQVE.
+
+Et quelle eſt cette peur dont leur Cœur eſt frappé,
+
+Seigneur ? Quelque Troyen vous eſt-il échappé ?
+
+
+
+
+
+PYRRHVS.
+
+Leur haine pour Hector n’eſt pas encore éteinte.
+
+Ils redoutent ſon Fils.
+
+
+
+
+
+ANDROMAQVE.
+
+Digne Objet de leur crainte !
+
+Vn Enfant malheureux, qui ne ſçait pas encor
+
+Que Pyrrhus eſt ſon Maiſtre, & qu’il eſt Fils d’Hector.
+
+
+
+
+
+PYRRHVS.
+
+Tel qu’il eſt, tous les Grecs demandent qu’il périſſe.
+
+Le Fils d’Agamemnon vient haſter ſon ſuplice.
+
+
+
+
+
+ANDROMAQVE.
+
+Et vous prononcerez vn Arreſt ſi cruel ?
+
+Eſt-ce mon intereſt qui le rend criminel ?
+
+Helas ! on ne craint point qu’il vange vn jour ſon Pere.
+
+On craint qu’il n’eſſuyaſt les larmes de ſa Mere.
+
+Il m’auroit tenu lieu d’vn Pere & d’vn Epoux ;
+
+Mais il me faut tout perdre, & toûjours par vos coups.
+
+
+
+
+
+PYRRHVS.
+
+Madame, mes refus ont préuenu vos larmes.
+
+Tous les Grecs m’ont déja ménaſſé de leurs Armes.
+
+Mais dûſſent-ils encore, en repaſſant les Eaux,
+
+Demander voſtre Fils auec mille Vaiſſeaux :
+
+Couſtaſt-il tout le ſang qu’Helene a fait répandre,
+
+Dûſſay-je apres dix ans voir mon Palais en cendre,
+
+Ie ne balance point, ie vole à ſon ſecours,
+
+Ie defendray ſa vie aux deſpens de mes jours.
+
+
+
+Mais parmy ces périls, où ie cours pour vous plaire,
+
+Me refuſerez-vous vn regard moins ſeuere ?
+
+Haï de tous les Grecs, preſſé de tous coſtez,
+
+Me faudra-t-il combattre encor vos cruautez ?
+
+Ie vous offre mon Bras. Puis-je eſperer encore
+
+Que vous accepterez vn Cœur qui vous adore ?
+
+Que l’orient contre elle à l’occident s’allie ;
+
+En combattant pour vous, me ſera-t’il permis
+
+De ne vous point conter parmy mes Ennemis ?
+
+
+
+
+
+ANDROMAQVE.
+
+Seigneur, que faites-vous, & que dira la Gréce ?
+
+Faut-il qu’vn ſi grand Cœur montre tant de foibleſſe ?
+
+Voulez-vous qu’vn deſſein ſi beau, ſi généreux,
+
+Paſſe pour le tranſport d’vn Eſprit amoureux ?
+
+Captiue, toûjours triſte, importune à moy-méme,
+
+Pouuez-vous ſouhaiter qu’Andromaque vous aime ?
+
+Que feriez-vous, helas ! d’vn Cœur infortuné
+
+Qu’à des pleurs éternels vous avez condamné ?
+
+Non, non, d’vn Ennemy reſpecter la Miſere,
+
+Sauuer des Malheureux, rendre vn Fils à ſa Mere,
+
+De cent Peuples pour luy combattre la rigueur,
+
+Sans me faire payer ſon ſalut de mon Cœur,
+
+Malgré moy, s’il le faut, luy donner vn azile,
+
+Seigneur, voilà des ſoins dignes du Fils d’Achille.
+
+
+
+
+
+PYRRHVS.
+
+Hé quoy ? Voſtre courroux n’a-t’il pas eû ſon cours ?
+
+Peut-on haïr ſans ceſſe ? Et punit-on toûjours ?
+
+I’ay fait des Malheureux, ſans doute, & la Phrygie
+
+Cent fois de voſtre ſang a veu ma main rougie.
+
+Mais que vos yeux ſur moy ſe ſont bien exercez !
+
+Qu’ils m’ont vendu bien cher les pleurs qu’ils ont verſez !
+
+
+
+De combien de remords m’ont-ils rendu la Proye ?
+
+Ie souffre tous les maux que i’ay faits deuãt Troye.
+
+Vaincu, chargé de fers, de regrets conſumé,
+
+Brûlé de plus de feux que ie n’en allumé,
+
+Tant de ſoins, tant de pleurs, tant d’ardeurs inquiétes…
+
+Helas ! fus-je iamais ſi cruel que vous l’eſtes ?
+
+Mais enfin, tour à tour, c’eſt aſſez nous punir.
+
+Nos Ennemis communs déuroient nous reünir.
+
+Madame, dites-moy ſeulement que i’eſpere,
+
+Ie vous rends voſtre Fils, & ie luy ſers de Pere.
+
+Ie l’inſtruiray moy-meſme à vanger les Troyens.
+
+I’iray punir les Grecs de vos maux & des miens.
+
+Animé d’vn regard, ie puis tout entreprendre :
+
+Voſtre Ilion encor peut ſortir de ſa cendre.
+
+Ie puis, en moins de tẽps que les Grecs ne l’ont pris,
+
+Que cent peuples unis des bouts de l’univers
+
+Dans ſes Murs releuez couronner voſtre Fils.
+
+
+
+
+
+ANDROMAQVE.
+
+Seigneur, tant de grandeurs ne nous touchent plus guére,
+
+Ie les luy promettois tant qu’a veſcu ſon Pere.
+
+Non, vous n’eſperez plus de nous reuoir encor,
+
+Sacrez Murs, que n’a pû conſeruer mon Hector.
+
+À de moindres faueurs des Malheureux prétendent,
+
+Seigneur. C’eſt vn Exil que mes pleurs vous demandent.
+
+Souffrez que loin des Grecs, & meſme loin de vous,
+
+I’aille cacher mon Fils, & pleurer mon Époux.
+
+Voſtre amour contre nous allume trop de haine.
+
+Retournez, retournez à la Fille d’Helene.
+
+
+
+
+
+PYRRHVS.
+
+Et le puis-je, Madame ? Ah ! que vous me geſnez !
+
+Comment luy rẽdre vn Cœur que vous me retenez ?
+
+
+
+Ie ſçais que de mes veux on luy promit l’empire.
+
+Ie ſçais que pour regner elle vint dans l’Épire.
+
+Le Sort vous y voulut l’vne & l’autre amener,
+
+Vous pour porter des fers, Elle pour en donner.
+
+Cependant ay-je pris quelque ſoin de luy plaire ?
+
+Et ne diroit-on pas, en voyant au contraire,
+
+Vos charmes tout-puiſſants, & les ſiens dédaignez,
+
+Qu’elle eſt icy Captiue, & que vous y regnez ?
+
+Ah ! qu’vn ſeul des ſoûpirs que mon Cœur vous enuoye,
+
+S’il s’échapoit vers elle, y porteroit de joye !
+
+
+
+
+
+ANDROMAQVE.
+
+Et pourquoy vos ſoûpirs ſeroient-ils repouſſez ?
+
+Auroit-elle oublié vos ſeruices paſſez ?
+
+Troye, Hector contre vous reuoltent-ils ſon Ame ?
+
+Aux cendres d’vn Époux doit-elle enfin ſa flâme ?
+
+Et quel Époux encore ! Ah ſouuenir cruel !
+
+Sa mort ſeule a rendu voſtre Pere immortel.
+
+Il doit au ſang d’Hector tout l’éclat de ſes armes,
+
+Et vous n’eſtes tous deux connus que par mes larmes.
+
+
+
+
+
+PYRRHVS.
+
+Hé bien, Madame, hé bien, il faut vous obéir.
+
+Il faut vous oublier, ou plûtoſt vous haïr.
+
+Oüy, mes vœux ont trop loin pouſſé leur violence
+
+Pour ne plus s’arreſter que dans l’indifference.
+
+Songez-y bien. Il faut deſormais que mon Cœur,
+
+S’il n’aime auec tranſport, haïſſe auec fureur.
+
+Ie n’épargneray rien dans ma juſte colere.
+
+Le Fils me répondra des mépris de la Mere,
+
+La Gréce le demande, & je ne prétens pas
+
+Mettre toûjours ma gloire à ſauuer des Ingrats
+
+
+
+
+
+ANDROMAQVE.
+
+Helas ! il mourra donc. Il n’a pour ſa défenſe,
+
+Que les pleurs de ſa Mere, & que ſon Innocence.
+
+Et peut-eſtre apres tout, en l’eſtat où ie ſuis,
+
+Sa mort auancera la fin de mes ennuis.
+
+Ie prolongeois pour luy ma vie, & ma miſere
+
+Mais enfin ſur ſes pas j’iray reuoir ſon Pere.
+
+Ainſi tous trois, Seigneur, par vos ſoins reünis,
+
+Nos Cœurs…
+
+
+
+
+
+PYRRHVS.
+
+Allez, Madame, allez voir voſtre Fils.
+
+Peut-eſtre, en le voyant, voſtre amour plus timide,
+
+Ne prendra pas toûjours ſa Colere pour guide.
+
+Pour ſçsauoir nos Destins, j’iray vous retrouuer.
+
+Madame, en l’embraſſant, ſongez à le ſauuer.
+
+
+
+
+
+Fin de premier Acte.
+
+
+
+
+
+* * *
+
+
+
+
+
+ACTE II.
+
+
+
+
+
+Scène PREMIÈRE.
+
+
+
+
+HERMIONNE, CLEONNE.
+
+
+
+
+
+HERMIONNE.
+
+
+
+
+
+I
+
+
+
+e fay ce que tu veux. Ie conſens qu’il me voye.
+
+Ie luy veux bien encore accorder cette joye ;
+
+Pylade va bien-toſt conduire icy ſes pas.
+
+Mais, ſi ie m’en croyois, ie ne le verrois pas.
+
+
+
+
+
+CLEONNE.
+
+Et qu’eſt-ce que ſa veuë a pour vous de funeſte ?
+
+Madame, n’eſt-ce pas toûjours le meſme Oreſte,
+
+Dont vous auez cent fois ſouhaité le retour,
+
+Et dont vous regrettiez la conſtance & l’amour ?
+
+
+
+
+
+HERMIONNE.
+
+C’eſt cet amour payé de trop d’ingratitude,
+
+Qui me rend en ces Lieux ſa preſence ſi rude.
+
+Quelle honte pour moy ! Quel triomphe pour luy,
+
+De voir mon infortune égaler ſon ennuy !
+
+Eſt-ce là, dira-t’il, cette fiere Hermionne ?
+
+Elle me dédaignoit, vn autre l’abandonne.
+
+L’Ingrate, qui mettoit ſon Cœur à ſi haut prix,
+
+Apprend donc à ſon tour à ſouffrir des mépris ?
+
+Ah Dieux !
+
+
+
+
+
+CLEONNE.
+
+Ah ! diſſipez ces indignes allarmes.
+
+Il a trop bien ſenty le pouuoir de vos charmes.
+
+Vous croyez qu’vn Amant vienne vous inſulter ?
+
+Il vous rapporte vn Cœur qu’il n’a pû vous oſter.
+
+Mais vous ne dites point ce que vous mande vn Pere.
+
+
+
+
+
+HERMIONNE.
+
+Dans ſes retardemens ſi Pyrrhus perſeuere,
+
+À la mort du Troyen s’il ne veut conſentir,
+
+Mon Pere auec les Grecs m’ordonne de partir.
+
+
+
+
+
+CLEONNE.
+
+Hé bien, Madame, hé bien, écoutez donc Oreſte.
+
+Pyrrhus a commencé, faites au moins le reſte.
+
+Pour bien faire, il faudroit que vous le préuinſſiez.
+
+Ne m’auez-vous pas dit que vous le haïſſiez ?
+
+
+
+
+
+HERMIONNE.
+
+Si je le hais, Cleonne ? Il y va de ma gloire,
+
+Apres tant de bontez dont il perd la memoire.
+
+
+
+Luy qui me fut ſi cher, & qui m’a pû trahir !
+
+Ah ! ie l’ay trop aimé pour ne le point haïr.
+
+
+
+
+
+CLEONNE.
+
+Fuyez-le donc, Madame ; et puis qu’on vous adore…
+
+
+
+
+
+HERMIONNE.
+
+Ah ! laiſſe à ma fureur le temps de croiſtre encore.
+
+Contre mon Ennemy laiſſe-moy m’aſſurer,
+
+Cleonne, auec horreur ie m’en veux ſeparer.
+
+Il n’y trauaillera que trop bien, l’Infidelle !
+
+
+
+
+
+CLEONNE.
+
+Quoy ! vous en attendez quelque injure nouuelle ?
+
+Aimer vne Captiue, & l’aimer à vos yeux,
+
+Tout cela n’a donc pû vous le rendre odieux ?
+
+Apres ce qu’il a fait, que ſçauroit-il donc faire ?
+
+Il vous auroit déplû, s’il pouuoit vous déplaire.
+
+
+
+
+
+HERMIONNE.
+
+Pourquoi veux-tu, Cruelle, irriter mes ennuis ?
+
+Je crains de me connoiſître en l’eſtat où ie ſuis.
+
+De tout ce que tu vois tâche de ne rien croire.
+
+Croy que ie n’aime plus. Vante-moy ma victoire,
+
+Croy que dans ſon dépit mon Cœur eſt endurcy.
+
+Helas ! & s’il ſe peut, fay-le moy croire auſſy.
+
+Tu veux que ie le fuye. Hé bien, rien ne m’arreſte.
+
+Allons. N’enuions plus ſon indigne conqueſte.
+
+Que ſur luy ſa Captiue étende ſon pouuoir.
+
+Fuyons. Mais ſi l’Ingrat rentroit dans ſon deuoir !
+
+
+
+Si la Foy dans ſon Cœur retrouuoit quelque place !
+
+S’il venoit à mes pieds me demander ſa Grace !
+
+Si ſous mes Loix, Amour, tu pouuois l’engager !
+
+S’il vouloit !… Mais l’Ingrat ne veut que m’outrager.
+
+Demeurons toutefois, pour troubler leur fortune.
+
+Prenons quelque plaiſir à leur eſtre importune.
+
+Ou le forçant de rompre vn nœud ſi ſolemnel,
+
+Aux yeux de tous les Grecs rendons-le criminel.
+
+I’ai déja ſur le Fils attiré leur colere.
+
+Ie veux qu’on viẽne encor luy demander la Mere.
+
+Passent pour la détruire et les monts et les mers !
+
+Rendons-luy les tourmens qu’elle me fait ſouffrir.
+
+Qu’elle le perde, ou bien qu’il la faſſe périr.
+
+
+
+
+
+CLEONNE.
+
+Penſez-vous que des yeux toûjours ouuerts aux larmes,
+
+Songent à balancer le pouuoir de vos charmes ?
+
+Et qu’vn Cœur accablé de tant de déplaiſirs,
+
+De ſon Perſecuteur ait brigué les ſoûpirs ?
+
+Voyez ſi ſa douleur en paroiſt ſoulagée.
+
+Pourquoy dõc les chagrins où ſon Ame eſt plõgée ?
+
+Pourquoy tant de froideurs ? Pourquoy cette fierté ?
+
+
+
+
+
+HERMIONNE.
+
+Helas ! pour mon malheur ie l’ay trop écouté.
+
+Ie n’ay point du ſilence affecté le myſtère.
+
+Ie croyois ſans péril pouuoir eſtre ſincere.
+
+Et ſans armer mes yeux d’vn moment de rigueur,
+
+Ie n’ay pour luy parler, conſulté que mon Cœur.
+
+Et qui ne ſe ſeroit comme moy declarée,
+
+Sur la foy d’vune amour ſi ſaintement jurée ?
+
+Me voyoit-il de l’œil qu’il me voit aujourd’huy ?
+
+Tu t’en ſouuiens encor, tout conſpiroit pour luy.
+
+
+
+Ma Famille vangée, & les Grecs dans la joye,
+
+Nos Vaiſſeaux tout chargez des dépoüilles de Troye,
+
+Les Exploits de ſon Pere, effacez par les ſiens,
+
+Ses feux que ie croyois plus ardans que les miens,
+
+Mon Cœur, toy-meſme enfin de ſa gloire ébloüye,
+
+Avant qu’il me trahiſt, vous m’auez tous trahie.
+
+Mais c’en eſt trop, Cleonne, & quel que ſoit Pyrrhus,
+
+Hermione eſt ſenſible, Oreſte a des vertus.
+
+Il ſçait aimer du moins, & meſme ſans qu’on l’aime ;
+
+Et peut-eſtre il ſçaura ſe faire aimer luy-méme.
+
+Allons. Qu’il vienne enfin.
+
+
+
+
+
+CLEONNE.
+
+Madame, le voicy.
+
+
+
+
+
+HERMIONNE.
+
+Ah ! ie ne croyois pas qu’il fuſt ſi prés d’icy.
+
+
+
+
+
+Scène II.
+
+
+
+
+HERMIONNE, ORESTE, CLEONNE.
+
+
+
+
+
+HERMIONNE.
+
+
+
+
+
+L
+
+
+
+e croiray-je, Seigneur, qu’vn reſte de tendreſſe
+
+Ait ſuſpendu les ſoins dont vous charge la Gréce ?
+
+Ou ne dois-je imputer qu’à voſtre ſeul deuoir,
+
+L’heureux empreſſemẽt qui vous porte à me voir ?
+
+
+
+
+
+ORESTE.
+
+Tel eſt de mon amour l’aueuglement funeſte,
+
+Vous le ſçauez, Madame, & le destin d’Oreſte
+
+Eſt de venir ſans ceſſe adorer vos attraits,
+
+Et de jurer toûjours qu’il n’y viendra iamais.
+
+Ie ſçais que vos regards vont rouurir mes bleſſures,
+
+Que tous mes pas vers vous ſont autãt de parjures.
+
+Ie le ſçais, i’en rougis. Mais i’atteſte les Dieux,
+
+Témoins de la fureur de mes derniers adieux,
+
+Que i’ay couru partout où ma perte certaine
+
+Dégageoit mes ſermens, & finiſſoit ma peine.
+
+I’ay mandié la Mort, chez des Peuples cruels
+
+Qui n’apaiſoient leurs Dieux que du ſang des Mortels :
+
+Ils m’ont fermé leur Temple, & ces Peuples barbares
+
+De mon ſang prodigué sont deuenus auares.
+
+
+
+Enfin ie viens à vous, & ie me voy reduit
+
+À chercher dans vos yeux vne mort, qui me fuit.
+
+Mon deſeſpoir n’attend que leur indifférence,
+
+Ils n’ont qu’à m’interdire vn reste d’eſpérance.
+
+Ils n’ont, pour auancer cette mort où ie cours,
+
+Qu’à me dire vne fois ce qu’ils m’ont dit toûjours.
+
+Voila depuis vn an le ſeul ſoin qui m’anime.
+
+Madame, c’eſt à vous de prendre vne Victime,
+
+Que les Scythes auroient dérobée à vos coups,
+
+Si i’en auois trouué d’auſſi cruels que Vous.
+
+
+
+
+
+HERMIONNE.
+
+Non, non, ne penſez pas qu’Hermionne diſpoſe.
+
+D’vn ſang, ſur qui la Gréce aujourd’huy ſe repoſe
+
+Mais vous-meſme, eſt-ce ainſi que vous executez
+
+Les vœux de tant d’Eſtats que vous repreſentez ?
+
+Faut-il que d’vn tranſport leur Vangeance dépende ?
+
+Eſt-ce le sang d’Oreſte enfin qu’on vous demande ?
+
+Dégagez-vous des ſoins dont vous eſtes chargé.
+
+
+
+
+
+ORESTE.
+
+Les refus de Pyrrhus m’ont aſſez dégagé,
+
+Madame, il me renuoye, & et quelque autre Puiſſance
+
+Luy fait du Fils d’Hector embraſſer la défence.
+
+
+
+
+
+HERMIONNE.
+
+L’infidelle !
+
+
+
+
+
+ORESTE.
+
+Ainſi donc il ne me reſte rien,
+
+Qu’à venir prendre icy la place du Troyen :
+
+Nous sõmes Ennemis, luy des Grecs, moy le voſtre,
+
+Pyrrhus protege l’vn, & ie vous liure l’autre.
+
+
+
+
+
+HERMIONNE.
+
+Hé quoy ? Dans vos chagrins ſans raiſon affermy,
+
+Vous croirez-vous toûjours, Seigneur, mon Ennemy ?
+
+Quelle eſt cette rigueur tant de fois alleguée ?
+
+I’ay paſſé dans l’Épire où j’eſtois reléguée.
+
+Mon Pere l’ordonnoit. Mais qui ſçait ſi depuis,
+
+Ie n’ay point en ſecret partagé vos ennuis ?
+
+Penſez-vous auoir ſeul éprouué des allarmes ?
+
+Que l’Épire iamais n’ait veû couler mes larmes ?
+
+Enfin, qui vous a dit, que malgré mon deuoir,
+
+Ie n’ay pas quelquefois ſouhaitté de vous voir ?
+
+
+
+
+
+ORESTE.
+
+Souhaitté de me voir ? Ah diuine Princeſſe…
+
+Mais de grace, eſt-ce à moy que ce diſcours s’adreſſe ?
+
+Ouurez les yeux. Songez qu’Oreſte eſt deuant vous,
+
+Oreſte ſi long-temps l’objet de leur courroux.
+
+
+
+
+
+HERMIONNE.
+
+Oüy, c’eſt vous dont l’amour naiſſant auec leurs charmes,
+
+Leur apprit le premier le pouuoir de leurs armes ;
+
+Vous que mille vertus me forçoient d’eſtimer,
+
+Vous que i’ay plaint, enfin que ie voudrois aimer.
+
+
+
+
+
+ORESTE.
+
+Ie vous entens. Tel eſt mon partage funeſte.
+
+Le Cœur eſt pour Pyrrhus, & les vœux pour Oreſte.
+
+
+
+
+
+HERMIONNE.
+
+Ah ! ne ſouhaittez pas le deſtin de Pyrrhus,
+
+Ie vous haïrois trop.
+
+
+
+
+
+ORESTE.
+
+Vous m’en aimeriez plus.
+
+Ah ! que vous me verriez d’vn regard bien contraire !
+
+Vous me voulez aimer, & ie ne puis vous plaire,
+
+Et l’Amour ſeul alors ſe faiſant obeïr,
+
+Vous m’aimeriez, Madame, en me voulant haïr.
+
+Ô Dieux ! Tant de reſpects, vne amitié ſtendre…
+
+Que de raiſons pour moy, ſi vous pouuiez m’entendre !
+
+Vous ſeule pour Pyrrhus diſputez aujourd’huy,
+
+Peut-eſtre malgré vous, ſans doute malgré luy.
+
+Car enfin il vous hait. Son ame ailleurs épriſe
+
+N’a plus…
+
+
+
+
+
+HERMIONNE.
+
+Qui vous l’a dit. Seigneur, qu’il me mépriſe ?
+
+Ses regards, ſes diſcours vous l’ont-ils donc appris ?
+
+Iugez vous que ma veuë inſpire des mépris ?
+
+Qu’elle allume en vn cœur des feux ſi peu durables ?
+
+Peut-eſtre d’autres yeux me sont plus fauorables.
+
+
+
+
+
+ORESTE.
+
+Pourſuivez. Il eſt beau de m’inſulter ainſi.
+
+Cruelle, c’est donc moy qui vous mépriſe ici.
+
+Vos yeux n’ont pas aſſez éprouué ma conſtance
+
+Ie ſuis donc vn témoin de leur peu de puiſſance.
+
+
+
+Ie les ay mépriſez ? Ah ! Qu’ils voudroient bien voir
+
+Riual, comme moy, mépriſer leur pouuoir.
+
+
+
+
+
+HERMIONNE.
+
+Que m’importe, Seigneur, ſa haine, ou ſa tendreſſe
+
+Allez contre vn Rebelle armer toute la Gréce.
+
+Rapportez-luy le prix de ſa rebellion.
+
+Qu’on faſſe de l’Épire vn ſecond Ilion.
+
+Allez. Apres cela, direz-vous que ie l’aime ?
+
+
+
+
+
+ORESTE.
+
+Madame, faites plus, & venez-y vous-meſme.
+
+Voulez-vous demeurer pour oſtage en ces lieux ?
+
+Venez dans tous les cœurs faire parler vos yeux.
+
+Faiſons de notre haine vne commune attaque.
+
+
+
+
+
+HERMIONNE.
+
+Mais, Seigneur, cependant s’il épouſe Andromaque ?
+
+
+
+
+
+ORESTE.
+
+Hé Madame !
+
+
+
+
+
+HERMIONNE.
+
+Songez quelle honte pour nous,
+
+Si d’vne Phrygienne il deuenoit l’Eſpoux.
+
+
+
+
+
+ORESTE.
+
+Et vous le haïſſez ? Auoüez-le, Madame,
+
+L’Amour n’eſt pas un feu qu’on renferme en vne ame.
+
+Tout nous trahit, la voix, le ſilence, les yeux.
+
+Et les feux mal couuerts n’en éclatent que mieux.
+
+
+
+
+
+HERMIONE.
+
+Seigneur, ie le voy bien, voſtre ame préuenuë
+
+Répand ſur mes diſcours le venin qui la tuë,
+
+Toûjours dans mes raiſons cherche quelque détour,
+
+Et croit qu’en moy la haine eſt vn effort d’amour.
+
+Il faut donc m’expliquer. Vous agirez enſuite.
+
+Vous ſçauez qu’en ces lieux mon deuoir m’a conduite,
+
+Mon deuoir m’y retient, & ie n’en puis partir,
+
+Que mon Pere, ou Pyrrhus ne m’en faſſe ſortir.
+
+Au nom de Menelas allez luy faire entendre,
+
+Que l’Ennemy des Grecs ne peut eſtre ſon Gendre,
+
+Du Troyen, ou de moy, faites-le decider :
+
+Qu’il ſonge qui des deux, il veut rendre, ou garder.
+
+Enfin qu’il me renuoye, ou bien qu’il vous le liure.
+
+Adieu, s’il y conſent, ie ſuis preſte à vous ſuiure.
+
+
+
+
+
+Scène III.
+
+
+
+
+ORESTE.
+
+
+
+
+
+O
+
+
+
+vy, oüy, vous me ſuivrez, n’en doutez nullement.
+
+Ie vous reſpons déja de ſon conſentement.
+
+Ie ne crains pas, enfin, que Pyrrhus la retienne,
+
+Il n’a deuant les yeux que ſa chere Troyenne,
+
+Tout autre objet le bleſſe, & peut-eſtre aujourd’huy
+
+Il n’attend qu’vn prétexte à l’éloigner de luy.
+
+Nous n’auons qu’à parler. C’en eſt fait. Quelle joye
+
+D’enleuer à l’Epire vne ſi belle Proye !
+
+Sauue tout ce qui reſte, & de Troye, & d’Hector.
+
+Garde ſon Fils, ſa Veuue, & mille autres encor,
+
+Epire, c’eſt aſſez qu’Hermionne renduë
+
+Perde à jamais tes bords, & ton Prince de veuë.
+
+Mais vn heureux deſtin le conduit en ces lieux.
+
+Parlons. À tant d’attraits, Amour, ferme ſes yeux.
+
+
+
+
+
+Scène IV.
+
+
+
+
+PYRRHVS, ORESTE, PHOENIX.
+
+
+
+
+
+PYRRHVS.
+
+
+
+
+
+I
+
+
+
+e vous cherchois, Seigneur. Vn peu de violence
+
+M’a fait de vos raiſons combattre la puiſſance,
+
+Ie l’auouë. Et depuis que ie vous ay quitté,
+
+I’en ay ſenty la force, & connu l’équité.
+
+I’ay ſongé comme vous, qu’à la Grece, à mon Pere,
+
+À moy-meſme en vn mot ie deuenois contraire,
+
+Que ie releuois Troye, & rendois imparfait
+
+Tout ce qu’a fait Achille, & tout ce que i’ay fait.
+
+Ie ne condamne plus vn courroux légitime,
+
+Et l’on vous va, Seigneur, liurer voſtre Victime.
+
+
+
+
+
+ORESTE.
+
+Seigneur, par ce conſeil prudent & rigoureux,
+
+C’eſt acheter la Paix du ſang d’vn Malheureux.
+
+
+
+
+
+PYRRHVS.
+
+Oüy. Mais ie veux, Seigneur, l’aſſurer davantage.
+
+D’vne eternelle Paix Hermionne eſt le gage.
+
+Ie l’eſpouſe. Il ſembloit qu’vn ſpectacle ſi doux
+
+N’attendiſt en ces lieux qu’vn Teſmoin tel que vous.
+
+
+
+Vous y repréſentez tous les Grecs & ſon Pere,
+
+Puis qu’en vous Menelas voit reuiure ſon Frere.
+
+Voyez-la donc. Allez. Dites-luy que demain
+
+I’attends, auec la Paix, ſon cœur de voſtre Main.
+
+
+
+ORESTE.
+
+Ah dieux !
+
+
+
+
+
+Scène V.
+
+
+
+
+PYRRHVS, PHOENIX.
+
+
+
+
+
+PYRRHVS.
+
+
+
+
+
+H
+
+
+
+e bien, Phœnix, l’Amour eſt-il le Maiſtre ?
+
+Tes yeux refuſent-ils encor de me connaiſtre ?
+
+
+
+
+
+PHOENIX.
+
+Ah ! je vous reconnois, & ce juste courroux
+
+Ainſi qu’à tous les Grecs, Seigneur, vous rend à vous.
+
+Et qui l’auroit penſé, qu’vne ſi noble audace
+
+D’vn long abaiſſement prendroit ſi-toſt la place ?
+
+Que l’on pût ſi-toſt vaincre vn poiſon ſi charmant ?
+
+Mais Pyrrhus, quand il veut, ſçait vaincre en vn moment.
+
+Ce n’eſt plus le jouët d’vne flamme ſeruile.
+
+C’eſt Pyrrhus. C’est le Fils, & le Riual d’Achille,
+
+Que la Gloire à la fin rameine ſous ſes lois,
+
+Qui triomphe de Troye vne ſeconde fois.
+
+
+
+
+
+PYRRHVS.
+
+Dy plutoſt, qu’aujourd’huy commence ma Victoire.
+
+D’aujourd’huy ſeulement ie jouïs de ma gloire,
+
+Et mon cœur auſſi fier, que tu l’as veû ſoûmis,
+
+Croit auoir en l’Amour vaincu mille Ennemis.
+
+
+
+Conſidere, Phœnix, les troubles que j’éuite,
+
+Quelle foule de maux l’Amour traiſne à ſa ſuite ;
+
+Que d’Amis, de deuoirs j’allois ſacrifier.
+
+Quels perils… Vn regard m’euſt tout fait oublier.
+
+Tous les Grecs conjurez fondoient ſur vn Rebelle.
+
+Ie trouuois du plaiſir à me perdre pour Elle.
+
+
+
+
+
+PHOENIX.
+
+Oüy, ie benis, Seigneur, l’heureuſe cruauté
+
+Qui vous rend…
+
+
+
+
+
+PYRRHVS.
+
+Tu l’as veû comme elle m’a traitté.
+
+Ie penſois, en voyant ſa tendreſſe allarmée,
+
+Que ſon Fils me la duſt renuoyer deſarmée.
+
+I’allois voir le ſuccez de ſes embraſſemens.
+
+Ie n’ay trouué que pleurs mélez d’emportemens.
+
+Sa miſere l’aigrit. Et touſiours plus farouche
+
+Cent fois le nom d’Hector eſt ſorti de ſa bouche.
+
+Vainement à ſon Fils j’aſſurois mon ſecours,
+
+C’eſt Hector, ( diſoit-elle en l’embraſſant toûjours ; )
+
+Voila ſes yeux, ſa bouche, & déja ſon audace,
+
+C’eſt luy-meſme, c’eſt toy cher Eſpoux que j’embraſſe.
+
+Et quelle eſt ſa penſée ? Attend-elle en ce iour
+
+Que ie luy laiſſe vn Fils pour nourrir ſon amour ?
+
+
+
+
+
+PHOENIX.
+
+Sans doute. C’eſt le prix que vous gardoit l’Ingrate.
+
+Mais laiſſez-la, Seigneur.
+
+
+
+
+
+PYRRHVS.
+
+Ie voy ce qui la flatte.
+
+Sa beauté la raſſure, & malgré mon courroux.
+
+L’Orgueilleuſe m’attend encore à ſes genoux.
+
+Ie la verrois aux miens, Phœnix, d’vn œil trãquile.
+
+Elle eſt Veuue d’Hector. Et ie ſuis Fils d’Achile.
+
+Trop de haine ſepare Andromaque & Pyrrhus.
+
+
+
+
+
+PHOENIX.
+
+Commencez donc, Seigneur, à ne m’en parler plus
+
+Allez voir Hermionne, & content de luy plaire,
+
+Oubliez à ſes pieds iuſqu’à voſtre colere.
+
+Vous-meſme à cet hymen venez la diſpoſer ?
+
+Eſt-ce ſur vn Riual qu’il s’en faut repoſer ?
+
+Il ne l’aime que trop.
+
+
+
+
+
+PYRRHVS.
+
+Crois-tu, ſi ie l’eſpouſe,
+
+Qu’Andromaque en ſecret n’en ſera pas jalouſe ?
+
+
+
+
+
+PHOENIX.
+
+Quoy touſiours Andromaque occupe voſtre eſprit ?
+
+Que vous importe, ô Dieux ! ſa joye, ou ſon deſpit ?
+
+Quel charme malgré vous vers elle vous attire ?
+
+
+
+
+
+PYRRHVS.
+
+Non, ie n’ay pas bien dit tout ce qu’il luy faut dire.
+
+Ma colère à ſes yeux n’a paru qu’à demy.
+
+Elle ignore à quel point ie ſuis ſon Ennemy.
+
+Retournons-y. Ie veux la brauer à ſa veuë,
+
+Et donner à ma haine une libre eſtenduë.
+
+
+
+Vien voir tous ſes attraits, Phœnix, humiliez.
+
+Allons.
+
+
+
+
+
+PHOENIX.
+
+Allez, Seigneur, vous jeter à ſes piez.
+
+Allez, en luy jurant que voſtre ame l’adore,
+
+À de nouveaux meſpris l’encourager encore.
+
+
+
+
+
+PYRRHVS.
+
+Ie le voy bien, tu crois que preſt à l’excuſer.
+
+Mon Cœur court apres elle, & cherche à s’apaiſer.
+
+
+
+
+
+PHOENIX.
+
+Vous aimez, c’eſt aſſez.
+
+
+
+
+
+PYRRHVS.
+
+Moy l’aimer ? Vne Ingrate,
+
+Qui me hait d’autant plus que mon amour la flate ?
+
+Sans Parens, ſans Amis, ſans eſpoir que ſur moy,
+
+Ie puis perdre ſon Fils, peut-eſtre ie le doy.
+
+Eſtrangère… Que dis-je ? Eſclaue dans l’Epire,
+
+Ie luy donne ſon Fils, mon Ame, mon Empire,
+
+Et ie ne puis gagner dans ſon perfide Cœur
+
+D’autre rang que celuy de ſon Perſecuteur ?
+
+Non, non, ie l’ay juré, ma vangeance eſt certaine.
+
+Il faut bien vne fois juſtifier ſa haine.
+
+I’abandonne ſon Fils. Que de pleurs vont couler !
+
+De quel nom ſa douleur me va-t’elle appeller ?
+
+Quel ſpectacle pour elle aujourd’huy ſe diſpoſe !
+
+Elle en mourra, Phœnix, & j’en ſeray la cauſe.
+
+C’eſt luy mettre moy-meſme vn poignard dans le ſein.
+
+
+
+
+
+PHOENIX.
+
+Et pourquoy donc en faire éclater le deſſein ?
+
+Que ne conſultiez-vous tantoſt voſtre foibleſſe ?
+
+
+
+
+
+PYRRHVS.
+
+Ie t’entens. Mais excuſe vn reſte de tendreſſe.
+
+Crains-tu pour ma colere vn ſi foible combat ?
+
+D’vn amour qui s’eſteint c’eſt le dernier éclat.
+
+Allons. À tes conſeils, Phœnix, ie m’abandonne.
+
+Faut-il liurer ſon Fils ? Faut-il voir Hermionne ?
+
+
+
+
+
+PHOENIX.
+
+Oüy, voyez-la, Seigneur, & par des vœux ſoûmis
+
+Proteſtez-luy…
+
+
+
+
+
+PYRRHVS.
+
+Faiſons tout ce que i’ay promis.
+
+
+
+
+
+Fin du ſecond Acte.
+
+
+
+
+
+* * *
+
+
+
+
+
+ACTE III.
+
+
+
+
+
+Scène première.
+
+
+
+
+ORESTE, PYLADE.
+
+
+
+
+
+PYLADE.
+
+
+
+
+
+M
+
+
+
+oderez donc, Seigneur, cette fureur extréme.
+
+Ie ne vous connoy plus. Vous n’eſtes plus vous-meſme.
+
+Souffrez…
+
+
+
+
+
+ORESTE.
+
+Non, tes conſeils ne ſont plus de ſaiſon,
+
+Pylade, ie ſuis las d’écouter la raiſon.
+
+C’eſt traiſner trop long-temps ma vie & mon ſupplice.
+
+Il faut que ie l’enleue, ou bien que ie periſſe.
+
+Le deſſein en eſt pris, ie le veux acheuer.
+
+Oüy ie le veux.
+
+
+
+
+
+PYLADE.
+
+Hé bien, il la faut enleuer.
+
+I’y conſens. Mais ſongez cependant où vous eſtes.
+
+Que croira-t’on de vous à voir ce que vous faites ?
+
+
+
+Faites taire, Seigneur, ce tranſport inquiet.
+
+Commandez à vos yeux de garder le ſecret.
+
+Ces Gardes, cette Cour, l’air qui vous enuironne,
+
+Tout dépend de Pyrrhus, & ſur tout d’Hermionne
+
+À ſes regards ſur tout cachez voſtre courroux.
+
+Ô Dieux ! en cet eſtat pourquoy la cherchiez-vous ?
+
+
+
+
+
+ORESTE.
+
+Que ſçais-je ? De moy-meſme eſtois-je alors le maiſtre ?
+
+La fureur m’emportoit, & ie venois peut-eſtre
+
+Menaſſer à la fois l’Ingrate & ſon Amant.
+
+
+
+
+
+PYLADE.
+
+Et quel eſtoit le fruit de cet emportement ?
+
+
+
+
+
+ORESTE.
+
+Et quelle ame, dy-moy, ne ſeroit éperduë
+
+Du coup dont ma raiſon vient d’eſtre confonduë ?
+
+Il épouſe, dit-il, Hermionne demain.
+
+Il veut pour m’honorer la tenir de ma main.
+
+Ah ! pluſtoſt cette main dans le ſang du Barbare…
+
+
+
+
+
+PYLADE.
+
+Vous l’accuſez, Seigneur, de ce deſtin bizare.
+
+Cependant tourmenté de ſes propres deſſeins,
+
+Il eſt peut-eſtre à plaindre, autant que ie vous plains.
+
+
+
+
+
+ORESTE.
+
+Non, non, ie le connoy, mon deſeſpoir le flate
+
+Sans moy, ſans mon amour, il dédaignoit l’Ingrate
+
+
+
+Ses charmes iuſque-là n’avoient pû le toucher.
+
+Le Cruel ne la prend que pour me l’arracher.
+
+Ah Dieux ! c’en eſtoit fait. Hermionne gagnée
+
+Pour iamais de ſa veuë alloit eſtre éloignée.
+
+Son cœur entre l’amour & le dépit confus.
+
+Pour ſe donner à moy n’attendoit qu’vn refus,
+
+Ses yeux s’ouuroient, Pylade. Elle écoutoit Oreſte,
+
+Luy parloit, le plaignoit. Vn mot euſt fait le reſte.
+
+
+
+
+
+PYLADE.
+
+Vous le croyez.
+
+
+
+
+
+ORESTE.
+
+Hé quoy ? ce courroux enflammé
+
+Contre vn Ingrat…
+
+
+
+
+
+PYLADE.
+
+Iamais il ne fut plus aimé.
+
+Penſez-vous, quand Pyrrhus vous l’auroit accordée,
+
+Qu’vn prétexte tout preſt ne l’euſt pas retardée ?
+
+M’en croirez-vous ? Laſſé de ſes trompeurs attraits,
+
+Au lieu de l’enleuer, Seigneur, ie la fuirais.
+
+Quoy ? Voſtre amour ſe veut charger d’vne Furie
+
+Qui vous déteſtera, qui toute voſtre vie
+
+Regrettant vn hymen tout preſt à s’acheuer,
+
+Voudra…
+
+
+
+
+
+ORESTE.
+
+C’eſt pour cela que ie veux l’enleuer.
+
+Tout luy riroit, Pylade, & moy, pour mon partage,
+
+Ie n’emporterois donc qu’vne inutile rage ?
+
+I’irois loin d’elle encor, taſcher de l’oublier ?
+
+Non, non, à mes tourmens ie veux l’aſſocier.
+
+C’eſt trop gémir tout ſeul. Ie ſuis las qu’on me plaigne.
+
+Ie prétens qu’à mon tour l’Inhumaine me craigne,
+
+
+
+Et que ſes Yeux cruels à pleurer condamnez,
+
+Me rendent tous les noms, que ie leur ay donnez.
+
+
+
+
+
+PYLADE.
+
+Voilà donc le ſuccez qu’aura voſtre Ambassade,
+
+Oreſte rauiſſeur.
+
+
+
+
+
+ORESTE.
+
+Et qu’importe, Pylade ?
+
+Quand nos Eſtats vangez jouïront de mes ſoins,
+
+L’Ingrate de mes pleurs jouïra-t’elle moins ?
+
+Et que me ſeruira que la Gréce m’admire
+
+Tandis que ie ſeray la fable de l’Épire ?
+
+Que veux-tu ? Mais, s’il faut ne te rien déguiſer,
+
+Mon Innocence enfin commence à me peſer.
+
+Ie ne ſçay de tout temps quelle injuſte Puiſſance
+
+Laiſſe le Crime en paix, & pourſuit l’Innocence.
+
+De quelque part ſur moy que ie tourne les yeux,
+
+Ie ne voy que malheurs qui condamnent les Dieux.
+
+Meritons leur courroux, juſtifions leur haine,
+
+Et que le fruit du Crime en précede la peine.
+
+Mais toy, par quelle erreur veux-tu toûjours ſur toy
+
+Deſtourner vn courroux qui ne cherche que moy ?
+
+Aſſez é trop long-temps mon amitié t’accable.
+
+Éuite vn Malheureux, abandonne vn Coupable.
+
+Cher Pylade, croy-moy, mon tourment me ſuffit.
+
+Laiſſe-moy des perils dont j’attens tout le fruit.
+
+Porte aux Grecs cet Enfant que Pyrrhus m’abandonne.
+
+Va-t’en.
+
+
+
+
+
+PYLADE.
+
+Allons, Seigneur, enleuons Hermionne.
+
+Au trauers des perils vn grand Cœur ſe fait iour
+
+Que ne peut l’amitié conduite par l’amour ?
+
+
+
+Allons de tous vos Grecs encourager le zele.
+
+Nos vaiſſeaux ſont tout preſts, & le vent nous appelle.
+
+Ie ſçais de ce Palais tous les détours obſcurs.
+
+Vous voyez que la Mer en vient battre les Murs.
+
+Et cette Nuit ſans peine vne ſecrette voye,
+
+Iuſqu’en voſtre vaiſſeau conduira voſtre Proye.
+
+
+
+
+
+ORESTE.
+
+I’abuſe, cher Amy, de ton trop d’amitié.
+
+Mais pardonne à des maux, dont toy ſeul as pitié.
+
+Excuſe vn Malheureux, qui perd tout ce qu’il aime,
+
+Que tout le monde hait, & qui ſe hait luy-meſme.
+
+Que ne puis-je à mon tour dans vn ſort plus heureux…
+
+
+
+
+
+PYLADE.
+
+Diſſimulez, Seigneur, c’eſt tout ce que ie veux.
+
+Gardez qu’auant le coup voſtre deſſein n’éclate.
+
+Oubliez iuſque-là qu’Hermionne eſt ingrate.
+
+Oubliez voſtre amour. Elle vient, ie la voy.
+
+
+
+
+
+ORESTE.
+
+Va-t’en. Répons-moy d’elle, & ie répons de moy.
+
+
+
+
+
+Scène II.
+
+
+
+
+HERMIONNE, ORESTE, CLEONNE.
+
+
+
+
+
+ORESTE.
+
+
+
+
+
+H
+
+
+
+e bien ? Mes ſoins vous ont rendu voſtre Conqueſte.
+
+I’ay veû Pyrrhus, Madame, & voſtre hymen s’apreſte.
+
+
+
+
+
+HERMIONNE.
+
+On le dit. Et de plus, on vient de m’aſſurer
+
+Que vous ne me cherchiez que pour m’y préparer.
+
+
+
+
+
+ORESTE.
+
+Et voſtre ame à ſes vœux ne ſera pas rebelle ?
+
+
+
+
+
+HERMIONNE.
+
+Qui l’euſt crû, que Pyrrhus ne fuſt pas infidelle ?
+
+Que ſa flamme attendroit ſi tard pour éclater,
+
+Qu’il reuiendroit à moy, quand ie l’allois quitter ?
+
+Ie veux croire auec vous, qu’il redoute la Grece,
+
+Qu’il ſuit ſon intereſt plûtoſt que ſa tendreſſe,
+
+Que mes yeux ſur voſtre ame eſtoiẽt plus abſolus.
+
+
+
+
+
+ORESTE.
+
+Non, Madame, il vous aime, & ie n’en doute plus.
+
+
+
+Vos yeux ne font-ils pas tout ce qu’ils veulent faire ?
+
+Et vous ne vouliez pas ſans doute luy déplaire.
+
+
+
+
+
+HERMIONNE.
+
+Mais que puis-je, Seigneur ? On a promis ma foy.
+
+Luy raviray-je vn bien, qu’il ne tient pas de moy ?
+
+L’Amour ne regle pas le ſort d’vne Princeſſe.
+
+La gloire d’obeïr eſt tout ce qu’on nous laiſſe.
+
+Cependant ie partois, & vous auez pû voir
+
+Combien ie relaſchois pour vous de mon deuoir.
+
+
+
+
+
+ORESTE.
+
+Ah ! que vous ſçaviez bien, Cruelle… Mais, Madame,
+
+Chacun peut à ſon choix diſpoſer de ſon ame.
+
+La voſtre eſtoit à vous. I’eſpérois. Mais enfin
+
+Vous l’auez pû donner ſans me faire vn larcin.
+
+Ie vous accuſe auſſi, bien moins que la Fortune.
+
+Et pourquoy vous laſſer d’vne plainte importune ?
+
+Tel eſt voſtre deuoir, ie l’auouë. Et le mien
+
+Eſt de vous épargner vn ſi triſte entretien.
+
+
+
+
+
+Scène III.
+
+
+
+
+HERMIONNE, CLEONNE.
+
+
+
+
+
+HERMIONNE.
+
+
+
+
+
+A
+
+
+
+ttendois-tu, Cleonne, vn courroux ſi modeſte ?
+
+
+
+
+
+CLEONNE.
+
+La douleur qui ſe taiſt n’en eſt que plus funeſte.
+
+Ie le plains. D’autant plus qu’Auteur de ſon ennuy,
+
+Le coup qui l’a perdu n’eſt parti que de luy.
+
+Contez depuis quel tẽps voſtre hymen ſe prépare.
+
+Il a parlé, Madame, & Pyrrhus ſe déclare.
+
+
+
+
+
+HERMIONNE.
+
+Tu crois que Pyrrhus craint ? Et que craint-il encor ?
+
+Des Peuples, qui dix ans ont fuy deuant Hector ?
+
+Qui cent fois effrayez de l’abſence d’Achille,
+
+Dans leurs vaiſſeaux brulans ont cherché leur azile,
+
+Et qu’on verroit encor, ſans l’appuy de ſon Fils,
+
+Redemander Helene aux Troyens impunis ?
+
+Non, Cleonne, il n’eſt point Ennemy de luy-meſme,
+
+Il veut tout ce qu’il fait, & et s’il m’eſpouſe, il m’aime.
+
+Mais qu’Oreſte à ſon gré m’impute ſes douleurs.
+
+N’auons-nous d’entretien que celuy de ſpleurs ?
+
+Pyrrhus reuient à nous. Hé bien, chere Cleonne,
+
+Conçois-tu les tranſports de l’heureuſe Hermiõne ?
+
+
+
+Sçais-tu quel eſt Pyrrhus ? T’és-tu fait raconter
+
+Le nombre des Exploits… Mais qui les peut conter ?
+
+Intrepide, & par tout ſuiuy de la Victoire,
+
+Charmant, Fidelle enfin, rien ne mãque à ſa Gloire
+
+Songe…
+
+
+
+
+
+CLEONNE.
+
+Diſſimulez. Voſtre Riuale en pleurs,
+
+Vient à vos pieds ſans doute apporter ſes douleurs.
+
+
+
+
+
+HERMIONNE.
+
+Dieux ! ne puis-je à ma joye abandonner mon ame ?
+
+Sortons. Que luy dirois-je ?
+
+
+
+
+
+Scène IV.
+
+
+
+
+ANDROMAQVE, HERMIONNE, CLEONNE, CEPHISE.
+
+
+
+
+
+ANDROMAQVE.
+
+
+
+
+
+O
+
+
+
+v fuyez-vous, Madame ?
+
+N’eſt-ce point à vos yeux, vn ſpectacle aſſez doux
+
+Que la Veuue d’Hector pleurante à vos genoux ?
+
+Ie ne viens point icy, par de jalouſes larmes,
+
+Vous enuier vn Cœur, qui ſe rend à vos charmes.
+
+Par les mains de ſon Pere, helas ! i’ay veû percer
+
+Le ſeul, où mes regards pretendoient s’adreſſer.
+
+Ma flamme par Hector fut jadis allumée,
+
+Auec luy dans la tombe elle s’eſt enfermée.
+
+Mais il me reſte vn Fils. Vous ſçaurez quelque jour,
+
+Madame, pour vn Fils iuſqu’où va noſtre amour.
+
+Mais vous ne ſçaurez pas, du moins ji le ſouhaitte,
+
+En quel trouble mortel ſon intereſt nous jette,
+
+Lors que de tant de biens, qui pouuoient nous flatter,
+
+C’eſt le ſeul qui nous reſte, & qu’on veut nous l’oſter.
+
+Helas ! Lors que laſſez de dix ans de miſere,
+
+Les Troyens en courroux menaçoient voſtre Mere,
+
+I’ay ſçeû de mon Hector luy procurer l’appuy,
+
+Vous pouuez ſur Pyrrhus, ce que i’ay pû ſur luy.
+
+Que craint-on d’vn Enfant, qui ſuruit à ſa perte ?
+
+Laiſſez-moy le cacher en quelque Iſle deſerte.
+
+
+
+Sur les ſoins de ſa Mere on peut s’en aſſurer,
+
+Et mon Fils auec moi n’aprendra qu’à pleurer.
+
+
+
+
+
+HERMIONNE.
+
+Ie conçoy vos douleurs. Mais vn devoir auſtere,
+
+Quand mon Pere a parlé, m’ordonne de me taire.
+
+C’eſt luy, qui de Pyrrhus fait agir le courroux.
+
+S’il faut fléchir Pyrrhus, qui le peut mieux que vous ?
+
+Vos yeux aſſez long-temps ont régné ſur ſon ame.
+
+Faites-le prononcer, j’y ſouſcriray, Madame.
+
+
+
+
+
+Scène V.
+
+
+
+
+ANDROMAQVE, CEPHISE.
+
+
+
+
+
+ANDROMAQVE.
+
+
+
+
+
+Q
+
+
+
+vel mépris la Cruelle attache à ſes refus !
+
+
+
+
+
+CEPHISE.
+
+Ie croirois ſes conſeils, & je verrois Pyrrhus.
+
+Vn regard confondroit Hermionne & la Gréce…
+
+Mais luy-meſme il vous cherche.
+
+
+
+
+
+Scène VI.
+
+
+
+
+PYRRHVS, ANDROMAQVE, PHOENIX, CEPHISE.
+
+
+
+
+
+PYRRHVS, à Phœnix.
+
+
+
+
+
+O
+
+
+
+v donc eſt la Princeſſe ?
+
+Ne m’auois-tu pas dit qu’elle eſtoit en ces lieux ?
+
+
+
+
+
+PHOENIX.
+
+Ie le croyois.
+
+
+
+
+
+ANDROMAQVE,, à Cephiſe.
+
+Tu vois le pouuoir de mes yeux.
+
+
+
+
+
+PYRRHVS.
+
+Que dit-elle, Phœnix ?
+
+
+
+
+
+ANDROMAQVE.
+
+Helas ! tout m’abandonne.
+
+
+
+
+
+PHOENIX.
+
+Allons, Seigneur, marchons ſur les pas d’Hermionne.
+
+
+
+
+
+CEPHISE.
+
+Qu’attendez-vous ? Forcez ce ſilence obſtiné.
+
+
+
+
+
+ANDROMAQVE.
+
+Il a promis mon Fils.
+
+
+
+
+
+CEPHISE.
+
+Il ne l’a pas donné.
+
+
+
+
+
+ANDROMAQVE.
+
+Non, non, j’ay beau pleurer, ſa mort eſt reſoluë.
+
+
+
+
+
+PYRRHVS.
+
+Daigne-t’elle ſur nous tourner au moins la veuë ?
+
+Quel orgueil !
+
+
+
+
+
+ANDROMAQVE.
+
+Ie ne fay que l’irriter encor.
+
+Sortons.
+
+
+
+
+
+PYRRHVS.
+
+Allons aux Grecs liurer le Fils d’Hector.
+
+
+
+
+
+ANDROMAQVE.
+
+Ah, Seigneur, arreſtez. Que prétendez-vous faire ?
+
+Si vous liurez le Fils, liurez-leur donc la Mere.
+
+Vos ſerments m’ont tantoſt juré tant d’amitié.
+
+Dieux ! N’en reſte-t’il pas du moins quelque pitié ?
+
+Sans eſpoir de pardon m’auez-vous condamnée ?
+
+
+
+
+
+PYRRHVS.
+
+Phœnix vous le dira, ma parole eſt donnée.
+
+
+
+
+
+ANDROMAQVE.
+
+Vous qui brauiez pour moy tant de perils diuers ?
+
+
+
+
+
+PYRRHVS.
+
+I’eſtois aueugle alors, mes yeux ſe ſont ouuerts.
+
+Sa grace à vos déſirs pouuoit eſtre accordée.
+
+Mais vous ne l’auez pas ſeulement demandée.
+
+C’en eſt fait.
+
+
+
+
+
+ANDROMAQVE.
+
+Ah ! Seigneur, vous entendiez aſſez
+
+Des ſoûpirs qui craignoient de ſe voir repouſſez,
+
+Pardonnez à l’éclat d’vne illuſtre fortune
+
+Ce reſde fierté qui craint d’eſtre importune.
+
+Vous ne l’ignorez pas, Andromaque ſans vous
+
+N’auroit jamais d’vn Maiſtre embraſſé les genoux.
+
+
+
+
+
+PYRRHVS.
+
+Non, vous me haïſſez. Et dans le fonds de l’ame
+
+Vous craignez de deuoir quelque choſe à ma flâme.
+
+
+
+Ce Fils meſme, ce Fils, l’objet de tant de ſoins,
+
+Si je l’auois ſauué, vous l’en aimeriez moins.
+
+La haine, le mépris, contre moy tout s’aſſemble.
+
+Vous me haïſſez plus que tous les Grecs enſemble.
+
+Ioüissez à loiſir d’vn ſi noble courroux.
+
+Allons, Phœnix.
+
+
+
+
+
+ANDROMAQVE.
+
+Allons rejoindre mon Eſpoux.
+
+
+
+
+
+CEPHISE.
+
+Madame…
+
+
+
+
+
+ANDROMAQVE.
+
+Et que veux-tu que je lui dise encore ?
+
+Auteur de tous mes maux, crois-tu qu’il les ignore ?
+
+Seigneur, voyez l’eſtat où vous me réduiſez ?
+
+I’ay veu mon Pere mort, & nos Murs embraſez,
+
+I’ay veû trancher les iours de ma Famille entiere,
+
+Et mon Eſpoux ſanglant traiſné ſur la pouſſiere,
+
+Son Fils ſeul avec moy reſerué pour les fers.
+
+Mais que ne peut vn Fils, je reſpire, je ſers.
+
+I’ay fait plus. Ie me suis quelquefois conſolée
+
+Qu’icy, plûtoſt qu’ailleurs le ſort m’euſt exhilée ;
+
+Qu’heureux dãs ſon malheur, le Fils de tant de Rois,
+
+Puis qu’il deuoit ſeruir, fuſt tombé ſous vos lois.
+
+I’ay crû que ſa priſon deuiendroit ſon Azile.
+
+Iadis Priam ſoûmis fut reſpecté d’Achille,
+
+I’attendois de ſon Fils encor plus de bonté.
+
+Pardonne, cher Hector, à ma crédulité.
+
+Ie n’yi pû ſoupçonner ton Ennemy d’vn crime,
+
+Malgré luy-meſme enfin je l’ay crû magnanime.
+
+
+
+Ah ! s’il l’eſtoit aſſez, pour nous laiſſer du moins
+
+Au Tombeau qu’à ta Cendre ont éleué mes ſoins ;
+
+Et que finiſſant-là ſa haine & nos misères,
+
+Il ne ſéparaſt point des dépoüilles ſi cheres !
+
+
+
+
+
+PYRRHVS.
+
+Va m’attendre, Phœnix.
+
+
+
+
+
+Scène VII.
+
+
+
+
+PYRRHVS, ANDROMAQVE, CEPHISE.
+
+
+
+
+
+PYRRHVS, continuë.
+
+
+
+
+
+M
+
+
+
+adame, demeurez ;
+
+On peut vous rendre encor ce Fils que vous pleurez.
+
+Oüy, je ſens à regret, qu’en excitant vos larmes
+
+Ie ne fay contre moy que vous donner des armes.
+
+Ie croyois apporter plus de haine en ces lieux.
+
+Mais, Madame, du moins tournez vers moy les yeux.
+
+Voyez ſi mes regards ſont d’vn Juge ſeuere,
+
+S’ils ſont d’un Ennemy qui cherche à vous déplaire.
+
+Pourquoy me forcez-vous vous-meſme à vous trahir ?
+
+Au nom de voſtre Fils, ceſſons de nous haïr.
+
+À le ſauuer enfin, c’eſt moy qui vous conuie.
+
+Faut-il que mes ſoûpirs vous demandent ſa vie ?
+
+Faut-il qu’en ſa faueur j’embraſſe vos genoux ?
+
+Pour la dernière fois, ſauuez-le, ſauuez-vous.
+
+Ie ſçais de quels ſermens je romps pour vous les chaiſnes,
+
+Combien je vais ſur moy faire éclater de haines.
+
+Ie renuoye Hermionne, & je mets ſur ſon front,
+
+Au lieu de ma Couronne, vn eternel affront.
+
+
+
+Ie vous conduis au Temple, où ſon Hymen s’appreſte.
+
+Ie vous ceins du Bandeau, préparé pour ſa Teſte.
+
+Mais ce n’eſt plus, Madame, vne offre à dédaigner,
+
+Ie vous le dis, il faut ou perir, ou regner.
+
+Mon cœur, deſeſperé d’vn an d’ingratitude,
+
+Ne peut plus de ſon ſort ſouffrir l’incertitude.
+
+C’eſt craindre, menaſſer, & gemir trop long-temps.
+
+Ie meurs, ſi je vous pers, mais je meurs, ſi j’attens.
+
+Songez-y, je vous laiſſe, & je viendray vous prendre,
+
+Pour vous mener au Temple, où ce Fils doit m’attendre.
+
+Et là vous me verrez ſoûmis, ou furieux,
+
+Vous couronner, Madame, ou le perdre à vos yeux.
+
+
+
+
+
+Scène VIII.
+
+
+
+
+ANDROMAQVE, CEPHISE.
+
+
+
+
+
+CÉPHISE.
+
+
+
+
+
+I
+
+
+
+e vous l’auois prédit, qu’en dépit de la Grece,
+
+De voſtre ſort encor vous ſeriez la Maiſtreſſe.
+
+
+
+
+
+ANDROMAQVE.
+
+Helas ! De quel effet tes diſcours ſont ſuiuis ?
+
+Il ne me reſtoit plus qu’à condamner mon Fils.
+
+
+
+
+
+CEPHISE.
+
+Madame, à voſtre Eſpoux c’eſt eſtre aſſez fidelle.
+
+Trop de vertu pourroit vous rendre criminelle.
+
+Luy-meſme il porteroit voſtre ame à la douceur.
+
+
+
+
+
+ANDROMAQVE.
+
+Quoy, je lui donnerois Pyrrhus pour ſucceſſeur ?
+
+
+
+
+
+CEPHISE.
+
+Ainsi le veut ſon Fils, que les Grecs vous rauiſſent.
+
+Penſez-vous qu’aprés tout ſes Manes en rougiſſent ?
+
+
+
+Qu’il mépriſaſt, Madame, vn Roy victorieux,
+
+Qui vous fait remonter au rang de vos Ayeux,
+
+Qui foule aux pieds pour vous vos Vainqueurs en colere,
+
+Qui ne ſe ſouuient plus qu’Achile eſtoit ſon Pere,
+
+Qui dément ſes Exploits, & les rend ſuperflus ?
+
+
+
+
+
+ANDROMAQVE.
+
+Dois-je les oublier, ſ’il ne s’en ſouuient plus ?
+
+Dois-je oublier Hector priué de funerailles,
+
+Et traiſné ſans honneur autour de nos murailles ?
+
+Dois-je oublier ſon Pere à mes pieds renuerſé,
+
+Enſanglantant l’Autel qu’il tenoit embraſſé ?
+
+Songe, ſonge, Cephiſe, à cette Nuit cruelle,
+
+Qui fut pour tout vn Peuple vne Nuit eternelle.
+
+Figure-toy Pyrrhus les yeux étincelans,
+
+Entrant à la lueur de nos Palais brûlans ;
+
+Sur tous mes Freres morts ſe faiſant vn passage,
+
+Et de ſang tout couuert échauffant le carnage.
+
+Songe aux cris des Vainqueurs, ſonge aux cris des Mourans,
+
+Dans la flamme étouffez, ſous le fer expirans.
+
+Peins-toy dans ces horreurs Andromaque eſperduë.
+
+Voila comme Pyrrhus vint s’offrir à ma veuë ;
+
+Voila par quels exploits il ſçeût ſe couronner,
+
+Enfin voila l’Eſpoux que tu me veux donner.
+
+Non, je ne seray point complice de ſes crimes.
+
+Qu’il nous prenne, s’il veut, pour dernières Victimes.
+
+Tous mes reſſentimens luy seroient aſſeruis.
+
+
+
+
+
+CEPHISE.
+
+Hé bien, allons donc voir expirer voſtre Fils.
+
+
+
+On n’attend plus que vous. Vous fremiſſez, Madame ?
+
+
+
+
+
+ANDROMAQVE.
+
+Ah ! de quel ſouuenir viens-tu frapper mon ame ?
+
+Quoy, Cephiſe, j’iray voir expirer encor
+
+Ce Fils, ma ſeule joye, & l’image d’Hector ?
+
+Ce Fils que de ſa flamme il me laiſſa pour gage ?
+
+Helas ! il m’en ſouuient, le jour que ſon courage,
+
+Luy fit chercher Achile, ou plûtoſt le treſpas,
+
+Il demanda ſon Fils, & le prit dans ſes bras.
+
+Chere Eſpouſe, dit-il, en eſſuyant mes larmes,
+
+I’ignore quel ſuccés le ſort garde à mes armes,
+
+Ie te laiſſe mon Fils, pour gage de ma foy ;
+
+S’il me perd, je prétens qu’il me retrouve en toy.
+
+Si d’vn heureux hymen la memoire t’eſt chere,
+
+Montre au Fils à quel point tu cheriſſois le Pere.
+
+Et je puis voir répandre vn sang ſi precieux ?
+
+Et je laiſſe avec luy perir tous ſes Ayeux ?
+
+Roy barbare, faut-il que mon crime l’entraiſne ?
+
+Si je te haïs, eſt-il coupable de ma haine ?
+
+T’a-t’il de tous les ſiens reproché le trépas ?
+
+S’eſt-il plaint à tes yeux des maux qu’il ne ſent pas ?
+
+Mais cependant, mon Fils, tu meurs, ſi je n’arreſte
+
+Le fer, que ce Cruel tient leué ſur ta teſte.
+
+Ie l’en puis détourner, & je t’y vais offrir ?
+
+Non tu ne mourras point, je ne le puis ſouffrir.
+
+Allons trouver Pyrrhus. Mais non, chere Cephise,
+
+Va le trouuer pour moy.
+
+
+
+
+
+CEPHISE.
+
+Que faut-il que je diſe ?
+
+
+
+
+
+ANDROMAQVE.
+
+Dy-luy que de mon Fils l’amour eſt aſſez fort…
+
+Crois-tu que dans ſon cœur il ait juré ſa mort ?
+
+L’amour peut-il ſi loin pousser ſa barbarie ?
+
+
+
+
+
+CEPHISE.
+
+Madame, il va bien-toſt reuenir en furie.
+
+
+
+
+
+ANDROMAQVE.
+
+Hé bien, va l’aſſurer…
+
+
+
+
+
+CEPHISE.
+
+De quoy ? de voſtre foy ?
+
+
+
+
+
+ANDROMAQVE.
+
+Helas ! pour la promettre eſt-elle encore à moy ?
+
+Ô cendres d’vn Eſpoux ! ô Troyens ! ô mon Pere !
+
+Ô mon Fils, que tes iours couſtent cher à ta Mere !
+
+Allons.
+
+
+
+
+
+CEPHISE.
+
+Où donc, Madame, & que reſoluez-vous ?
+
+
+
+
+
+ANDROMAQVE.
+
+Allons, ſur ſon tombeau, conſulter mon Eſpoux.
+
+
+
+
+
+Fin du troiſième Acte.
+
+
+
+
+
+* * *
+
+
+
+
+
+ACTE IV.
+
+
+
+
+
+Scène première.
+
+
+
+
+ANDROMAQVE, CEPHISE.
+
+
+
+
+
+CEPHISE.
+
+
+
+
+
+A
+
+
+
+h ! je n’en doute point. C’eſt voſtre Eſpoux, Madame,
+
+C’eſt Hector qui produit ce miracle en voſtre ame.
+
+Il veut que Troye encor ſe puiſſe releuer,
+
+Auec cét heureux Fils, qu’il vous fait conſeruer.
+
+Pyrrhus vous l’a promis. Vous venez de l’entendre,
+
+Madame, il n’attendoit qu’vn mot pour vous le rendre.
+
+Croyez-en ſes tranſports. Pere, Sceptre, Alliez.
+
+Content de voſtre cœur, il met tout à vos pieds.
+
+Sur luy, ſur tout ſon Peuple il vous rend Souueraine.
+
+Eſt-ce là ce Vainqueur digne de tant de haine ?
+
+Déja contre les Grecs plein d’vn noble courroux,
+
+Le ſoin de voſtre Fils le touche autant que vous ;
+
+
+
+Il preuient leur fureur, il luy laiſſe ſa Garde,
+
+Pour ne pas l’expoſer luy-meſme il ſe hazarde.
+
+Mais tout s’apreſte au Temple. Et vous auez promis…
+
+
+
+
+
+ANDROMAQVE.
+
+Ouy, je m’y trouuerai. Mais allons voir mon Fils.
+
+
+
+
+
+CEPHISE.
+
+Madame, qui vous preſſe ? Il ſuffit que ſa veuë
+
+Deſormais à vos yeux ne ſoit plus deffenduë.
+
+Vous luy pourrez bien-toſt prodiguer vos bontez,
+
+Et vos embraſſements ne ſeront plus contez.
+
+Quel plaiſir ! d’éleuer vn Enfant qu’on voit craiſtre,
+
+Non plus comme vn Eſclaue éleué pour ſon Maiſtre,
+
+Mais pour voir auec luy renaiſtre tant de Rois.
+
+
+
+
+
+ANDROMAQVE.
+
+Cephiſe, allons le voir pour la derniere fois.
+
+
+
+
+
+CEPHISE.
+
+Que dites-vous ? ô Dieux !
+
+
+
+
+
+ANDROMAQVE.
+
+Ô ! ma chere Cephiſe,
+
+Ce n’eſt point auec toy que mon cœur ſe déguiſe.
+
+Ta foy dans mon malheur s’eſt montrée à mes yeux.
+
+Mais j’ay crû qu’à mon tour tu me connoiſſois mieux.
+
+Quoy donc as-tu penſé qu’Andromaque infidelle,
+
+Pûſt trahir vn Eſpoux qui croit reuiure en elle,
+
+
+
+Et que de tant de Morts réueillant la douleur,
+
+Le ſoin de mon repos me fiſt troubler le leur ?
+
+Eſt-ce là cette ardeur tant promiſe à ſa cendre.
+
+Mais ſon Fils periſſoit, il l’a falu défendre ?
+
+Pyrrhus en m’épouſant s’en déclare l’appuy.
+
+Il ſuffit. Je veux bien m’en repoſer ſur luy.
+
+Ie ſçays quel eſt Pyrrhus. Violent, mais ſincere,
+
+Cephiſe, il fera plus qu’il n’a promis de faire.
+
+Sur le courroux des Grecs, je m’en repoſe encor,
+
+Leur haine va donner vn Pere au Fils d’Hector.
+
+Ie vais donc, puiſqu’il faut que je me ſacrifie,
+
+Aſſurer à Pyrrhus le reſte de ma vie.
+
+Ie vais en receuant ſa foy ſur les Autels,
+
+L’engager à mon Fils par des nœuds immortels.
+
+Mais auſſi-toſt ma main, à moy ſeule funeſte,
+
+D’vne infidelle vie abbregera le reſte,
+
+Et ſauuant ma vertu, rendra ce que je doyi
+
+À Pyrrhus, à mon Fils, à mon Eſpoux, à moy.
+
+Voila de mon amour l’innocent ſtratagéme,
+
+Voila ce qu’vn Eſpoux m’a commandé luy-méme.
+
+I’iray ſeule rejoindre Hector, & mes Ayeux.
+
+Cephiſe, c’eſt à toy de me fermer les yeux.
+
+
+
+
+
+CEPHISE.
+
+Ah ! ne pretendez pas que je puiſſe ſuruiure.
+
+
+
+
+
+ANDROMAQVE.
+
+Non, non, je te deffends, Cephiſe, de me ſuiure.
+
+Ie confie à tes ſoins mon vnique treſor,
+
+Si tu viuois pour moy, vy pour le Fils d’Hector.
+
+De l’eſpoir des Troyens ſeule dépoſitaire,
+
+Songe à combien de Roys tu deuiens neceſſaire.
+
+Veille auprès de Pyrrhus. Fais-luy garder ſa foy.
+
+S’il le faut, je conſens que tu parles de moy,
+
+
+
+Fais-luy valoir l’hymen, où je me ſuis rangée ;
+
+Dy-luy, qu’auant ma mort je luy fus engagée,
+
+Que ſes reſſentimens doiuent eſtre effacez,
+
+Qu’en luy laiſſant mon Fils, c’eſt l’eſtimer aſſez.
+
+Fay connoiſtre à mon Fils les Heros de ſa Race ;
+
+Autant que tu pourras, conduy-le ſur leur trace.
+
+Dy-luy, par quels exploits leurs noms ont éclaté,
+
+Plûtoſt ce qu’ils ont fait que ce qu’ils ont eſté.
+
+Parle luy tous les jours des Vertus de ſon Pere,
+
+Et quelquefois auſſi parle luy de ſa Mere.
+
+Mais qu’il ne ſonge plus, Cephiſe, à nous vanger,
+
+Nous luy laiſſons vn Maiſtre, il le doit ménager ;
+
+Qu’il ait de ſes Ayeux vn ſouuenir modeſte,
+
+Il eſt du ſang d’Hector, mais il en eſt le reſte.
+
+Et pour ce reſte enfin j’ay moy-meſme en vn jour
+
+Sacrifié mon ſang, ma haine, & mon amour.
+
+
+
+
+
+CEPHISE.
+
+Helas !
+
+
+
+
+
+ANDROMAQVE.
+
+Ne me ſuis point, ſi ton cœur en allarmes
+
+Preuoit qu’il ne pourra commander à tes larmes,
+
+On vient. Cache tes pleurs, Cephiſe, & ſouuiens-toy
+
+Que le ſort d’Andromaque eſt commis à ta foy.
+
+C’eſt Hermionne. Allons, fuyons ſa violence.
+
+
+
+
+
+Scène II.
+
+
+
+
+HERMIONNE, CLEONNE.
+
+
+
+
+
+CLEONNE.
+
+
+
+
+
+N
+
+
+
+on, je ne puis aſſez admirer ce ſilence.
+
+Vous vous taiſez, Madame, & ce cruel mépris
+
+N’a pas du moindre trouble agité vos eſprits ?
+
+Vous ſouſtenez en paix vne ſi rude attaque ?
+
+Vous qu’on voyoit fremir au ſeul nom d’Andromaque ?
+
+Vous qui ſans deſeſpoir ne pouuiez endurer
+
+Que Pyrrhus d’vn regard la vouluſt honorer ?
+
+Il l’épouſe. Il luy donne ayec ſon Diadême
+
+La foy, que vous venez de receuoir vous-même ;
+
+Et voſtre bouche encor muette à tant d’ennuy,
+
+N’a pas daigné s’ouurir pour ſe plaindre de luy ?
+
+Ah ! que je crains, Madame, vn calme ſi funeſte !
+
+Et qu’il vaudroit bien mieux…
+
+
+
+
+
+HERMIONNE.
+
+Fais-tu venir Oreſte !
+
+
+
+
+
+CLEONNE.
+
+Il vient, Madame, il vient. Et vous pouuez juger,
+
+Que bien-toſt à vos pieds il alloit ſe ranger.
+
+Preſt à ſeruir toûjours ſans eſpoir de ſalaire,
+
+Vos yeux ne sont que trop aſſurez de luy plaire.
+
+Mais il entre.
+
+
+
+
+
+Scène III.
+
+
+
+
+ORESTE, HERMIONNE, CLEONNE.
+
+
+
+
+
+ORESTE.
+
+
+
+
+
+A
+
+
+
+h Madame ? Eſt-il vray qu’vne fois
+
+Oreſte en vous cherchant obeïſſe à vos lois ?
+
+Ne m’a-t-on point flatté d’vne fauſſe eſperance ?
+
+Auez-vous en effet ſouhaitté ma preſence ?
+
+Croiray-je que vos yeux à la fin déſarmez,
+
+Veulent…
+
+
+
+
+
+HERMIONNE.
+
+Ie veux ſçauoir, Seigneur, ſi vous m’aimez.
+
+
+
+
+
+ORESTE.
+
+Si je vous aime ? Ô Dieux ! mes ſerments, mes parjures,
+
+Ma fuite, mon retour, mes reſpects, mes injures,
+
+Mon deſeſpoir, mes yeux de pleurs toûjours noyez,
+
+Quels témoins croirez-vous, ſi vous ne les croyez ?
+
+
+
+
+
+HERMIONNE.
+
+Vangez-moy, je croy tout.
+
+
+
+
+
+ORESTE.
+
+Hé bien allons, Madame :
+
+Mettons encore vn coup toute la Grece en flame.
+
+Prenons, en ſignalant mon bras, & voſtre nom,
+
+Vous la place d’Helene, & moi d’Agamemnon.
+
+De Troye en ce pays réueillons les miſeres,
+
+Et qu’on parle de nous, ainſi que de nos Peres.
+
+Partons, je ſuis tout preſt.
+
+
+
+
+
+HERMIONNE.
+
+Non, Seigneur, demeurons,
+
+Ie ne veux pas ſi loin porter de tels affrons.
+
+Quoy de mes ennemis couronnant l’inſolence,
+
+I’irois attendre ailleurs vne lente vengeance,
+
+Et je m’en remettrois au deſtin des combats,
+
+Qui peut-eſtre à la fin ne me vangeroit pas ?
+
+Ie veux qu’à mon départ toute l’Epire pleure.
+
+Mais ſi vous me vangez, vangez-moy dãs vne heure.
+
+Tous vos retardemens ſont pour moy des refus,
+
+Courez au temple. Il faut immoler…
+
+
+
+
+
+ORESTE.
+
+Qui ?
+
+
+
+
+
+HERMIONNE.
+
+Pyrrhus.
+
+
+
+
+
+ORESTE.
+
+Pyrrhus, Madame ?
+
+
+
+
+
+HERMIONNE.
+
+Hé ! quoy ? voſtre haine chancelle ?
+
+Ah ! courez, & craignez que je ne vous rappelle.
+
+N’alleguez point des droits que je veux oublier.
+
+Et ce n’eſt pas à vous à le juſtifier.
+
+
+
+
+
+ORESTE.
+
+Moy, je l’excuserois ? Ah ! vos bontez, Madame,
+
+Ont graué trop auant ſes crimes dans mon ame.
+
+Vangeons-nous, j’y conſens. Mais par d’autres chemins.
+
+Soyons ſes Ennemis, & non ſes Aſſaſſins.
+
+Faiſons de ſa ruine vne juſte Conqueſte.
+
+Quoy pour réponſe aux Grecs porteray-je ſa teſte ?
+
+Et n’ay-je pris ſur moy le ſoin de tout l’Eſtat,
+
+Que pour m’en acquitter par vn Aſſaſſinat ?
+
+Souffrez, au nom des Dieux, que la Grece s’explique.
+
+Et qu’il meure chargé de la haine publique.
+
+Souuenez-vous qu’il regne, & qu’vn front couronné…
+
+
+
+
+
+HERMIONNE.
+
+Ne vous ſuffit-il pas que je l’ay condamné ?
+
+Ne vous ſuffit-il pas que ma Gloire offenſée
+
+Demande vne Victime à moy ſeule adreſſée ;
+
+Qu’Hermionne eſt le prix d’vn Tyran opprimé,
+
+Que je le hais, enfin, Seigneur, que je l’aimay ?
+
+Ie ne m’en cache point. L’ingrat m’auoit ſçeu plaire,
+
+Soit qu’ainſi l’ordonnaſt mon amour, ou mon Pere,
+
+N’importe. Mais enfin reglez-vous là-deſſus.
+
+Malgré mes vœux, Seigneur, honteuſement deceûs,
+
+
+
+Malgré la juſte horreur que ſon crime me donne,
+
+Tant qu’il viura, craignez que je ne luy pardonne.
+
+Doutez juſqu’à ſa mort d’vn courroux incertain,
+
+S’il ne meurt aujourd’huy, je puis l’aimer demain.
+
+
+
+
+
+ORESTE.
+
+Hé bien, il faut le perdre, & préuenir ſa grace.
+
+Il faut… Mais cependant que faut-il que je faſſe ?
+
+Comment puis-je ſi-toſt ſeruir voſtre courroux ?
+
+Quel chemin iuſà luy peut conduire mes coups ?
+
+À peine ſuis-je encore arriué dans l’Epire,
+
+Vous voulez par mes mains renuerſer vn Empire.
+
+Vous voulez qu’vn Roy meure, & pour ſon chaſtiment,
+
+Vous ne donnez qu’vn jour, qu’vne heure, qu’vn moment.
+
+Aux yeux de tout ſon Peuple il faut que je l’opprime ?
+
+Laiſſez-moy vers l’Autel conduire ma Victime.
+
+Ie ne m’en défens plus. Et je ne veux qu’aller
+
+Reconnoiſtre la place où je dois l’immoler.
+
+Cette Nuit je vous ſers. Cette Nuit je l’attaque.
+
+
+
+
+
+HERMIONNE.
+
+Mais cependant ce Iour il épouſe Andromaque.
+
+Dans le Temple déja le trône eſt éleué.
+
+Ma honte eſt confirmée, & ſon Crime acheué.
+
+Enfin qu’attendez-vous ? Il vous offre ſa Teſte.
+
+Sans Gardes, ſans défenſe il marche à cette Feſte.
+
+Autour du Fils d’Hector il les fait tous ranger.
+
+Il s’abandonne au bras qui me voudra vanger.
+
+Voulez-vous, malgré luy, prendre ſoin de ſa vie ?
+
+Armez auec vos Grecs, tous ceux qui m’ont ſuivie.
+
+Souleuez vos Amis. Tous les miens ſont à vous.
+
+Il me trahit, vous trompe, & nous mépriſe tous.
+
+
+
+Mais quoy ? Déja leur haine eſt égale à la mienne.
+
+Elle eſpargne à regret l’Eſpoux d’vne Troyenne.
+
+Parlez. Mon Ennemy ne vous peut échapper.
+
+Ou plûtoſt, il ne faut que les laiſſer frapper.
+
+Conduiſez, ou ſuiuez vne fureur ſi belle.
+
+Reuenez tout couuert du ſang de l’Infidelle.
+
+Allez, en cet eſtat ſoyez ſeûr de mon cœur.
+
+
+
+
+
+ORESTE.
+
+Mais, Madame, ſongez…
+
+
+
+
+
+HERMIONNE.
+
+Ah ! c’en eſt trop, Seigneur.
+
+Tant de raiſonnemens offenſent ma colere.
+
+I’ay voulu vous donner les moyens de me plaire,
+
+Rendre Oreſte content. Mais enfin je voy bien,
+
+Qu’il veut touſiours ſe plaindre, & ne meriter rien.
+
+Partez. Allez ailleurs vanter voſtre conſtance,
+
+Et me laiſſez icy le ſoin de ma vangeance.
+
+De mes laſches bontez mon courage eſt confus,
+
+Et c’eſt trop en vn jour eſſuyer de refus.
+
+Ie m’en vais ſeule au Temple, où leur hymen s’apreſte,
+
+Où vous n’oſez aller meriter ma conqueſte.
+
+Là, de mon Ennemy je ſçauray m’approcher.
+
+Ie perceray le Cœur, que je n’ay pû toucher.
+
+Et mes ſanglantes mains ſur moy-meſme tournées,
+
+Auſſi-toſt, malgré luy, joindront nos deſtinées,
+
+Et tout Ingrat qu’il eſt, il me ſera plus doux
+
+De mourir auec luy, que de viure auec vous.
+
+
+
+
+
+ORESTE.
+
+Non, je vous priueray de ce plaiſir funeſte,
+
+Madame. Il ne mourra que de la main d’Oreſte.
+
+
+
+Vos Ennemis par moy vont vous eſtre immolez.
+
+Et vous reconnoiſtrez mes ſoins, ſi vous voulez.
+
+Mais que dis-je ? Ah plûtoſt ! permettez que j’eſpere.
+
+Excuſez vn Amant, que trouble ſa miſere,
+
+Qui tout preſt d’eſtre heureux, enuie encor le ſort
+
+D’vn Ingrat, condamné par vous-meſme à la mort.
+
+
+
+
+
+HERMIONNE.
+
+Allez. De voſtre ſort laiſſez-moy la conduite.
+
+Et que tous vos Vaiſſeaux ſoient preſts pour noſtre fuite.
+
+
+
+
+
+Scène IV.
+
+
+
+
+HERMIONNE, CLEONNE.
+
+
+
+
+
+CLEONNE.
+
+
+
+
+
+V
+
+
+
+ous vous perdez, Madame. Et vous deuez ſonger…
+
+
+
+
+
+HERMIONNE.
+
+Que je me perde, ou non, je ſonge à me vanger.
+
+Ie ne ſçay meſme encor, quoy qu’il m’ait pû promettre,
+
+Sur d’autres que ſur moy, ſi je doy m’en remettre.
+
+Pyrrhus n’eſt pas coupable à ſes yeux comme aux miens,
+
+Et je tiendrois mes coups bien plus ſeûrs que les ſiens.
+
+Quel plaiſir de vanger moy-meſme mon injure !
+
+De retirer mon bras teint du ſang du Parjure,
+
+Et pour rendre ſa peine & mes plaiſirs plus grands,
+
+De cacher ma Riuale à ſes regards mourans.
+
+Ah ! ſi du moins Oreſte, en puniſſant ſon crime,
+
+Luy laiſſoit le regret de mourir ma Victime.
+
+Va le trouuer. Dy-luy qu’il apprenne à l’Ingrat,
+
+Qu’on l’immole à ma haine, & non pas à l’Eſtat.
+
+Chere Cleonne cours. Ma vangeance eſt perduë,
+
+S’il ignore, en mourant, que c’eſt moy qui le tuë.
+
+
+
+
+
+CLEONNE.
+
+Ie vous obeïray. Mais qu’eſt-ce que ie voy ?
+
+Ô Dieux ! Qui l’auroit crû, Madame ? C’eſt le Roy.
+
+
+
+
+
+HERMIONNE.
+
+Ah ! cours aprers Oreſte, & dy-luy, ma Cleonne,
+
+Qu’il n’entreprenne rien ſans reuoir Hermionne.
+
+
+
+
+
+Scène V.
+
+
+
+
+PYRRHVS, HERMIONNE, PHOENIX.
+
+
+
+
+
+PYRRHVS.
+
+
+
+
+
+V
+
+
+
+ous ne m’attendiez pas, Madame, & ie voy bien
+
+Que mon abord icy trouble voſtre entretien.
+
+Ie ne viens point armé d’vn indigne artifice
+
+D’vn voile d’équité couurir mon injuſtice.
+
+Il ſuffit, que mon cœur me condamne tout bas,
+
+Et ie ſoûtiendrois mal ce que ie ne croy pas.
+
+I’épouſe vne Troyenne. Oüy, Madame, & j’auouë
+
+Que ie vous ay promis la foy, que ie luy vouë.
+
+Vn autre vous diroit, que dans les champs Troyens
+
+Nos deux Peres ſans nous formerent ces liens,
+
+Et que ſans conſulter ny mon cœur ny le voſtre.
+
+Nous fuſmes ſans amour engagez l’v à l’autre.
+
+Mais c’eſt aſſez pour moy que ie me ſois ſoûmis.
+
+Par mes Ambaſſadeurs mon cœur vous fut promis.
+
+Loin de les reuoquer, ie voulus y ſouſcrire.
+
+Ie vous vis auec eux arriuer en Epire.
+
+Et quoy que d’vn autre œil l’éclat victorieux
+
+Euſt déja préuenu le pouuoir de vos yeux ;
+
+Ie ne m’arreſtay point à cette ardeur nouuelle.
+
+Ie voulus m’obſtiner à vous eſtre fidelle.
+
+Ie vous receûs en Reine, & iuſques à ce jour,
+
+I’ay cru que mes ſermens me tiendroient lieu d’amour.
+
+
+
+Mais cét amour l’emporte. Et par vn coup funeſte,
+
+Andromaque m’arrache vn cœur qu’elle déteſte.
+
+L’vn par l’autre entraiſnés, nous courons à l’Autel
+
+Nous jurer, malgré nous, vn amour immortel.
+
+Apres cela, Madame, éclatez contre vn Traiſtre,
+
+Qui l’eſt auec douleur, & qui pourtant veut l’eſtre.
+
+Pour moy, loin de contraindre vn ſi iuſte courroux,
+
+Il me ſoulagera peut-eſtre autant que vous.
+
+Donnez-moy tous les noms deſtinez aux Parjures.
+
+Ie crains voſtre ſilence, & non pas vos injures,
+
+Et mon Cœur ſouleuant mille ſecrets teſmoins,
+
+M’en dira d’autant plus que vous m’en direz moins.
+
+
+
+
+
+HERMIONNE.
+
+Seigneur, dans cét aueu deſpoüillé d’artifice,
+
+I’aime à voir que du moins vous vous rendiez juſtice,
+
+Et que voulant bien rompre vn nœud ſi ſolennel,
+
+Vous vous abandonniez au crime en criminel.
+
+Eſt-il juſte apres tout, qu’vn Conquerant s’abaiſſe
+
+Sous la ſeruile loy de garder ſa promeſſe ?
+
+Non, non, la Perfidie a dequoy vous tenter.
+
+Et vous ne me cherchez que pour vous en vanter.
+
+Quoy ? Sans que ny ſerment, ny deuoir vous retienne,
+
+Rechercher vne Grecque, Amant d’vne Troyenne ?
+
+Me quitter, me reprendre, & retourner encor
+
+De la Fille d’Helene, à la Veuue d’Hector ?
+
+Couronner tour à tour l’Eſclaue, & la Princeſſe,
+
+Immoler Troye aux Grecs, au Fils d’Hector la Grece ?
+
+Tout cela part d’vn cœur touſiours maiſtre de ſoy,
+
+D’vn Heros qui n’eſt point Eſclaue de ſa foy.
+
+
+
+Pour plaire à voſtre Eſpouſe, il vous faudroit peut-eſtre
+
+Prodiguer les doux noms de Parjure, & de Traiſtre.
+
+Voſtre grand cœur ſans doute attend apres mes pleurs,
+
+Pour aller dans ſes bras joüir de mes douleurs ?
+
+Chargé de tant d’honneur il veut qu’on le renuoye ?
+
+Mais, Seigneur, en vn iour ce ſeroit trop de joye.
+
+Et ſans chercher ailleurs des titres empruntez,
+
+Ne vous ſuffit-il pas de ceux que vous portez ?
+
+Du vieux Pere d’Hector la valeur abbattuë
+
+Aux pieds de ſa Famille expirante à ſa veuë,
+
+Tandis que dans ſon ſein voſtre bras enfoncé
+
+Cherche vn reſte de ſang que l’âge auoit glacé ;
+
+Dans des ruiſſeaux de ſang Troye ardante plongée,
+
+De voſtre propre main Polyxene eſgorgée
+
+Aux yeux de tous les Grecs indignez contre vous,
+
+Que peut-on refuſer à ces genereux coups ?
+
+
+
+
+
+PYRRHVS.
+
+Madame, ie ſçay trop, â quel excez de rage
+
+L’ardeur de vous vanger emporta mon courage.
+
+Ie puis me plaindre à vous du ſang que i’ay verſé,
+
+Mais enfin ie conſens d’oublier le paſſé.
+
+Ie rends graces au Ciel, que voſtre indifference
+
+De mes heureux ſoûpirs m’aprenne l’innocence.
+
+Mon cœur, ie le voy bien, trop prompt à ſe geſner,
+
+Deuoit mieux vous cõnoiſtre, & mieux s’examiner.
+
+Mes remords vous faiſoient vne injure mortelle,
+
+Il faut ſe croire aimé, pour ſe croire infidelle.
+
+Vous ne prétendiez point m’arreſter dans vos fers.
+
+I’ay craint de vous trahir, peut-eſtre ie vous ſers.
+
+Nos Vœurs n’eſtoient point faits dépendans l’vn de l’autre.
+
+Ie ſuivois mon deuoir, & vous cediez au voſtre.
+
+
+
+Rien ne vous engageoit à m’aimer en effet.
+
+
+
+
+
+HERMIONNE.
+
+Ie ne t’ay point aimé, Cruel ? Qu’ay-je donc fait ?
+
+I’ay deſdaigné pour toy les vœux de tous nos Princes,
+
+Ie t’ay cherché moy-meſme au fond de tes Prouinces.
+
+I’y ſuis encor, malgré tes infidélitez,
+
+Et malgré tous mes Grecs honteux de mes bontez.
+
+Ie leur ay commandé de cacher mon injure,
+
+I’attendois en ſecret le retour d’vn Parjure,
+
+I’ay creu que toſt ou tard à ton deuoir rendu,
+
+Tu me rapporterois vn Cœur qui m’eſtoit dû.
+
+Ie t’aimois inconſtant, qu’aurois-je fait fidelle ?
+
+Et meſme en ce moment, où ta bouche cruelle
+
+Vient ſi tranquillement m’annoncer le treſpas,
+
+Ingrat, ie doute encor, ſi ie ne t’aime pas.
+
+Mais, Seigneur, s’il le faut, ſi le Ciel en colere
+
+Réſerue à d’autres yeux la gloire de vous plaire,
+
+Acheuez voſtre hymen, j’y conſens. Mais du moins
+
+Ne forcez pas mes yeux d’en eſtre les teſmoins.
+
+Pour la derniere fois ie vous parle peut-eſtre,
+
+Differez-le d’vn iour, demain vous ſerez maiſtre.
+
+Vous ne reſpondez point. Perfide, ie le voy,
+
+Tu contes les momens que tu perds auec moy.
+
+Ton cœur impatient de reuoir ſa Troyenne,
+
+Ne ſouffre qu’à regret qu’vn autre t’entretienne,
+
+Tu luy parles du cœur, tu la cherches des yeux.
+
+Ie ne te retiens plus, ſauve-toy de ces lieux.
+
+Va luy jurer la foy, que tu m’auois jurée,
+
+Va profaner des Dieux la Majeſté ſacrée.
+
+Ces Dieux, ces juſtes Dieux n’auront pas oublié,
+
+Que les meſmes ſermens auec moy t’ont lié.
+
+
+
+Porte aux pieds des Autels ce Cœur qui m’abandonne.
+
+Va, cours. Mais crains encor d’y trouver Hermionne.
+
+
+
+
+
+Scène VI.
+
+
+
+
+PYRRHVS, PHOENIX.
+
+
+
+
+
+PHOENIX.
+
+
+
+
+
+S
+
+
+
+eigneur, vous l’entendez. Gardez de négliger
+
+Vne Amante en fureur, qui cherche à ſe vanger.
+
+Elle n’eſt en ces lieux que trop bien appuyée,
+
+La querelle des Grecs à la ſienne eſt liée.
+
+Oreſte l’aime encore. Et peut-eſtre à ce prix…
+
+
+
+
+
+PYRRHVS.
+
+Andromaque m’attend. Phœnix, garde ſon Fils.
+
+
+
+
+
+Fin du quatriéme Acte.
+
+
+
+
+
+* * *
+
+
+
+
+
+ACTE V.
+
+
+
+
+
+Scène première.
+
+
+
+
+
+HERMIONNE, ſeule.
+
+
+
+
+
+O
+
+
+
+v ſuis-je ? Qu’ay-je fait ? Que dois-je faire encore ?
+
+Quel tranſport me ſaiſit ? Quel chagrin me deuore ?
+
+Errante, & ſans deſſein, ie cours dans ce Palais.
+
+Ah ! ne puis-je ſçavoir ſi j’aime, ou ſi ie hais !
+
+Le Cruel ! De quel œil il m’a congédiée ?
+
+Sans pitié, ſans douleur, au moins eſtudiée.
+
+Ay-je veû ſes regards ſe troubler vn moment ?
+
+En ay-je pû tirer vn ſeul gemiſſement ?
+
+Muet a mes ſoupirs, tranquille à mes allarmes,
+
+Sembloit-il ſeulement qu’il euſt part à mes larmes ?
+
+Et ie le plains encore ? Et pour comble d’ennuy
+
+Mon cœur, mon laſche cœur s’intereſſe pour luy ?
+
+Ie tremble au ſeul penſer du coup qui le menaſſe ?
+
+Et preſte à me vanger ie luy fais déja grace ?
+
+Non, ne reuoquons point l’arreſt de mon courroux.
+
+Qu’il periſſe. Auſſi bien il ne vit plus pour nous.
+
+
+
+Le Perfide triomphe, & ſe rit de ma rage.
+
+Il penſe voir en pleurs diſſiper cét orage.
+
+Il croit que touſiours foible, & d’vn cœur incertain,
+
+Ie pareray d’vn bras les coups de l’autre main.
+
+Il juge encor de moy par mes bontez paſſées.
+
+Mais plûtoſt le Perfide a bien d’autres penſées.
+
+Triomphant dans le Temple, il ne s’informe pas
+
+Si l’on ſouhaite ailleurs ſa vie ou ſon treſpas.
+
+Il me laiſſe, l’Ingrat ! cet embarras funeſte.
+
+Non, non, encore vn coup, laiſſons agir Oreſte.
+
+Qu’il meure, puis qu’enfin il a dû le preuoir,
+
+Et puis qu’il m’a forcée enfin à le vouloir.
+
+À le vouloir ? Hé quoy ? C’eſt donc moy qui l’ordonne ?
+
+Sa Mort ſera l’effet de l’amour d’Hermionne ?
+
+Ce Prince, dont mon cœur ſe faiſoit autrefois,
+
+Auec tant de plaiſir, redire les Exploits,
+
+À qui meſme en ſecret ie m’eſtois deſtinée,
+
+Auant qu’on euſt conclu ce fatal hymenée,
+
+Ie n’ay donc trauerſé tant de mers, tant d’Eſtats,
+
+Que pour venir ſi loin preparer ſon treſpas,
+
+L’aſſaſſiner, le perdre ? Ah deuant qu’il expire…
+
+
+
+
+
+Scène II.
+
+
+
+
+HERMIONNE, CLEONNE.
+
+
+
+
+
+HERMIONNE.
+
+
+
+
+
+A
+
+
+
+h ! qu’ay-je fait, Cleonne ? Et que viens-tu me dire ?
+
+Que fait Pyrrhus ?
+
+
+
+
+
+CLEONNE.
+
+Il est au comble de ſes vœux,
+
+Le plus fier des Mortels, & le plus amoureux.
+
+Ie l’ay veû vers le Temple, où ſon hymen s’apreſte,
+
+Mener en Conquerant ſa nouuelle Conqueſte,
+
+Et d’vn œil qui déja déuoroit ſon eſpoir,
+
+S’enyurer, en marchant, du plaiſir de la voir.
+
+Andromaque, au trauers de mille cris de joye,
+
+Porte iuſqu’aux Autels le ſouuenir de Troye,
+
+Incapable touſiours d’aimer, & de haïr,
+
+Sans joy, & ſans murmure elle ſemble obeïr.
+
+
+
+
+
+HERMIONNE.
+
+Et l’Ingrat ? Iuſqu’au bout il a pouſſé l’outrage ?
+
+Mais as-tu bien, Cleonne, obſerué ſon viſage ?
+
+Gouſte-t’il des plaiſirs tranquilles & parfaits ?
+
+N’a-t’il point détourné ſes yeux vers le Palais ?
+
+
+
+Dy-moy, ne t’es-tu point preſentée à ſa veuë ?
+
+L’Ingrat a-t’il rougy, lors qu’il t’a reconnuë ?
+
+Son trouble auoüoit-il ſon infidélité ?
+
+A-t’il iuſqu’à la fin ſoûtenu ſa fierté ?
+
+
+
+
+
+CLEONNE.
+
+Madame, il ne voit rien. Son ſalut, & ſa gloire
+
+Semble eſtre auec vous ſortis de ſa memoire.
+
+Sans ſonger qui le ſuit, Ennemis, ou Sujets.
+
+Il pourſuit ſeulement ſes amoureux projets.
+
+Autour du Fils d’Hector il a rangé ſa Garde,
+
+Et croit que c’eſt luy ſeul que le peril regarde.
+
+Phœnix meſme en reſpond, qui l’a conduit exprés
+
+Dans vn Fort éloigné du Temple, & du Palais.
+
+Voila, dans ſes transports, le ſeul ſoin qui luy reſte.
+
+
+
+
+
+HERMIONNE.
+
+Le Perfide ! Il mourra. Mais que t’a dit Oreſte ?
+
+
+
+
+
+CLEONNE.
+
+Oreſte, auec ſes Grecs, dans le Temple eſt entré.
+
+
+
+
+
+HERMIONNE.
+
+Hé bien ? À me vanger n’eſt-il pas preparé ?
+
+
+
+
+
+CLEONNE.
+
+Ie ne ſçay.
+
+
+
+
+
+HERMIONNE.
+
+Tu ne ſçais ? Quoy donc Oreſte encore,
+
+Oreſte me trahit ?
+
+
+
+
+
+CLEONNE.
+
+Oreſte vous adore.
+
+
+
+Mais de mille remords ſon eſprit combattu
+
+Croit tantoſt ſon amour, & tantoſt ſa vertu.
+
+Il reſpecte en Pyrrhus l’honneur du diadéme.
+
+Il reſpecte en Pyrrhus Achille, & Pyrrhus meſme.
+
+Il craint les Grecs, il craint l’Vnivers en courroux.
+
+Mais il ſe craint, dit-il, ſoy-meſme plus que tous.
+
+Il voudroit en Vainqueur vous apporter ſa teſte.
+
+Le ſeul nom d’Aſſaſſin l’épouuante & l’arreſte.
+
+Enfin il eſt entré, ſans ſçauoir dans ſon cœur
+
+S’il en deuoit ſortir Coupable, ou Spectateur.
+
+
+
+
+
+HERMIONNE.
+
+Non, non, il les verra triompher ſans obſtacle,
+
+Il ſe gardera bien de troubler ce ſpectacle.
+
+Ie ſçay de quels remords ſon courage eſt atteint.
+
+Le laſche craint la mort, & c’eſt tout ce qu’il craint.
+
+Quoy ? ſans qu’elle employaſt vne ſeule priere,
+
+Ma Mere en ſa faueur arma la Grece entiere ?
+
+Ses yeux pour leur querelle, en dix ans de combats,
+
+Virent périr vingt Rois, qu’ils ne connoiſſoient pas ?
+
+Et moy je ne prétens que la mort d’vn Parjure,
+
+Et ie charge vn Amant du ſoin de mon injure,
+
+Il peut me conquerir à ce prix, ſans danger,
+
+Ie me liure moy-meſme, & ne puis me vanger ?
+
+Allons. C’eſt à moy ſeule, à me rendre juſtice.
+
+Que de cris de douleur le Temple retentiſſe.
+
+De leur hymen fatal troublons l’euenement,
+
+Et qu’ils ne ſoient vnis, s’il ſe peut, qu’vn moment.
+
+Ie ne choisiray point dans ce deſordre extréme.
+
+Tout me ſera Pyrrhus, fuſt-ce Oreſte luy-meſme,
+
+Ie mourray. Mais au moins ma mort me vangera,
+
+Ie ne mourray pas ſeule, & quelqu’vn me ſuiura.
+
+
+
+
+
+Scène III.
+
+
+
+
+ORESTE, ANDROMAQVE, HERMIONNE, CLEONNE, CEPHISE, Soldats d’ORESTE.
+
+
+
+
+
+ORESTE.
+
+
+
+
+
+M
+
+
+
+adame, c’en eſt fait. Partons en diligence.
+
+Venez dans mes vaiſſeaux goûter voſtre vangeance.
+
+Voyez cette Captiue. Elle peut mieux que moy
+
+Vous apprendre qu’Oreſte a dégagé ſa foy.
+
+
+
+
+
+HERMIONNE.
+
+Ô Dieux ! C’eſt Andromaque ?
+
+
+
+
+
+ANDROMAQVE.
+
+Oüy, c’est cette Princeſſe
+
+Deux fois Veuue, & deux fois l’Eſclaue de la Grece,
+
+Mais qui juſque dans Sparte ira vous brauer tous,
+
+Puis qu’elle voit ſon Fils à couuert de vos coups.
+
+Du crime de Pyrrhus complice manifeſte,
+
+I’attens ſon chaſtiment. Car je voy bien qu’Oreſte
+
+Engagé par voſtre ordre à cét aſſaſſinat,
+
+Vient de ce triſte exploit vous ceder tout l’éclat.
+
+Ie ne m’attendois pas que le Ciel en colere
+
+Puſt, ſans perdre mon Fils, accroiſtre ma miſere,
+
+Et gardaſt à mes yeux quelque ſpectacle encor
+
+Qui fiſt couler mes pleurs pour vn autre qu’Hector.
+
+
+
+Vous auez trouué ſeule vne ſanglante voye
+
+De ſuſpendre en mon cœur le ſouvenir de Troye.
+
+Plus barbare aujourd’huy qu’Achille & que ſon Fils,
+
+Vous me faites pleurer mes plus grands Ennemis ;
+
+Et ce que n’auoient pû promeſſe, ny menaſſe,
+
+Pyrrhus de mon Hector ſemble auoir pris la place.
+
+Ie n’ay que trop, Madame, éprouué ſon courroux,
+
+I’aurois plus de ſujet de m’en plaindre que vous.
+
+Pour derniere rigueur, ton amitié cruelle,
+
+Pyrrhus, à mon Epoux me rendoit infidelle.
+
+Ie t’en allois punir. Mais le Ciel m’eſt témoin,
+
+Que je ne pouſſois pas ma vangeance ſi loin,
+
+Et ſans verſer ton ſang, ny cauſer tant d’allarmes,
+
+Il ne t’en euſt couſté peut-eſtre que des larmes.
+
+
+
+
+
+HERMIONNE.
+
+Quoy ? Pyrrhus eſt donc mort !
+
+
+
+
+
+ORESTE.
+
+Oüy, nos Grecs irritez
+
+Ont laué dans ſon sang ſes infidelitez.
+
+Ie vous l’auois promis. Et quoy que mon courage
+
+Se fiſt de ce complot vne funeſte image,
+
+I’ay couru vers le Temple, où nos Grecs diſperſez
+
+Se ſont juſqu’à l’Autel dans la foule gliſſez.
+
+Pyrrhus m’a reconnu. Mais ſans changer de face,
+
+Il ſembloit que ma veuë excitaſt ſon audace,
+
+Que tous les Grecs brauez en leur Ambaſſadeur
+
+Deuſſent de ſon hymen releuer la ſplendeur.
+
+Enfin auec tranſport prenant ſon diadéme,
+
+Sur le front d’Andromaque il l’a poſé luy-meſme.
+
+Ie vous donne, a-t’il dit, ma Couronne, & ma Foy ;
+
+Andromaque, regnez ſur l’Epire & ſur moy.
+
+
+
+Ie voüe à voſtre Fils vne amitié de Pere,
+
+I’en atteſte les Dieux, je le jure à ſa Mere.
+
+Pour tous mes Ennemis je declare les ſiens,
+
+Et je le reconnoy pour le Roy des Troyens.
+
+À ces mots, qui du Peuple attiroient le ſuffrage,
+
+Nos Grecs n’ont répondu que par vn cry de rage,
+
+L’Infidelle s’eſt vû par tout enuelopper,
+
+Et je n’ay pû trouuer de place pour frapper.
+
+Chacun ſe diſputoit la gloire de l’abbattre.
+
+Ie l’ay veû dans leurs mains quelque temps ſe deébattre,
+
+Tout ſanglant à leurs coups vouloir ſe dérober,
+
+Mais enfin à l’Autel il eſt allé tomber.
+
+Le Troyen eſt ſauué. Mais partons, le temps preſſe.
+
+L’Epire toſt ou tard ſatisfera la Grece :
+
+Cependant j’ay voulu qu’Andromaque aujourd’huy
+
+Honnoraſt mon triomphe, & répondît de luy.
+
+Du Peuple épouuanté la foule fugitiue
+
+M’a laiſſé ſans obstacle enleuer ma Captiue,
+
+Et regagner ces lieux, où bien-toſt nos Amis
+
+Viendront couuerts du ſang, que je vous ay promis.
+
+
+
+
+
+HERMIONNE.
+
+Qu’ont-ils fait !
+
+
+
+
+
+ORESTE.
+
+Pardonnez à leur impatience,
+
+Ils ont, je le voy bien, trahy voſtre vangeance.
+
+Vous vouliez que ma main portaſt les premiers coups,
+
+Qu’il ſentiſt en mourant qu’il expiroit pour vous.
+
+Mais c’eſt moy, dont l’ardeur leur a ſeruy d’exemple,
+
+Ie les ay pour vous ſeule entraînez dans le Temple,
+
+
+
+Madame, & vous pouuez juſtement vous flatter
+
+D’vne mort que les Grecs n’ont fait qu’executer.
+
+Vous ſeule auez pouſſé les coups…
+
+
+
+
+
+HERMIONNE.
+
+Tay-toy, Perfide,
+
+Et n’impute qu’à toy ton laſche Parricide.
+
+Va faire chez tes Grecs admirer ta fureur,
+
+Va, je la deſauouë, & tu me fais horreur.
+
+Barbare qu’as-tu fait ? auec quelle furie
+
+As-tu tranché le cours d’vne ſi belle vie ?
+
+Auez-vous pû, Cruels, l’immoler aujourd’huy,
+
+Sans que tout voſtre ſang ſe ſoûleuaſt pour luyi ?
+
+Mais parle. De ſon sort qui t’a rendu l’arbitre ?
+
+Pourquoy l’aſſaſſiner ? Qu’a-t-il fait ? À quel titre ?
+
+Qui te l’a dit ?
+
+
+
+
+
+ORESTE.
+
+Ô Dieux ! Quoy ne m’auez-vous pas
+
+Vous-meſme, icy, tantoſt, ordonné ſon trépas ?
+
+
+
+
+
+HERMIONNE.
+
+Ah ! Falloit-il en croire vne Amante inſenſée ?
+
+Ne deuois-tu pas lire au fond de ma penſée ?
+
+Et ne voyois-tu pas, dans mes emportemens,
+
+Que mon cœur démentoit ma bouche à tous momens ?
+
+Quand je l’aurois voulu, falloit-il y ſouſcrire ?
+
+N’as-tu pas dû cent fois te le faire redire,
+
+Toy-meſme auant le coup me venir conſulter,
+
+Y reuenir encore, ou plûtoſt m’éuiter ?
+
+Que ne me laiſſois-tu le ſoin de ma vangeance ?
+
+Qui t’ameine en des lieux, où l’on fuit ta preſence ?
+
+
+
+Voila de ton amour le deteſtable fruit.
+
+Tu m’apportois, Cruel, le malheur qui te ſuit.
+
+C’eſt toy, dont l’Ambaſſade à tous les deux fatale,
+
+L’a fait pour ſon malheur pancher vers ma Riuale ;
+
+Nous le verrions encor nous partager ſes ſoins,
+
+Il m’aimeroit peut-eſtre, il le feindroit du moins.
+
+Adieu. Tu peux partir. Ie demeure en Epire,
+
+Ie renonce à la Grece, à Sparte, à ſon Empire,
+
+À toute ma Famille. Et c’eſt aſſez pour moy,
+
+Traiſtre, qu’elle ait produit vn monstre comme toy.
+
+Allons, Madame, allons. C’eſt moy qui vous déliure.
+
+Pyrrhus ainſi l’ordonne, & vous pouuez me ſuiure.
+
+De nos derniers deuoirs allons nous dégager.
+
+Montrons qui de nous deux ſçaura mieux le vanger.
+
+
+
+
+
+Scène IV.
+
+
+
+
+ORESTE, Soldats d’Oreſte.
+
+
+
+
+
+ORESTE.
+
+
+
+
+
+Q
+
+
+
+ve voy-je ? Eſt-ce Hermionne ? Et que viens-je d’entendre ?
+
+Pour qui coule le ſang que ie viens de répandre ?
+
+Ie ſuis, ſi ie l’en crois, vn Traiſtre, vn Aſſaſſin.
+
+Eſt-ce Pyrrhus qui meurt ? & ſuis-je Oreſte enfin ?
+
+Quoy ? j’étouffe en mon cœur la raiſon qui m’éclaire.
+
+I’aſſaſſine à regret vn Roy que je reuere.
+
+Ie viole en vn jour les droits des Souuerains,
+
+Ceux des Ambaſſadeurs, & tous ceux des Humains,
+
+Ceux meſme des Autels où ma fureur l’aſſiege.
+
+Ie deviens Parricide, Aſſaſſin, Sacrilege.
+
+Pour qui ? Pour vne Ingrate, à qui ie le promets,
+
+Qui meſme, s’il ne meurt, ne me verra jamais,
+
+Dont j’épouſe la rage. Et quand ie l’ay ſeruie,
+
+Elle me redemande & ſon ſang & ſa vie !
+
+Elle l’aime ! & ie ſuis un monſtre furieux !
+
+Ie la voy pour jamais s’éloigner de mes yeux,
+
+Et l’Ingrate, en fuyant, me laiſſe pour ſalaire
+
+Tous les noms odieux que j’ay pris pour luy plaire.
+
+
+
+
+
+Scène V.
+
+
+
+
+ORESTE, PYLADE, Soldats d’Oreſte.
+
+
+
+
+
+PYLADE.
+
+
+
+
+
+I
+
+
+
+l faut partir, Seigneur. Sortons de ce Palais,
+
+Ou bien reſoluons nous de n’en ſortir jamais.
+
+Nos Grecs pour vn moment en défendent la Porte.
+
+Tout le Peuple aſſemblé nous pourſuit à main forte.
+
+Aux ordres d’Andromaque icy tout eſt ſoûmis,
+
+Ils la traitent en Reyne, & nous comme Ennemis.
+
+Andromaque elle meſme à Pyrrhus ſi rebelle,
+
+Luy rend tous les deuoirs d’vne Veuve fidelle,
+
+Commande qu’on le vange. Et peut-eſtre qu’encor,
+
+Elle pourſuit ſur nous la vangeance d’Hector.
+
+Allons. N’attendons pas que l’on nous enuironne,
+
+Nos Grecs nous rejoindront. Et tandis qu’Hermionne
+
+Tient encore le Peuple autour d’elle arreſté,
+
+Voilà noſtre chemin, ſortons en ſeureté.
+
+
+
+
+
+ORESTE.
+
+Non, non, c’eſt Hermionne, Amis, que ie veux ſuivre,
+
+À ſon dernier courroux, ie ne puis plus ſuruiure :
+
+
+
+Partez, j’ay fait le crime, & ie vais l’expier.
+
+
+
+
+
+PYLADE.
+
+Hermionne, Seigneur ? Il la faut oublier.
+
+Quoy touſiours l’inſtrument, & l’objet de ſa rage,
+
+Cherchez-vous chez les Morts quelque nouuel outrage ?
+
+Et parce qu’elle meurt, faut-il que vous mouriez ?
+
+
+
+
+
+ORESTE.
+
+Elle meurt ? Dieux. Qu’entens-je !
+
+
+
+
+
+PYLADE.
+
+Hé quoy ? vous l’ignoriez ?
+
+En rentrant dans ces lieux, nous l’auons rencontrée,
+
+Qui couroit vers le Temple, inquiete, égarée.
+
+Elle a trouué Pyrrhus porté ſur des Soldats,
+
+Que ſon ſang excitoit à vanger ſon trépas.
+
+Sans doute, à cét objet ſa rage s’eſt émuë.
+
+Mais du haut de la porte enfin nous l’auons veuë,
+
+Vn poignard à la main, ſur Pyrrhus ſe courber,
+
+Leuer les yeux au Ciel, ſe frapper, & tomber.
+
+
+
+
+
+ORESTE.
+
+Grace aux Dieux ! Mon mal-heur paſſe mon eſperance.
+
+Oüy, ie te louë, ô Ciel ! de ta perſeuerance.
+
+Appliqué ſans relaſche au ſoin de me punir,
+
+Au comble des douleurs tu m’as fait paruenir.
+
+
+
+Ta haine a pris plaiſir à former ma miſere,
+
+I’eſtois né, pour seruir d’exemple à ta colere,
+
+Pour eſtre du Mal-heur vn modelle accomply ;
+
+Hé bien, ie meurs content, & mon ſort eſt remply.
+
+Où ſont ces deux Amans ? Pour couronner ma joye,
+
+Dans leur ſang, dans le mien, il faut que ie me noye ;
+
+L’vn & l’autre en mourant, ie les veux regarder.
+
+Réüniſſons trois cœurs, qui n’ont pû s’accorder,
+
+Mais quelle épaiſſe nuit tout à coup m’enuironne ?
+
+De quel coſté ſortir ? D’où vient que ie friſſonne ?
+
+Quelle horeur me ſaiſit ? Grace au Ciel, j’entreuoy.
+
+Dieux ! Quels ruiſſeaux de ſang coulent autour de moy !
+
+
+
+
+
+PYLADE.
+
+Ah ! Seigneur !
+
+
+
+
+
+ORESTE.
+
+Quoy, Pyrrhus, ie te rencontre encore ?
+
+Trouueray-je partout vn Riual que j’abhorre ?
+
+Percé de tant de coups comment t’es-tu ſauué ?
+
+Tiens, tiens, voila le coup que ie t’ay reſerué.
+
+Mais que vois-je ? À mes yeux Hermionne l’embraſſe ?
+
+Elle vient l’arracher au coup qui le menaſſe ?
+
+Dieux, quels affreux regards elle jette ſur moy !
+
+Quels Démons, quels ſerpents traiſne-t’elle apres ſoy ?
+
+Hé bien, Filles d’Enfer, vos mains ſont-elles preſtes ?
+
+Pour qui ſont ces Serpens qui ſifflent ſur vos teſtes ?
+
+À qui deſtinez-vous l’appareil qui vous ſuit ?
+
+Venez-vous m’enleuer dans l’eternelle Nuit ?
+
+
+
+Venez, à vos fureurs Oreſte s’abandonne.
+
+Mais non, retirez-vous, laiſſez faire Hermionne ;
+
+L’Ingrate mieux que vous ſçaura me déchirer,
+
+Et ie luy porte enfin mon cœur à deuorer.
+
+
+
+
+
+PYLADE.
+
+Il perd le ſentiment. Amis, le temps nous preſſe,
+
+Ménageons les momens que ce tranſport nous laiſſe.
+
+Sauuons-le. Nos efforts deuiendroient impuiſſants,
+
+S’il reprenoit icy ſa rage auec ſes ſens.
+
+
+
+
+
+FIN.
+
+
+
+
+
+* * *
+
+
+
+
+
+PRIVILEGE DV ROY.
+
+
+
+
+
+L
+
+
+
+Ovis par La grace de Diev, Roy de France et de Navarre ; A nos amez & feaux Conſeillers les Gens tenans nos Cours de Parlement, Maiſtres des Requeſtes ordinaires de noſtre Hoſtel, Preuoſt de Paris, Bailliſs, Seneſchaux, leurs Lieutenans Ciuils, & autres nos Iuſticiers, & Officiers qu’il appartiendra, Salut. Noftre bien amé Iean Racine, Prieur de l’Epinay, nous a fait remonſtrer qu’il a compoſé vne Piece de Theatre, qu’il deſireroit faire imprimer, & donner au public, ſous le titre de L’Andromaque, mais il craint qu’ayant fait la dépenſe de l’impreſſion de ce Liure, d’autres n’entrepriſſent de l’imprimer à ſon prejudice, s’il n’auoit pour ce nos Lettres de Priuilege, qu’il nous a tres-humblement fait ſupplier de luy accorder. A ces cavses voulans fauorablement traiter l’Expoſant, Nous luy auons permis & accordé, permettons & accordons par ces preſentes, de faire imprimer ledit Liure, qui a pour titre L’Andromaque, par tel Libraire ou Imprimeur qu’il voudra choiſir de ceux par Nous referuez, en tel volume, marge, caractere, & autant de fois que bon luy ſemblera, pendant le temps de cinq années, à commencer du jour qu’il fera acheué d’imprimer, & le vendre & diſtribuër partout noſtre Royaume. Faiſons deffenſes à tous Libraires, Imprimeurs, ou autres, d’imprimer, faire imprimer, vendre, & diſtribuër ledit Liure ſous quelque pretexte que ce ſoit, meſme d’impreſſion étrangère, & autrement, ſans le conſentement de l’Expoſant, ou de ſes ayans cauſe, ſur peine de confiſcation des exemplaires contrefaits, quinze cens liures d’amande, dépens, dommages, & intereſts, à la charge d’en mettre deux Exemplaires en noſtre Bibliotheque publique, vn autre en noſtre Cabinet des Liures en noſtre Chaſteau du Louure, & vn autre en la Bibliotheque de noſtre tres-cher, & feal Cheualier, Chancellier de France le Sieur Seguyer, à peine de nullité des preſentes, du contenu deſquelles Nous vous mandons, & enjoignons de faire joüir l’Expoſant, & ſes ayans cauſe, pleinement & paiſiblement, ceſſant, & faiſant ceſſer tous troubles & empeſchemens au contraire. Voulons qu’en mettant au commencement, ou à la fin de chacun des Liures l’Extrait des preſentes, elles ſoient tenües pour deuëment ſignifiées, & qu’aux coppies collationnées par l’vn de nos amez, & feaux Conſeillers. & Secretaires, foy ſoit adjoûtée comme à l’original Mandons au premier noſtre Huiſſier ou Sergent faire pour l’execution des Preſentes, toutes ſignifications, deffenſes, ſaiſies, & autres actes requis & neceſſaires, ſans demander autre permiſſfion : Car tel eſt noſtre Plaiſir. Donné à Paris le vingt-huitième jour de Décembre l’an de grâce mil ſix cens ſoixante-ſept, & de noſtre regne le vingt-cinquieſme, Par le Roy en ſon Conſeil. Signé,Demalon.
+
+Et ledit ſieur Racine a cédé ſon droit de Priuilege à Theodore Girard, Marchand Libraire à Paris, ſuiuant l’accord fait entr’eux.
+
+Et ledit Girard a aſſocié audit Priuilege Thomas Iolly, & Claude Barbin, auſſi Marchands Libraires.
+
+
+
+Regiſtré ſur le Liure de la Communauté.
+
+
+
+
+
+* * *
+
+
+
+
+
+À propos de cette édition électronique
+
+
+Ce livre électronique est issu de la bibliothèque numérique Wikisource[1]. Cette bibliothèque numérique multilingue, construite par des bénévoles, a pour but de mettre à la disposition du plus grand nombre tout type de documents publiés (roman, poèmes, revues, lettres, etc.)
+
+Nous le faisons gratuitement, en ne rassemblant que des textes du domaine public ou sous licence libre. En ce qui concerne les livres sous licence libre, vous pouvez les utiliser de manière totalement libre, que ce soit pour une réutilisation non commerciale ou commerciale, en respectant les clauses de la licence Creative Commons BY-SA 3.0[2] ou, à votre convenance, celles de la licence GNU FDL[3].
+
+Wikisource est constamment à la recherche de nouveaux membres. N’hésitez pas à nous rejoindre. Malgré nos soins, une erreur a pu se glisser lors de la transcription du texte à partir du fac-similé. Vous pouvez nous signaler une erreur à cette adresse[4].
+
+Les contributeurs suivants ont permis la réalisation de ce livre :
+
+[La liste des contributeurs a été omise, comme demandé.]
+
+
+
+
+
+* * *
+
+
+
+↑ http://fr.wikisource.org
+
+↑ http://creativecommons.org/licenses/by-sa/3.0/deed.fr
+
+↑ http://www.gnu.org/copyleft/fdl.html
+
+↑ http://fr.wikisource.org/wiki/Aide:Signaler_une_erreur
+
+
+
+
+

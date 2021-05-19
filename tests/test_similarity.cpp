@@ -1,16 +1,14 @@
 #include <gtest/gtest.h>
+#include <robin_hood.h>
 
 #include <bf/all.hpp>
-// #include <filesystem>
-// #include <fstream>
-// #include <iostream>
-// #include <random>
 #include <string>
 
-#include "../src/FileIndexer.hpp"
-#include "../src/truth.hpp"
-#include "../src/utils.hpp"
-#include "../thirdparty/robinHoodHashing/src/include/robin_hood.h"  // TODO faire de beaux imports
+#include "../src/libraries/evaluation/evaluation.hpp"
+#include "../src/libraries/indexer/indexer.hpp"
+#include "../src/libraries/querier/querier.hpp"
+#include "../src/libraries/similarity/similarity.hpp"
+#include "../src/libraries/utils/utils.hpp"
 
 TEST(TestQTF, TestSimilarity) {
     robin_hood::unordered_set<std::string> truthPlusK;
@@ -28,15 +26,14 @@ TEST(TestQTF, TestSimilarity) {
     //     "data/Penicillium chrysogenum.fasta"};
 
     // std::string querySeq = extractContentFromFasta("data/Salmonella enterica.fasta");
-    const auto& [truth, filter] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
-    std::vector<bool> truthQuery = queryTruth(truth, querySeq, k);
+    const auto& [truth, filter, x, y] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
+    std::vector<bool> truthQuery = truth::queryTruth(truth, querySeq, k);
 
-    robin_hood::unordered_set<std::string> truthKPlusZ;
-    computeTruth(input_filenames, k + nbNeighboursMin, truthKPlusZ);
-    std::vector<bool> truthKPlusZQuery = queryTruth(truthKPlusZ, querySeq, k + nbNeighboursMin);
+    robin_hood::unordered_set<std::string> truthKPlusZ = truth::indexFastas(input_filenames, k + nbNeighboursMin);
+    std::vector<bool> truthKPlusZQuery = truth::queryTruth(truthKPlusZ, querySeq, k + nbNeighboursMin);
 
-    std::vector<bool> responseQTF = qtf(filter, querySeq, k, nbNeighboursMin);
-    std::vector<bool> responseQTFKPlusZ = qtfIndexKPlusZ(filter, querySeq, k, nbNeighboursMin);
+    std::vector<bool> responseQTF = QTFNoSplitKmer::query(filter, querySeq, k, nbNeighboursMin);
+    std::vector<bool> responseQTFKPlusZ = QTF::query(filter, querySeq, k + nbNeighboursMin, nbNeighboursMin);
 
     const auto& [truth_P, truth_N] = count0And1InAray(truthQuery);
     const auto& [qtf_P, qtf_N] = computeSimilarityQTFKPlusZ(filter, querySeq, k, nbNeighboursMin, epsilon_percent);
@@ -46,8 +43,8 @@ TEST(TestQTF, TestSimilarity) {
     std::cout << "qtf:           P: " << qtf_P << " ,N: " << qtf_N << std::endl;
     std::cout << "qtf_corrected: P: " << qtf_corr_P << " ,N: " << qtf_corr_N << std::endl;
 
-    printScore(getScore(truthQuery, responseQTF));
-    printScore(getScore(truthKPlusZQuery, responseQTFKPlusZ));
+    QTF_internal::printScore(QTF_internal::getScore(truthQuery, responseQTF));
+    QTF_internal::printScore(QTF_internal::getScore(truthKPlusZQuery, responseQTFKPlusZ));
     toFileTXT("truthQuery.txt", truthQuery);
     toFileTXT("responseQTF.txt", responseQTF);
     toFileTXT("truthKPlusZQuery.txt", truthKPlusZQuery);

@@ -1,16 +1,14 @@
 #include <gtest/gtest.h>
+#include <robin_hood.h>
 
 #include <bf/all.hpp>
-// #include <filesystem>
-// #include <fstream>
-// #include <iostream>
-// #include <random>
 #include <string>
 
-#include "../src/FileIndexer.hpp"
-#include "../src/truth.hpp"
-#include "../src/utils.hpp"
-#include "../thirdparty/robinHoodHashing/src/include/robin_hood.h"  // TODO faire de beaux imports
+#include "../src/libraries/evaluation/evaluation.hpp"
+#include "../src/libraries/indexer/indexer.hpp"
+#include "../src/libraries/querier/querier.hpp"
+#include "../src/libraries/similarity/similarity.hpp"
+#include "../src/libraries/utils/utils.hpp"
 
 TEST(TestBF, TestFPR) {
     robin_hood::unordered_set<std::string> truthPlusK;
@@ -22,15 +20,15 @@ TEST(TestBF, TestFPR) {
     std::string querySeq = extractContentFromFasta("data/Salmonella enterica.fasta");
 
     // create a truth and filter
-    const auto& [truth, filter] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
+    const auto& [truth, filter, x, y] = indexFastas(input_filenames, numHashes, k, epsilon_percent);
 
-    std::vector<bool> truthQuery = queryTruth(truth, querySeq, k);
-    std::vector<bool> responseQuery = query(filter, querySeq, k);
+    std::vector<bool> truthQuery = truth::queryTruth(truth, querySeq, k);
+    std::vector<bool> responseQuery = noQTF::query(filter, querySeq, k);
 
-    const auto& [TP, TN, FP, FN] = getScore(truthQuery, responseQuery);
+    const auto& [TP, TN, FP, FN] = QTF_internal::getScore(truthQuery, responseQuery);
     double fpr = (double)(100 * FP) / (double)(FP + TN);
     double fnr = (double)(100 * FN) / (double)(FN + TP);
-    // std::cout << "TP: " << TP << ", TN :" << TN << ", FP :" << FP << ", FN :" << FN << std::endl;
+
     ASSERT_LT(fpr, 5.1);
     ASSERT_GT(fpr, 4.9);
     ASSERT_EQ(fnr, 0);
