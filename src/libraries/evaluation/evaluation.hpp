@@ -41,28 +41,30 @@ inline std::tuple<int, int, int, int> getScore(const std::vector<bool>& truth, c
 inline void printContext(const unsigned long long& k, const unsigned long long& z, const double& epsilon) {
     std::cout << "    {" << std::endl;
     std::cout << "        \"param\": {" << std::endl;
-    std::cout << "            \"k\" : " << k << "," << std::endl;
-    std::cout << "            \"z\" : " << z << "," << std::endl;
-    std::cout << "            \"epsilon\" : " << epsilon << std::endl;
+    std::cout << "            \"k\": " << k << "," << std::endl;
+    std::cout << "            \"z\": " << z << "," << std::endl;
+    std::cout << "            \"epsilon\": " << epsilon << std::endl;
     std::cout << "        }," << std::endl;
 }
 
-inline void printTime(std::chrono::_V2::system_clock::time_point t0,
-                      std::chrono::_V2::system_clock::time_point t1,
-                      std::chrono::_V2::system_clock::time_point t2,
-                      std::chrono::_V2::system_clock::time_point t3,
-                      std::chrono::_V2::system_clock::time_point t4,
-                      std::chrono::_V2::system_clock::time_point t5,
-                      std::chrono::_V2::system_clock::time_point t6,
-                      std::chrono::_V2::system_clock::time_point t7,
+inline void printTime(std::chrono::system_clock::time_point t0,
+                      std::chrono::system_clock::time_point t1,
+                      std::chrono::system_clock::time_point t2,
+                      std::chrono::system_clock::time_point t3,
+                      std::chrono::system_clock::time_point t4,
+                      std::chrono::system_clock::time_point t5,
+                      std::chrono::system_clock::time_point t6,
+                      std::chrono::system_clock::time_point t7,
                       int taimeTakenByIndexingBf) {
     std::cout << "        \"time\": {" << std::endl;
-    std::cout << "            \"computeTruth\":" << std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count() << "," << std::endl;
-    std::cout << "            \"computeBf\":" << taimeTakenByIndexingBf << "," << std::endl;
-    std::cout << "            \"queryTruth\":" << std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count() << "," << std::endl;
-    std::cout << "            \"queryBf\":" << std::chrono::duration_cast<std::chrono::milliseconds>(t4 - t3).count() << std::endl;
-    std::cout << "            \"queryBfSkip\":" << std::chrono::duration_cast<std::chrono::milliseconds>(t5 - t4).count() << std::endl;
-    std::cout << "            \"queryNormalFilter\":" << std::chrono::duration_cast<std::chrono::milliseconds>(t7 - t6).count() << std::endl;
+    std::cout << "            \"computeTruth\": " << std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count() << "," << std::endl;
+    std::cout << "            \"computeBf\": " << taimeTakenByIndexingBf << "," << std::endl;
+    std::cout << "            \"queryTruth\": " << std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count() << "," << std::endl;
+    std::cout << "            \"queryBf\": " << std::chrono::duration_cast<std::chrono::milliseconds>(t4 - t3).count() << "," << std::endl;
+    ;
+    std::cout << "            \"queryBfSkip\": " << std::chrono::duration_cast<std::chrono::milliseconds>(t5 - t4).count() << "," << std::endl;
+    ;
+    std::cout << "            \"queryNormalFilter\": " << std::chrono::duration_cast<std::chrono::milliseconds>(t7 - t6).count() << std::endl;
     std::cout << "        }," << std::endl;
 }
 
@@ -72,7 +74,8 @@ inline void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN, const 
     if (sizeOfBloomFilterInBits > 0) {
         std::cout << "            \"BFSize(bits)\": " << sizeOfBloomFilterInBits << "," << std::endl;
     }
-    std::cout << "            \"TP\": " << TP << ", \"TN\":" << TN << ", \"FP\":" << FP << ", \"FN\":" << FN << "," << std::endl;
+    std::cout << "            \"TP\": " << TP << ",\n            \"TN\": " << TN << ",\n            \"FP\": " << FP << ",\n            \"FN\": " << FN << ",\n"
+              << std::endl;
     std::cout << "            \"FPR\": " << (double)(100 * FP) / (double)(FP + TN) << "," << std::endl;
     std::cout << "            \"FNR\": " << (double)(100 * FN) / (double)(FN + TP) << std::endl;
     std::cout << "        }";
