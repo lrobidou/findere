@@ -12,8 +12,8 @@ sudo apt-get install zlib # or wathever you found with apt-cache search
 ```
 
 ```
-git clone --recursive https://gitlab.inria.fr/lrobidou/qtf
-cd qtf
+git clone --recursive https://github.com/lrobidou/findere
+cd findere
 git submodule update --init --recursive
 chmod +x build.sh
 ./build.sh
