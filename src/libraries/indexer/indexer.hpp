@@ -116,19 +116,8 @@ inline robin_hood::unordered_set<std::string> indexText(std::vector<std::string>
 }  // namespace truth
 
 namespace QTF_internal {
-inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexFastasGivenTruth(const std::vector<std::string>& filenames, const robin_hood::unordered_set<std::string>& truth, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent, bool canonical = false) {
-    // number of *unique* elements to add in that filter
-    const unsigned long long n = truth.size();
-    // size (in bit) required for that filter
-    unsigned long long m = -(n / log(1 - ((double)epsilon_percent / (double)100)));
-    // oops, maybe m is not a multiple of 8
-    // this is required by most implementation of Bloom filters
-    // let's fix that
-    m = m + 8 - (m % 8);
-
-    // now that we have the size, let's index those files
-    bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), m);
-
+inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexFastasGivenBits(const std::vector<std::string>& filenames, unsigned long long bits, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent, bool canonical = false) {
+    bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), bits);
     std::string line;
     for (auto const& filename : filenames) {
         std::ifstream myfile(filename);
@@ -156,11 +145,10 @@ inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexFastasGivenT
             exit(1);
         }
     }
-
-    return {filter, m};
+    return {filter, bits};
 }
 
-inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexFastaqGZGivenTruth(const std::vector<std::string>& filenames, const robin_hood::unordered_set<std::string>& truth, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent, bool canonical = false) {
+inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexFastasGivenTruth(const std::vector<std::string>& filenames, const robin_hood::unordered_set<std::string>& truth, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent, bool canonical = false) {
     // number of *unique* elements to add in that filter
     const unsigned long long n = truth.size();
     // size (in bit) required for that filter
@@ -169,7 +157,13 @@ inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexFastaqGZGive
     // this is required by most implementation of Bloom filters
     // let's fix that
     m = m + 8 - (m % 8);
-    bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), m);
+
+    // now that we have the size, let's index those files
+    return indexFastasGivenBits(filenames, m, numHashes, k, epsilon_percent, canonical);
+}
+
+inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexFastqGZGivenBits(const std::vector<std::string>& filenames, const unsigned long long bits, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent, bool canonical) {
+    bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), bits);
 
     std::string line;
     for (auto const& filename : filenames) {
@@ -196,10 +190,10 @@ inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexFastaqGZGive
             i = i % 4;
         }
     }
-    return {filter, m};
+    return {filter, bits};
 }
 
-inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexTextGivenTruth(const std::vector<std::string>& filenames, const robin_hood::unordered_set<std::string>& truth, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent, bool canonical = false) {
+inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexFastqGZGivenTruth(const std::vector<std::string>& filenames, const robin_hood::unordered_set<std::string>& truth, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent, bool canonical) {
     // number of *unique* elements to add in that filter
     const unsigned long long n = truth.size();
     // size (in bit) required for that filter
@@ -208,7 +202,11 @@ inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexTextGivenTru
     // this is required by most implementation of Bloom filters
     // let's fix that
     m = m + 8 - (m % 8);
-    bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), m);
+    return indexFastqGZGivenBits(filenames, m, numHashes, k, epsilon_percent, canonical);
+}
+
+inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexTextGivenBits(const std::vector<std::string>& filenames, unsigned long long bits, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent, bool canonical = false) {
+    bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), bits);
 
     std::string line;
     for (auto const& filename : filenames) {
@@ -232,7 +230,19 @@ inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexTextGivenTru
             }
         }
     }
-    return {filter, m};
+    return {filter, bits};
+}
+
+inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexTextGivenTruth(const std::vector<std::string>& filenames, const robin_hood::unordered_set<std::string>& truth, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent, bool canonical = false) {
+    // number of *unique* elements to add in that filter
+    const unsigned long long n = truth.size();
+    // size (in bit) required for that filter
+    unsigned long long m = -(n / log(1 - ((double)epsilon_percent / (double)100)));
+    // oops, maybe m is not a multiple of 8
+    // this is required by most implementation of Bloom filters
+    // let's fix that
+    m = m + 8 - (m % 8);
+    return indexTextGivenBits(filenames, m, numHashes, k, epsilon_percent, canonical);
 }
 }  // namespace QTF_internal
 
@@ -249,7 +259,7 @@ inline std::tuple<robin_hood::unordered_set<std::string>, bf::basic_bloom_filter
     // create ground truth
     robin_hood::unordered_set<std::string> truth = truth::indexFastqGz(filenames, k, canonical);
     auto t0 = std::chrono::high_resolution_clock::now();
-    const auto& [filter, sizeOfFilter] = QTF_internal::indexFastaqGZGivenTruth(filenames, truth, numHashes, k, epsilon_percent, canonical);
+    const auto& [filter, sizeOfFilter] = QTF_internal::indexFastqGZGivenTruth(filenames, truth, numHashes, k, epsilon_percent, canonical);
     auto t1 = std::chrono::high_resolution_clock::now();
     return {truth, filter, std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count(), sizeOfFilter};
 }
@@ -261,6 +271,32 @@ inline std::tuple<robin_hood::unordered_set<std::string>, bf::basic_bloom_filter
     const auto& [filter, sizeOfFilter] = QTF_internal::indexTextGivenTruth(filenames, truth, numHashes, k, epsilon_percent, canonical);
     auto t1 = std::chrono::high_resolution_clock::now();
     return {truth, filter, std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count(), sizeOfFilter};
+}
+
+// passing bits as parameter
+
+inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, unsigned long long bits, bool canonical = false) {
+    // create ground truth
+    auto t0 = std::chrono::high_resolution_clock::now();
+    const auto& [filter, sizeOfFilter] = QTF_internal::indexFastasGivenBits(filenames, bits, numHashes, k, epsilon_percent, canonical);
+    auto t1 = std::chrono::high_resolution_clock::now();
+    return {filter, std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count(), sizeOfFilter};
+}
+
+inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexFastqGz(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, unsigned long long bits, bool canonical = false) {
+    // create ground truth
+    auto t0 = std::chrono::high_resolution_clock::now();
+    const auto& [filter, sizeOfFilter] = QTF_internal::indexFastqGZGivenBits(filenames, bits, numHashes, k, epsilon_percent, canonical);
+    auto t1 = std::chrono::high_resolution_clock::now();
+    return {filter, std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count(), sizeOfFilter};
+}
+
+inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexText(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, unsigned long long bits, bool canonical = false) {
+    // create ground truth
+    auto t0 = std::chrono::high_resolution_clock::now();
+    const auto& [filter, sizeOfFilter] = QTF_internal::indexFastasGivenBits(filenames, bits, numHashes, k, epsilon_percent, canonical);
+    auto t1 = std::chrono::high_resolution_clock::now();
+    return {filter, std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count(), sizeOfFilter};
 }
 
 namespace QTF {
@@ -279,4 +315,20 @@ inline std::tuple<robin_hood::unordered_set<std::string>, bf::basic_bloom_filter
     return ::indexText(filenames, numHashes, k - nbNeighboursMin, epsilon_percent, canonical);
 }
 
+// passing bits as parameter
+
+inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, const unsigned& nbNeighboursMin, unsigned long long bits, bool canonical = false) {
+    // indexing for QTF is esay: just index as usual, but with k = k - nbNeighboursMin
+    return ::indexFastas(filenames, numHashes, k - nbNeighboursMin, epsilon_percent, bits, canonical);
+}
+
+inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexFastqGz(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, const unsigned& nbNeighboursMin, unsigned long long bits, bool canonical = false) {
+    // indexing for QTF is esay: just index as usual, but with k = k - nbNeighboursMin
+    return ::indexFastqGz(filenames, numHashes, k - nbNeighboursMin, epsilon_percent, bits, canonical);
+}
+
+inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexText(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, const unsigned& nbNeighboursMin, unsigned long long bits, bool canonical = false) {
+    // indexing for QTF is esay: just index as usual, but with k = k - nbNeighboursMin
+    return ::indexText(filenames, numHashes, k - nbNeighboursMin, epsilon_percent, bits, canonical);
+}
 }  // namespace QTF
