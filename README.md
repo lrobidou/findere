@@ -1,6 +1,6 @@
-# qtf
+# findere
 
-Query-Time Filtration source repository
+findere source repository
 
 # Installation and execution
 ## Installation
@@ -20,7 +20,13 @@ chmod +x build.sh
 ```
 ## Execution
 ```
-./build/src/main
+./build/src/index -i <lists of files to index> -o <index output> -k <k> -z <z> --epsilonpercent <epsilon in percent> -t <type of data you want to index>
+./build/src/query -i <the index> -q <your query file> -k <k> -z <z> -t <type of data you indexed>
+```
+Exemple:
+```
+./build/src/index -i data/texts/contemplations.txt,data/texts/Horace.txt,data/texts/Le_Cid.txt,data/texts/Maastricht.txt,data/texts/Othon.txt,data/texts/Lettres_persanes.txt -o poesie.bin -k 31 -z 5 --epsilonpercent 8 -t text
+./build/src/query -i poesie.bin -q data/texts/AndromaqueAndHorace.txt -k 31 -z 5 -t text
 ```
 
 
