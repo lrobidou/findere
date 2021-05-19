@@ -47,7 +47,7 @@ int main(int argc, char* argv[]) {
         std::vector<bool> bigTruth = truth::queryTruth(truthBigK, querySeq, k_iter);
         auto t2 = std::chrono::high_resolution_clock::now();
         for (double epsilonPercent_iter = 0.5; epsilonPercent_iter <= epsilonPercent; epsilonPercent_iter += 0.5) {
-            // epsilonPercent_iter = 5;
+            epsilonPercent_iter = 5;
             bf::basic_bloom_filter* normalfilter = nullptr;
             unsigned long long numberOfIndexedElements = 0;
             if (bits) {
@@ -70,7 +70,7 @@ int main(int argc, char* argv[]) {
 
                 if (bits) {
                     truthSmallK = truth::indexFastqGz(input_filenames, k_iter - z_iter, canonical);
-                    std::tie(smallFilter, timeTakenMs, sizeOfBloomFilter) = QTF::indexFastqGz(input_filenames, numHashes, k_iter, epsilonPercent_iter, bits, z_iter, canonical);
+                    std::tie(smallFilter, timeTakenMs, sizeOfBloomFilter) = QTF::indexFastqGz(input_filenames, numHashes, k_iter, epsilonPercent_iter, z_iter, bits, canonical);
                 } else {
                     std::tie(truthSmallK, smallFilter, timeTakenMs, sizeOfBloomFilter) = QTF::indexFastqGz(input_filenames, numHashes, k_iter, epsilonPercent_iter, z_iter, canonical);
                 }
@@ -87,7 +87,7 @@ int main(int argc, char* argv[]) {
                 QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnBloomFilter), "queryBF", false, sizeOfBloomFilter);
                 QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnBloomFilterSkip), "queryBFSkip", false, sizeOfBloomFilter);
                 QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnSmallTruth), "resultsOnSmallTruth", false);
-                QTF_internal::printScore(QTF_internal::getScore(bigTruth, noQTFSimpleQuery), "normalfilter", true);
+                QTF_internal::printScore(QTF_internal::getScore(bigTruth, noQTFSimpleQuery), "normalfilter", true, numberOfIndexedElements);
 
                 std::cout << "    }," << std::endl;
                 delete smallFilter;
@@ -96,8 +96,8 @@ int main(int argc, char* argv[]) {
                 //toFileTXT("qtfonbf.txt", QTFOnBloomFilter);
                 //toFileTXT("truth.txt", bigTruth);
                 //toFileTXT("qtfOnTruth.txt", QTFOnSmallTruth);
-                // return 0;
             }
+            return 0;
         }
     }
     std::cout << "]" << std::endl;

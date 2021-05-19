@@ -106,7 +106,7 @@ std::tuple<std::vector<std::string>, std::string, unsigned long long, unsigned l
 
     std::vector<std::string> input_filenames = getOneArg<std::vector<std::string>>(arguments, json, "i");
     std::string queryFile = getOneArg<std::string>(arguments, json, "q");
-    const unsigned long long k = getOneArg<unsigned long long>(arguments, json, "k");
+    const unsigned long long k = getOneArg<unsigned long long>(arguments, json, "K");
     const unsigned long long z = getOneArg<unsigned long long>(arguments, json, "z");
     const double epsilon = getOneArg<double>(arguments, json, "epsilonpercent");
     const bool canonical = getOneArg<bool>(arguments, json, "c");
