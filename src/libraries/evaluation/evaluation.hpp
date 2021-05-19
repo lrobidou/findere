@@ -47,14 +47,14 @@ inline void printContext(const unsigned long long& k, const unsigned long long& 
     std::cout << "        }," << std::endl;
 }
 
-inline void printTime(std::chrono::_V2::system_clock::time_point t0,
-                      std::chrono::_V2::system_clock::time_point t1,
-                      std::chrono::_V2::system_clock::time_point t2,
-                      std::chrono::_V2::system_clock::time_point t3,
-                      std::chrono::_V2::system_clock::time_point t4,
-                      std::chrono::_V2::system_clock::time_point t5,
-                      std::chrono::_V2::system_clock::time_point t6,
-                      std::chrono::_V2::system_clock::time_point t7,
+inline void printTime(std::chrono::time_point<std::chrono::high_resolution_clock> t0,
+                      std::chrono::time_point<std::chrono::high_resolution_clock> t1,
+                      std::chrono::time_point<std::chrono::high_resolution_clock> t2,
+                      std::chrono::time_point<std::chrono::high_resolution_clock> t3,
+                      std::chrono::time_point<std::chrono::high_resolution_clock> t4,
+                      std::chrono::time_point<std::chrono::high_resolution_clock> t5,
+                      std::chrono::time_point<std::chrono::high_resolution_clock> t6,
+                      std::chrono::time_point<std::chrono::high_resolution_clock> t7,
                       int taimeTakenByIndexingBf) {
     std::cout << "        \"time\": {" << std::endl;
     std::cout << "            \"computeTruth\":" << std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count() << "," << std::endl;
