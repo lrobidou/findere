@@ -104,7 +104,7 @@ head -c 199715200 enwiki-latest-pages-articles1.txt |tail -c 104857600 > enwiki-
 
 ​      "FNR": 0
 
-#### Result with finder (using z=3):
+#### Result with findere (using z=3):
 
 ```bash
 
