@@ -24,8 +24,8 @@ int main(int argc, char* argv[]) {
 
     std::cout << "[" << std::endl;
 
-    std::vector<std::string> input_filenames = {};
-    std::string queryFile = "";
+    std::vector<std::string> input_filenames = {"data/ecoli2.fasta"};
+    std::string queryFile = "data/ecoli1.fasta";
 
     std::string querySeq = extractContentFromFastqGz(queryFile);
 
@@ -43,6 +43,10 @@ int main(int argc, char* argv[]) {
         QTF_internal::printContextBits(K, z, membit);
         QTF_internal::printScore(QTF_internal::getScore(bigTruth, findereOnBloomFilter), "findere", false, sizeOfBloomFilter);
         QTF_internal::printScore(QTF_internal::getScore(bigTruth, noFindereimpleQuery), "normalfilter", true, numberOfIndexedElements);
+        std::cout << "    }";
+        if (membit != 8022598392) {
+            std::cout << ",";
+        }
         std::cout << std::endl;
 
         delete smallFilter;

@@ -83,10 +83,7 @@ inline void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN, const 
     if (sizeOfBloomFilterInBits > 0) {
         std::cout << "            \"BFSize(bits)\": " << sizeOfBloomFilterInBits << "," << std::endl;
     }
-    std::cout << "            \"TP\": " << TP << ",\n            \"TN\": " << TN << ",\n            \"FP\": " << FP << ",\n            \"FN\": " << FN << ",\n"
-              << std::endl;
-    std::cout << "            \"FPR\": " << (double)(100 * FP) / (double)(FP + TN) << "," << std::endl;
-    std::cout << "            \"FNR\": " << (double)(100 * FN) / (double)(FN + TP) << std::endl;
+    std::cout << "            \"TP\": " << TP << ",\n            \"TN\": " << TN << ",\n            \"FP\": " << FP << ",\n            \"FN\": " << FN << std::endl;
     std::cout << "        }";
     if (!end) {
         std::cout << ",";
