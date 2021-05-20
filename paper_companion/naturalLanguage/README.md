@@ -9,7 +9,7 @@ As a query, we propose another poem (`Andromaque`), in which we inserted some li
 
 The poems come from wikisource (https://fr.wikisource.org).
 
-The result on natural language was obtained at the commit: b299ab0e68380f2dc6e6cb193445f37fbc9babf0
+The result on natural language was obtained at the commit: 1dead79779c3dc61c803f51509f1d85aa9828555
 
 
 # Steps to reproduce:
@@ -18,7 +18,7 @@ The result on natural language was obtained at the commit: b299ab0e68380f2dc6e6c
 git clone --recursive https://github.com/lrobidou/findere
 cd findere
 
-git checkout b299ab0e68380f2dc6e6cb193445f37fbc9babf0  # important
+git checkout 1dead79779c3dc61c803f51509f1d85aa9828555  # important
 
 git submodule update --init --recursive  # also impotant (even if you already did it before), as git won't update the submodule when you checkout
 chmod +x build.sh
