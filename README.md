@@ -23,10 +23,16 @@ chmod +x build.sh
 ./build/src/index -i <lists of files to index> -o <index output> -k <k> -z <z> --epsilonpercent <epsilon in percent> -t <type of data you want to index>
 ./build/src/query -i <the index> -q <your query file> -k <k> -z <z> -t <type of data you indexed>
 ```
-Exemple:
+### Exemple on texts:
 ```
 ./build/src/index -i data/texts/contemplations.txt,data/texts/Horace.txt,data/texts/Le_Cid.txt,data/texts/Maastricht.txt,data/texts/Othon.txt,data/texts/Lettres_persanes.txt -o poesie.bin -k 31 -z 5 --epsilonpercent 8 -t text
 ./build/src/query -i poesie.bin -q data/texts/AndromaqueAndHorace.txt -k 31 -z 5 -t text
+```
+
+### Execution on fastas:
+```
+./bin/index -i "data/ecoli2.fasta","data/ecoli3.fasta","data/Listeria phage.fasta","data/Penicillium chrysogenum.fasta" -o indexFastas -K 31 -z 3 --epsilonpercent 5 -t fasta
+./bin/query -i indexFastas -q data/Listeria\ phage.fasta -K 31 -z 3 -t fasta
 ```
 
 

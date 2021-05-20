@@ -9,7 +9,7 @@ As a query, we propose another poem (`Andromaque`), in which we inserted some li
 
 The poems come from wikisource (https://fr.wikisource.org).
 
-The result on natural language was obtained at the commit: 1dead79779c3dc61c803f51509f1d85aa9828555
+The result on natural language was obtained at the commit: adc5d037c0be76c75cba0ed2a8f2e613f03a4182
 
 
 ## Steps to reproduce:
@@ -104,7 +104,7 @@ head -c 199715200 enwiki-latest-pages-articles1.txt |tail -c 104857600 > enwiki-
 
 ​      "FNR": 0
 
-#### Result with finder (using z=3):
+#### Result with findere (using z=3):
 
 ```bash
 
