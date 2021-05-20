@@ -51,7 +51,7 @@ int main(int argc, char* argv[]) {
             bf::basic_bloom_filter* normalfilter = nullptr;
             unsigned long long numberOfIndexedElements = 0;
             if (bits) {
-                std::tie(normalfilter, numberOfIndexedElements) = QTF_internal::indexFastqGZGivenBits(input_filenames, bits, numHashes, k_iter, epsilonPercent_iter, canonical);
+                std::tie(normalfilter, numberOfIndexedElements) = QTF_internal::indexFastqGZGivenBits(input_filenames, bits, numHashes, k_iter, canonical);
             } else {
                 std::tie(normalfilter, numberOfIndexedElements) = QTF_internal::indexFastqGZGivenTruth(input_filenames, truthBigK, numHashes, k_iter, epsilonPercent_iter, canonical);
             }
@@ -70,7 +70,7 @@ int main(int argc, char* argv[]) {
 
                 if (bits) {
                     truthSmallK = truth::indexFastqGz(input_filenames, k_iter - z_iter, canonical);
-                    std::tie(smallFilter, timeTakenMs, sizeOfBloomFilter) = QTF::indexFastqGz(input_filenames, numHashes, k_iter, epsilonPercent_iter, z_iter, bits, canonical);
+                    std::tie(smallFilter, timeTakenMs, sizeOfBloomFilter) = QTF::indexFastqGzGivenBits(input_filenames, numHashes, k_iter, z_iter, bits, canonical);
                 } else {
                     std::tie(truthSmallK, smallFilter, timeTakenMs, sizeOfBloomFilter) = QTF::indexFastqGz(input_filenames, numHashes, k_iter, epsilonPercent_iter, z_iter, canonical);
                 }

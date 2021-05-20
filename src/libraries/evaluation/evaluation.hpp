@@ -47,6 +47,15 @@ inline void printContext(const unsigned long long& k, const unsigned long long& 
     std::cout << "        }," << std::endl;
 }
 
+inline void printContextBits(const unsigned long long& k, const unsigned long long& z, const double& epsilon) {
+    std::cout << "    {" << std::endl;
+    std::cout << "        \"param\": {" << std::endl;
+    std::cout << "            \"k\": " << k << "," << std::endl;
+    std::cout << "            \"z\": " << z << "," << std::endl;
+    std::cout << "            \"bits\": " << epsilon << std::endl;
+    std::cout << "        }," << std::endl;
+}
+
 inline void printTime(std::chrono::system_clock::time_point t0,
                       std::chrono::system_clock::time_point t1,
                       std::chrono::system_clock::time_point t2,
