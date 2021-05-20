@@ -24,8 +24,9 @@ int main(int argc, char* argv[]) {
 
     std::cout << "[" << std::endl;
 
-    std::vector<std::string> input_filenames = {"data/ecoli2.fasta"};
-    std::string queryFile = "data/ecoli1.fasta";
+    std::vector<std::string> input_filenames = {"/groups/genscale/NGSdatasets/metagenomics/hmp/data/SRS014107/SRS014107.denovo_duplicates_marked.trimmed.1.fastq.gz"};
+    std::string queryFile = "/groups/genscale/NGSdatasets/metagenomics/hmp/data/SRS016349/SRS016349.denovo_duplicates_marked.trimmed.1.fastq.gz";
+
 
     std::string querySeq = extractContentFromFastqGz(queryFile);
 
