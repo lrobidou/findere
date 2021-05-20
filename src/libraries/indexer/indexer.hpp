@@ -85,31 +85,24 @@ inline robin_hood::unordered_set<std::string> indexFastqGz(std::vector<std::stri
 
 inline robin_hood::unordered_set<std::string> indexText(std::vector<std::string> filenames, int k, bool canonical = false) {
     robin_hood::unordered_set<std::string> output;
-    std::string line;
     for (auto const& filename : filenames) {
         std::ifstream myfile(filename);
-        if (myfile.is_open()) {
-            while (std::getline(myfile, line)) {
-                unsigned long long start = 0;
-                unsigned long long l = line.length();
-                if (canonical) {
-                    while ((start + k) <= l) {
-                        output.insert(make_canonical(line.substr(start, k)));
-                        start++;
-                    }
-                } else {
-                    while ((start + k) <= l) {
-                        output.insert(line.substr(start, k));
-                        start++;
-                    }
-                }
+        std::string content = extractContentFromText(filename);
+        unsigned long long start = 0;
+        unsigned long long l = content.length();
+        if (canonical) {
+            while ((start + k) <= l) {
+                output.insert(make_canonical(content.substr(start, k)));
+                start++;
             }
-            myfile.close();
         } else {
-            std::cerr << "The file " << filename << " does not exist." << std::endl;
-            exit(1);
+            while ((start + k) <= l) {
+                output.insert(content.substr(start, k));
+                start++;
+            }
         }
     }
+
     return output;
 }
 
@@ -208,28 +201,26 @@ inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexFastqGZGiven
 inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexTextGivenBits(const std::vector<std::string>& filenames, unsigned long long bits, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent, bool canonical = false) {
     bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), bits);
 
-    std::string line;
     for (auto const& filename : filenames) {
         // std::ifstream myfilegz(filename);
         // zstr::istream myfile(myfilegz);
-        std::ifstream myfile(filename);
+        std::string content = extractContentFromText(filename);
 
-        while (std::getline(myfile, line)) {
-            unsigned long long start = 0;
-            unsigned long long l = line.length();
-            if (canonical) {
-                while ((start + k) <= l) {
-                    filter->add(make_canonical(line.substr(start, k)));
-                    start++;
-                }
-            } else {
-                while ((start + k) <= l) {
-                    filter->add(line.substr(start, k));
-                    start++;
-                }
+        unsigned long long start = 0;
+        unsigned long long l = content.length();
+        if (canonical) {
+            while ((start + k) <= l) {
+                filter->add(make_canonical(content.substr(start, k)));
+                start++;
+            }
+        } else {
+            while ((start + k) <= l) {
+                filter->add(content.substr(start, k));
+                start++;
             }
         }
     }
+
     return {filter, bits};
 }
 
