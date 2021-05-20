@@ -58,10 +58,18 @@ void printCommon(std::vector<bool> response, std::string querySeq, int k) {
 
 int main(int argc, char* argv[]) {
     const unsigned numHashes = 1;  // number of hash functions
-
+    std::string querySeq;
     cxxopts::ParseResult arguments = parseArgvQuerier(argc, argv);
     const auto& [filterFilenameName, query_filename, k, z, typeInput, canonical] = getArgsQuerier(arguments);
-    std::string querySeq = extractContentFromText(query_filename);
+    if (typeInput == "fastq") {
+        querySeq = extractContentFromFastqGz(query_filename);
+    } else if (typeInput == "fasta") {
+        querySeq = extractContentFromFasta(query_filename);
+    } else if (typeInput == "text") {
+        querySeq = extractContentFromText(query_filename);
+    } else {
+        std::cerr << "The given type of input input '" << typeInput << "' is not recognised." << std::endl;
+    }
 
     bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), filterFilenameName);
     // arg, we have a bf::basic_bloom_filter * now
@@ -75,24 +83,24 @@ int main(int argc, char* argv[]) {
     //do whatever you want with the respopnse vector.
 
     //For instance, you can print it:
-    // printVector(response); // beware the huge print
+    printVector(response);  // beware the huge print
 
     // or print common parts between the query and the index
-    // printCommon(response, querySeq, k); // nice french poetry
+    // printCommon(response, querySeq, k);  // nice french poetry
 
     // you can also reconstruct the truth to see if everything worked well :
     // of course, the lines below only works if you indexed those files:
-    std::vector<std::string> filenames = {"data/texts/contemplations.txt",
-                                          "data/texts/Horace.txt",
-                                          "data/texts/Le_Cid.txt",
-                                          "data/texts/Maastricht.txt",
-                                          "data/texts/Othon.txt",
-                                          "data/texts/Lettres_persanes.txt"};
+    // std::vector<std::string> filenames = {"data/texts/contemplations.txt",
+    //                                       "data/texts/Horace.txt",
+    //                                       "data/texts/Le_Cid.txt",
+    //                                       "data/texts/Maastricht.txt",
+    //                                       "data/texts/Othon.txt",
+    //                                       "data/texts/Lettres_persanes.txt"};
     // so be sure to change the filenames variable accordingly, to cumpute the correct truth
     // but in real life, you do not reconstruct the truth, because it wont fit in your memory
     // this is just here to test findere
 
-    std::vector<bool> truthQuery = truth::queryTruth(truth::indexText(filenames, k, canonical), querySeq, k);
-    QTF_internal::printScore(QTF_internal::getScore(truthQuery, response));
+    // std::vector<bool> truthQuery = truth::queryTruth(truth::indexText(filenames, k, canonical), querySeq, k);
+    // QTF_internal::printScore(QTF_internal::getScore(truthQuery, response));
     return 0;
 }

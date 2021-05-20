@@ -16,8 +16,11 @@ int main(int argc, char* argv[]) {
 
     cxxopts::ParseResult arguments = parseArgvIndexer(argc, argv);
     const auto& [input_filenames, output, k, z, epsilonPercent, typeInput, canonical] = getArgsIndexer(arguments);
-    if (typeInput == "fastqgz") {
+    if (typeInput == "fastq") {
         const auto& [truthSmallK, smallFilter, timeTakenMs, sizeOfBloomFilter] = QTF::indexFastqGz(input_filenames, numHashes, k, epsilonPercent, z, canonical);
+        smallFilter->save(output);
+    } else if (typeInput == "fasta") {
+        const auto& [truthSmallK, smallFilter, timeTakenMs, sizeOfBloomFilter] = QTF::indexFastas(input_filenames, numHashes, k, epsilonPercent, z, canonical);
         smallFilter->save(output);
     } else if (typeInput == "text") {
         const auto& [truthSmallK, smallFilter, timeTakenMs, sizeOfBloomFilter] = QTF::indexText(input_filenames, numHashes, k, epsilonPercent, z, canonical);
