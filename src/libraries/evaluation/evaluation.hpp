@@ -66,9 +66,9 @@ inline void printTime(std::chrono::system_clock::time_point t0,
                       std::chrono::system_clock::time_point t7,
                       int taimeTakenByIndexingBf) {
     std::cout << "        \"time\": {" << std::endl;
-    std::cout << "            \"computeTruth\": " << std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count() << "," << std::endl;
+    // std::cout << "            \"computeTruth\": " << std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count() << "," << std::endl;
     std::cout << "            \"computeBf\": " << taimeTakenByIndexingBf << "," << std::endl;
-    std::cout << "            \"queryTruth\": " << std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count() << "," << std::endl;
+    // std::cout << "            \"queryTruth\": " << std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count() << "," << std::endl;
     std::cout << "            \"queryBf\": " << std::chrono::duration_cast<std::chrono::milliseconds>(t4 - t3).count() << "," << std::endl;
     ;
     std::cout << "            \"queryBfSkip\": " << std::chrono::duration_cast<std::chrono::milliseconds>(t5 - t4).count() << "," << std::endl;
