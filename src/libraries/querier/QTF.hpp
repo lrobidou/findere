@@ -17,15 +17,10 @@ inline std::vector<bool> queryFilterOrTruth(const T& filterOrTruth, const std::s
     unsigned long long j = 0;              // index of the query vector
 
     while (j < size - k + 1) {
-        // std::cout << "start loop j = " << j << "; i = " << i << std ::endl;
-
         if (oneQuery(filterOrTruth, s.substr(j, smallK))) {
-            // std::cout << "start if j = " << j << "; i = " << i << std ::endl;
             stretchLength++;
             j++;
-            // std::cout << "end if j = " << j << "; i = " << i << std ::endl;
         } else {
-            // std::cout << "start else j = " << j << "; i = " << i << std ::endl;
             if (stretchLength != 0) {
                 if (stretchLength > nbNeighboursMin) {
                     nbStretch++;
@@ -45,7 +40,6 @@ inline std::vector<bool> queryFilterOrTruth(const T& filterOrTruth, const std::s
                 }
                 stretchLength = 0;
             }
-            // std::cout << "after emptied stretchlength j = " << j << "; i = " << i << std ::endl;
 
             // skip queries between current position and the next positive kmer
             if (skip && (nbNeighboursMin > 0)) {
@@ -59,19 +53,10 @@ inline std::vector<bool> queryFilterOrTruth(const T& filterOrTruth, const std::s
                 }
             }
 
-            // std::cout << "after skip j = " << j << "; i = " << i << std ::endl;
             response[i] = 0;
             i++;
             j++;
-            // while (i < nextPositivePosition) {
-            //     std::cout << "incrementingiand j" << std::endl;
-            //     response[i] = 0;
-            //     i++;
-            //     j++;
-            // }
-            // std::cout << "end else j = " << j << "; i = " << i << std ::endl;
         }
-        // std::cout << "end loop j = " << j << "; i = " << i << std ::endl;
     }
     if (stretchLength != 0) {
         if (stretchLength > nbNeighboursMin) {
