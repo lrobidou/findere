@@ -27,7 +27,6 @@ int main(int argc, char* argv[]) {
     std::vector<std::string> input_filenames = {"/groups/genscale/NGSdatasets/metagenomics/hmp/data/SRS014107/SRS014107.denovo_duplicates_marked.trimmed.1.fastq.gz"};
     std::string queryFile = "/groups/genscale/NGSdatasets/metagenomics/hmp/data/SRS016349/SRS016349.denovo_duplicates_marked.trimmed.1.fastq.gz";
 
-
     std::string querySeq = extractContentFromFastqGz(queryFile);
 
     robin_hood::unordered_set<std::string> truthBigK = truth::indexFastqGz(input_filenames, K, false);
@@ -37,11 +36,18 @@ int main(int argc, char* argv[]) {
     for (const auto& membit : membits) {
         const auto& [normalfilter, numberOfIndexedElements] = QTF_internal::indexFastqGZGivenBits(input_filenames, membit, numHashes, K, false);
         const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = QTF::indexFastqGzGivenBits(input_filenames, numHashes, K, z, membit, false);
-
+        auto t1 = std::chrono::high_resolution_clock::now();
         std::vector<bool> noFindereimpleQuery = noQTF::query(normalfilter, querySeq, K);
+        auto t2 = std::chrono::high_resolution_clock::now();
         std::vector<bool> findereOnBloomFilter = QTF::query(smallFilter, querySeq, K, z, true);
+        auto t3 = std::chrono::high_resolution_clock::now();
 
         QTF_internal::printContextBits(K, z, membit);
+        std::cout << "        \"time\": {" << std::endl;
+        std::cout << "            \"computeBf\": " << timeTakenMs << "," << std::endl;
+        std::cout << "            \"queryBfSkip\": " << std::chrono::duration_cast<std::chrono::milliseconds>(t3 - t2).count() << "," << std::endl;
+        std::cout << "            \"queryNormalFilter\": " << std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count() << std::endl;
+        std::cout << "        }," << std::endl;
         QTF_internal::printScore(QTF_internal::getScore(bigTruth, findereOnBloomFilter), "findere", false, sizeOfBloomFilter);
         QTF_internal::printScore(QTF_internal::getScore(bigTruth, noFindereimpleQuery), "normalfilter", true, numberOfIndexedElements);
         std::cout << "    }";
@@ -54,5 +60,6 @@ int main(int argc, char* argv[]) {
         delete normalfilter;
     }
     std::cout << "]" << std::endl;
+
     return 0;
 }
