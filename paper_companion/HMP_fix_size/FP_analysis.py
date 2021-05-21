@@ -32,6 +32,9 @@ def plot_frp(the_dic):
                 * the_size["findere"]["FP"]
                 / (the_size["findere"]["FP"] + the_size["findere"]["TN"])
             )
+        print("size", "FPR_findere (z=3)", "FPR_BF")
+        for x, y, z in zip(sizes, fprs_findere, fprs_bf):
+            print(x, y, z)
         plt.plot(sizes, fprs_findere, label="FPR_findere (z=3)")
         plt.plot(sizes, fprs_bf, label="FPR_BF")
         plt.title("K = " + str(k) + "; z = 3")
@@ -42,7 +45,7 @@ def plot_frp(the_dic):
 
 
 def main():
-    with open("fixSize.json", "r") as fichier:
+    with open("fixSizeZoomed.json", "r") as fichier:
         runs = json.load(fichier)
 
     kez = []
