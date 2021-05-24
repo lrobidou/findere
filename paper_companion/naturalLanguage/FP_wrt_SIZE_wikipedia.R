@@ -12,7 +12,7 @@ resetPar()
 dev.new()
 
 
-
+setwd("~/workspace/findere/paper_companion/naturalLanguage")
 #par(mar=c(5,5,3,6), cex.axis=2, cex.lab=2, cex.main = 2)
 # par(mar=c(5,5,3,6))
 data = read.table("data_findereOnWikipedia.txt", head=T)

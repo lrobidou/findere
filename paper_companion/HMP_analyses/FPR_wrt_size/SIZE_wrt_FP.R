@@ -20,7 +20,7 @@ data = read.table("data_FP_wrt_size.txt", head=T)
 data$sizeGiga = data$size/8000000000
 
 
-plot(data$sizeGiga~data$FPR_findere,xlab="FP rate (%) - log scale",ylab="Bloom Filter size (GB)", pch=15, col="red",log="x",xaxt="n",
+plot(data$sizeGiga~data$FPR_findere,xlab="FP rate (%) - log scale",ylab="Bloom Filter size (Go)", pch=15, col="red",log="x",xaxt="n",
      bg = "red", type="l",  cex=2, main="False positive rate, depending on the Bloom filter size, K=31", cex.main = 1, cex.lab = 1, cex.axis = 1)
 points(data$sizeGiga~data$FPR_BF,type="l",axes=FALSE,xlab="",ylab="",pch=19, lty=2, col="blue",  cex=1, log="y")
 
