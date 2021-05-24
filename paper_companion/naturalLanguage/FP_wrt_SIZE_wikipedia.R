@@ -26,12 +26,12 @@ plot(data$FPR_findere~data$sizeGiga,xlab="Bloom Filter size (GB)",ylab="FP rate 
      bg = "red", type="l",  cex=2, main="False positive rate, wikipedia corpus, \
      depending on the Bloom filter size, K=31, z=3", 
      cex.main = 1, cex.lab = 1, cex.axis = 1,
-     ylim=c(0.01, 100), xlim=c(0, 15))
+     ylim=c(0.01, 100))
 points(data$FPR_BF~data$sizeGiga,type="l",xlab="",ylab="",pch=19, lty=2, col="blue",  cex=1, xlim=c(0, 15))
 
-yticks<-c(0.01,0.02,0.1,0.5,1,5,10, 50)
+yticks<-c(0.01,0.03,0.1,1,5,10, 50)
 axis(2,at=yticks,labels=yticks)
-xticks<-c(0,2,4,6,8,10,12,14,16)
+xticks<-c(0,2,4,6,8,10,12,14,16, 18, 20, 22, 24, 26, 28, 30, 32, 34)
 axis(1,at=xticks,labels=xticks)
 
 

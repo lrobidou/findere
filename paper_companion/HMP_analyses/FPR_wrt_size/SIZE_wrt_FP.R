@@ -1,5 +1,5 @@
 
-pdf(file="fpr_size.pdf",width=6,height=4)
+pdf(file="size_fpr.pdf",width=6,height=4)
 resetPar <- function() {
   dev.new()
   op <- par(no.readonly = TRUE)
@@ -20,14 +20,12 @@ data = read.table("data_FP_wrt_size.txt", head=T)
 data$sizeGiga = data$size/8000000000
 
 
-plot(data$FPR_findere~data$sizeGiga,xlab="Bloom Filter size (GB)",ylab="FP rate (%) - log scale", pch=15, col="red",log="y",yaxt="n",xaxt="n",
+plot(data$sizeGiga~data$FPR_findere,xlab="FP rate (%) - log scale",ylab="Bloom Filter size (GB)", pch=15, col="red",log="x",xaxt="n",
      bg = "red", type="l",  cex=2, main="False positive rate, depending on the Bloom filter size, K=31", cex.main = 1, cex.lab = 1, cex.axis = 1)
-points(data$FPR_BF~data$sizeGiga,type="l",axes=FALSE,xlab="",ylab="",pch=19, lty=2, col="blue",  cex=1, log="y")
+points(data$sizeGiga~data$FPR_BF,type="l",axes=FALSE,xlab="",ylab="",pch=19, lty=2, col="blue",  cex=1, log="y")
 
 
-yticks<-c(0.1,0.5,1,5,10, 50)
-axis(2,at=yticks,labels=yticks)
-xticks<-c(0,0.16,5,10,15,17, 20,25,30)
+xticks<-c(0.1,0.5,1,5,10, 50)
 axis(1,at=xticks,labels=xticks)
 
 
