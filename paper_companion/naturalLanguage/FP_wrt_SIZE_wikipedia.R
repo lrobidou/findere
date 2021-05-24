@@ -17,7 +17,7 @@ dev.new()
 # par(mar=c(5,5,3,6))
 data = read.table("data_findereOnWikipedia.txt", head=T)
 data$sizeGiga = data$size/8000000000
-100/8000000000
+162072792/8000000000
 
 dev.off()
 plot(data$FPR_findere~data$sizeGiga,xlab="Bloom Filter size (GB)",ylab="FP rate (%) - log scale",pch=15, 
@@ -27,12 +27,26 @@ plot(data$FPR_findere~data$sizeGiga,xlab="Bloom Filter size (GB)",ylab="FP rate 
      depending on the Bloom filter size, K=31, z=3", 
      cex.main = 1, cex.lab = 1, cex.axis = 1,
      ylim=c(0.01, 100), xlim=c(0, 15))
-points(data$FPR_BF~data$sizeGiga,type="l",xlab="",ylab="",pch=19, lty=2, col="blue",  cex=1)
+points(data$FPR_BF~data$sizeGiga,type="l",xlab="",ylab="",pch=19, lty=2, col="blue",  cex=1, xlim=c(0, 15))
 
-yticks<-c(0.01,0.1,0.5,1,5,10, 50)
+yticks<-c(0.01,0.02,0.1,0.5,1,5,10, 50)
 axis(2,at=yticks,labels=yticks)
-xticks<-c(100/8000000000,2,4,6,8,10,12,14,16)
+xticks<-c(0,2,4,6,8,10,12,14,16)
 axis(1,at=xticks,labels=xticks)
+
+
+par(new = TRUE)#, mar=c(5,5,3,6))
+
+
+segments(-1000, 0.1, 20, 0.1,
+         col = par("fg"), lty = 3, lwd = par("lwd"), cex=2)
+
+
+segments(0.02, 0.000001,  0.02, 0.2,
+         col = par("fg"), lty = 3, lwd = par("lwd"), cex=2)
+
+segments(3.83, 0.000001, 3.83, 0.2,
+         col = par("fg"), lty = 3, lwd = par("lwd"), cex=2)
 
 
 
