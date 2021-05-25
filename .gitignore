@@ -1,3 +1,7 @@
 .vscode/
 bin/
 build/
+*.json
+*.txt
+*.bz2
+*.bin

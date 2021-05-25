@@ -1,6 +1,7 @@
 add_executable(paper mainPaper.cpp)
 add_executable(paperFixedSize mainPaperFixedSize.cpp)
 add_executable(paperNaturalText mainPaperNaturalText.cpp)
+add_executable(paperNaturalTextTime mainPaperNaturalTextTime.cpp)
 add_executable(index index.cpp)
 add_executable(query query.cpp)
 
@@ -11,3 +12,4 @@ target_link_libraries(paperFixedSize qtf_utils_lib qtf_querier_lib libbf_static 
 target_link_libraries(index qtf_utils_lib qtf_querier_lib libbf_static z)
 target_link_libraries(query qtf_utils_lib qtf_querier_lib libbf_static z)
 target_link_libraries(paperNaturalText qtf_utils_lib qtf_querier_lib libbf_static z)
+target_link_libraries(paperNaturalTextTime qtf_utils_lib qtf_querier_lib libbf_static z)
