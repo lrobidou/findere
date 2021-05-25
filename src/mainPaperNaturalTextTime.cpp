@@ -29,11 +29,11 @@ int main(int argc, char* argv[]) {
 
     std::string querySeq = extractContentFromText(queryFile);
 
-    robin_hood::unordered_set<std::string> truthBigK = truth::indexFastqGz(input_filenames, K, false);
+    robin_hood::unordered_set<std::string> truthBigK = truth::indexText(input_filenames, K, false);
     std::vector<bool> bigTruth = truth::queryTruth(truthBigK, querySeq, K);
     int epsilonPercent = 5;
 
-    const auto& [normalfilter, sizeSimpleFilter] = QTF_internal::indexFastqGZGivenTruth(input_filenames, truthBigK, epsilonPercent, numHashes, K, false);
+    const auto& [normalfilter, sizeSimpleFilter] = QTF_internal::indexTextGivenTruth(input_filenames, truthBigK, epsilonPercent, numHashes, K, false);
 
     auto t1 = std::chrono::high_resolution_clock::now();
     std::vector<bool> noFindereimpleQuery = noQTF::query(normalfilter, querySeq, K);
@@ -54,7 +54,7 @@ int main(int argc, char* argv[]) {
         std::cout << "        }," << std::endl;
         QTF_internal::printScore(QTF_internal::getScore(bigTruth, findereOnBloomFilter), "findere", false, sizeOfBloomFilterFindere);
         QTF_internal::printScore(QTF_internal::getScore(bigTruth, noFindereimpleQuery), "normalfilter", true, sizeSimpleFilter);
-
+        std::cout << "}";
         if (z != 10) {
             std::cout << ",";
         }
