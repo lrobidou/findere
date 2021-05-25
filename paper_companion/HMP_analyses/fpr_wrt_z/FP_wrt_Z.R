@@ -14,7 +14,6 @@ dev.off()
 par(mar=c(5,5,3,6), cex.axis=2, cex.lab=2, cex.main = 2)
 #par(mar=c(5,5,5,1))
 data = read.table("data_FP_K31_hmp.txt", head=T)
-datime = read.table("data_time_K31_hmp.txt", head=T)
 data$FP_BFk = data$findere_FPR-data$construction_FPR
 plot(data$AMQ_FPR*100~data$z,xlab="z value",ylab="FP rate (%)", lwd=2, pch=15, col="blue", 
      bg = "blue", lty=2, type="o",  mgp=c(3,1,0), cex=2, ylim=c(0,7), xlim=c(0,10), main="False positive rate, depending on z, K=31", cex.main = 2, cex.lab = 2, cex.axis = 2)
