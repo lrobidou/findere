@@ -6,4 +6,4 @@
 
 - [ ] Version number used for testing
 
-  
+- [ ] Read fasta.gz too
