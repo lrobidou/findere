@@ -31,9 +31,9 @@ int main(int argc, char* argv[]) {
 
     robin_hood::unordered_set<std::string> truthBigK = truth::indexText(input_filenames, K, false);
     std::vector<bool> bigTruth = truth::queryTruth(truthBigK, querySeq, K);
-    int epsilonPercent = 5;
+    double epsilonPercent = 5.0;
 
-    const auto& [normalfilter, sizeSimpleFilter] = QTF_internal::indexTextGivenTruth(input_filenames, truthBigK, epsilonPercent, numHashes, K, false);
+    const auto& [normalfilter, sizeSimpleFilter] = QTF_internal::indexTextGivenTruth(input_filenames, truthBigK, numHashes, K, epsilonPercent, false);
 
     auto t1 = std::chrono::high_resolution_clock::now();
     std::vector<bool> noFindereimpleQuery = noQTF::query(normalfilter, querySeq, K);
