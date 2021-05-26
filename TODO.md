@@ -7,3 +7,5 @@
 - [ ] Version number used for testing
 
 - [ ] Read fasta.gz too
+
+- [ ] Read lowercase letters as uppercase letters when indexing genomic data
