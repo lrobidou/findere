@@ -17,13 +17,10 @@ int main(int argc, char* argv[]) {
     bool canonical = false;
 
     unsigned long long K = 31;
-    // unsigned long long z = 3;
 
     const unsigned numHashes = 1;  // number of hash functions
 
     cxxopts::ParseResult arguments = parseArgv(argc, argv);
-
-    std::cout << "[" << std::endl;
 
     std::vector<std::string> input_filenames = {"enwiki-latest-pages-articles1_head100M.txt"};
     std::string queryFile = "enwiki-latest-pages-articles1_next100M.txt";
