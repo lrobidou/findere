@@ -10,6 +10,7 @@ if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
+option(CompileAll "full" OFF)
 
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall --std=c++17")  # I have to specify the standard version here...
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Izlib-1.2.11 --std=c++17")
@@ -42,4 +43,6 @@ add_subdirectory(thirdparty/googletest)
 
 # build src qtf
 add_subdirectory(src)
+if (CompileAll)
 add_subdirectory(tests)
+endif()
