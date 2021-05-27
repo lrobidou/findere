@@ -178,7 +178,7 @@ std::tuple<std::string, std::string, unsigned long long, unsigned long long, std
         std::cout << "If you are a biologist, you may want to tquery canonical Kmers. just add -c at the end of the command to do that." << std::endl;
         std::cout << "" << std::endl;
         std::cout << "Here is an exemple:" << std::endl;
-        std::cout << "./bin/query -i indexFastas -q data/Listeria\\ phage.fasta -K 31 -z 3 -t fasta" << std::endl;
+        std::cout << "./bin/query -i indexedFastas -q data/Listeria\\ phage.fasta -K 31 -z 3 -t fasta" << std::endl;
         exit(0);
     }
     std::string input_filename = getOneArg<std::string>(arguments, json, "i");
