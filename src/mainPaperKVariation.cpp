@@ -13,16 +13,17 @@
 int main(int argc, char* argv[]) {
     const unsigned numHashes = 1;  // number of hash functions
 
-    std::vector<std::string> input_filenames = {"data/ecoli2.fasta"};
+
+    std::vector<std::string> input_filenames = {"/groups/genscale/NGSdatasets/metagenomics/hmp/SRS014107_SRS016349_fasta/SRS014107.denovo_duplicates_marked.trimmed.1.fasta"};
     bool canonical = false;
-    std::string queryFile = "data/ecoli1.fasta";
+    std::string queryFile = "/groups/genscale/NGSdatasets/metagenomics/hmp/SRS014107_SRS016349_fasta/SRS016349.denovo_duplicates_marked.trimmed.1.fasta";
     double epsilonPercent = 5.0;
     unsigned long long z = 3;
 
     std::string querySeq = extractContentFromFastqGz(queryFile);
 
     std::cout << "[" << std::endl;
-    for (unsigned long long k_iter = 21; k_iter <= 41; k_iter += 2) {
+    for (unsigned long long k_iter = 21; k_iter <= 35; k_iter += 2) {
         auto t0 = std::chrono::high_resolution_clock::now();
         robin_hood::unordered_set<std::string> truthBigK = truth::indexFastas(input_filenames, k_iter, canonical);
         auto t1 = std::chrono::high_resolution_clock::now();
@@ -62,7 +63,7 @@ int main(int argc, char* argv[]) {
         QTF_internal::printScore(QTF_internal::getScore(bigTruth, noQTFSimpleQuery), "normalfilter", true, numberOfIndexedElements);
 
         std::cout << "    }";
-        if (k_iter < 41) {
+        if (k_iter < 35) {
             std::cout << ",";
         }
         std::cout << std::endl;
