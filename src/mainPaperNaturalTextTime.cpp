@@ -35,6 +35,7 @@ int main(int argc, char* argv[]) {
 
     auto t1 = std::chrono::high_resolution_clock::now();
     std::vector<bool> bigTruth = truth::queryTruth(truthBigK, querySeq, k_iter);
+
     auto t2 = std::chrono::high_resolution_clock::now();
     double epsilonPercent_iter = 5;
     bf::basic_bloom_filter* normalfilter = nullptr;
@@ -56,7 +57,9 @@ int main(int argc, char* argv[]) {
         std::tie(truthSmallK, smallFilter, timeTakenMs, sizeOfBloomFilter) = QTF::indexText(input_filenames, numHashes, k_iter, epsilonPercent_iter, z_iter, canonical);
 
         auto t3 = std::chrono::high_resolution_clock::now();
+
         std::vector<bool> QTFOnBloomFilter = QTF::query(smallFilter, querySeq, k_iter, z_iter);
+
         auto t4 = std::chrono::high_resolution_clock::now();
         std::vector<bool> QTFOnBloomFilterSkip = QTF::query(smallFilter, querySeq, k_iter, z_iter, true);
         auto t5 = std::chrono::high_resolution_clock::now();
