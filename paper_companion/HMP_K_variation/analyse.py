@@ -39,9 +39,6 @@ def plot_time(the_dic):
                     * the_b["queryBFSkip"]["FP"]
                     / (the_b["queryBFSkip"]["FP"] + the_b["queryBFSkip"]["TN"])
                 )
-    print(ks)
-    print(times_bf)
-    print(times_findere)
     plt.plot(ks, times_findere, label="time_findere (z=3)")
     plt.plot(ks, times_bf, label="time_BF")
     plt.xlabel("K")
@@ -51,14 +48,14 @@ def plot_time(the_dic):
 
     plt.plot(ks, fpr_findere, label="fpr_findere (z=3)")
     plt.plot(ks, fpr_bf, label="frp_BF")
-    # plt.title("K = " + str(k) + "; epislon = " + str(b))
     plt.xlabel("K")
     plt.ylabel("FPR (%)")
     plt.legend(loc="best")
     plt.show()
 
-    for x, y, z in zip(ks, fpr_findere, times_findere):
-        print(x, round(y, 2), z / 1000)
+    print("K fpr_findere time_findere_query fpr_bf time_bf")
+    for x, y, z, i, j in zip(ks, fpr_findere, times_findere, fpr_bf, times_bf):
+        print(x, round(y, 2), z / 1000, round(i, 2), j / 1000)
 
 
 def main():
