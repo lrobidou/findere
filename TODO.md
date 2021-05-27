@@ -9,3 +9,5 @@
 - [ ] Read fasta.gz too
 
 - [ ] Read lowercase letters as uppercase letters when indexing genomic data
+ 
+ - [ ] verify that the index exists before trying to query it
