@@ -1,4 +1,4 @@
-- [ ] Help message with -h
+- [x] Help message with -h
 
 - [ ] Default values (K31, z3)
 
@@ -6,8 +6,8 @@
 
 - [ ] Version number used for testing
 
-- [ ] Read fasta.gz too
+- [x] Read fasta.gz too
 
 - [ ] Read lowercase letters as uppercase letters when indexing genomic data
- 
+
  - [ ] verify that the index exists before trying to query it
