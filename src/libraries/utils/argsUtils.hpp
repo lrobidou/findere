@@ -121,78 +121,68 @@ std::tuple<std::vector<std::string>, std::string, unsigned long long, unsigned l
     return {input_filenames, queryFile, k, z, epsilon, canonical, typeInput, bits};
 }
 
-std::tuple<std::vector<std::string>, std::string, unsigned long long, unsigned long long, double, std::string, bool> getArgsIndexer(const cxxopts::ParseResult& arguments) {
+std::tuple<std::vector<std::string>, std::string, unsigned long long, unsigned long long, unsigned long long, std::string, bool> getArgsIndexer(const cxxopts::ParseResult& arguments) {
     nlohmann::json json;
     const bool displayHelp = getOneArg<bool>(arguments, json, "h");
     if (displayHelp) {
-        std::cout << "Welcome." << std::endl;
-        std::cout << "I, this executable, can be used to index an AMQ using findere." << std::endl;
-        std::cout << "You can execute me like this:" << std::endl;
-        std::cout << "./bin/index -i <inputFiles> -o <index> -K <K> -z <z> --epsilonpercent <espilonInPercent> [-t type] [-c]" << std::endl;
-        std::cout << "My options are:" << std::endl;
-        std::cout << "-i: the input files you want to index;" << std::endl;
-        std::cout << "-o: my output. Where should I place the resulting index?" << std::endl;
-        std::cout << "-K: the value for K;" << std::endl;
-        std::cout << "-z: the value for z. Beware: I will actually index K-z mers;" << std::endl;
-        std::cout << "--epsilonpercent: the value for epsilon the index will have if you query it without findere" << std::endl;
-        std::cout << "-t: the type of data you want to index. Can be \"fasta\", \"text\" or \"fastq\"." << std::endl;
-        std::cout << "" << std::endl;
-        std::cout << "If you are a biologist, you may want to to index canonical Kmers. just add -c at the end of the command to do that." << std::endl;
-        std::cout << "" << std::endl;
-        std::cout << "Here is an exemple:" << std::endl;
-        std::cout << "./bin/index -i \"data/ecoli2.fasta\",\"data/ecoli3.fasta\",\"data/Listeria phage.fasta\",\"data/Penicillium chrysogenum.fasta\" -o indexedFastas -K 31 -z 3 --epsilonpercent 5 -t fasta" << std::endl;
+        std::cout << "findere_index: index Kmers using kmers (K>k) indexed in an Approximate Membership Query data structure (a Bloom filter in this implementation)." << std::endl;
+        std::cout << "Usage:" << std::endl;
+        std::cout << "    ./bin/findere_index -i <inputFiles> -o <index> -b <bits> [-K <K>] [-z <z>] [-t type] [-c]" << std::endl;
+        std::cout << "Options:" << std::endl;
+        std::cout << "    -i: the input files you want to index. Multiplle files are authorized, with the following format: \"file_name1\",\"file_name2\",\"file_name3\". Files may be gzipped." << std::endl;
+        std::cout << "    -o: output index name" << std::endl;
+        std::cout << "    -K: the value for K: size of the Kmers queried by findere_query. Default=31" << std::endl;
+        std::cout << "    -z: the value for z. findere indexes kmers of size K-z. Default=3" << std::endl;
+        std::cout << "    -b: size in bits of the Bloom filter" << std::endl;
+        std::cout << "    -t: type of data [fasta/fastq/text]. Default=fasta" << std::endl;
+        std::cout << "    -c: index canonical Kmers if type of data is fasta or fastq." << std::endl;
+        std::cout << "Example:" << std::endl;
+        std::cout << "    ./bin/findere_index -i \"data/ecoli2.fasta\",\"data/ecoli3.fasta\",\"data/Listeria phage.fasta\",\"data/Penicillium chrysogenum.fasta\" -o indexedFastas -K 31 -z 3 -b 10000000 -t fasta" << std::endl;
         exit(0);
     }
 
+    // mandatory args
     std::vector<std::string> input_filenames = getOneArg<std::vector<std::string>>(arguments, json, "i");
     std::string output = getOneArg<std::string>(arguments, json, "o");
+    const unsigned long long b = getOneArg<unsigned long long>(arguments, json, "b");
+
+    // optional args
     const unsigned long long K = getOneArgOptional<unsigned long long>(arguments, json, "K", 31);
     const unsigned long long z = getOneArgOptional<unsigned long long>(arguments, json, "z", 3);
-    const double epsilon = getOneArg<double>(arguments, json, "epsilonpercent");
-    std::string typeInput;
-    if (arguments.count("type")) {
-        typeInput = arguments["type"].as<std::string>();
-    } else {
-        typeInput = "fastq";
-    }
-    const bool canonical = getOneArg<bool>(arguments, json, "c");
+    std::string typeInput = getOneArgOptional<std::string>(arguments, json, "type", "fasta");
+    const bool canonical = getOneArg<bool>(arguments, json, "c");  // defaults value: false
 
-    return {input_filenames, output, K, z, epsilon, typeInput, canonical};
+    return {input_filenames, output, K, z, b, typeInput, canonical};
 }
 
 std::tuple<std::string, std::string, unsigned long long, unsigned long long, std::string, bool> getArgsQuerier(const cxxopts::ParseResult& arguments) {
     nlohmann::json json;
     const bool displayHelp = getOneArg<bool>(arguments, json, "h");
     if (displayHelp) {
-        std::cout << "Welcome." << std::endl;
-        std::cout << "I, this executable, can be used to query an AMQ using findere." << std::endl;
-        std::cout << "You can execute me like this:" << std::endl;
-        std::cout << "./bin/query -i <index> -q <queryFile> -K <K> -z <z> [-t type] [-c]" << std::endl;
-        std::cout << "My options are:" << std::endl;
-        std::cout << "-i: the input index, that you created with ./bin/index;" << std::endl;
-        std::cout << "-q: the file you want to query against the index;" << std::endl;
-        std::cout << "-K: the value for K;" << std::endl;
-        std::cout << "-z: the value for z. Beware: I will actually query K-z mers;" << std::endl;
-        std::cout << "-t: the type of data you want to query. Can be \"fasta\", \"text\" or \"fastq\"." << std::endl;
-        std::cout << "" << std::endl;
-        std::cout << "If you are a biologist, you may want to tquery canonical Kmers. just add -c at the end of the command to do that." << std::endl;
-        std::cout << "" << std::endl;
-        std::cout << "Here is an exemple:" << std::endl;
-        std::cout << "./bin/query -i indexedFastas -q data/Listeria\\ phage.fasta -K 31 -z 3 -t fasta" << std::endl;
+        std::cout << "findere_query: query Kmers using kmers (K>k) indexed in an Approximate Membership Query data structure (a Bloom filter in this implementation) stored on a disk." << std::endl;
+        std::cout << "Usage:" << std::endl;
+        std::cout << "    ./bin/findere_index -i <index> -q <queyFileName> -K <K> -z <z> -b <bits> [-t type] [-c]" << std::endl;
+        std::cout << "Options:" << std::endl;
+        std::cout << "    -i: the input index you want to query, that you created with ./bin/index." << std::endl;
+        std::cout << "    -q: the file you want to query against the index. May be gzipped." << std::endl;
+        std::cout << "    -K: the value for K: size of the Kmers queried by findere_query. Default=31" << std::endl;
+        std::cout << "    -z: the value for z. findere indexes kmers of size K-z. Default=3" << std::endl;
+        std::cout << "    -t: type of data [fasta/fastq/text]. Default=fasta" << std::endl;
+        std::cout << "    -c: index canonical Kmers if type of data is fasta or fastq." << std::endl;
+        std::cout << "Example:" << std::endl;
+        std::cout << "    ./bin/findere_query -i indexedFastas -q \"data/Listeria phage.fasta\" -K 31 -z 3  -t fasta" << std::endl;
         exit(0);
     }
+
+    // mandatory args
     std::string input_filename = getOneArg<std::string>(arguments, json, "i");
     std::string query_filename = getOneArg<std::string>(arguments, json, "q");
+
+    // optional args
     const unsigned long long K = getOneArgOptional<unsigned long long>(arguments, json, "K", 31);
     const unsigned long long z = getOneArgOptional<unsigned long long>(arguments, json, "z", 3);
-    std::string typeInput = "";
-    if (arguments.count("type")) {
-        typeInput = arguments["type"].as<std::string>();
-    } else {
-        typeInput = "fastq";
-    }
-
-    const bool canonical = getOneArg<bool>(arguments, json, "c");
+    std::string typeInput = getOneArgOptional<std::string>(arguments, json, "type", "fasta");
+    const bool canonical = getOneArg<bool>(arguments, json, "c");  // defaults value: false
 
     return {input_filename, query_filename, K, z, typeInput, canonical};
 }
