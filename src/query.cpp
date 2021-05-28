@@ -74,10 +74,10 @@ int main(int argc, char* argv[]) {
     bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), filterFilenameName);
     // arg, we have a bf::basic_bloom_filter * now
     // but what if you want to query something else in your own program ?
-    // how can you exectute QTF::query on your own data structure ?
+    // how can you exectute findere::query on your own data structure ?
     // look no further, there we go:
     bfAMQ myAMQ = bfAMQ(filter);
-    std::vector<bool> response = QTF::query(myAMQ, querySeq, k, z);
+    std::vector<bool> response = findere::query(myAMQ, querySeq, k, z);
     // the end.
 
     //do whatever you want with the respopnse vector.

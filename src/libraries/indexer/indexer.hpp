@@ -290,7 +290,7 @@ inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexTextGiv
     return {filter, std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count(), sizeOfFilter};
 }
 
-namespace QTF {
+namespace findere {
 inline std::tuple<robin_hood::unordered_set<std::string>, bf::basic_bloom_filter*, int, unsigned long long> indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, const unsigned& nbNeighboursMin, bool canonical = false) {
     // indexing for QTF is esay: just index as usual, but with k = k - nbNeighboursMin
     return ::indexFastas(filenames, numHashes, k - nbNeighboursMin, epsilon_percent, canonical);
@@ -322,4 +322,4 @@ inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexTextGiv
     // indexing for QTF is esay: just index as usual, but with k = k - nbNeighboursMin
     return ::indexTextGivenBits(filenames, numHashes, k - nbNeighboursMin, bits, canonical);
 }
-}  // namespace QTF
+}  // namespace findere

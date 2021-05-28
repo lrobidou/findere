@@ -33,7 +33,7 @@ TEST(TestQTF, TestSimilarity) {
     std::vector<bool> truthKPlusZQuery = truth::queryTruth(truthKPlusZ, querySeq, k + nbNeighboursMin);
 
     std::vector<bool> responseQTF = QTFNoSplitKmer::query(filter, querySeq, k, nbNeighboursMin);
-    std::vector<bool> responseQTFKPlusZ = QTF::query(filter, querySeq, k + nbNeighboursMin, nbNeighboursMin);
+    std::vector<bool> responseQTFKPlusZ = findere::query(filter, querySeq, k + nbNeighboursMin, nbNeighboursMin);
 
     const auto& [truth_P, truth_N] = count0And1InAray(truthQuery);
     const auto& [qtf_P, qtf_N] = computeSimilarityQTFKPlusZ(filter, querySeq, k, nbNeighboursMin, epsilon_percent);

@@ -37,11 +37,11 @@ int main(int argc, char* argv[]) {
 
     for (const auto& membit : membits) {
         const auto& [normalfilter, sizeSimpleFilter] = QTF_internal::indexFastqGZGivenBits(input_filenames, membit, numHashes, K, false);
-        const auto& [smallFilter, timeTakenMs, sizeOfBloomFilterFindere] = QTF::indexFastqGzGivenBits(input_filenames, numHashes, K, z, membit, false);
+        const auto& [smallFilter, timeTakenMs, sizeOfBloomFilterFindere] = findere::indexFastqGzGivenBits(input_filenames, numHashes, K, z, membit, false);
         auto t1 = std::chrono::high_resolution_clock::now();
         std::vector<bool> noFindereimpleQuery = noQTF::query(normalfilter, querySeq, K);
         auto t2 = std::chrono::high_resolution_clock::now();
-        std::vector<bool> findereOnBloomFilter = QTF::query(smallFilter, querySeq, K, z, true);
+        std::vector<bool> findereOnBloomFilter = findere::query(smallFilter, querySeq, K, z, true);
         auto t3 = std::chrono::high_resolution_clock::now();
 
         QTF_internal::printContextBits(K, z, membit);

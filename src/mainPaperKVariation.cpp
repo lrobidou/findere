@@ -13,7 +13,6 @@
 int main(int argc, char* argv[]) {
     const unsigned numHashes = 1;  // number of hash functions
 
-
     std::vector<std::string> input_filenames = {"/groups/genscale/NGSdatasets/metagenomics/hmp/SRS014107_SRS016349_fasta/SRS014107.denovo_duplicates_marked.trimmed.1.fasta"};
     bool canonical = false;
     std::string queryFile = "/groups/genscale/NGSdatasets/metagenomics/hmp/SRS014107_SRS016349_fasta/SRS016349.denovo_duplicates_marked.trimmed.1.fasta";
@@ -49,12 +48,12 @@ int main(int argc, char* argv[]) {
         std::cout << "            \"bits\": " << m << std::endl;
         std::cout << "        }," << std::endl;
 
-        const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = QTF::indexFastasGivenBits(input_filenames, numHashes, k_iter, z, bits, canonical);
+        const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = findere::indexFastasGivenBits(input_filenames, numHashes, k_iter, z, bits, canonical);
 
         auto t3 = std::chrono::high_resolution_clock::now();
-        std::vector<bool> QTFOnBloomFilter = QTF::query(smallFilter, querySeq, k_iter, z);
+        std::vector<bool> QTFOnBloomFilter = findere::query(smallFilter, querySeq, k_iter, z);
         auto t4 = std::chrono::high_resolution_clock::now();
-        std::vector<bool> QTFOnBloomFilterSkip = QTF::query(smallFilter, querySeq, k_iter, z, true);
+        std::vector<bool> QTFOnBloomFilterSkip = findere::query(smallFilter, querySeq, k_iter, z, true);
         auto t5 = std::chrono::high_resolution_clock::now();
 
         QTF_internal::printTime(t0, t1, t2, t3, t4, t5, t6, t7, timeTakenMs);

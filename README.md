@@ -104,12 +104,12 @@ Now, before using `findere`, wrap your data structure.
 Dont do:
 
 ```c++
-std::vector<bool> response = QTF::query(myFilterThatFindereDontKnowAnythingAboutfilter, querySeq, k, z);//findere can't handle it!
+std::vector<bool> response = findere::query(myFilterThatFindereDontKnowAnythingAboutfilter, querySeq, k, z);//findere can't handle it!
 ```
 Do:
 ```c++
 bfAMQ myAMQ = bfAMQ(myFilterThatFindereDontKnowAnythingAboutfilter);
-std::vector<bool> response = QTF::query(myAMQ, querySeq, k, z);
+std::vector<bool> response = findere::query(myAMQ, querySeq, k, z);
 ```
 
 ## Contacts

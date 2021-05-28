@@ -13,7 +13,7 @@
 
 int main(int argc, char* argv[]) {
     // in Python,after import numpy as np: [int(x) for x in np.linspace(100, 2674199464*3, 100)] gives you this:
-    std::vector<unsigned long long> membits = {409909080,683181800,956454520,1229727240,2049545400,2459454480,2869363560,3279272640,3552545360,3825818080,4099090800,4372363520,4782272600,5465454400,64877120000,65142176000,65417408000,65684928000,66101760000,66780128000};
+    std::vector<unsigned long long> membits = {409909080, 683181800, 956454520, 1229727240, 2049545400, 2459454480, 2869363560, 3279272640, 3552545360, 3825818080, 4099090800, 4372363520, 4782272600, 5465454400, 64877120000, 65142176000, 65417408000, 65684928000, 66101760000, 66780128000};
 
     unsigned long long K = 31;
     unsigned long long z = 3;
@@ -35,11 +35,11 @@ int main(int argc, char* argv[]) {
 
     for (const auto& membit : membits) {
         const auto& [normalfilter, numberOfIndexedElements] = QTF_internal::indexFastqGZGivenBits(input_filenames, membit, numHashes, K, false);
-        const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = QTF::indexFastqGzGivenBits(input_filenames, numHashes, K, z, membit, false);
+        const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = findere::indexFastqGzGivenBits(input_filenames, numHashes, K, z, membit, false);
         auto t1 = std::chrono::high_resolution_clock::now();
         std::vector<bool> noFindereimpleQuery = noQTF::query(normalfilter, querySeq, K);
         auto t2 = std::chrono::high_resolution_clock::now();
-        std::vector<bool> findereOnBloomFilter = QTF::query(smallFilter, querySeq, K, z, true);
+        std::vector<bool> findereOnBloomFilter = findere::query(smallFilter, querySeq, K, z, true);
         auto t3 = std::chrono::high_resolution_clock::now();
 
         QTF_internal::printContextBits(K, z, membit);

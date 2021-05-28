@@ -31,7 +31,7 @@ TEST(TestSuiteName, TestName2) {
     std::vector<bool> responseQuery = noQTF::query(filter, querySeq, k);
     std::vector<bool> responseQTFNoSkip = QTFNoSplitKmer::queryNoSkip(filter, querySeq, k, nbNeighboursMin);
     std::vector<bool> responseQTF = QTFNoSplitKmer::query(filter, querySeq, k, nbNeighboursMin);
-    std::vector<bool> responseQTFPlus = QTF::query(filter, querySeq, k, nbNeighboursMin);
+    std::vector<bool> responseQTFPlus = findere::query(filter, querySeq, k, nbNeighboursMin);
     std::cout << std::endl
               << std::endl;
     /* *****SCORE***** */

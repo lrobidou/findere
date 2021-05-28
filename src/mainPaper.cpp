@@ -70,18 +70,18 @@ int main(int argc, char* argv[]) {
 
                 if (bits) {
                     truthSmallK = truth::indexFastqGz(input_filenames, k_iter - z_iter, canonical);
-                    std::tie(smallFilter, timeTakenMs, sizeOfBloomFilter) = QTF::indexFastqGzGivenBits(input_filenames, numHashes, k_iter, z_iter, bits, canonical);
+                    std::tie(smallFilter, timeTakenMs, sizeOfBloomFilter) = findere::indexFastqGzGivenBits(input_filenames, numHashes, k_iter, z_iter, bits, canonical);
                 } else {
-                    std::tie(truthSmallK, smallFilter, timeTakenMs, sizeOfBloomFilter) = QTF::indexFastqGz(input_filenames, numHashes, k_iter, epsilonPercent_iter, z_iter, canonical);
+                    std::tie(truthSmallK, smallFilter, timeTakenMs, sizeOfBloomFilter) = findere::indexFastqGz(input_filenames, numHashes, k_iter, epsilonPercent_iter, z_iter, canonical);
                 }
 
                 auto t3 = std::chrono::high_resolution_clock::now();
-                std::vector<bool> QTFOnBloomFilter = QTF::query(smallFilter, querySeq, k_iter, z_iter);
+                std::vector<bool> QTFOnBloomFilter = findere::query(smallFilter, querySeq, k_iter, z_iter);
                 auto t4 = std::chrono::high_resolution_clock::now();
-                std::vector<bool> QTFOnBloomFilterSkip = QTF::query(smallFilter, querySeq, k_iter, z_iter, true);
+                std::vector<bool> QTFOnBloomFilterSkip = findere::query(smallFilter, querySeq, k_iter, z_iter, true);
                 auto t5 = std::chrono::high_resolution_clock::now();
 
-                std::vector<bool> QTFOnSmallTruth = QTF::query(truthSmallK, querySeq, k_iter, z_iter);
+                std::vector<bool> QTFOnSmallTruth = findere::query(truthSmallK, querySeq, k_iter, z_iter);
 
                 // QTF_internal::printTime(t0, t1, t2, t3, t4, t5, t6, t7, timeTakenMs);
                 QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnBloomFilter), "queryBF", false, sizeOfBloomFilter);

@@ -76,7 +76,7 @@ inline std::vector<bool> queryFilterOrTruth(const T& filterOrTruth, const std::s
     return response;
 }
 
-namespace QTF {
+namespace findere {
 
 std::vector<bool> inline query(bf::basic_bloom_filter* filter, const std::string& s, const unsigned int& k, const unsigned int& nbNeighboursMin, unsigned long long& nbStretch, bool skip = false) {
     return queryFilterOrTruth(filter, s, k, nbNeighboursMin, nbStretch, skip);
@@ -105,4 +105,4 @@ std::vector<bool> inline query(const customAMQ& amq, const std::string& s, const
     return queryFilterOrTruth(amq, s, k, nbNeighboursMin, dontCare, skip);
 }
 
-}  // namespace QTF
+}  // namespace findere
