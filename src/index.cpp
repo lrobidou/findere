@@ -15,15 +15,15 @@ int main(int argc, char* argv[]) {
     const unsigned numHashes = 1;  // number of hash functions
 
     cxxopts::ParseResult arguments = parseArgvIndexer(argc, argv);
-    const auto& [input_filenames, output, k, z, epsilonPercent, typeInput, canonical] = getArgsIndexer(arguments);
+    const auto& [input_filenames, output, k, z, b, typeInput, canonical] = getArgsIndexer(arguments);
     if (typeInput == "fastq") {
-        const auto& [truthSmallK, smallFilter, timeTakenMs, sizeOfBloomFilter] = QTF::indexFastqGz(input_filenames, numHashes, k, epsilonPercent, z, canonical);
+        const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = QTF::indexFastqGzGivenBits(input_filenames, numHashes, k, z, b, canonical);
         smallFilter->save(output);
     } else if (typeInput == "fasta") {
-        const auto& [truthSmallK, smallFilter, timeTakenMs, sizeOfBloomFilter] = QTF::indexFastas(input_filenames, numHashes, k, epsilonPercent, z, canonical);
+        const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = QTF::indexFastasGivenBits(input_filenames, numHashes, k, z, b, canonical);
         smallFilter->save(output);
     } else if (typeInput == "text") {
-        const auto& [truthSmallK, smallFilter, timeTakenMs, sizeOfBloomFilter] = QTF::indexText(input_filenames, numHashes, k, epsilonPercent, z, canonical);
+        const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = QTF::indexTextGivenBits(input_filenames, numHashes, k, z, b, canonical);
         smallFilter->save(output);
     } else {
         std::cerr << "The given type of input input '" << typeInput << "' is not recognised." << std::endl;
