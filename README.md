@@ -6,7 +6,7 @@
 
 <img src="paper_companion/HMP_analyses/fpr_wrt_z/fpr_simple.png" alt="fpr" width="600"/>
 
-The `findere` implementation proposed here uses a Bloom filter as AMQ. Il proposes a way to index and query Kmers from biological sequences (fastq or fasta, gzipped or not, possibly considering only canonical Kmers) or from any textual data. 
+The `findere` implementation proposed here uses a Bloom filter as AMQ. It proposes a way to index and query Kmers from biological sequences (fastq or fasta, gzipped or not, possibly considering only canonical Kmers) or from any textual data. 
 
 A library is proposed, hence `findere` can be easily adapted to any other AMQ, for any usage.
 
@@ -33,16 +33,19 @@ chmod +x build.sh
 ```
 ### Exemple on text files
 ```bash
-./bin/findere_index -i data/texts/contemplations.txt,data/texts/Horace.txt,data/texts/Le_Cid.txt,data/texts/Maastricht.txt,data/texts/Othon.txt,data/texts/Lettres_persanes.txt -o poesie.bin -k 31 -z 5 --epsilonpercent 8 -t text
-./bin/findere_query -i poesie.bin -q data/texts/AndromaqueAndHorace.txt -k 31 -z 5 -t text
+./bin/findere_index -i data/texts/contemplations.txt,data/texts/Horace.txt,data/texts/Le_Cid.txt,data/texts/Maastricht.txt,data/texts/Othon.txt,data/texts/Lettres_persanes.txt -o poesie.bin -K 31 -z 5 -b 1000000 -t text
+./bin/findere_query -i poesie.bin -q data/texts/AndromaqueAndHorace.txt -K 31 -z 5 -t text
 ```
 
 ### Execution on fasta files
 ```bash
-./bin/findere_index -i "data/ecoli2.fasta","data/ecoli3.fasta","data/Listeria phage.fasta","data/Penicillium chrysogenum.fasta" -o indexFastas -K 31 -z 3 --epsilonpercent 5 -t fasta
+./bin/findere_index -i "data/ecoli2.fasta","data/ecoli3.fasta","data/Listeria phage.fasta","data/Penicillium chrysogenum.fasta" -o indexFastas -K 31 -z 3 -b 10000000 5 -t fasta
 ./bin/findere_query -i indexFastas -q data/Listeria\ phage.fasta -K 31 -z 3 -t fasta
 ```
 
+Be sure that parameters K and z matches between findere_index and findere_query.
+
+To date, the last version of the library we use for our Bloom filters has an unsolved bug (https://github.com/mavam/libbf/blob/5478275d8a4e9a5cc163b44c34517c515bd898ec/src/hash.cpp#L13). For a high value of K, the hash function of Bloom filters crash. Thus, we experienced problems with a value of k > 36. Be carefull that K-z must be <= 36. If (K, z) is (37, 0) or (38, 1), findere_index will throw an exception. If (K, z) is (37, 1) or (38, 2), everything will be fine. 
 
 ## Sweet, but I already have a great AMQ data structure. How can I use `findere` to query it ?
 
