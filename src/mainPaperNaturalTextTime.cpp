@@ -40,7 +40,7 @@ int main(int argc, char* argv[]) {
     double epsilonPercent_iter = 5;
     bf::basic_bloom_filter* normalfilter = nullptr;
     unsigned long long numberOfIndexedElements = 0;
-    std::tie(normalfilter, numberOfIndexedElements) = QTF_internal::indexTextGivenTruth(input_filenames, truthBigK, numHashes, k_iter, epsilonPercent_iter, canonical);
+    std::tie(normalfilter, numberOfIndexedElements) = findere_internal::indexTextGivenTruth(input_filenames, truthBigK, numHashes, k_iter, epsilonPercent_iter, canonical);
 
     auto t6 = std::chrono::high_resolution_clock::now();
     std::vector<bool> noQTFSimpleQuery = noQTF::query(normalfilter, querySeq, k_iter);
@@ -52,7 +52,7 @@ int main(int argc, char* argv[]) {
         int timeTakenMs;
         unsigned long long sizeOfBloomFilter;
 
-        QTF_internal::printContext(k_iter, z_iter, epsilonPercent_iter);
+        findere_internal::printContext(k_iter, z_iter, epsilonPercent_iter);
 
         std::tie(truthSmallK, smallFilter, timeTakenMs, sizeOfBloomFilter) = findere::indexText(input_filenames, numHashes, k_iter, epsilonPercent_iter, z_iter, canonical);
 
@@ -66,11 +66,11 @@ int main(int argc, char* argv[]) {
 
         std::vector<bool> QTFOnSmallTruth = findere::query(truthSmallK, querySeq, k_iter, z_iter);
 
-        QTF_internal::printTime(t0, t1, t2, t3, t4, t5, t6, t7, timeTakenMs);
-        QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnBloomFilter), "queryBF", false, sizeOfBloomFilter);
-        QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnBloomFilterSkip), "queryBFSkip", false, sizeOfBloomFilter);
-        QTF_internal::printScore(QTF_internal::getScore(bigTruth, QTFOnSmallTruth), "resultsOnSmallTruth", false);
-        QTF_internal::printScore(QTF_internal::getScore(bigTruth, noQTFSimpleQuery), "normalfilter", true, numberOfIndexedElements);
+        findere_internal::printTime(t0, t1, t2, t3, t4, t5, t6, t7, timeTakenMs);
+        findere_internal::printScore(findere_internal::getScore(bigTruth, QTFOnBloomFilter), "queryBF", false, sizeOfBloomFilter);
+        findere_internal::printScore(findere_internal::getScore(bigTruth, QTFOnBloomFilterSkip), "queryBFSkip", false, sizeOfBloomFilter);
+        findere_internal::printScore(findere_internal::getScore(bigTruth, QTFOnSmallTruth), "resultsOnSmallTruth", false);
+        findere_internal::printScore(findere_internal::getScore(bigTruth, noQTFSimpleQuery), "normalfilter", true, numberOfIndexedElements);
 
         std::cout << "    }";
         if (z_iter < 10) {

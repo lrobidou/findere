@@ -3,7 +3,7 @@
 #include <tuple>
 #include <vector>
 
-namespace QTF_internal {
+namespace findere_internal {
 
 inline std::tuple<int, int, int, int> getScore(const std::vector<bool>& truth, const std::vector<bool>& queryResult) {
     if (truth.size() != queryResult.size()) {
@@ -99,4 +99,4 @@ inline void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN, const 
 //     std::cout << "            \"FNR\": " << (double)(100 * FN) / (double)(FN + TP) << std::endl;
 //     std::cout << "        }" << std::endl;
 // }
-}  // namespace QTF_internal
+}  // namespace findere_internal

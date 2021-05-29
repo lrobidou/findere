@@ -108,7 +108,7 @@ inline robin_hood::unordered_set<std::string> indexText(std::vector<std::string>
 
 }  // namespace truth
 
-namespace QTF_internal {
+namespace findere_internal {
 inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexFastasGivenBits(const std::vector<std::string>& filenames, unsigned long long bits, const unsigned numHashes, const unsigned int& k, const double& epsilon_percent, bool canonical = false) {
     bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), bits);
     std::string line;
@@ -235,13 +235,13 @@ inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexTextGivenTru
     m = m + 8 - (m % 8);
     return indexTextGivenBits(filenames, m, numHashes, k, epsilon_percent, canonical);
 }
-}  // namespace QTF_internal
+}  // namespace findere_internal
 
 inline std::tuple<robin_hood::unordered_set<std::string>, bf::basic_bloom_filter*, int, unsigned long long> indexFastas(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, bool canonical = false) {
     // create ground truth
     robin_hood::unordered_set<std::string> truth = truth::indexFastas(filenames, k, canonical);
     auto t0 = std::chrono::high_resolution_clock::now();
-    const auto& [filter, sizeOfFilter] = QTF_internal::indexFastasGivenTruth(filenames, truth, numHashes, k, epsilon_percent, canonical);
+    const auto& [filter, sizeOfFilter] = findere_internal::indexFastasGivenTruth(filenames, truth, numHashes, k, epsilon_percent, canonical);
     auto t1 = std::chrono::high_resolution_clock::now();
     return {truth, filter, std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count(), sizeOfFilter};
 }
@@ -250,7 +250,7 @@ inline std::tuple<robin_hood::unordered_set<std::string>, bf::basic_bloom_filter
     // create ground truth
     robin_hood::unordered_set<std::string> truth = truth::indexFastqGz(filenames, k, canonical);
     auto t0 = std::chrono::high_resolution_clock::now();
-    const auto& [filter, sizeOfFilter] = QTF_internal::indexFastqGZGivenTruth(filenames, truth, numHashes, k, epsilon_percent, canonical);
+    const auto& [filter, sizeOfFilter] = findere_internal::indexFastqGZGivenTruth(filenames, truth, numHashes, k, epsilon_percent, canonical);
     auto t1 = std::chrono::high_resolution_clock::now();
     return {truth, filter, std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count(), sizeOfFilter};
 }
@@ -259,7 +259,7 @@ inline std::tuple<robin_hood::unordered_set<std::string>, bf::basic_bloom_filter
     // create ground truth
     robin_hood::unordered_set<std::string> truth = truth::indexText(filenames, k, canonical);
     auto t0 = std::chrono::high_resolution_clock::now();
-    const auto& [filter, sizeOfFilter] = QTF_internal::indexTextGivenTruth(filenames, truth, numHashes, k, epsilon_percent, canonical);
+    const auto& [filter, sizeOfFilter] = findere_internal::indexTextGivenTruth(filenames, truth, numHashes, k, epsilon_percent, canonical);
     auto t1 = std::chrono::high_resolution_clock::now();
     return {truth, filter, std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count(), sizeOfFilter};
 }
@@ -269,7 +269,7 @@ inline std::tuple<robin_hood::unordered_set<std::string>, bf::basic_bloom_filter
 inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexFastasGivenBits(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, unsigned long long bits, bool canonical = false) {
     // create ground truth
     auto t0 = std::chrono::high_resolution_clock::now();
-    const auto& [filter, sizeOfFilter] = QTF_internal::indexFastasGivenBits(filenames, bits, numHashes, k, canonical);
+    const auto& [filter, sizeOfFilter] = findere_internal::indexFastasGivenBits(filenames, bits, numHashes, k, canonical);
     auto t1 = std::chrono::high_resolution_clock::now();
     return {filter, std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count(), sizeOfFilter};
 }
@@ -277,7 +277,7 @@ inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexFastasG
 inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexFastqGzGivenBits(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, unsigned long long bits, bool canonical = false) {
     // create ground truth
     auto t0 = std::chrono::high_resolution_clock::now();
-    const auto& [filter, sizeOfFilter] = QTF_internal::indexFastqGZGivenBits(filenames, bits, numHashes, k, canonical);
+    const auto& [filter, sizeOfFilter] = findere_internal::indexFastqGZGivenBits(filenames, bits, numHashes, k, canonical);
     auto t1 = std::chrono::high_resolution_clock::now();
     return {filter, std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count(), sizeOfFilter};
 }
@@ -285,7 +285,7 @@ inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexFastqGz
 inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexTextGivenBits(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, unsigned long long bits, bool canonical = false) {
     // create ground truth
     auto t0 = std::chrono::high_resolution_clock::now();
-    const auto& [filter, sizeOfFilter] = QTF_internal::indexFastasGivenBits(filenames, bits, numHashes, k, canonical);
+    const auto& [filter, sizeOfFilter] = findere_internal::indexFastasGivenBits(filenames, bits, numHashes, k, canonical);
     auto t1 = std::chrono::high_resolution_clock::now();
     return {filter, std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count(), sizeOfFilter};
 }

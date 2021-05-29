@@ -101,6 +101,6 @@ int main(int argc, char* argv[]) {
     // this is just here to test findere
 
     // std::vector<bool> truthQuery = truth::queryTruth(truth::indexText(filenames, k, canonical), querySeq, k);
-    // QTF_internal::printScore(QTF_internal::getScore(truthQuery, response));
+    // findere_internal::printScore(findere_internal::getScore(truthQuery, response));
     return 0;
 }

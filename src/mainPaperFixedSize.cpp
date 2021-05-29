@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
     std::vector<bool> bigTruth = truth::queryTruth(truthBigK, querySeq, K);
 
     for (const auto& membit : membits) {
-        const auto& [normalfilter, numberOfIndexedElements] = QTF_internal::indexFastqGZGivenBits(input_filenames, membit, numHashes, K, false);
+        const auto& [normalfilter, numberOfIndexedElements] = findere_internal::indexFastqGZGivenBits(input_filenames, membit, numHashes, K, false);
         const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = findere::indexFastqGzGivenBits(input_filenames, numHashes, K, z, membit, false);
         auto t1 = std::chrono::high_resolution_clock::now();
         std::vector<bool> noFindereimpleQuery = noQTF::query(normalfilter, querySeq, K);
@@ -42,14 +42,14 @@ int main(int argc, char* argv[]) {
         std::vector<bool> findereOnBloomFilter = findere::query(smallFilter, querySeq, K, z, true);
         auto t3 = std::chrono::high_resolution_clock::now();
 
-        QTF_internal::printContextBits(K, z, membit);
+        findere_internal::printContextBits(K, z, membit);
         std::cout << "        \"time\": {" << std::endl;
         std::cout << "            \"computeBf\": " << timeTakenMs << "," << std::endl;
         std::cout << "            \"queryBfSkip\": " << std::chrono::duration_cast<std::chrono::milliseconds>(t3 - t2).count() << "," << std::endl;
         std::cout << "            \"queryNormalFilter\": " << std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count() << std::endl;
         std::cout << "        }," << std::endl;
-        QTF_internal::printScore(QTF_internal::getScore(bigTruth, findereOnBloomFilter), "findere", false, sizeOfBloomFilter);
-        QTF_internal::printScore(QTF_internal::getScore(bigTruth, noFindereimpleQuery), "normalfilter", true, numberOfIndexedElements);
+        findere_internal::printScore(findere_internal::getScore(bigTruth, findereOnBloomFilter), "findere", false, sizeOfBloomFilter);
+        findere_internal::printScore(findere_internal::getScore(bigTruth, noFindereimpleQuery), "normalfilter", true, numberOfIndexedElements);
         std::cout << "    }";
         if (membit != 8022598392) {
             std::cout << ",";

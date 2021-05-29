@@ -36,20 +36,20 @@ TEST(TestSuiteName, TestName2) {
               << std::endl;
     /* *****SCORE***** */
     std::cout << "getScore(truthQuery, responseQuery)" << std::endl;
-    QTF_internal::printScore(QTF_internal::getScore(truthQuery, responseQuery));
+    findere_internal::printScore(findere_internal::getScore(truthQuery, responseQuery));
     std::cout << std::endl;
 
     // const auto& [TP, TN, FP, FN] = getScore(truthQuery, responseQuery);
     std::cout << "getScore(truthQuery, responseQTFNoSkip);" << std::endl;
-    QTF_internal::printScore(QTF_internal::getScore(truthQuery, responseQTFNoSkip));
+    findere_internal::printScore(findere_internal::getScore(truthQuery, responseQTFNoSkip));
     std::cout << std::endl;
 
     std::cout << "getScore(truthQuery, responseQTF);" << std::endl;
-    QTF_internal::printScore(QTF_internal::getScore(truthQuery, responseQTF));
+    findere_internal::printScore(findere_internal::getScore(truthQuery, responseQTF));
     std::cout << std::endl;
 
     // getScore(truthQuery, responseQTFPlus);//TODO FPR supr bas, pourquoi ?
     std::cout << "getScore(truthQueryKPlusZ, responseQTFPlus)" << std::endl;
-    QTF_internal::printScore(QTF_internal::getScore(truthQueryKPlusZ, responseQTFPlus));
+    findere_internal::printScore(findere_internal::getScore(truthQueryKPlusZ, responseQTFPlus));
     std::cout << std::endl;
 }

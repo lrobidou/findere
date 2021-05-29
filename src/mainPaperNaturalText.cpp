@@ -32,11 +32,11 @@ int main(int argc, char* argv[]) {
     robin_hood::unordered_set<std::string> truthBigK = truth::indexFastqGz(input_filenames, K, false);
     robin_hood::unordered_set<std::string> truthSmallK = truth::indexFastqGz(input_filenames, K - z, false);
     std::vector<bool> bigTruth = truth::queryTruth(truthBigK, querySeq, K);
-    // const auto& [normalfilter, size] = QTF_internal::indexFastqGZGivenTruth(input_filenames, truthBigK, numHashes, K, 5, false);
+    // const auto& [normalfilter, size] = findere_internal::indexFastqGZGivenTruth(input_filenames, truthBigK, numHashes, K, 5, false);
     // std::cout << size << std::endl;
 
     for (const auto& membit : membits) {
-        const auto& [normalfilter, sizeSimpleFilter] = QTF_internal::indexFastqGZGivenBits(input_filenames, membit, numHashes, K, false);
+        const auto& [normalfilter, sizeSimpleFilter] = findere_internal::indexFastqGZGivenBits(input_filenames, membit, numHashes, K, false);
         const auto& [smallFilter, timeTakenMs, sizeOfBloomFilterFindere] = findere::indexFastqGzGivenBits(input_filenames, numHashes, K, z, membit, false);
         auto t1 = std::chrono::high_resolution_clock::now();
         std::vector<bool> noFindereimpleQuery = noQTF::query(normalfilter, querySeq, K);
@@ -44,14 +44,14 @@ int main(int argc, char* argv[]) {
         std::vector<bool> findereOnBloomFilter = findere::query(smallFilter, querySeq, K, z, true);
         auto t3 = std::chrono::high_resolution_clock::now();
 
-        QTF_internal::printContextBits(K, z, membit);
+        findere_internal::printContextBits(K, z, membit);
         std::cout << "        \"time\": {" << std::endl;
         std::cout << "            \"computeBf\": " << timeTakenMs << "," << std::endl;
         std::cout << "            \"queryBfSkip\": " << std::chrono::duration_cast<std::chrono::milliseconds>(t3 - t2).count() << "," << std::endl;
         std::cout << "            \"queryNormalFilter\": " << std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count() << std::endl;
         std::cout << "        }," << std::endl;
-        QTF_internal::printScore(QTF_internal::getScore(bigTruth, findereOnBloomFilter), "findere", false, sizeOfBloomFilterFindere);
-        QTF_internal::printScore(QTF_internal::getScore(bigTruth, noFindereimpleQuery), "normalfilter", true, sizeSimpleFilter);
+        findere_internal::printScore(findere_internal::getScore(bigTruth, findereOnBloomFilter), "findere", false, sizeOfBloomFilterFindere);
+        findere_internal::printScore(findere_internal::getScore(bigTruth, noFindereimpleQuery), "normalfilter", true, sizeSimpleFilter);
         std::cout << "    }";
         if (membit != 267419946400) {
             std::cout << ",";
