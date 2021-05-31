@@ -120,4 +120,4 @@ Pierre Peterlongo: pierre.peterlongo@inria.fr
 
 ## Citation
 
-Todo
+Robidou L, Peterlongo P [findere: fast and precise approximate membership query](https://doi.org/10.1101/2021.05.31.446182)
