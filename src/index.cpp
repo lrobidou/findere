@@ -19,12 +19,15 @@ int main(int argc, char* argv[]) {
     if (typeInput == "fastq") {
         const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = findere::indexFastqGzGivenBits(input_filenames, numHashes, k, z, b, canonical);
         smallFilter->save(output);
+        delete(smallFilter);
     } else if (typeInput == "fasta") {
         const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = findere::indexFastasGivenBits(input_filenames, numHashes, k, z, b, canonical);
         smallFilter->save(output);
+        delete(smallFilter);
     } else if (typeInput == "text") {
         const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = findere::indexTextGivenBits(input_filenames, numHashes, k, z, b, canonical);
         smallFilter->save(output);
+        delete(smallFilter);
     } else {
         std::cerr << "The given type of input input '" << typeInput << "' is not recognised." << std::endl;
     }
