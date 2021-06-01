@@ -24,24 +24,19 @@ TODO Lucas
 
 ### Experiments with respect to the `z`value
 
-TODO Lucas
+To execute the experiments, follow the instruction in the directory fpr_wrt_z.
 
 ### Experiments with respect to the space used
 
-TODO Lucas
+To execute the experiments, follow the instruction in the directory FPR_wrt_size.
 
 ### Experiments with respect to the `K` value
 
-To execute the experiment, follow the instruction in the directory wrt_k.
+To execute the experiments, follow the instruction in the directory wrt_k.
 
 ## Plot results
 
-In each of the two directories dedicated to the proposed experiments wrt to `z`or the space used, we propose 
-
-- a text file containing the results of our tests 
-- a R script that may be used to reproduce the figures proposed in the `findere`manuscript.
-
-In the directory of the experiment wrt `K` value, we propose: 
+In each of the three directories dedicated to the proposed experiments wrt to `z`or the space used, we propose 
 - a python file that opens the output of findere, then extracts, prints and plots them. 
-- a txt tile containing the results of our tests 
-- a R script that may be used to reproduce the figures proposed in the `findere`manuscript.
+- a txt tile containing the results of the execution of the python file 
+- a R script that may be used to reproduce the figures proposed in the `findere` manuscript.

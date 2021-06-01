@@ -1,6 +1,6 @@
 # Stability of findere wrt K
 
-We propose an experiment to show the stability of the false positive rate and the query time of findere.
+We propose an experiment to show the stability of the false positive rate and the query time of findere with respect to the value of `K` .
 
 ## Reproduce the result
 
