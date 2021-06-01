@@ -15,7 +15,7 @@ A library is proposed, hence `findere` can be easily adapted to any other AMQ, f
 You must first install zlib. It is likely to be already installed, if not you can try:
 ```bash
 sudo apt update
-sudo apt-cache search zlib
+sudo apt-cache search zlib # This is zlib1g-dev on Ubuntu 20.04.
 sudo apt-get install zlib # or wathever you found with apt-cache search
 ```
 
