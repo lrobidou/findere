@@ -9,6 +9,13 @@ We propose an experiment to show the stability of the false positive rate and th
 ```
 git clone --recursive https://github.com/lrobidou/findere
 cd findere
+```
+### Modify the parameters
+In the file src/mainPaperKVariation.cpp: 
+Modify the values of `input_filenames` and `queryFile` to match with the position of the fastas files on your disk. 
+
+### Compile findere
+```
 git submodule update --init --recursive
 chmod +x build.sh
 ./build.sh
@@ -20,6 +27,7 @@ chmod +x build.sh
 ```
 
 ### print the result
+By default, this will print and plot the result. You can comment out `plt.show()` to stop plotting the results.
 ```
 python3 paper_companion/HMP_K_variation/analyse.py
 ```

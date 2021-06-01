@@ -5,8 +5,7 @@ import matplotlib.pyplot as plt
 
 def from_tuple_to_nested_dict(list_of_tuples):
     dic = defaultdict(dict)  # dict where the default values are dicts.
-    for a, b, c, d in list_of_tuples:  # Each tuple is "key1, key2, value"
-        # print(a, b, c, d)
+    for a, b, c, d in list_of_tuples:
         if not b in dic[a]:
             dic[a][b] = {}
         dic[a][b][c] = d
