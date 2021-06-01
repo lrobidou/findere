@@ -13,6 +13,11 @@ cd findere
 ```
 
 ### Compile findere
+Go to CMakeLists.txt and turn option CompileAll to ON.
+```
+option(CompileAll "full" ON)
+```
+Then, compile:
 ```
 git submodule update --init --recursive
 chmod +x build.sh

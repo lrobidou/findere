@@ -15,6 +15,11 @@ In the file src/mainPaperKVariation.cpp:
 Modify the values of `input_filenames` and `queryFile` to match with the position of the fastas files on your disk. 
 
 ### Compile findere
+Go to CMakeLists.txt and turn option CompileAll to ON.
+```
+option(CompileAll "full" ON)
+```
+Then, compile:
 ```
 git submodule update --init --recursive
 chmod +x build.sh

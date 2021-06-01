@@ -23,6 +23,13 @@ git checkout 1dead79779c3dc61c803f51509f1d85aa9828555  # important
 
 git submodule update --init --recursive  # also impotant (even if you already did it before), as git won't update the submodule when you checkout
 chmod +x build.sh
+```
+Go to CMakeLists.txt and turn option CompileAll to ON.
+```
+option(CompileAll "full" ON)
+```
+Then, compile:
+```
 ./build.sh
 ```
 
