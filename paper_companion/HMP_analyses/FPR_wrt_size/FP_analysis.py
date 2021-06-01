@@ -5,8 +5,7 @@ import matplotlib.pyplot as plt
 
 def from_tuple_to_nested_dict(list_of_tuples):
     dic = defaultdict(dict)  # dict where the default values are dicts.
-    for a, b, c, d in list_of_tuples:  # Each tuple is "key1, key2, value"
-        # print(a, b, c, d)
+    for a, b, c, d in list_of_tuples:
         if not b in dic[a]:
             dic[a][b] = {}
         dic[a][b][c] = d
@@ -45,18 +44,19 @@ def plot_frp(the_dic):
 
 
 def main():
-    with open("fixSizeZoomed.json", "r") as fichier:
+    # open the file, read the content
+    with open("fixSize.json", "r") as fichier:
         runs = json.load(fichier)
 
+    # create a dict from the content to make it easier to manipulate
     kez = []
-    kze = []
     for run in runs:
         kez_keys = run["param"]["k"], run["param"]["bits"], run["param"]["z"]
-        kze_keys = run["param"]["k"], run["param"]["z"], run["param"]["bits"]
         run.pop("param")
         kez.append((*kez_keys, run))
-        kze.append((*kze_keys, run))
     kez_results = from_tuple_to_nested_dict(kez)
+
+    # plot the result of the experiment
     plot_frp(kez_results)
 
 
