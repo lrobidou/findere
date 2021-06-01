@@ -10,7 +10,7 @@ The `findere` implementation proposed here uses a Bloom filter as AMQ. It propos
 
 A library is proposed, hence `findere` can be easily adapted to any other AMQ, for any usage.
 
-# Installation and execution
+# Installation and how to run
 ## Installation
 You must first install zlib. It is likely to be already installed, if not you can try:
 ```bash
@@ -26,7 +26,7 @@ git submodule update --init --recursive
 chmod +x build.sh
 ./build.sh
 ```
-## Execution
+## Running
 ```bash
 ./bin/findere_index -i <lists of files to index> -o <index output> -k <k> -z <z> -b <size in bits> -t <type of data you want to index>
 ./bin/findere_query -i <the index> -q <your query file> -k <k> -z <z> -t <type of data you indexed>
@@ -37,7 +37,7 @@ chmod +x build.sh
 ./bin/findere_query -i poesie.bin -q data/texts/AndromaqueAndHorace.txt -K 31 -z 5 -t text
 ```
 
-### Execution on fasta files
+### Running on fasta files
 ```bash
 ./bin/findere_index -i "data/ecoli2.fasta","data/ecoli3.fasta","data/Listeria phage.fasta","data/Penicillium chrysogenum.fasta" -o indexFastas -K 31 -z 3 -b 10000000 5 -t fasta
 ./bin/findere_query -i indexFastas -q data/Listeria\ phage.fasta -K 31 -z 3 -t fasta

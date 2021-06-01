@@ -38,5 +38,5 @@ To execute the experiments, follow the instruction in the directory wrt_k.
 
 In each of the three directories dedicated to the proposed experiments wrt to `z`or the space used, we propose 
 - a python file that opens the output of findere, then extracts, prints and plots them. 
-- a txt tile containing the results of the execution of the python file 
+- a txt file containing the results of the run of the python file 
 - a R script that may be used to reproduce the figures proposed in the `findere` manuscript.
