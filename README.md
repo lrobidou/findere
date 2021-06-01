@@ -28,7 +28,7 @@ chmod +x build.sh
 ```
 ## Execution
 ```bash
-./bin/findere_index -i <lists of files to index> -o <index output> -k <k> -z <z> --epsilonpercent <epsilon in percent> -t <type of data you want to index>
+./bin/findere_index -i <lists of files to index> -o <index output> -k <k> -z <z> -b <size in bits> -t <type of data you want to index>
 ./bin/findere_query -i <the index> -q <your query file> -k <k> -z <z> -t <type of data you indexed>
 ```
 ### Exemple on text files
