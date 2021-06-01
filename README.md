@@ -66,7 +66,7 @@ class customAMQ {
 }
 ```
 
-Any class that inherits `customAMQ` can be use with `findere`.Just wrap your data structure in it, and you are done. An exemple can be find in the file `src/query.cpp`. Let's break it down:
+Any class that inherits `customAMQ` can be use with `findere`. Just wrap your data structure in it, and you are done. An exemple can be find in the file `src/query.cpp`. Let's break it down:
 
 You have to inherit customAMQ, so:
 ```c++
