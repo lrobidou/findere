@@ -51,7 +51,7 @@ int main(int argc, char* argv[]) {
         findere_internal::printScore(findere_internal::getScore(bigTruth, findereOnBloomFilter), "findere", false, sizeOfBloomFilter);
         findere_internal::printScore(findere_internal::getScore(bigTruth, noFindereimpleQuery), "normalfilter", true, numberOfIndexedElements);
         std::cout << "    }";
-        if (membit != 8022598392) {
+        if (membit != 66780128000) {
             std::cout << ",";
         }
         std::cout << std::endl;
