@@ -102,5 +102,6 @@ int main(int argc, char* argv[]) {
 
     // std::vector<bool> truthQuery = truth::queryTruth(truth::indexText(filenames, k, canonical), querySeq, k);
     // findere_internal::printScore(findere_internal::getScore(truthQuery, response));
+    delete(filter);
     return 0;
 }
