@@ -78,19 +78,20 @@ inline std::vector<bool> queryFilterOrTruth(const T& filterOrTruth, const std::s
 }
 
 unsigned long long get_nb_positions_covered(std::vector<bool> bv, const unsigned int k){
-    unsigned long long nb_positions_covered = 0; // NB pos covered by at least one shared K-mer
+    long long nb_positions_covered = 0; // NB pos covered by at least one shared K-mer
     long long last_covered_position = -1; 
-    unsigned long long  pos = 0;
+    long long  pos = 0;
     for (auto shared : bv) {
         if (shared){
             if (last_covered_position < pos){
                 nb_positions_covered += k;
             }
             else{
-                nb_positions_covered += pos + k - last_covered_position - 1;
+                nb_positions_covered += pos - last_covered_position + k - 1;
             }
             
             last_covered_position = pos + k - 1;
+            
         } 
         pos++;
     }
@@ -101,7 +102,6 @@ namespace findere {
 
 std::vector<bool> inline query_one_sequence(const std::string& filename, bf::basic_bloom_filter* filter, const unsigned int& k, const unsigned int& nbNeighboursMin, unsigned long long& nbStretch, bool skip = false) {
     
-    std::cerr<<"query_one_sequence0"<<std::endl;
     FileManager read_files = FileManager ();
     read_files.addFile(filename);
     
@@ -111,7 +111,6 @@ std::vector<bool> inline query_one_sequence(const std::string& filename, bf::bas
 
 std::vector<bool> inline query_one_sequence(const std::string& filename, const robin_hood::unordered_set<std::string>& truth, const unsigned int& k, const unsigned int& nbNeighboursMin, unsigned long long& nbStretch, bool skip = false) {
     
-    std::cerr<<"query_one_sequence1"<<std::endl;
     FileManager read_files = FileManager ();
     read_files.addFile(filename);
     std::string & current_read = read_files.get_next_read();
@@ -119,21 +118,16 @@ std::vector<bool> inline query_one_sequence(const std::string& filename, const r
 }
 
 std::vector<bool> inline query_one_sequence(const std::string& filename, bf::basic_bloom_filter* filter, const unsigned int& k, const unsigned long long& nbNeighboursMin, bool skip = false) {
-    
-    std::cerr<<"query_one_sequence2"<<std::endl;
     unsigned long long dontCare = 0;
     FileManager read_files = FileManager ();
 
-    std::cerr<<"Adding file "<<filename<<std::endl;
     read_files.addFile(filename);
     std::string & current_read = read_files.get_next_read();
-    std::cerr<<"Querying "<<current_read<<std::endl;
     return queryFilterOrTruth(filter, current_read, k, nbNeighboursMin, dontCare, skip);
 }
 
 std::vector<bool> inline query_one_sequence(const std::string& filename, const robin_hood::unordered_set<std::string>& truth, const unsigned int& k, const unsigned int& nbNeighboursMin, bool skip = false) {
     
-    std::cerr<<"query_one_sequence3"<<std::endl;
     
     unsigned long long dontCare = 0;
 
@@ -145,7 +139,6 @@ std::vector<bool> inline query_one_sequence(const std::string& filename, const r
 
 std::vector<bool> inline query_one_sequence(const std::string& filename, const customAMQ& amq,  const unsigned int& k, const unsigned int& nbNeighboursMin, unsigned long long& nbStretch, bool skip = false) {
     
-    std::cerr<<"query_one_sequence4"<<std::endl;
     FileManager read_files = FileManager ();
     read_files.addFile(filename);
     std::string & current_read = read_files.get_next_read();
@@ -154,14 +147,11 @@ std::vector<bool> inline query_one_sequence(const std::string& filename, const c
 
 std::vector<bool> inline query_one_sequence(const std::string& filename, const customAMQ& amq, const unsigned int& k, const unsigned long long& nbNeighboursMin, bool skip = false) {
     
-    std::cerr<<"query_one_sequence5"<<std::endl;
     unsigned long long dontCare = 0;
     FileManager read_files = FileManager ();
 
-    std::cerr<<"Adding file "<<filename<<std::endl;
     read_files.addFile(filename);
     std::string & current_read = read_files.get_next_read();
-    std::cerr<<"Querying "<<current_read<<std::endl;
     return queryFilterOrTruth(amq, current_read, k, nbNeighboursMin, dontCare, skip);
 }
 
@@ -170,14 +160,15 @@ void query_all(const std::string& filename, const customAMQ& amq, const unsigned
     FileManager read_files = FileManager ();
     read_files.addFile(filename);
     
-    std::string  current_data = read_files.get_data();
     std::string  current_read = read_files.get_next_read();
+    std::string  current_header = read_files.get_header();
 
 
     while (!current_read.empty()) {
         // Analyse the result of each query
         std::vector<bool> res = queryFilterOrTruth(amq, current_read, k, nbNeighboursMin, dontCare, skip);
-        std::cout << current_data <<"\n"<< get_nb_positions_covered(res, k) <<std::endl;
+        long long nb_positions_covered = get_nb_positions_covered(res, k);
+        std::cout << current_header << nb_positions_covered << " over "<<current_read.length()<<" :"<<(100*nb_positions_covered)/float(current_read.length())<<"%"<<std::endl;
         current_read = read_files.get_next_read();
     } 
 }

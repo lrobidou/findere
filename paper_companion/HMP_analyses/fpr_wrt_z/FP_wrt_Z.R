@@ -20,12 +20,12 @@ plot(data$AMQ_FPR*100~data$z,xlab="z value",ylab="FP rate (%)", lwd=2, pch=15, c
 
 
 par(new = TRUE, mgp=c(3,1,0))
-plot(data$findere_FPR*100~data$z,type="o",axes=FALSE,xlab="",ylab="",pch=19, col="red", ylim=c(0,7), xlim=c(0,5), cex=2)
+plot(data$findere_FPR*100~data$z,type="o",axes=FALSE,xlab="",ylab="",pch=19, col="red", ylim=c(0,7), xlim=c(0,10), cex=2)
 
 
 
 par(new = TRUE, mgp=c(3,1,0))
-plot(data$construction_FPR*100~data$z,type="o",axes=FALSE,xlab="",ylab="",pch=21, col="orange", ylim=c(0,7), xlim=c(0,5), cex=2)
+plot(data$construction_FPR*100~data$z,type="o",axes=FALSE,xlab="",ylab="",pch=21, col="orange", ylim=c(0,7), xlim=c(0,10), cex=2)
 
 
 legend( x="topleft", 

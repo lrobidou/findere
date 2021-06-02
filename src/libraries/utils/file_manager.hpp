@@ -67,7 +67,6 @@ public:
 		}
 		std::string & tmp_read = files[current_file]->get_next_read();
 		while (tmp_read.empty()) {
-			std::cerr<<tmp_read<<tmp_read<<std::endl;
 			current_file++;
 			if (current_file >= (int) files.size()) {
 				break;
@@ -150,6 +149,7 @@ public:
 	}
 	
 	const std::string & get_data() const {return files[current_file]->get_data();}
+	const std::string & get_header() const {return files[current_file]->get_header();}
 	
 	
 	

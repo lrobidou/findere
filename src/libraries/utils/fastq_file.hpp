@@ -96,6 +96,7 @@ public:
 		}
 		current_read_data.clear();
 		current_read_seq.clear();
+		current_read_header.clear();
 		
 			// The current read is 1 in the boolean vector
 			// Or current_read_pos >= nb_reads -> end of file
@@ -106,6 +107,7 @@ public:
 					while (tmp_str.empty() && infile.peek() != (int) std::char_traits<wchar_t>::eof()) {
 						getline (infile, tmp_str);
 					}
+					current_read_header += tmp_str;
 					current_read_data += tmp_str + "\n";
 				} else {
 					return current_read_seq;
@@ -133,6 +135,7 @@ public:
 				} else {
 					current_read_seq.clear();
 					current_read_data.clear();
+					current_read_header.clear();
 					return current_read_seq;
 				}
 				// Read the fourth line of FASTQ entry -> "quality sequence"
@@ -145,6 +148,7 @@ public:
 				} else {
 					current_read_seq.clear();
 					current_read_data.clear();
+					current_read_header.clear();
 				}
 			}
 		
@@ -158,6 +162,7 @@ public:
 	void flush_next_read () {
 		current_read_data.clear();
 		current_read_seq.clear();
+		current_read_header.clear();
 		if (infile.good() && infile.peek() != (int) std::char_traits<wchar_t>::eof()) {
 			getline (infile, tmp_str);
 			while (tmp_str.empty() && infile.peek() != (int) std::char_traits<wchar_t>::eof()) {
@@ -204,6 +209,12 @@ public:
 	
 	
 	
+// Return the current header
+	//
+	const std::string & get_header() const
+	{
+		return current_read_header;
+	}
 	
 	////////////////////////////////////////////////////////////
 	// Go to the beginning of the file -> current_read_pos = -1
@@ -214,30 +225,9 @@ public:
 		infile.seekg(0);
 		current_read_pos = 0;
 		first_read = true;
-	};
-	
-	
-	////////////////////////////////////////////////////////////
-	// Save the selected reads in a given file name
-	//
-	void save (const std::string & directory, const std::string & suffix) {
-		std::string output_file_name = directory + "/" + fname.substr(fname.rfind("/") + 1)  + "_in_" + suffix+ ".fq";
-		rewind();
-		std::ofstream outfile;
-		outfile.open (output_file_name.c_str());
-		if (!outfile.good()) {
-			std::cerr << "Cannot write on file " << output_file_name << "\n";
-			exit(1);
-		}
-		std::string & current_read = get_next_read();
-		while (!current_read.empty()) {
-			outfile << get_data();
-			current_read = get_next_read();
-		}
-		outfile.close();
 	}
+	
 };
-
 class GzFastqFile : public ReadFile  {
 private:
 	gzFile infile;
@@ -298,6 +288,7 @@ public:
 		}
 		current_read_data.clear();
 		current_read_seq.clear();
+		current_read_header.clear();
 		
 			
 			// The current read is 1 in the boolean vector
@@ -310,6 +301,7 @@ public:
 						gzgets(infile, tmp_str, NORMALSIZEREAD);
 					}
 					current_read_data += std::string(tmp_str);
+					current_read_header += tmp_str;
 					if (current_read_data[current_read_data.size() - 1] != '\n') {
 						current_read_data += '\n';
 					}
@@ -344,6 +336,7 @@ public:
 				} else {
 					current_read_seq.clear();
 					current_read_data.clear();
+					current_read_header.clear();
 					return current_read_seq;
 				}
 				// Read the fourth line of FASTQ entry -> "quality sequence"
@@ -359,6 +352,7 @@ public:
 				} else {
 					current_read_seq.clear();
 					current_read_data.clear();
+					current_read_header.clear();
 				}
 			}
 		
@@ -372,6 +366,7 @@ public:
 	void flush_next_read () {
 		current_read_data.clear();
 		current_read_seq.clear();
+		current_read_header.clear();
 		if (!gzeof(infile)) {
 			gzgets(infile, tmp_str, NORMALSIZEREAD);
 			while (tmp_str[0] == '\0' && !gzeof(infile)) {
@@ -417,6 +412,12 @@ public:
 	}
 	
 	
+// Return the current header
+	//
+	const std::string & get_header() const
+	{
+		return current_read_header;
+	}
 	////////////////////////////////////////////////////////////
 	// Go to the beginning of the file -> current_read_pos = -1
 	// because no read has been read

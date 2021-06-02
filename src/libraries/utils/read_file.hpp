@@ -37,6 +37,7 @@ protected:
 	std::string fname;
 	std::string current_read_data;
 	std::string current_read_seq;
+	std::string current_read_header;
 	unsigned long current_read_pos;
 	unsigned long nb_reads;
 	bool first_read;
@@ -44,6 +45,7 @@ public:
 	virtual ~ReadFile () {};
 	virtual std::string & get_next_read () = 0;
 	virtual const std::string & get_data() const = 0;
+	virtual const std::string & get_header() const = 0;
 	virtual void rewind () = 0;
 	virtual const unsigned long & get_nb_reads() const {return nb_reads;}
 	virtual const unsigned long & get_read_pos() const {return current_read_pos;}

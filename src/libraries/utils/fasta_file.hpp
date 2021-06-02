@@ -99,6 +99,7 @@ public:
 		}
 		current_read_data.clear();
 		current_read_seq.clear();
+		current_read_header.clear();
 		
 
 
@@ -113,6 +114,7 @@ public:
 					if (tmp_str[tmp_str.size() - 1] == '\n' ) {
 						tmp_str.erase(tmp_str.size() - 1);
 					}
+					current_read_header += tmp_str;
 					current_read_data += tmp_str + "\n";
 					while (infile.good() && infile.peek() != '>' && infile.peek() != (int) std::char_traits<wchar_t>::eof()) {
 						getline (infile, tmp_str);
@@ -140,6 +142,7 @@ public:
 	void flush_next_read () {
 		current_read_data.clear();
 		current_read_seq.clear();
+		current_read_header.clear();
 		if (infile.good()) {
 			getline (infile, tmp_str);
 		}
@@ -154,11 +157,18 @@ public:
 	
 	
 	////////////////////////////////////////////////////////////
-	// Return the full FASTQ entry of the current read
+	// Return the full FASTA entry of the current read
 	//
 	const std::string & get_data() const
 	{
 		return current_read_data;
+	}
+
+// Return the current header
+	//
+	const std::string & get_header() const
+	{
+		return current_read_header;
 	}
 	
 	
@@ -259,6 +269,7 @@ public:
 		}
 		current_read_data.clear();
 		current_read_seq.clear();
+		current_read_header.clear();
 		
 
 			// The current read is 1 in the boolean vector
@@ -271,6 +282,7 @@ public:
 							exit(1);
 						}
 						current_read_data += std::string(tmp_str);
+						current_read_header += std::string(tmp_str);
 						if (current_read_data[current_read_data.size() - 1] != '\n') {
 							current_read_data += '\n';
 						}
@@ -297,6 +309,7 @@ public:
 	void flush_next_read () {
 		current_read_data.clear();
 		current_read_seq.clear();
+		current_read_header.clear();
 		if (gzgets(infile, tmp_str, NORMALSIZEREAD) != NULL) {
 			if (tmp_str[0] != '>') {
 				std::cerr << "Error in Fasta format !!\n";
@@ -331,6 +344,12 @@ public:
 	}
 	
 	
+// Return the current header
+	//
+	const std::string & get_header() const
+	{
+		return current_read_header;
+	}
 	
 	
 	////////////////////////////////////////////////////////////
