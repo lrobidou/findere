@@ -61,7 +61,6 @@ int main(int argc, char* argv[]) {
     std::string querySeq;
     cxxopts::ParseResult arguments = parseArgvQuerier(argc, argv);
     const auto& [filterFilenameName, query_filename, k, z, typeInput, canonical] = getArgsQuerier(arguments);
-    
 
     bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), filterFilenameName);
     // arg, we have a bf::basic_bloom_filter * now
@@ -70,17 +69,17 @@ int main(int argc, char* argv[]) {
     // look no further, there we go:
     bfAMQ myAMQ = bfAMQ(filter);
     if (typeInput == "bio") {
-        std::cout<<"Query "<<query_filename<<std::endl;
+        std::cout << "Query " << query_filename << std::endl;
         std::vector<bool> response = findere::query_one_sequence(query_filename, myAMQ, k, z);
         printVector(response);  // beware the huge print
-        findere::query_all(query_filename,myAMQ, k, z);
+        findere::query_all(query_filename, myAMQ, k, z);
     } else if (typeInput == "text") {
-        std::cerr << "not implemented" <<std::endl;
-            // querySeq = extractContentFromText(query_filename);
+        std::cerr << "not implemented" << std::endl;
+        // querySeq = extractContentFromText(query_filename);
     } else {
         std::cerr << "The given type of input input '" << typeInput << "' is not recognised." << std::endl;
     }
-    
+
     // the end.
 
     //do whatever you want with the response vector.
