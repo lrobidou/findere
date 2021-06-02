@@ -92,24 +92,29 @@ inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexBioGivenBits
 
 
     std::string & current_read = read_files.get_next_read();
-    while (!current_read.empty()) {
-
-
-        unsigned long long start = 0;
-        unsigned long long l = current_read.length();
-        if (canonical) {
+    if (canonical) {
+        while (!current_read.empty()) {
+            unsigned long long start = 0;
+            unsigned long long l = current_read.length();
             while ((start + k) <= l) {
                 filter->add(make_canonical(current_read.substr(start, k)));
                 start++;
             }
-        } else {
+            current_read = read_files.get_next_read();
+        }
+    } 
+    else {
+        while (!current_read.empty()) {
+            unsigned long long start = 0;
+            unsigned long long l = current_read.length();
             while ((start + k) <= l) {
                 filter->add(current_read.substr(start, k));
                 start++;
             }
-        }    
-        current_read = read_files.get_next_read();
+            current_read = read_files.get_next_read();
+        }
     }
+    
 
     return {filter, bits};
 }

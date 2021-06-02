@@ -1,14 +1,14 @@
 /*
  * Contributors :
- *   Pierre PETERLONGO, pierre.peterlongo@inria.fr [12/06/13]
- *   Nicolas MAILLET, nicolas.maillet@inria.fr     [12/06/13]
- *   Guillaume Collet, guillaume@gcollet.fr        [27/05/14]
+ *   Pierre PETERLONGO, pierre.peterlongo@inria.fr [02/06/21]
+ * 
+ * Adapted from Commet https://github.com/pierrepeterlongo/commet
  *
  * This software is a computer program whose purpose is to find all the
  * similar reads between two set of NGS reads. It also provide a similarity
  * score between the two samples.
  *
- * Copyright (C) 2014  INRIA
+ * Copyright (C) 2021  INRIA
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
@@ -149,8 +149,6 @@ public:
 	}
 	
 	const std::string & get_data() const {return files[current_file]->get_data();}
-	const std::string & get_header() const {return files[current_file]->get_header();}
-	
 	
 	
 	const std::string & get_sum_of_file_names () const {return sum_of_file_names;}

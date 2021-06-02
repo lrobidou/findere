@@ -1,14 +1,14 @@
 /*
  * Contributors :
- *   Pierre PETERLONGO, pierre.peterlongo@inria.fr [12/06/13]
- *   Nicolas MAILLET, nicolas.maillet@inria.fr     [12/06/13]
- *   Guillaume Collet, guillaume@gcollet.fr        [27/05/14]
+ *   Pierre PETERLONGO, pierre.peterlongo@inria.fr [02/06/21]
+ * 
+ * Adapted from Commet https://github.com/pierrepeterlongo/commet
  *
  * This software is a computer program whose purpose is to find all the
  * similar reads between two set of NGS reads. It also provide a similarity
  * score between the two samples.
  *
- * Copyright (C) 2014  INRIA
+ * Copyright (C) 2021  INRIA
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
@@ -58,7 +58,7 @@ public:
 		}
 		// Count reads
 		//const clock_t begin_time = clock();
-		nb_reads = 0;
+		nb_reads = 0; // TODO AVOID to count the reads. 
 		while (infile.good()) {
 			getline (infile, tmp_str);
 			try {
@@ -99,61 +99,37 @@ public:
 		}
 		current_read_data.clear();
 		current_read_seq.clear();
-		current_read_header.clear();
 		
 
 
-			// Or current_read_pos >= nb_reads -> end of file
-			if (current_read_pos < nb_reads) {
-				if (infile.good()) {
+		// Or current_read_pos >= nb_reads -> end of file
+		if (current_read_pos < nb_reads) {
+			if (infile.good()) {
+				getline (infile, tmp_str);
+				if (tmp_str[0] != '>') {
+					std::cerr << "Error in Fasta format !!\n";
+					exit(1);
+				}
+				if (tmp_str[tmp_str.size() - 1] == '\n' ) {
+					tmp_str.erase(tmp_str.size() - 1);
+				}
+				current_read_data += tmp_str + "\n";
+				while (infile.good() && infile.peek() != '>' && infile.peek() != (int) std::char_traits<wchar_t>::eof()) {
 					getline (infile, tmp_str);
-					if (tmp_str[0] != '>') {
-						std::cerr << "Error in Fasta format !!\n";
-						exit(1);
-					}
-					if (tmp_str[tmp_str.size() - 1] == '\n' ) {
-						tmp_str.erase(tmp_str.size() - 1);
-					}
-					current_read_header += tmp_str;
-					current_read_data += tmp_str + "\n";
-					while (infile.good() && infile.peek() != '>' && infile.peek() != (int) std::char_traits<wchar_t>::eof()) {
-						getline (infile, tmp_str);
-						if (!tmp_str.empty()) {
-							if (tmp_str[tmp_str.size() - 1] == '\n' ) {
-								tmp_str.erase(tmp_str.size() - 1);
-							}
-							current_read_seq += tmp_str;
-							current_read_data += tmp_str + "\n";
+					if (!tmp_str.empty()) {
+						if (tmp_str[tmp_str.size() - 1] == '\n' ) {
+							tmp_str.erase(tmp_str.size() - 1);
 						}
+						current_read_seq += tmp_str;
+						current_read_data += tmp_str + "\n";
 					}
 				}
 			}
-			if (!current_read_seq.empty()) {
-
-			}
-		
+		}
 		return current_read_seq;
 	}
 	
 	
-	////////////////////////////////////////////////////////////
-	// Just read the next read without storing it
-	//
-	void flush_next_read () {
-		current_read_data.clear();
-		current_read_seq.clear();
-		current_read_header.clear();
-		if (infile.good()) {
-			getline (infile, tmp_str);
-		}
-		if (tmp_str[0] != '>') {
-			std::cerr << "Error in Fasta format !!\n";
-			exit(1);
-		}
-		while (infile.good() && infile.peek() != '>') {
-			getline (infile, tmp_str);
-		}
-	}
 	
 	
 	////////////////////////////////////////////////////////////
@@ -164,12 +140,6 @@ public:
 		return current_read_data;
 	}
 
-// Return the current header
-	//
-	const std::string & get_header() const
-	{
-		return current_read_header;
-	}
 	
 	
 	////////////////////////////////////////////////////////////
@@ -269,61 +239,38 @@ public:
 		}
 		current_read_data.clear();
 		current_read_seq.clear();
-		current_read_header.clear();
 		
 
-			// The current read is 1 in the boolean vector
-			// Or current_read_pos >= nb_reads -> end of file
-			if (current_read_pos < nb_reads) {
-				if (!gzeof(infile)) {
-					if(gzgets(infile, tmp_str, NORMALSIZEREAD) != NULL) {
-						if (tmp_str[0] != '>') {
-							std::cerr << "Error in Fasta format !!\n";
-							exit(1);
-						}
-						current_read_data += std::string(tmp_str);
-						current_read_header += std::string(tmp_str);
-						if (current_read_data[current_read_data.size() - 1] != '\n') {
-							current_read_data += '\n';
-						}
-						char c = gzgetc(infile);
-						while (!gzeof(infile) && c != '>') {
-							if (c != '\n') {
-								current_read_seq += c;
-							}
-							current_read_data += c;
-							c = gzgetc(infile);
-						}
-						gzungetc(c, infile);
+		// The current read is 1 in the boolean vector
+		// Or current_read_pos >= nb_reads -> end of file
+		if (current_read_pos < nb_reads) {
+			if (!gzeof(infile)) {
+				if(gzgets(infile, tmp_str, NORMALSIZEREAD) != NULL) {
+					if (tmp_str[0] != '>') {
+						std::cerr << "Error in Fasta format !!\n";
+						exit(1);
 					}
+					current_read_data += std::string(tmp_str);
+					if (current_read_data[current_read_data.size() - 1] != '\n') {
+						current_read_data += '\n';
+					}
+					char c = gzgetc(infile);
+					while (!gzeof(infile) && c != '>') {
+						if (c != '\n') {
+							current_read_seq += c;
+						}
+						current_read_data += c;
+						c = gzgetc(infile);
+					}
+					gzungetc(c, infile);
 				}
 			}
+		}
 		
 		return current_read_seq;
 	}
 	
 	
-	////////////////////////////////////////////////////////////
-	// Just read the next read without storing it
-	//
-	void flush_next_read () {
-		current_read_data.clear();
-		current_read_seq.clear();
-		current_read_header.clear();
-		if (gzgets(infile, tmp_str, NORMALSIZEREAD) != NULL) {
-			if (tmp_str[0] != '>') {
-				std::cerr << "Error in Fasta format !!\n";
-				exit(1);
-			}
-			char c = gzgetc(infile);
-			while (!gzeof(infile) && c != '>') {
-				gzungetc(c, infile);
-				gzgets(infile, tmp_str, NORMALSIZEREAD);
-				c = gzgetc(infile);
-			}
-			gzungetc(c, infile);
-		}
-	}
 
 	
 	////////////////////////////////////////////////////////////
@@ -344,12 +291,6 @@ public:
 	}
 	
 	
-// Return the current header
-	//
-	const std::string & get_header() const
-	{
-		return current_read_header;
-	}
 	
 	
 	////////////////////////////////////////////////////////////

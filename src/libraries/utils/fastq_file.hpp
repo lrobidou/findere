@@ -1,14 +1,14 @@
 /*
  * Contributors :
- *   Pierre PETERLONGO, pierre.peterlongo@inria.fr [12/06/13]
- *   Nicolas MAILLET, nicolas.maillet@inria.fr     [12/06/13]
- *   Guillaume Collet, guillaume@gcollet.fr        [27/05/14]
+ *   Pierre PETERLONGO, pierre.peterlongo@inria.fr [02/06/21]
+ * 
+ * Adapted from Commet https://github.com/pierrepeterlongo/commet
  *
  * This software is a computer program whose purpose is to find all the
  * similar reads between two set of NGS reads. It also provide a similarity
  * score between the two samples.
  *
- * Copyright (C) 2014  INRIA
+ * Copyright (C) 2021  INRIA
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
@@ -96,7 +96,6 @@ public:
 		}
 		current_read_data.clear();
 		current_read_seq.clear();
-		current_read_header.clear();
 		
 			// The current read is 1 in the boolean vector
 			// Or current_read_pos >= nb_reads -> end of file
@@ -107,7 +106,6 @@ public:
 					while (tmp_str.empty() && infile.peek() != (int) std::char_traits<wchar_t>::eof()) {
 						getline (infile, tmp_str);
 					}
-					current_read_header += tmp_str;
 					current_read_data += tmp_str + "\n";
 				} else {
 					return current_read_seq;
@@ -135,7 +133,6 @@ public:
 				} else {
 					current_read_seq.clear();
 					current_read_data.clear();
-					current_read_header.clear();
 					return current_read_seq;
 				}
 				// Read the fourth line of FASTQ entry -> "quality sequence"
@@ -148,7 +145,6 @@ public:
 				} else {
 					current_read_seq.clear();
 					current_read_data.clear();
-					current_read_header.clear();
 				}
 			}
 		
@@ -156,38 +152,6 @@ public:
 	}
 	
 	
-	////////////////////////////////////////////////////////////
-	// Just read the next four lines without storing them
-	//
-	void flush_next_read () {
-		current_read_data.clear();
-		current_read_seq.clear();
-		current_read_header.clear();
-		if (infile.good() && infile.peek() != (int) std::char_traits<wchar_t>::eof()) {
-			getline (infile, tmp_str);
-			while (tmp_str.empty() && infile.peek() != (int) std::char_traits<wchar_t>::eof()) {
-				getline (infile, tmp_str);
-			}
-		}
-		if (infile.good() && infile.peek() != (int) std::char_traits<wchar_t>::eof()) {
-			getline (infile, tmp_str);
-			while (tmp_str.empty() && infile.peek() != (int) std::char_traits<wchar_t>::eof()) {
-				getline (infile, tmp_str);
-			}
-		}
-		if (infile.good() && infile.peek() != (int) std::char_traits<wchar_t>::eof()) {
-			getline (infile, tmp_str);
-			while (tmp_str.empty() && infile.peek() != (int) std::char_traits<wchar_t>::eof()) {
-				getline (infile, tmp_str);
-			}
-		}
-		if (infile.good()) {
-			getline (infile, tmp_str);
-			while (tmp_str.empty() && infile.good()) {
-				getline (infile, tmp_str);
-			}
-		}
-	}
 	
 	
 	////////////////////////////////////////////////////////////
@@ -209,12 +173,6 @@ public:
 	
 	
 	
-// Return the current header
-	//
-	const std::string & get_header() const
-	{
-		return current_read_header;
-	}
 	
 	////////////////////////////////////////////////////////////
 	// Go to the beginning of the file -> current_read_pos = -1
@@ -288,7 +246,6 @@ public:
 		}
 		current_read_data.clear();
 		current_read_seq.clear();
-		current_read_header.clear();
 		
 			
 			// The current read is 1 in the boolean vector
@@ -301,7 +258,6 @@ public:
 						gzgets(infile, tmp_str, NORMALSIZEREAD);
 					}
 					current_read_data += std::string(tmp_str);
-					current_read_header += tmp_str;
 					if (current_read_data[current_read_data.size() - 1] != '\n') {
 						current_read_data += '\n';
 					}
@@ -336,7 +292,6 @@ public:
 				} else {
 					current_read_seq.clear();
 					current_read_data.clear();
-					current_read_header.clear();
 					return current_read_seq;
 				}
 				// Read the fourth line of FASTQ entry -> "quality sequence"
@@ -352,46 +307,12 @@ public:
 				} else {
 					current_read_seq.clear();
 					current_read_data.clear();
-					current_read_header.clear();
 				}
 			}
 		
 		return current_read_seq;
 	}
 	
-	
-	////////////////////////////////////////////////////////////
-	// Just read the next four lines without storing them
-	//
-	void flush_next_read () {
-		current_read_data.clear();
-		current_read_seq.clear();
-		current_read_header.clear();
-		if (!gzeof(infile)) {
-			gzgets(infile, tmp_str, NORMALSIZEREAD);
-			while (tmp_str[0] == '\0' && !gzeof(infile)) {
-				gzgets(infile, tmp_str, NORMALSIZEREAD);
-			}
-		}
-		if (!gzeof(infile)) {
-			gzgets(infile, tmp_str, NORMALSIZEREAD);
-			while (tmp_str[0] == '\0' && !gzeof(infile)) {
-				gzgets(infile, tmp_str, NORMALSIZEREAD);
-			}
-		}
-		if (!gzeof(infile)) {
-			gzgets(infile, tmp_str, NORMALSIZEREAD);
-			while (tmp_str[0] == '\0' && !gzeof(infile)) {
-				gzgets(infile, tmp_str, NORMALSIZEREAD);
-			}
-		}
-		if (!gzeof(infile)) {
-			gzgets(infile, tmp_str, NORMALSIZEREAD);
-			while (tmp_str[0] == '\0' && !gzeof(infile)) {
-				gzgets(infile, tmp_str, NORMALSIZEREAD);
-			}
-		}
-	}
 	
 	
 	////////////////////////////////////////////////////////////
@@ -412,12 +333,6 @@ public:
 	}
 	
 	
-// Return the current header
-	//
-	const std::string & get_header() const
-	{
-		return current_read_header;
-	}
 	////////////////////////////////////////////////////////////
 	// Go to the beginning of the file -> current_read_pos = -1
 	// because no read has been read
