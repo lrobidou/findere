@@ -16,17 +16,14 @@ int main(int argc, char* argv[]) {
 
     cxxopts::ParseResult arguments = parseArgvIndexer(argc, argv);
     const auto& [input_filenames, output, k, z, b, typeInput, canonical] = getArgsIndexer(arguments);
-    if (typeInput == "fastq") {
-        const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = findere::indexFastqGzGivenBits(input_filenames, numHashes, k, z, b, canonical);
-        smallFilter->save(output);
-    } else if (typeInput == "fasta") {
-        const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = findere::indexFastasGivenBits(input_filenames, numHashes, k, z, b, canonical);
+    if (typeInput == "bio") {
+        const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = findere::indexBioGivenBits(input_filenames, numHashes, k, z, b, canonical);
         smallFilter->save(output);
     } else if (typeInput == "text") {
         const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = findere::indexTextGivenBits(input_filenames, numHashes, k, z, b, canonical);
         smallFilter->save(output);
     } else {
-        std::cerr << "The given type of input input '" << typeInput << "' is not recognised." << std::endl;
+        std::cerr << "The given type of input input '" << typeInput << "' is not recognised (enter \"bio\" or \"text\")." << std::endl;
     }
     return 0;
 }

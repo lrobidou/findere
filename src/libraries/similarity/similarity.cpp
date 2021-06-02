@@ -43,16 +43,16 @@ std::tuple<int, int> computeSimilarityQTFCorrected(bf::basic_bloom_filter* filte
     return {P - pToBeRemoved, N + pToBeRemoved};
 }
 
-std::tuple<int, int> computeSimilarityQTFKPlusZ(bf::basic_bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, const unsigned int& epsilon_percent) {
-    std::vector<bool> responseQTFKPlusZ = findere::query(filter, s, k, nbNeighboursMin);
-    return count0And1InAray(responseQTFKPlusZ);
-}
+// std::tuple<int, int> computeSimilarityQTFKPlusZ(bf::basic_bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, const unsigned int& epsilon_percent) {
+//     std::vector<bool> responseQTFKPlusZ = findere::query(filter, s, k, nbNeighboursMin);
+//     return count0And1InAray(responseQTFKPlusZ);
+// }
 
-std::tuple<int, int> computeSimilarityQTFKPlusZCorrected(bf::basic_bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, const unsigned int& epsilon_percent) {
-    unsigned long long nbStretch = 0;
-    std::vector<bool> responseQTFKPlusZ = findere::query(filter, s, k, nbNeighboursMin, nbStretch, false);
-    int numberOfFPExpected = nbStretch * 2 * computeNumberOfExpectedFP(epsilon_percent, 5);
-    const auto& [P, N] = count0And1InAray(responseQTFKPlusZ);
-    int pToBeRemoved = std::min(P, numberOfFPExpected);
-    return {P - pToBeRemoved, N + pToBeRemoved};
-}
+// std::tuple<int, int> computeSimilarityQTFKPlusZCorrected(bf::basic_bloom_filter* filter, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, const unsigned int& epsilon_percent) {
+//     unsigned long long nbStretch = 0;
+//     std::vector<bool> responseQTFKPlusZ = findere::query(filter, s, k, nbNeighboursMin, nbStretch, false);
+//     int numberOfFPExpected = nbStretch * 2 * computeNumberOfExpectedFP(epsilon_percent, 5);
+//     const auto& [P, N] = count0And1InAray(responseQTFKPlusZ);
+//     int pToBeRemoved = std::min(P, numberOfFPExpected);
+//     return {P - pToBeRemoved, N + pToBeRemoved};
+// }
