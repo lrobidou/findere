@@ -72,8 +72,8 @@ int main(int argc, char* argv[]) {
     if (typeInput == "bio") {
         std::cout<<"Querying "<<query_filename<<std::endl;
         std::vector<bool> response = findere::query_one_sequence(query_filename, myAMQ, k, z);
-        // printVector(response);  // beware the huge print
-        findere::query_all(query_filename,myAMQ, k, z);
+        printVector(response);  // beware the huge print
+        // findere::query_all(query_filename,myAMQ, k, z);
     } else if (typeInput == "text") {
         std::cerr << "not implemented" <<std::endl;
             // querySeq = extractContentFromText(query_filename);

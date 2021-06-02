@@ -169,7 +169,10 @@ void query_all(const std::string& filename, const customAMQ& amq, const unsigned
         // Analyse the result of each query
         std::vector<bool> res = queryFilterOrTruth(amq, current_read, k, nbNeighboursMin, dontCare, skip);
         long long nb_positions_covered = get_nb_positions_covered(res, k);
-        std::cout << current_header << "\n" << nb_positions_covered << " over "<<current_read.length()<<" :"<<(100*nb_positions_covered)/float(current_read.length())<<"%"<<std::endl;
+        float ratio = (100*nb_positions_covered)/float(current_read.length());
+        if (ratio > 95){
+            std::cout << current_header << "\n" << nb_positions_covered << " over "<<current_read.length()<<" :"<<ratio<<"%"<<std::endl;
+        }
         current_read = read_files.get_next_read();
     } 
 }

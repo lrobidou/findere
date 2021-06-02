@@ -123,7 +123,7 @@ inline void printVector(T x) {
     }
     std::cout << std::endl;
 }
-
+// TODO: manquent les canonical
 inline bool oneQuery(bf::bloom_filter* filter, const std::string s) {
     return filter->lookup(s);
 }
