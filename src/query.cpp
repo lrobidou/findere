@@ -89,23 +89,23 @@ int main(int argc, char* argv[]) {
         response = findere::query_all(query_filename, myAMQ, k, z);
     } else if (typeInput == "text") {
         std::vector<bool> response = findere::query_text(extractContentFromText(query_filename), myAMQ, k, z);
-        printVector(response);
     } else {
         std::cerr << "The given type of input input '" << typeInput << "' is not recognised." << std::endl;
         exit(1);
     }
+    printVector(response);
 
     //do whatever you want with the response vector.
 
     // you can also reconstruct the truth to see if everything worked well :
     // of course, the lines below only works if you indexed those files:
 
-    std::vector<std::string> filenames = {"data/ecoli2.fasta", "data/ecoli3.fasta", "data/Listeria phage.fasta", "data/Penicillium chrysogenum.fasta"};
-    std::vector<bool> truthQuery = truth::query_all(query_filename, truthAMQ(truth::indexBio(filenames, k, canonical)), k);
-    // so be sure to change the filenames variable accordingly, to cumpute the correct truth
-    // but in real life, you do not reconstruct the truth, because it wont fit in your memory
-    // this is just here to test findere
-    findere_internal::printScore(findere_internal::getScore(truthQuery, response));
+    // std::vector<std::string> filenames = {"data/ecoli2.fasta", "data/ecoli3.fasta", "data/Listeria phage.fasta", "data/Penicillium chrysogenum.fasta"};
+    // std::vector<bool> truthQuery = truth::query_all(query_filename, truthAMQ(truth::indexBio(filenames, k, canonical)), k);
+    // // so be sure to change the filenames variable accordingly, to cumpute the correct truth
+    // // but in real life, you do not reconstruct the truth, because it wont fit in your memory
+    // // this is just here to test findere
+    // findere_internal::printScore(findere_internal::getScore(truthQuery, response));
 
     return 0;
 }
