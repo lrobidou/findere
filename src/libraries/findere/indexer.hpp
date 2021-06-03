@@ -39,8 +39,6 @@ inline std::tuple<bf::basic_bloom_filter*, unsigned long long> indexTextGivenBit
     bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), bits);
 
     for (auto const& filename : filenames) {
-        // std::ifstream myfilegz(filename);
-        // zstr::istream myfile(myfilegz);
         std::string content = extractContentFromText(filename);
 
         unsigned long long start = 0;
@@ -111,14 +109,14 @@ inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexTextGiv
 }
 
 namespace findere {
-// inline std::tuple<robin_hood::unordered_set<std::string>, bf::basic_bloom_filter*, int, unsigned long long> indexBio(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, const unsigned& nbNeighboursMin, bool canonical = false) {
-//     // indexing for findere is easy: just index as usual, but with k = k - nbNeighboursMin
-//     return ::indexBio(filenames, numHashes, k - nbNeighboursMin, epsilon_percent, canonical);
+// inline std::tuple<robin_hood::unordered_set<std::string>, bf::basic_bloom_filter*, int, unsigned long long> indexBio(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, const unsigned& z, bool canonical = false) {
+//     // indexing for findere is easy: just index as usual, but with k = k - z
+//     return ::indexBio(filenames, numHashes, k - z, epsilon_percent, canonical);
 // }
 
-// inline std::tuple<robin_hood::unordered_set<std::string>, bf::basic_bloom_filter*, int, unsigned long long> indexText(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, const unsigned& nbNeighboursMin, bool canonical = false) {
-//     // indexing for findere is esay: just index as usual, but with k = k - nbNeighboursMin
-//     return ::indexText(filenames, numHashes, k - nbNeighboursMin, epsilon_percent, canonical);
+// inline std::tuple<robin_hood::unordered_set<std::string>, bf::basic_bloom_filter*, int, unsigned long long> indexText(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const double& epsilon_percent, const unsigned& z, bool canonical = false) {
+//     // indexing for findere is esay: just index as usual, but with k = k - z
+//     return ::indexText(filenames, numHashes, k - z, epsilon_percent, canonical);
 // }
 
 // passing bits as parameter
@@ -128,14 +126,14 @@ namespace findere {
  * @param filenames the list of filenames that contains reads to be indexed
  * @param numHashes the number of hash function to be used
  * @param k the value for (big) k
- * @param nbNeighboursMin the value of z
+ * @param z the value of z
  * @param bits the size in bits to be allocated to the filter
  * @param canonical
  * @return 
  */
-inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexBioGivenBits(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const unsigned& nbNeighboursMin, unsigned long long bits, bool canonical = false) {
-    // indexing for findere is esay: just index as usual, but with k = k - nbNeighboursMin
-    return ::indexBioGivenBits(filenames, numHashes, k - nbNeighboursMin, bits, canonical);
+inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexBioGivenBits(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const unsigned& z, unsigned long long bits, bool canonical = false) {
+    // indexing for findere is esay: just index as usual, but with k = k - z
+    return ::indexBioGivenBits(filenames, numHashes, k - z, bits, canonical);
 }
 
 /**
@@ -143,12 +141,12 @@ inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexBioGive
  * @param filenames the list of filenames that contains texts to be indexed
  * @param numHashes the number of hash function to be used
  * @param k the value for (big) k
- * @param nbNeighboursMin the value of z
+ * @param z the value of z
  * @param bits the size in bits to be allocated to the filter
  * @return 
  */
-inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexTextGivenBits(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const unsigned& nbNeighboursMin, unsigned long long bits) {
-    // indexing for findere is esay: just index as usual, but with k = k - nbNeighboursMin
-    return ::indexTextGivenBits(filenames, numHashes, k - nbNeighboursMin, bits);
+inline std::tuple<bf::basic_bloom_filter*, int, unsigned long long> indexTextGivenBits(const std::vector<std::string>& filenames, const unsigned int& numHashes, const unsigned int& k, const unsigned& z, unsigned long long bits) {
+    // indexing for findere is esay: just index as usual, but with k = k - z
+    return ::indexTextGivenBits(filenames, numHashes, k - z, bits);
 }
 }  // namespace findere

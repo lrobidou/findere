@@ -11,16 +11,16 @@ namespace findere_internal {
  * @param filterOrTruth the amq wrapped within a customAMQ
  * @param s the sequence to be queried
  * @param k the value for (big) k
- * @param nbNeighboursMin the value for z
+ * @param z the value for z
  * @param j the current position being queried in s
  * @return the number of jumps that can bo done. Each jump means that z position can be skipped.
  */
-inline unsigned long long getNextPositiveKmerPositionInTheQuery(const customAMQ& filterOrTruth, const std::string& s, unsigned int k, const unsigned long long& nbNeighboursMin, unsigned long long j) {
+inline unsigned long long getNextPositiveKmerPositionInTheQuery(const customAMQ& filterOrTruth, const std::string& s, unsigned int k, const unsigned long long& z, unsigned long long j) {
     unsigned long long numberOfJumps = 0;
     unsigned long long size = s.size();
     do {
         numberOfJumps += 1;
-    } while ((j + numberOfJumps * nbNeighboursMin < size - k + 1) && (filterOrTruth.contains(s.substr(j + numberOfJumps * nbNeighboursMin, k))) == false);
+    } while ((j + numberOfJumps * z < size - k + 1) && (filterOrTruth.contains(s.substr(j + numberOfJumps * z, k))) == false);
     numberOfJumps -= 1;
     return numberOfJumps;
 }
@@ -30,16 +30,16 @@ inline unsigned long long getNextPositiveKmerPositionInTheQuery(const customAMQ&
  * @param filterOrTruth the amq wrapped within a customAMQ
  * @param s the sequence to be queried
  * @param k the value for (big) k
- * @param nbNeighboursMin the current position being queried in s
+ * @param z the current position being queried in s
  * @return The result of findere's query on s.
  */
-inline std::vector<bool> queryFilterOrTruth(const customAMQ& filterOrTruth, const std::string& s, const unsigned int& k, const unsigned int& nbNeighboursMin) {
-    const unsigned int smallK = k - nbNeighboursMin;  // small k, used to index
-    unsigned long long size = s.size();               // size of the query
-    std::vector<bool> response(size - k + 1);         // result of the query
-    unsigned long long i = 0;                         // index of the response vector
-    unsigned long long stretchLength = 0;             // number of consecutive positives kmers
-    unsigned long long j = 0;                         // index of the query vector
+inline std::vector<bool> queryFilterOrTruth(const customAMQ& filterOrTruth, const std::string& s, const unsigned int& k, const unsigned int& z) {
+    const unsigned int smallK = k - z;         // small k, used to index
+    unsigned long long size = s.size();        // size of the query
+    std::vector<bool> response(size - k + 1);  // result of the query
+    unsigned long long i = 0;                  // index of the response vector
+    unsigned long long stretchLength = 0;      // number of consecutive positives kmers
+    unsigned long long j = 0;                  // index of the query vector
 
     while (j < size - k + 1) {
         if (filterOrTruth.contains(s.substr(j, smallK))) {
@@ -47,12 +47,12 @@ inline std::vector<bool> queryFilterOrTruth(const customAMQ& filterOrTruth, cons
             j++;
         } else {
             if (stretchLength != 0) {
-                if (stretchLength > nbNeighboursMin) {
-                    for (unsigned long long t = 0; t < stretchLength - nbNeighboursMin; t++) {
+                if (stretchLength > z) {
+                    for (unsigned long long t = 0; t < stretchLength - z; t++) {
                         response[i] = true;
                         i++;
                     }
-                    for (unsigned long long t = 0; t < nbNeighboursMin; t++) {
+                    for (unsigned long long t = 0; t < z; t++) {
                         response[i] = false;
                         i++;
                     }
@@ -66,9 +66,9 @@ inline std::vector<bool> queryFilterOrTruth(const customAMQ& filterOrTruth, cons
             }
 
             // skip queries between current position and the next positive kmer
-            if (nbNeighboursMin > 0) {
-                unsigned long long numberOfJumps = getNextPositiveKmerPositionInTheQuery(filterOrTruth, s, smallK, nbNeighboursMin, j);
-                for (unsigned long long temp = 0; temp < nbNeighboursMin * numberOfJumps; temp++) {
+            if (z > 0) {
+                unsigned long long numberOfJumps = getNextPositiveKmerPositionInTheQuery(filterOrTruth, s, smallK, z, j);
+                for (unsigned long long temp = 0; temp < z * numberOfJumps; temp++) {
                     response[i] = false;
                     i++;
                     j++;
@@ -93,7 +93,7 @@ inline std::vector<bool> queryFilterOrTruth(const customAMQ& filterOrTruth, cons
     }
 
     if (stretchLength != 0) {
-        if (stretchLength > nbNeighboursMin) {
+        if (stretchLength > z) {
             for (unsigned long long k = 0; k < stretchLength; k++) {
                 response[i] = true;
                 i++;
@@ -141,14 +141,14 @@ namespace findere {
  * @param filename the name of the file to be queried
  * @param amq the amq wrapped within a customAMQ
  * @param k the value of (big) k
- * @param nbNeighboursMin the value of z
+ * @param z the value of z
  * @return the result of findere's query applied on the first read
  */
-std::vector<bool> inline query_one_sequence(const std::string& filename, const customAMQ& amq, const unsigned int& k, const unsigned long long& nbNeighboursMin) {
+std::vector<bool> inline query_one_sequence(const std::string& filename, const customAMQ& amq, const unsigned int& k, const unsigned long long& z) {
     FileManager read_files = FileManager();
     read_files.addFile(filename);
     std::string& current_read = read_files.get_next_read();
-    return ::findere_internal::queryFilterOrTruth(amq, current_read, k, nbNeighboursMin);
+    return ::findere_internal::queryFilterOrTruth(amq, current_read, k, z);
 }
 
 /**
@@ -168,10 +168,10 @@ std::vector<bool> inline query_text(const std::string& content, const customAMQ&
  * @param filename the name of the file to be queried
  * @param amq the amq wrapped within a customAMQ
  * @param k the value of (big) k
- * @param nbNeighboursMin the value of z
+ * @param z the value of z
  * @return the result of findere's query applied on alls reads
  */
-std::vector<bool> query_all(const std::string& filename, const customAMQ& amq, const unsigned int& k, const unsigned long long& nbNeighboursMin) {
+std::vector<bool> query_all(const std::string& filename, const customAMQ& amq, const unsigned int& k, const unsigned long long& z) {
     FileManager read_files = FileManager();
     read_files.addFile(filename);
 
@@ -180,7 +180,7 @@ std::vector<bool> query_all(const std::string& filename, const customAMQ& amq, c
     std::vector<bool> result(0);
 
     while (!(current_read = read_files.get_next_read()).empty()) {
-        std::vector<bool> res = ::findere_internal::queryFilterOrTruth(amq, current_read, k, nbNeighboursMin);
+        std::vector<bool> res = ::findere_internal::queryFilterOrTruth(amq, current_read, k, z);
         result.insert(std::end(result), std::begin(res), std::end(res));
     }
     return result;
