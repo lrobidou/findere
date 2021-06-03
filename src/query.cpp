@@ -52,7 +52,7 @@ void printCommon(std::vector<bool> response, std::string querySeq, int k) {
                 stretch = false;
             }
         }
-        j++;
+        j++;    
     }
 }
 
@@ -60,9 +60,7 @@ int main(int argc, char* argv[]) {
     const unsigned numHashes = 1;  // number of hash functions
     std::string querySeq;
     cxxopts::ParseResult arguments = parseArgvQuerier(argc, argv);
-    const auto& [filterFilenameName, query_filename, k, z, typeInput, canonical] = getArgsQuerier(arguments);
-    
-
+    const auto& [filterFilenameName, query_filename, K, z, typeInput, canonical] = getArgsQuerier(arguments);
     bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), filterFilenameName);
     // arg, we have a bf::basic_bloom_filter * now
     // but what if you want to query something else in your own program ?
@@ -70,13 +68,14 @@ int main(int argc, char* argv[]) {
     // look no further, there we go:
     bfAMQ myAMQ = bfAMQ(filter);
     if (typeInput == "bio") {
-        std::cout<<"Querying "<<query_filename<<std::endl;
-        std::vector<bool> response = findere::query_one_sequence(query_filename, myAMQ, k, z);
-        printVector(response);  // beware the huge print
-        // findere::query_all(query_filename,myAMQ, k, z);
+        // std::vector<bool> response = findere::query_one_sequence(query_filename, myAMQ, K, z);
+        // printVector(response);  // beware the huge print
+        findere::query_all(query_filename,myAMQ, K, z);
     } else if (typeInput == "text") {
-        std::cerr << "not implemented" <<std::endl;
-            // querySeq = extractContentFromText(query_filename);
+        std::string queried_text = extractContentFromText(query_filename);
+        unsigned long long dontCare = 0;
+        std::vector<bool> response = queryFilterOrTruth(myAMQ, queried_text, K, z, dontCare);
+        printVector(response);
     } else {
         std::cerr << "The given type of input input '" << typeInput << "' is not recognised." << std::endl;
     }

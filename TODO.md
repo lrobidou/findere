@@ -19,3 +19,5 @@
  - [ ] Optimisation de la fonction canonical (?)
 
    
+
+   

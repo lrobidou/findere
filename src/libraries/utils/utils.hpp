@@ -119,7 +119,7 @@ void inline toFileTXT(std::string outfilename, T x) {
 template <typename T>
 inline void printVector(T x) {
     for (auto const& i : std::as_const(x)) {
-        std::cout << i << ' ';
+        std::cout << i;
     }
     std::cout << std::endl;
 }
