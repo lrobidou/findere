@@ -152,6 +152,18 @@ std::vector<bool> inline query_one_sequence(const std::string& filename, const c
 }
 
 /**
+ * @brief Applies findere directly on a string.
+ * @param content the query as a string
+ * @param amq the amq wrapped within a customAMQ
+ * @param k tha value of (big) k
+ * @param z the value of z
+ * @return 
+ */
+std::vector<bool> inline query_text(const std::string& content, const customAMQ& amq, const unsigned int& k, const unsigned long long& z) {
+    return ::findere_internal::queryFilterOrTruth(amq, content, k, z);
+}
+
+/**
  * @brief Query every read of the query using findere.
  * @param filename the name of the file to be queried
  * @param amq the amq wrapped within a customAMQ
