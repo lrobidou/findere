@@ -1,1 +1,0 @@
-add_library(qtf_querier_lib QTFNoSplitKmer.cpp)
