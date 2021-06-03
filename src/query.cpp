@@ -6,10 +6,11 @@
 #include <string>
 
 #include "libraries/evaluation/evaluation.hpp"
+#include "libraries/findere/customAMQ.hpp"
+#include "libraries/findere/indexer.hpp"
 #include "libraries/indexer/indexer.hpp"
 #include "libraries/querier/querier.hpp"
 #include "libraries/utils/argsUtils.hpp"
-#include "libraries/utils/customAMQ.hpp"
 #include "libraries/utils/utils.hpp"
 
 // magic trick to use findere with your own AMQ
@@ -33,6 +34,19 @@ class bfAMQ : public customAMQ {
     }
 
     //that's all folks
+};
+
+class truthAMQ : public customAMQ {
+   private:
+    robin_hood::unordered_set<std::string> _t;
+
+   public:
+    truthAMQ(const robin_hood::unordered_set<std::string>& t) : _t(t) {
+    }
+
+    bool contains(const std::string& x) const {
+        return _t.contains(x);
+    }
 };
 
 void printCommon(std::vector<bool> response, std::string querySeq, int k) {
@@ -68,40 +82,33 @@ int main(int argc, char* argv[]) {
     // how can you exectute findere::query on your own data structure ?
     // look no further, there we go:
     bfAMQ myAMQ = bfAMQ(filter);
+    // the end.
+    std::vector<std::string> filenames = {"data/ecoli2.fasta", "data/ecoli3.fasta", "data/Listeria phage.fasta", "data/Penicillium chrysogenum.fasta"};
+
+    std::vector<bool> response;
+    std::vector<bool> responseNoFindere;
     if (typeInput == "bio") {
-        std::cout << "Query " << query_filename << std::endl;
-        std::vector<bool> response = findere::query_one_sequence(query_filename, myAMQ, k, z);
-        printVector(response);  // beware the huge print
-        findere::query_all(query_filename, myAMQ, k, z);
+        response = findere::query_all(query_filename, myAMQ, k, z);
+        responseNoFindere = truth::query_all(query_filename, bfAMQ(std::get<bf::basic_bloom_filter*>(findere::indexBioGivenBits(filenames, numHashes, k, 0, 300000000))), k);
     } else if (typeInput == "text") {
         std::cerr << "not implemented" << std::endl;
         // querySeq = extractContentFromText(query_filename);
     } else {
         std::cerr << "The given type of input input '" << typeInput << "' is not recognised." << std::endl;
+        exit(1);
     }
-
-    // the end.
 
     //do whatever you want with the response vector.
 
-    //For instance, you can print it:
-
-    // or print common parts between the query and the index
-    // printCommon(response, querySeq, k);  // nice french poetry
-
     // you can also reconstruct the truth to see if everything worked well :
     // of course, the lines below only works if you indexed those files:
-    // std::vector<std::string> filenames = {"data/texts/contemplations.txt",
-    //                                       "data/texts/Horace.txt",
-    //                                       "data/texts/Le_Cid.txt",
-    //                                       "data/texts/Maastricht.txt",
-    //                                       "data/texts/Othon.txt",
-    //                                       "data/texts/Lettres_persanes.txt"};
+
+    std::vector<bool> truthQuery = truth::query_all(query_filename, truthAMQ(truth::indexBio(filenames, k, canonical)), k);
     // so be sure to change the filenames variable accordingly, to cumpute the correct truth
     // but in real life, you do not reconstruct the truth, because it wont fit in your memory
     // this is just here to test findere
+    findere_internal::printScore(findere_internal::getScore(truthQuery, response));
+    findere_internal::printScore(findere_internal::getScore(truthQuery, responseNoFindere));
 
-    // std::vector<bool> truthQuery = truth::queryTruth(truth::indexText(filenames, k, canonical), querySeq, k);
-    // findere_internal::printScore(findere_internal::getScore(truthQuery, response));
     return 0;
 }

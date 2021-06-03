@@ -6,6 +6,7 @@
 #include <string>
 
 #include "libraries/evaluation/evaluation.hpp"
+#include "libraries/findere/indexer.hpp"
 #include "libraries/indexer/indexer.hpp"
 #include "libraries/querier/querier.hpp"
 #include "libraries/utils/argsUtils.hpp"
@@ -20,7 +21,7 @@ int main(int argc, char* argv[]) {
         const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = findere::indexBioGivenBits(input_filenames, numHashes, k, z, b, canonical);
         smallFilter->save(output);
     } else if (typeInput == "text") {
-        const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = findere::indexTextGivenBits(input_filenames, numHashes, k, z, b, canonical);
+        const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = findere::indexTextGivenBits(input_filenames, numHashes, k, z, b);
         smallFilter->save(output);
     } else {
         std::cerr << "The given type of input input '" << typeInput << "' is not recognised (enter \"bio\" or \"text\")." << std::endl;

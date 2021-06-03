@@ -1,7 +1,12 @@
 #pragma once
+#include <iostream>
 #include <string>
 
-/// The abstract AMQ interface.
+/**
+ * @brief A vritual wrapper class to wrap your custom AMQ.
+ * @author Lucas Robidou
+ * @since Thu Jun 03 2021
+ */
 class customAMQ {
    public:
     customAMQ() = default;
