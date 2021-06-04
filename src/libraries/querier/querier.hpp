@@ -54,7 +54,7 @@ inline std::vector<bool> queryString(const customAMQ& amq, const std::string& se
  * @param k the value of k
  * @return 
  */
-std::vector<bool> query_all(const std::string& filename, const customAMQ& amq, const unsigned int& k) {
+inline std::vector<bool> query_all(const std::string& filename, const customAMQ& amq, const unsigned int& k) {
     FileManager read_files = FileManager();
     read_files.addFile(filename);
 

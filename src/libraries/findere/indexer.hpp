@@ -1,3 +1,4 @@
+#pragma once
 #include <bf/all.hpp>
 #include <chrono>
 
