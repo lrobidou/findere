@@ -16,7 +16,7 @@ cxxopts::ParseResult parseArgv(int argc, char* argv[]) {
     cxxopts::Options options("index", "indexer of multifilter");
     options.add_options()                                                                             //
         ("i,input", "txt input files", cxxopts::value<std::vector<std::string>>())                    //
-        ("q,query", "fasta file containing the query", cxxopts::value<std::string>())                 // use fastq.gz
+        ("q,query", "file containing the query", cxxopts::value<std::string>())                       // use fastq.gz
         ("K", "length of K-mers", cxxopts::value<unsigned long long>())                               //
         ("z", "number of sub-k-mers per kmer", cxxopts::value<unsigned long long>())                  //
         ("epsilonpercent", "false positive rate of original Bloom filter", cxxopts::value<double>())  //
@@ -46,7 +46,7 @@ cxxopts::ParseResult parseArgvQuerier(int argc, char* argv[]) {
     cxxopts::Options options("index", "indexer of multifilter");
     options.add_options()                                                                                        //
         ("i,input", "index input files", cxxopts::value<std::string>())                                          //
-        ("q,query", "fasta file containing the query", cxxopts::value<std::string>())                            // use fastq.gz
+        ("q,query", "file containing the query", cxxopts::value<std::string>())                                  // use fastq.gz
         ("K", "length of K-mers", cxxopts::value<unsigned long long>())                                          //
         ("z", "number of sub-k-mers per kmer", cxxopts::value<unsigned long long>())                             //
         ("h,help", "display this help", cxxopts::value<bool>()->default_value("false")->implicit_value("true"))  //
@@ -134,10 +134,10 @@ std::tuple<std::vector<std::string>, std::string, unsigned long long, unsigned l
         std::cout << "    -K: the value for K: size of the Kmers queried by findere_query. Default=31" << std::endl;
         std::cout << "    -z: the value for z. findere indexes kmers of size K-z. Default=3" << std::endl;
         std::cout << "    -b: size in bits of the Bloom filter" << std::endl;
-        std::cout << "    -t: type of data [fasta/fastq/text]. Default=fasta" << std::endl;
-        std::cout << "    -c: index canonical Kmers if type of data is fasta or fastq." << std::endl;
+        std::cout << "    -t: type of data [bio/text]. Default=bio" << std::endl;
+        std::cout << "    -c: index canonical Kmers if type is bio." << std::endl;
         std::cout << "Example:" << std::endl;
-        std::cout << "    ./bin/findere_index -i \"data/ecoli2.fasta\",\"data/ecoli3.fasta\",\"data/Listeria phage.fasta\",\"data/Penicillium chrysogenum.fasta\" -o indexedFastas -K 31 -z 3 -b 10000000 -t fasta" << std::endl;
+        std::cout << "    ./bin/findere_index -i \"data/ecoli2.fasta\",\"data/ecoli3.fasta\",\"data/Listeria phage.fasta\",\"data/Penicillium chrysogenum.fasta\" -o indexedFastas -K 31 -z 3 -b 10000000 -t bio" << std::endl;
         exit(0);
     }
 
@@ -149,7 +149,7 @@ std::tuple<std::vector<std::string>, std::string, unsigned long long, unsigned l
     // optional args
     const unsigned long long K = getOneArgOptional<unsigned long long>(arguments, json, "K", 31);
     const unsigned long long z = getOneArgOptional<unsigned long long>(arguments, json, "z", 3);
-    std::string typeInput = getOneArgOptional<std::string>(arguments, json, "type", "fasta");
+    std::string typeInput = getOneArgOptional<std::string>(arguments, json, "type", "bio");
     const bool canonical = getOneArg<bool>(arguments, json, "c");  // defaults value: false
 
     return {input_filenames, output, K, z, b, typeInput, canonical};
@@ -167,10 +167,10 @@ std::tuple<std::string, std::string, unsigned long long, unsigned long long, std
         std::cout << "    -q: the file you want to query against the index. May be gzipped." << std::endl;
         std::cout << "    -K: the value for K: size of the Kmers queried by findere_query. Default=31" << std::endl;
         std::cout << "    -z: the value for z. findere indexes kmers of size K-z. Default=3" << std::endl;
-        std::cout << "    -t: type of data [fasta/fastq/text]. Default=fasta" << std::endl;
-        std::cout << "    -c: index canonical Kmers if type of data is fasta or fastq." << std::endl;
+        std::cout << "    -t: type of data [bio/text]. Default=bio" << std::endl;
+        std::cout << "    -c: index canonical Kmers if type of data is bio." << std::endl;
         std::cout << "Example:" << std::endl;
-        std::cout << "    ./bin/findere_query -i indexedFastas -q \"data/Listeria phage.fasta\" -K 31 -z 3  -t fasta" << std::endl;
+        std::cout << "    ./bin/findere_query -i indexedFastas -q \"data/Listeria phage.fasta\" -K 31 -z 3 -t bio" << std::endl;
         exit(0);
     }
 
@@ -181,7 +181,7 @@ std::tuple<std::string, std::string, unsigned long long, unsigned long long, std
     // optional args
     const unsigned long long K = getOneArgOptional<unsigned long long>(arguments, json, "K", 31);
     const unsigned long long z = getOneArgOptional<unsigned long long>(arguments, json, "z", 3);
-    std::string typeInput = getOneArgOptional<std::string>(arguments, json, "type", "fasta");
+    std::string typeInput = getOneArgOptional<std::string>(arguments, json, "type", "bio");
     const bool canonical = getOneArg<bool>(arguments, json, "c");  // defaults value: false
 
     return {input_filename, query_filename, K, z, typeInput, canonical};

@@ -39,8 +39,8 @@ chmod +x build.sh
 
 ### Running on fasta files
 ```bash
-./bin/findere_index -i "data/ecoli2.fasta","data/ecoli3.fasta","data/Listeria phage.fasta","data/Penicillium chrysogenum.fasta" -o indexFastas -K 31 -z 3 -b 10000000 5 -t fasta
-./bin/findere_query -i indexFastas -q data/Listeria\ phage.fasta -K 31 -z 3 -t fasta
+./bin/findere_index -i "data/ecoli2.fasta","data/ecoli3.fasta","data/Listeria phage.fasta","data/Penicillium chrysogenum.fasta" -o indexFastas -K 31 -z 3 -b 10000000 5 -t bio
+./bin/findere_query -i indexFastas -q data/Listeria\ phage.fasta -K 31 -z 3 -t bio
 ```
 
 Be sure that parameters K and z matches between findere_index and findere_query.
