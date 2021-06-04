@@ -4,6 +4,7 @@
 
 #include "../findere/reader/file_manager.hpp"
 #include "customAMQ.hpp"
+#include "customResponse.hpp"
 
 namespace findere_internal {
 /**
@@ -109,13 +110,32 @@ inline std::vector<bool> queryFilterOrTruth(const customAMQ& filterOrTruth, cons
     return response;
 }
 
+}  // namespace findere_internal
+
+namespace findere {
+// TODO not used once, should we remove it ?
+// /**
+//  * @brief Query only one read of the query using findere.
+//  * @param filename the name of the file to be queried
+//  * @param amq the amq wrapped within a customAMQ
+//  * @param k the value of (big) k
+//  * @param z the value of z
+//  * @return the result of findere's query applied on the first read
+//  */
+// std::vector<bool> inline query_one_sequence(const std::string& filename, const customAMQ& amq, const unsigned int& k, const unsigned long long& z) {
+//     FileManager read_files = FileManager();
+//     read_files.addFile(filename);
+//     std::string& current_read = read_files.get_next_read();
+//     return ::findere_internal::queryFilterOrTruth(amq, current_read, k, z);
+// }
+
 /**
  * @brief Computes the number of shared position between the query and the index given the response of findere.
  * @param bv The result of the query.
  * @param k the value of (big) k.
  * @return The number of shared position between the query and the index.
  */
-unsigned long long get_nb_positions_covered(std::vector<bool> bv, const unsigned int k) {
+inline unsigned long long get_nb_positions_covered(std::vector<bool> bv, const unsigned int k) {
     unsigned long long nb_positions_covered = 0;  // NB pos covered by at least one shared K-mer
     long long last_covered_position = -1;
     long long pos = 0;
@@ -133,23 +153,6 @@ unsigned long long get_nb_positions_covered(std::vector<bool> bv, const unsigned
     }
     return nb_positions_covered;
 }
-}  // namespace findere_internal
-
-namespace findere {
-/**
- * @brief Query only one read of the query using findere.
- * @param filename the name of the file to be queried
- * @param amq the amq wrapped within a customAMQ
- * @param k the value of (big) k
- * @param z the value of z
- * @return the result of findere's query applied on the first read
- */
-std::vector<bool> inline query_one_sequence(const std::string& filename, const customAMQ& amq, const unsigned int& k, const unsigned long long& z) {
-    FileManager read_files = FileManager();
-    read_files.addFile(filename);
-    std::string& current_read = read_files.get_next_read();
-    return ::findere_internal::queryFilterOrTruth(amq, current_read, k, z);
-}
 
 /**
  * @brief Applies findere directly on a string.
@@ -159,7 +162,7 @@ std::vector<bool> inline query_one_sequence(const std::string& filename, const c
  * @param z the value of z
  * @return 
  */
-std::vector<bool> inline query_text(const std::string& content, const customAMQ& amq, const unsigned int& k, const unsigned long long& z) {
+inline std::vector<bool> query_text(const std::string& content, const customAMQ& amq, const unsigned int& k, const unsigned long long& z) {
     return ::findere_internal::queryFilterOrTruth(amq, content, k, z);
 }
 
@@ -167,23 +170,22 @@ std::vector<bool> inline query_text(const std::string& content, const customAMQ&
  * @brief Query every read of the query using findere.
  * @param filename the name of the file to be queried
  * @param amq the amq wrapped within a customAMQ
- * @param k the value of (big) k
+ * @param K the value of (big) k
  * @param z the value of z
- * @return the result of findere's query applied on alls reads
+ * @param response a instance of customResponse that implements processResult.
+ * @return Nothing. See param response.
  */
-std::vector<bool> query_all(const std::string& filename, const customAMQ& amq, const unsigned int& k, const unsigned long long& z) {
+inline void query_all(const std::string& filename, const customAMQ& amq, const unsigned int& K, const unsigned long long& z, customResponse& response) {
     FileManager read_files = FileManager();
     read_files.addFile(filename);
-
-    std::string current_data = read_files.get_data();
     std::string current_read;
-    std::vector<bool> result(0);
 
     while (!(current_read = read_files.get_next_read()).empty()) {
-        std::vector<bool> res = ::findere_internal::queryFilterOrTruth(amq, current_read, k, z);
-        result.insert(std::end(result), std::begin(res), std::end(res));
+        std::string current_data = read_files.get_data();
+        std::string current_header = current_data.substr(0, current_data.find('\n'));
+        std::vector<bool> res = ::findere_internal::queryFilterOrTruth(amq, current_read, K, z);
+        response.processResult(res, K, current_header, current_read);
     }
-    return result;
 }
 
 }  // namespace findere
