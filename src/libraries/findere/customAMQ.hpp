@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 #include <string>
 
 /**
@@ -11,10 +10,5 @@ class customAMQ {
    public:
     customAMQ() = default;
     virtual ~customAMQ() = default;
-
-    virtual bool contains(const std::string& x) const {
-        std::cerr << "Should never be called." << std::endl;
-        exit(1);
-        return false;
-    };
+    virtual bool contains(const std::string& x) const = 0;
 };
