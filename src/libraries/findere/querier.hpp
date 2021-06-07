@@ -8,7 +8,7 @@
 
 namespace findere_internal {
 /**
- * @brief get the position of the next possible kmer that is positive.
+ * @brief get the number of jumps doable before getting to the next kmer that is likely to be positive.
  * @param filterOrTruth the amq wrapped within a customAMQ
  * @param s the sequence to be queried
  * @param k the value for (small) k
@@ -16,7 +16,7 @@ namespace findere_internal {
  * @param j the current position being queried in s
  * @return the number of jumps that can bo done. Each jump means that z position can be skipped.
  */
-inline unsigned long long getNextPositiveKmerPositionInTheQuery(const customAMQ& filterOrTruth, const std::string& s, unsigned int k, const unsigned long long& z, unsigned long long j, const bool& canonical) {
+inline unsigned long long getNumberOfJumpBeforeTheNextPositiveKmerPositionInTheQuery(const customAMQ& filterOrTruth, const std::string& s, unsigned int k, const unsigned long long& z, unsigned long long j, const bool& canonical) {
     unsigned long long numberOfJumps = 0;
     unsigned long long size = s.size();
     do {
@@ -34,13 +34,47 @@ inline unsigned long long getNextPositiveKmerPositionInTheQuery(const customAMQ&
  * @param z the current position being queried in s
  * @return The result of findere's query on s.
  */
+
+inline std::vector<bool> queryFilterOrTruthPapier(const customAMQ& filterOrTruth, const std::string& s, const unsigned int& K, const unsigned int& z, const bool& canonical) {
+    const unsigned int k = K - z;
+    unsigned long long size = s.size();
+    std::vector<bool> response(size - K + 1, false);
+    unsigned long long stretchLength = 0;  // number of consecutive positives kmers
+    unsigned long long j = 0;              // index of the query vector
+    bool extending_stretch = true;
+    while (j < size - k + 1) {
+        if (filterOrTruth.contains(s.substr(j, k), canonical)) {
+            stretchLength++;
+            if (extending_stretch)
+                j++;
+            else {
+                extending_stretch = true;
+                j = j - z;
+            }
+        } else {
+            if (stretchLength >= z) {
+                for (unsigned long long t = j - stretchLength; t < j - z; t++) response[t] = true;
+            }
+            stretchLength = 0;
+            extending_stretch = false;
+            j = j + z + 1;
+        }
+    }
+    // Last values:
+    if (stretchLength >= z) {
+        for (unsigned long long t = size - k + 1 - stretchLength; t < size - K + 1; t++) response[t] = true;
+    }
+
+    return response;
+}
+
 inline std::vector<bool> queryFilterOrTruth(const customAMQ& filterOrTruth, const std::string& s, const unsigned int& K, const unsigned int& z, const bool& canonical) {
-    const unsigned int k = K - z;              // small k, used to index
-    unsigned long long size = s.size();        // size of the query
-    std::vector<bool> response(size - K + 1);  // result of the query
-    unsigned long long i = 0;                  // index of the response vector
-    unsigned long long stretchLength = 0;      // number of consecutive positives kmers
-    unsigned long long j = 0;                  // index of the query vector
+    const unsigned int k = K - z;                     // small k, used to index
+    unsigned long long size = s.size();               // size of the query
+    std::vector<bool> response(size - K + 1, false);  // result of the query
+    unsigned long long i = 0;                         // index of the response vector
+    unsigned long long stretchLength = 0;             // number of consecutive positives kmers
+    unsigned long long j = 0;                         // index of the query vector
 
     while (j < size - K + 1) {
         if (filterOrTruth.contains(s.substr(j, k), canonical)) {
@@ -68,7 +102,7 @@ inline std::vector<bool> queryFilterOrTruth(const customAMQ& filterOrTruth, cons
 
             // skip queries between current position and the next positive kmer
             if (z > 0) {
-                unsigned long long numberOfJumps = getNextPositiveKmerPositionInTheQuery(filterOrTruth, s, k, z, j, canonical);
+                unsigned long long numberOfJumps = getNumberOfJumpBeforeTheNextPositiveKmerPositionInTheQuery(filterOrTruth, s, k, z, j, canonical);
                 for (unsigned long long temp = 0; temp < z * numberOfJumps; temp++) {
                     response[i] = false;
                     i++;
@@ -95,13 +129,8 @@ inline std::vector<bool> queryFilterOrTruth(const customAMQ& filterOrTruth, cons
 
     if (stretchLength != 0) {
         if (stretchLength > z) {
-            for (unsigned long long l = 0; l < stretchLength; l++) {
+            for (unsigned long long l = 0; l < stretchLength - z; l++) {
                 response[i] = true;
-                i++;
-            }
-        } else {
-            for (unsigned long long l = 0; l < stretchLength; l++) {
-                response[i] = false;
                 i++;
             }
         }
@@ -183,7 +212,7 @@ inline void query_all(const std::string& filename, const customAMQ& amq, const u
     while (!(current_read = read_files.get_next_read()).empty()) {
         std::string current_data = read_files.get_data();
         std::string current_header = current_data.substr(0, current_data.find('\n'));
-        std::vector<bool> res = ::findere_internal::queryFilterOrTruth(amq, current_read, K, z, canonical);
+        std::vector<bool> res = ::findere_internal::queryFilterOrTruthPapier(amq, current_read, K, z, canonical);
         response.processResult(res, K, current_header, current_read);
     }
 }

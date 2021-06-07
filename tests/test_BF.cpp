@@ -77,8 +77,7 @@ TEST(TestBF, TestFPR) {
     const auto& [TP, TN, FP, FN] = findere_internal::getScore(truthQuery, responseQuery);
     double fpr = (double)(100 * FP) / (double)(FP + TN);
     double fnr = (double)(100 * FN) / (double)(FN + TP);
-
+    ASSERT_EQ(fnr, 0);
     ASSERT_LT(fpr, 5.1);
     ASSERT_GT(fpr, 4.9);
-    ASSERT_EQ(fnr, 0);
 }

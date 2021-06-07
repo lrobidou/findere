@@ -14,10 +14,10 @@
 
 - [x] Amélioration: Stockage de K, z
 
-- [ ] stockage de canonical dans l'index (à discuter)
+- [x] stockage de canonical dans l'index (à discuter)
 
 - [x] Appliquer Canonical à la partie Query 
 
 - [ ] Optimisation de la fonction canonical (?)
 
-   
+- [ ] test equivalence findere::query_all 
