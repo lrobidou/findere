@@ -91,34 +91,42 @@ int main(int argc, char* argv[]) {
     cxxopts::ParseResult arguments = parseArgvQuerier(argc, argv);
     unsigned long long K;
     unsigned long long z;
-    const auto& [filterFilenameName, query_filename, Kuser, zuser, typeInput, threshold, canonical, hasUserProvidedKandzvalue] = getArgsQuerier(arguments);
-
+    bool canonical;
+    const auto& [filterFilenameName, query_filename, Kuser, zuser, typeInput, threshold, canonicaluser, hasUserProvidedKandzvalue, hasUserProvidedCanonical] = getArgsQuerier(arguments);
     unsigned long long Kinfilter = 0;
     unsigned long long zinfilter = 0;
-    bool filterhasKandzvalue = false;
+    bool canonicalinfilter = false;
+    bool filterhasKzandcanonicalvalues = false;
 
-    bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), filterFilenameName, filterhasKandzvalue, Kinfilter, zinfilter);
+    bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), filterFilenameName, filterhasKzandcanonicalvalues, Kinfilter, zinfilter, canonicalinfilter);
     if (hasUserProvidedKandzvalue) {
-        if (filterhasKandzvalue) {
-            K = Kuser;
-            z = zuser;
-            if ((Kuser - zuser) != (Kinfilter - zinfilter)) {
-                std::cout << "You passed K = " << Kuser << " and z = " << zuser << " (K - z = " << Kuser - zuser << ")" << std::endl;
-                std::cout << "The filter contains K = " << Kinfilter << " and z = " << zinfilter << " (K - z = " << Kinfilter - zinfilter << ")" << std::endl;
-                std::cout << "The behavior of findere is undefined." << std::endl;
-            }
-
-        } else {
-            K = Kuser;
-            z = zuser;
+        K = Kuser;
+        z = zuser;
+        if (filterhasKzandcanonicalvalues && ((Kuser - zuser) != (Kinfilter - zinfilter))) {
+            std::cout << "You passed K = " << Kuser << " and z = " << zuser << " (K - z = " << Kuser - zuser << ")" << std::endl;
+            std::cout << "The filter contains K = " << Kinfilter << " and z = " << zinfilter << " (K - z = " << Kinfilter - zinfilter << ")" << std::endl;
+            std::cout << "The behavior of findere is undefined." << std::endl;
         }
-
     } else {
-        if (filterhasKandzvalue) {
+        if (filterhasKzandcanonicalvalues) {
             K = Kinfilter;
             z = zinfilter;
         } else {
-            std::cerr << "No value for K and z (not in filter neither in user's parameters" << std::endl;
+            std::cerr << "No value for K and z (not in filter neither in user's parameters)." << std::endl;
+            exit(1);
+        }
+    }
+
+    if (hasUserProvidedCanonical) {
+        canonical = canonicaluser;
+        if (filterhasKzandcanonicalvalues && (canonicaluser != canonicalinfilter)) {
+            std::cerr << "You passed canonical = " << canonicaluser << " but the filter contains " << canonicalinfilter << ". The behavior of findere is undefined." << std::endl;
+        }
+    } else {
+        if (filterhasKzandcanonicalvalues) {
+            canonical = canonicalinfilter;
+        } else {
+            std::cerr << "No value for canonical (not in filter neither in user's parameters)." << std::endl;
             exit(1);
         }
     }

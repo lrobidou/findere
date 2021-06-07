@@ -19,10 +19,10 @@ int main(int argc, char* argv[]) {
     const auto& [input_filenames, output, K, z, b, typeInput, canonical] = getArgsIndexer(arguments);
     if (typeInput == "bio") {
         const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = findere::indexBioGivenBits(input_filenames, numHashes, K, z, b, canonical);
-        smallFilter->save(output, K, z);
+        smallFilter->save(output, K, z, canonical);
     } else if (typeInput == "text") {
         const auto& [smallFilter, timeTakenMs, sizeOfBloomFilter] = findere::indexTextGivenBits(input_filenames, numHashes, K, z, b);
-        smallFilter->save(output, K, z);
+        smallFilter->save(output, K, z, canonical);
     } else {
         std::cerr << "The given type of input input '" << typeInput << "' is not recognised (enter \"bio\" or \"text\")." << std::endl;
     }

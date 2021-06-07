@@ -16,14 +16,14 @@ cxxopts::ParseResult parseArgv(int argc, char* argv[]) {
     cxxopts::Options options("index", "indexer of multifilter");
     options.add_options()                                                                             //
         ("i,input", "txt input files", cxxopts::value<std::vector<std::string>>())                    //
-        ("q,query", "file containing the query", cxxopts::value<std::string>())                       // use fastq.gz
+        ("q,query", "file containing the query", cxxopts::value<std::string>())                       //
         ("K", "length of K-mers", cxxopts::value<unsigned long long>())                               //
         ("z", "number of sub-k-mers per kmer", cxxopts::value<unsigned long long>())                  //
         ("epsilonpercent", "false positive rate of original Bloom filter", cxxopts::value<double>())  //
         ("s,scenario", "JSON parameter file", cxxopts::value<std::string>())                          //
         ("t,type", "txt input files", cxxopts::value<std::string>())                                  //
         ("b,bits", "size of the filter", cxxopts::value<unsigned long long>())                        //
-        ("c,canonical", "do you want to index cannonical kmers ?", cxxopts::value<bool>()->default_value("false")->implicit_value("true"));
+        ("c,canonical", "do you want to index canonical kmers ?", cxxopts::value<bool>()->default_value("false")->implicit_value("true"));
     return options.parse(argc, argv);
 }
 
@@ -38,7 +38,7 @@ cxxopts::ParseResult parseArgvIndexer(int argc, char* argv[]) {
         ("t,type", "txt input files", cxxopts::value<std::string>())                                             //
         ("b,bits", "size of the filter", cxxopts::value<unsigned long long>())                                   //
         ("h,help", "display this help", cxxopts::value<bool>()->default_value("false")->implicit_value("true"))  //
-        ("c,canonical", "do you want to index cannonical kmers ?", cxxopts::value<bool>()->default_value("false")->implicit_value("true"));
+        ("c,canonical", "do you want to index canonical kmers ?", cxxopts::value<bool>()->default_value("false")->implicit_value("true"));
     return options.parse(argc, argv);
 }
 
@@ -46,13 +46,14 @@ cxxopts::ParseResult parseArgvQuerier(int argc, char* argv[]) {
     cxxopts::Options options("index", "indexer of multifilter");
     options.add_options()                                                                                        //
         ("i,input", "index input files", cxxopts::value<std::string>())                                          //
-        ("q,query", "file containing the query", cxxopts::value<std::string>())                                  // use fastq.gz
+        ("q,query", "file containing the query", cxxopts::value<std::string>())                                  //
         ("K", "length of K-mers", cxxopts::value<unsigned long long>())                                          //
         ("z", "number of sub-k-mers per kmer", cxxopts::value<unsigned long long>())                             //
+        ("c", "do you want to index canonical kmers ?", cxxopts::value<bool>())                                  //
         ("h,help", "display this help", cxxopts::value<bool>()->default_value("false")->implicit_value("true"))  //
         ("t,type", "txt input files", cxxopts::value<std::string>()->default_value("bio"))                       //
         ("threshold", "percentage threshold for a read to be considered positive", cxxopts::value<double>())     //
-        ("c,canonical", "do you want to index cannonical kmers ?", cxxopts::value<bool>()->default_value("false")->implicit_value("true"));
+        ;
     return options.parse(argc, argv);
 }
 
@@ -172,12 +173,12 @@ std::tuple<std::vector<std::string>, std::string, unsigned long long, unsigned l
     const unsigned long long K = getOneArgOptional<unsigned long long>(arguments, json, "K", 31);
     const unsigned long long z = getOneArgOptional<unsigned long long>(arguments, json, "z", 3);
     std::string typeInput = getOneArgOptional<std::string>(arguments, json, "type", "bio");
-    const bool canonical = getOneArg<bool>(arguments, json, "c");  // defaults value: false
+    const bool canonical = getOneArgOptional<bool>(arguments, json, "c", false);
 
     return {input_filenames, output, K, z, b, typeInput, canonical};
 }
 
-std::tuple<std::string, std::string, unsigned long long, unsigned long long, std::string, double, bool, bool> getArgsQuerier(const cxxopts::ParseResult& arguments) {
+std::tuple<std::string, std::string, unsigned long long, unsigned long long, std::string, double, bool, bool, bool> getArgsQuerier(const cxxopts::ParseResult& arguments) {
     nlohmann::json json;
     const bool displayHelp = getOneArg<bool>(arguments, json, "h");
     if (displayHelp) {
@@ -198,6 +199,7 @@ std::tuple<std::string, std::string, unsigned long long, unsigned long long, std
 
     bool isKdefaultValue = false;
     bool iszdefaultValue = false;
+    bool iscanonicaldefaultValue = false;
 
     // mandatory args
     std::string input_filename = getOneArg<std::string>(arguments, json, "i");
@@ -206,6 +208,7 @@ std::tuple<std::string, std::string, unsigned long long, unsigned long long, std
     // optional args
     const unsigned long long K = getOneArgOptional<unsigned long long>(arguments, json, "K", 31, isKdefaultValue);
     const unsigned long long z = getOneArgOptional<unsigned long long>(arguments, json, "z", 3, iszdefaultValue);
+    const bool canonical = getOneArgOptional<bool>(arguments, json, "c", false, iscanonicaldefaultValue);
 
     if (isKdefaultValue != iszdefaultValue) {
         std::cerr << "You must pass either (K and z) or nothing" << std::endl;
@@ -213,9 +216,8 @@ std::tuple<std::string, std::string, unsigned long long, unsigned long long, std
     }
     const double threshold = getOneArgOptional<double>(arguments, json, "threshold", 0);  // TODO confirmer valeur thereshold
     std::string typeInput = getOneArgOptional<std::string>(arguments, json, "type", "bio");
-    const bool canonical = getOneArg<bool>(arguments, json, "c");  // defaults value: false
 
-    return {input_filename, query_filename, K, z, typeInput, threshold, canonical, !isKdefaultValue};
+    return {input_filename, query_filename, K, z, typeInput, threshold, canonical, !isKdefaultValue, !iscanonicaldefaultValue};
 }
 
 void printArgs(std::vector<std::string> input_filenames, std::string queryFile, unsigned long long k, unsigned long long z, int epsilon) {
