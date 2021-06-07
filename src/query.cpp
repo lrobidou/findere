@@ -29,34 +29,28 @@ class bfAMQ : public customAMQ {
     }
 
     // finally, map the contains method to whatever the name of the method of our inner bloom filter
-    bool contains(const std::string& x) const {
+    bool contains(const std::string& x, const bool& canonical) const {
         // just pass the parameter to your amq
+        if (canonical) {
+            return _bf->lookup(make_canonical(x));
+        }
         return _bf->lookup(x);
     }
 
     //that's all folks
 };
 
-class truthAMQ : public customAMQ {
-   private:
-    robin_hood::unordered_set<std::string> _t;
-
-   public:
-    truthAMQ(const robin_hood::unordered_set<std::string>& t) : _t(t) {}
-
-    bool contains(const std::string& x) const {
-        return _t.contains(x);
-    }
-};
-
 class ResultPrinter : public customResponse {
+   private:
+    double _threshold;
+
    public:
-    ResultPrinter() {}
+    ResultPrinter(double threshold) : _threshold(threshold) {}
 
     void processResult(const std::vector<bool>& res, const unsigned int& K, const std::string& current_header, const std::string& current_read) {
         long long nb_positions_covered = findere::get_nb_positions_covered(res, K);
         float ratio = (100 * nb_positions_covered) / float(current_read.length());
-        if (ratio > 50) {
+        if (ratio > _threshold) {
             std::cout << current_header
                       << "\n"
                       << nb_positions_covered
@@ -95,9 +89,40 @@ int main(int argc, char* argv[]) {
     const unsigned numHashes = 1;  // number of hash functions
     std::string querySeq;
     cxxopts::ParseResult arguments = parseArgvQuerier(argc, argv);
-    const auto& [filterFilenameName, query_filename, k, z, typeInput, canonical] = getArgsQuerier(arguments);
+    unsigned long long K;
+    unsigned long long z;
+    const auto& [filterFilenameName, query_filename, Kuser, zuser, typeInput, threshold, canonical, hasUserProvidedKandzvalue] = getArgsQuerier(arguments);
 
-    bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), filterFilenameName);
+    unsigned long long Kinfilter = 0;
+    unsigned long long zinfilter = 0;
+    bool filterhasKandzvalue = false;
+
+    bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), filterFilenameName, filterhasKandzvalue, Kinfilter, zinfilter);
+    if (hasUserProvidedKandzvalue) {
+        if (filterhasKandzvalue) {
+            K = Kuser;
+            z = zuser;
+            if ((Kuser - zuser) != (Kinfilter - zinfilter)) {
+                std::cout << "You passed K = " << Kuser << " and z = " << zuser << " (K - z = " << Kuser - zuser << ")" << std::endl;
+                std::cout << "The filter contains K = " << Kinfilter << " and z = " << zinfilter << " (K - z = " << Kinfilter - zinfilter << ")" << std::endl;
+                std::cout << "The behavior of findere is undefined." << std::endl;
+            }
+
+        } else {
+            K = Kuser;
+            z = zuser;
+        }
+
+    } else {
+        if (filterhasKandzvalue) {
+            K = Kinfilter;
+            z = zinfilter;
+        } else {
+            std::cerr << "No value for K and z (not in filter neither in user's parameters" << std::endl;
+            exit(1);
+        }
+    }
+
     // arg, we have a bf::basic_bloom_filter * now
     // but what if you want to query something else in your own program ?
     // how can you exectute findere::query on your own data structure ?
@@ -105,11 +130,11 @@ int main(int argc, char* argv[]) {
     bfAMQ myAMQ = bfAMQ(filter);
     // the end.
 
-    ResultPrinter printer = ResultPrinter();
+    ResultPrinter printer = ResultPrinter(threshold);
     if (typeInput == "bio") {
-        findere::query_all(query_filename, myAMQ, k, z, printer);
+        findere::query_all(query_filename, myAMQ, K, z, canonical, printer);
     } else if (typeInput == "text") {
-        std::vector<bool> response = findere::query_text(extractContentFromText(query_filename), myAMQ, k, z);
+        std::vector<bool> response = findere::query_text(extractContentFromText(query_filename), myAMQ, K, z, canonical);
     } else {
         std::cerr << "The given type of input input '" << typeInput << "' is not recognised." << std::endl;
         exit(1);

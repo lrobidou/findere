@@ -18,7 +18,10 @@ class bfAMQ : public customAMQ {
     bfAMQ(bf::basic_bloom_filter* bf) : _bf(bf) {
     }
 
-    bool contains(const std::string& x) const {
+    bool contains(const std::string& x, const bool& canonical) const {
+        if (canonical) {
+            return _bf->lookup(make_canonical(x));
+        }
         return _bf->lookup(x);
     }
 };
@@ -31,7 +34,10 @@ class truthAMQ : public customAMQ {
     truthAMQ(const robin_hood::unordered_set<std::string>& t) : _t(t) {
     }
 
-    bool contains(const std::string& x) const {
+    bool contains(const std::string& x, const bool& canonical) const {
+        if (canonical) {
+            return _t.contains(make_canonical(x));
+        }
         return _t.contains(x);
     }
 };
@@ -52,7 +58,7 @@ class ResultGetter : public customResponse {
 
 TEST(TestBF, TestFPR) {
     robin_hood::unordered_set<std::string> truthPlusK;
-    const unsigned k = 32;         // k-mer size
+    const unsigned K = 32;         // k-mer size
     const unsigned numHashes = 1;  // number of hash functions
     const double epsilon_percent = 5.0;
 
@@ -60,11 +66,11 @@ TEST(TestBF, TestFPR) {
     std::string query_filename = "data/Salmonella enterica.fasta";
 
     // create a truth and filter
-    const auto& [truth, filter, x, y] = indexBio(input_filenames, numHashes, k, epsilon_percent);
+    const auto& [truth, filter, x, y] = indexBio(input_filenames, numHashes, K, epsilon_percent);
 
-    std::vector<bool> truthQuery = truth::query_all(query_filename, truthAMQ(truth), k);
+    std::vector<bool> truthQuery = truth::query_all(query_filename, truthAMQ(truth), K);
     ResultGetter getter = ResultGetter();
-    findere::query_all(query_filename, bfAMQ(filter), k, 0, getter);
+    findere::query_all(query_filename, bfAMQ(filter), K, 0, false, getter);
     std::vector<bool> responseQuery = getter.getResult();
     // std::cout << filter->storage().size() << std::endl; // about 284257904
 

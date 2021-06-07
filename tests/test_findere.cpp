@@ -18,7 +18,10 @@ class bfAMQ : public customAMQ {
     bfAMQ(bf::basic_bloom_filter* bf) : _bf(bf) {
     }
 
-    bool contains(const std::string& x) const {
+    bool contains(const std::string& x, const bool& canonical) const {
+        if (canonical) {
+            return _bf->lookup(make_canonical(x));
+        }
         return _bf->lookup(x);
     }
 };
@@ -31,7 +34,10 @@ class truthAMQ : public customAMQ {
     truthAMQ(const robin_hood::unordered_set<std::string>& t) : _t(t) {
     }
 
-    bool contains(const std::string& x) const {
+    bool contains(const std::string& x, const bool& canonical) const {
+        if (canonical) {
+            return _t.contains(make_canonical(x));
+        }
         return _t.contains(x);
     }
 };
@@ -68,7 +74,7 @@ TEST(TestFindere, TestFPR) {
 
     std::vector<bool> truthQuery = truth::query_all(query_filename, truthAMQ(truth), K);
     ResultGetter getter = ResultGetter();
-    findere::query_all(query_filename, bfAMQ(filter), K, z, getter);
+    findere::query_all(query_filename, bfAMQ(filter), K, z, false, getter);
     std::vector<bool> responseQuery = getter.getResult();
 
     const auto& [TP, TN, FP, FN] = findere_internal::getScore(truthQuery, responseQuery);

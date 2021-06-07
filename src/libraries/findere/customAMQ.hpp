@@ -10,5 +10,5 @@ class customAMQ {
    public:
     customAMQ() = default;
     virtual ~customAMQ() = default;
-    virtual bool contains(const std::string& x) const = 0;
+    virtual bool contains(const std::string& x, const bool& canonical) const = 0;
 };
