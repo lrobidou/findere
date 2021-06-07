@@ -10,10 +10,6 @@
 #include <vector>
 #include <zstr.hpp>
 
-std::string changeFilenameExtensionIfAnyOrAddOne(std::string filename, std::string newExtension);
-
-inline bool thisFilenameExists(const std::string& name);
-
 inline void dbg(std::string s) {
     //std::cout << s;
 }
