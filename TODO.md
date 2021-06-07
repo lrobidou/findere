@@ -10,12 +10,14 @@
 
 - [ ] Read lowercase letters as uppercase letters when indexing genomic data
 
- - [ ] verify that the index exists before trying to query it
+- [x] verify that the index exists before trying to query it
 
- - [ ] Amélioration: Stockage de K, z, et canonical dans l'index
+- [x] Amélioration: Stockage de K, z
 
- - [ ] Appliquer Canonical à la partie Query 
+- [ ] stockage de canonical dans l'index (à discuter)
 
- - [ ] Optimisation de la fonction canonical (?)
+- [x] Appliquer Canonical à la partie Query 
+
+- [ ] Optimisation de la fonction canonical (?)
 
    
