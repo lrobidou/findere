@@ -5,25 +5,28 @@
 #include <string>
 
 #include "../src/libraries/evaluation/evaluation.hpp"
+#include "../src/libraries/evaluation/indexer.hpp"
+#include "../src/libraries/evaluation/querier.hpp"
 #include "../src/libraries/findere/indexer.hpp"
 #include "../src/libraries/findere/querier.hpp"
-#include "../src/libraries/indexer/indexer.hpp"
-#include "../src/libraries/querier/querier.hpp"
 
-class bfAMQ : public customAMQ {
+class forcedResponsebfAMQ : public customAMQ {
    private:
     bf::basic_bloom_filter* _bf;
     std::vector<bool> _tab;
     std::vector<std::string> v = {
-        "01234567890123456789012345678",
-        "12345678901234567890123456789",
-        "23456789012345678901234567890",
-        "34567890123456789012345678901",
-        "45678901234567890123456789012",
-        "56789012345678901234567890123"};
+        "iuapnvpdrazhjrljjmviihwiojocn",
+        "uapnvpdrazhjrljjmviihwiojocns",
+        "apnvpdrazhjrljjmviihwiojocnsm",
+        "pnvpdrazhjrljjmviihwiojocnsmn",
+        "nvpdrazhjrljjmviihwiojocnsmnn",
+        "vpdrazhjrljjmviihwiojocnsmnnr",
+        "pdrazhjrljjmviihwiojocnsmnnrw",
+        "drazhjrljjmviihwiojocnsmnnrwi",
+        "razhjrljjmviihwiojocnsmnnrwii"};
 
    public:
-    bfAMQ(bf::basic_bloom_filter* bf, std::vector<bool> tab) : _bf(bf), _tab(tab) {
+    forcedResponsebfAMQ(bf::basic_bloom_filter* bf, std::vector<bool> tab) : _bf(bf), _tab(tab) {
     }
 
     bool contains(const std::string& x, const bool& canonical) const {
@@ -34,7 +37,7 @@ class bfAMQ : public customAMQ {
             }
             i++;
         }
-        std::cout << x << std::endl;
+        std::cout << "that should not happening" << std::endl;
         exit(1);
     }
 };
@@ -43,21 +46,27 @@ TEST(TestFindere, TestQueryFilterOrTruth) {
     robin_hood::unordered_set<std::string> truthPlusK;
     const unsigned K = 32;  // k-mer size
     const unsigned int z = 3;
-    std::string s = "0123456789012345678901234567890123";
+    std::string s = "iuapnvpdrazhjrljjmviihwiojocnsmnnrwii";  //ucjukescrreuhrpobpuquhuefuemylbtotnucfqlkdoubadmludmyzxthvgyzyv";
 
     auto filter = new bf::basic_bloom_filter(0.05, 10);
 
-    std::vector<std::vector<bool>> vect = {
+    std::vector<std::vector<bool>> inputs = {
         {1, 1, 1, 1, 0, 0},
         {1, 1, 1, 1, 0, 1},
         {1, 1, 0, 1, 1, 0},
         {1, 0, 1, 1, 1, 0}};
 
-    for (const auto v : vect) {
-        std::vector<bool> responseQueryp = findere_internal::queryFilterOrTruth(bfAMQ(filter, v), s, K, z, false);
-        std::vector<bool> responseQueryl = findere_internal::queryFilterOrTruthPapier(bfAMQ(filter, v), s, K, z, false);
-        ASSERT_EQ(responseQueryp, responseQueryl);
+    std::vector<std::vector<bool>> expectedResponses = {
+        {1, 0, 0, 0, 0, 0},
+        {1, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0}};
+
+    std::vector<std::vector<bool>> responses;
+
+    for (const auto input : inputs) {
+        responses.push_back(findere_internal::queryFilterOrTruth(forcedResponsebfAMQ(filter, input), s, K, z, false));
     }
 
-    delete filter;
+    ASSERT_EQ(responses, expectedResponses);
 }
