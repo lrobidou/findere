@@ -5,10 +5,10 @@
 #include <string>
 
 #include "../src/libraries/evaluation/evaluation.hpp"
+#include "../src/libraries/evaluation/indexer.hpp"
+#include "../src/libraries/evaluation/querier.hpp"
 #include "../src/libraries/findere/indexer.hpp"
 #include "../src/libraries/findere/querier.hpp"
-#include "../src/libraries/indexer/indexer.hpp"
-#include "../src/libraries/querier/querier.hpp"
 
 class bfAMQ : public customAMQ {
    private:
@@ -58,9 +58,9 @@ class ResultGetter : public customResponse {
 
 TEST(TestFindere, TestFPR) {
     robin_hood::unordered_set<std::string> truthPlusK;
-    const unsigned K = 32;         // k-mer size
-    const unsigned numHashes = 1;  // number of hash functions
-    const double epsilon_percent = 5.0;
+    const unsigned K = 32;               // k-mer size
+    const unsigned numHashes = 1;        // number of hash functions
+    const double epsilon_percent = 5.0;  //the value is not usefull, but I need it to use indexBio
     const unsigned int z = 3;
     unsigned long long bits = 284257904;  // size of the filter for a FPR of 5%
 

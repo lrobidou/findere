@@ -10,6 +10,7 @@
 #include <unordered_set>
 #include <zstr.hpp>
 
+#include "../findere/indexer.hpp"
 #include "../findere/reader/file_manager.hpp"
 #include "../findere/utils.hpp"
 

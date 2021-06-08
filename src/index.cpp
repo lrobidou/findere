@@ -6,9 +6,9 @@
 #include <string>
 
 #include "libraries/evaluation/evaluation.hpp"
+#include "libraries/evaluation/indexer.hpp"
+#include "libraries/evaluation/querier.hpp"
 #include "libraries/findere/indexer.hpp"
-#include "libraries/indexer/indexer.hpp"
-#include "libraries/querier/querier.hpp"
 #include "libraries/utils/argsUtils.hpp"
 #include "libraries/utils/utils.hpp"
 

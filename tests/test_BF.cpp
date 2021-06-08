@@ -5,10 +5,10 @@
 #include <string>
 
 #include "../src/libraries/evaluation/evaluation.hpp"
+#include "../src/libraries/evaluation/indexer.hpp"
+#include "../src/libraries/evaluation/querier.hpp"
 #include "../src/libraries/findere/indexer.hpp"
 #include "../src/libraries/findere/querier.hpp"
-#include "../src/libraries/indexer/indexer.hpp"
-#include "../src/libraries/querier/querier.hpp"
 
 class bfAMQ : public customAMQ {
    private:
