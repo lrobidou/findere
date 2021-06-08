@@ -10,6 +10,7 @@ We propose an experiment to show the evolution of false positive rate (as well a
 ```
 git clone --recursive https://github.com/lrobidou/findere
 cd findere
+git checkout paper
 ```
 
 ### Compile findere

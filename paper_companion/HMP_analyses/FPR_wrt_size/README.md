@@ -10,6 +10,7 @@ We propose an experiment to show the evolution of the false positive rate of bot
 ```
 git clone --recursive https://github.com/lrobidou/findere
 cd findere
+git checkout paper
 ```
 ### Modify the parameters
 In the file src/mainPaperFixedSize.cpp: 

@@ -9,6 +9,7 @@ We propose an experiment to show the stability of the false positive rate and th
 ```
 git clone --recursive https://github.com/lrobidou/findere
 cd findere
+git checkout paper
 ```
 ### Modify the parameters
 In the file src/mainPaperKVariation.cpp: 
