@@ -7,35 +7,17 @@
 #include "customResponse.hpp"
 
 namespace findere_internal {
-/**
- * @brief get the number of jumps doable before getting to the next kmer that is likely to be positive.
- * @param filterOrTruth the amq wrapped within a customAMQ
- * @param s the sequence to be queried
- * @param k the value for (small) k
- * @param z the value for z
- * @param j the current position being queried in s
- * @return the number of jumps that can bo done. Each jump means that z position can be skipped.
- */
-inline unsigned long long getNumberOfJumpBeforeTheNextPositiveKmerPositionInTheQuery(const customAMQ& filterOrTruth, const std::string& s, unsigned int k, const unsigned long long& z, unsigned long long j, const bool& canonical) {
-    unsigned long long numberOfJumps = 0;
-    unsigned long long size = s.size();
-    do {
-        numberOfJumps += 1;
-    } while ((j + numberOfJumps * z < size - k + 1) && (filterOrTruth.contains(s.substr(j + numberOfJumps * z, k), canonical)) == false);
-    numberOfJumps -= 1;
-    return numberOfJumps;
-}
 
 /**
  * @brief Query using findere.
  * @param filterOrTruth the amq wrapped within a customAMQ
  * @param s the sequence to be queried
- * @param k the value for (big) k
+ * @param K the value for (big) k
  * @param z the current position being queried in s
+ * @param canonical do we query canonical kmers ?
  * @return The result of findere's query on s.
  */
-
-inline std::vector<bool> queryFilterOrTruthPapier(const customAMQ& filterOrTruth, const std::string& s, const unsigned int& K, const unsigned int& z, const bool& canonical) {
+inline std::vector<bool> queryFilterOrTruth(const customAMQ& amq, const std::string& s, const unsigned int& K, const unsigned int& z, const bool& canonical) {
     const unsigned int k = K - z;
     unsigned long long size = s.size();
     std::vector<bool> response(size - K + 1, false);
@@ -43,11 +25,11 @@ inline std::vector<bool> queryFilterOrTruthPapier(const customAMQ& filterOrTruth
     unsigned long long j = 0;              // index of the query vector
     bool extending_stretch = true;
     while (j < size - k + 1) {
-        if (filterOrTruth.contains(s.substr(j, k), canonical)) {
-            stretchLength++;
-            if (extending_stretch)
+        if (amq.contains(s.substr(j, k), canonical)) {
+            if (extending_stretch) {
+                stretchLength++;
                 j++;
-            else {
+            } else {
                 extending_stretch = true;
                 j = j - z;
             }
@@ -65,77 +47,6 @@ inline std::vector<bool> queryFilterOrTruthPapier(const customAMQ& filterOrTruth
         for (unsigned long long t = size - k + 1 - stretchLength; t < size - K + 1; t++) response[t] = true;
     }
 
-    return response;
-}
-
-inline std::vector<bool> queryFilterOrTruth(const customAMQ& filterOrTruth, const std::string& s, const unsigned int& K, const unsigned int& z, const bool& canonical) {
-    const unsigned int k = K - z;                     // small k, used to index
-    unsigned long long size = s.size();               // size of the query
-    std::vector<bool> response(size - K + 1, false);  // result of the query
-    unsigned long long i = 0;                         // index of the response vector
-    unsigned long long stretchLength = 0;             // number of consecutive positives kmers
-    unsigned long long j = 0;                         // index of the query vector
-
-    while (j < size - K + 1) {
-        if (filterOrTruth.contains(s.substr(j, k), canonical)) {
-            stretchLength++;
-            j++;
-        } else {
-            if (stretchLength != 0) {
-                if (stretchLength > z) {
-                    for (unsigned long long t = 0; t < stretchLength - z; t++) {
-                        response[i] = true;
-                        i++;
-                    }
-                    for (unsigned long long t = 0; t < z; t++) {
-                        response[i] = false;
-                        i++;
-                    }
-                } else {
-                    for (unsigned long long t = 0; t < stretchLength; t++) {
-                        response[i] = false;
-                        i++;
-                    }
-                }
-                stretchLength = 0;
-            }
-
-            // skip queries between current position and the next positive kmer
-            if (z > 0) {
-                unsigned long long numberOfJumps = getNumberOfJumpBeforeTheNextPositiveKmerPositionInTheQuery(filterOrTruth, s, k, z, j, canonical);
-                for (unsigned long long temp = 0; temp < z * numberOfJumps; temp++) {
-                    response[i] = false;
-                    i++;
-                    j++;
-                }
-            }
-            response[i] = 0;
-            i++;
-            j++;
-        }
-    }
-
-    //reminder: from here, (j == size - K + 1)
-    // check if stretchLength can be even bigger
-    bool sameStretch = true;
-    while ((sameStretch) && (j < size - k + 1)) {
-        if (filterOrTruth.contains(s.substr(j, k), canonical)) {
-            stretchLength++;
-        } else {
-            sameStretch = false;
-        }
-        j++;
-    }
-
-    if (stretchLength != 0) {
-        if (stretchLength > z) {
-            for (unsigned long long l = 0; l < stretchLength - z; l++) {
-                response[i] = true;
-                i++;
-            }
-        }
-        stretchLength = 0;
-    }
     return response;
 }
 
@@ -191,8 +102,18 @@ inline unsigned long long get_nb_positions_covered(std::vector<bool> bv, const u
  * @param z the value of z
  * @return 
  */
-inline std::vector<bool> query_text(const std::string& content, const customAMQ& amq, const unsigned int& K, const unsigned long long& z, const bool& canonical) {
-    return ::findere_internal::queryFilterOrTruth(amq, content, K, z, canonical);
+inline void query_text(const std::string& filename, const customAMQ& amq, const unsigned int& K, const unsigned long long& z, const bool& canonical, customResponse& response) {
+    std::ifstream myfilegz(filename);
+    zstr::istream myfile(myfilegz);
+
+    std::string line;
+    std::string content;
+
+    while (std::getline(myfile, line)) {
+        if (line.length() > K) {
+            response.processResult(::findere_internal::queryFilterOrTruth(amq, line, K, z, canonical), K, "", line);
+        }
+    }
 }
 
 /**
@@ -212,7 +133,20 @@ inline void query_all(const std::string& filename, const customAMQ& amq, const u
     while (!(current_read = read_files.get_next_read()).empty()) {
         std::string current_data = read_files.get_data();
         std::string current_header = current_data.substr(0, current_data.find('\n'));
-        std::vector<bool> res = ::findere_internal::queryFilterOrTruthPapier(amq, current_read, K, z, canonical);
+        std::vector<bool> res = ::findere_internal::queryFilterOrTruth(amq, current_read, K, z, canonical);
+        response.processResult(res, K, current_header, current_read);
+    }
+}
+
+inline void query_all_paper(const std::string& filename, const customAMQ& amq, const unsigned int& K, const unsigned long long& z, const bool& canonical, customResponse& response) {
+    FileManager read_files = FileManager();
+    read_files.addFile(filename);
+    std::string current_read;
+
+    while (!(current_read = read_files.get_next_read()).empty()) {
+        std::string current_data = read_files.get_data();
+        std::string current_header = current_data.substr(0, current_data.find('\n'));
+        std::vector<bool> res = ::findere_internal::queryFilterOrTruth(amq, current_read, K, z, canonical);
         response.processResult(res, K, current_header, current_read);
     }
 }
