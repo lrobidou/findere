@@ -11,6 +11,8 @@ The `findere` implementation proposed here uses a Bloom filter as AMQ. It propos
 A library is proposed, hence `findere` can be easily adapted to any other AMQ, for any usage.
 
 ## Table of content
+- [findere](#findere)
+  - [Table of content](#table-of-content)
 - [Install](#install)
   - [Dependencies](#dependencies)
   - [Install findere](#install-findere)
@@ -57,7 +59,7 @@ For a high value of K, the hash function of Bloom filters crash. Thus, we experi
 ## Overview
 ```bash
 # indexing files
-./bin/findere_index -i <lists of files to index> -o <index_name> -K <K> -z <z> -b <size in bits> -t <type of data {bio/text}>
+./bin/findere_index -i <lists of files to index> -o <index_name> -b <size in bits> [ -K <K> -z <z> -t <type of data {bio/text}>]
 
 # querying a file
 ./bin/findere_query -i <index_name> -q <your query file> -t <{bio/text}>
@@ -67,15 +69,14 @@ Type `./bin/findere_index -h` or `./bin/findere_query -h` for full list of optio
 ## Exemple on natural text file
 ```bash
 # indexing some texts
-./bin/findere_index -i data/texts/contemplations.txt,data/texts/Horace.txt,data/texts/Le_Cid.txt,data/texts/Maastricht.txt,data/texts/Othon.txt,data/texts/Lettres_persanes.txt -o poesie.idx -b 1000000 -t text
+./bin/findere_index -i data/texts/contemplations.txt,data/texts/Horace.txt,data/texts/Le_Cid.txt,data/texts/Maastricht.txt,data/texts/Othon.txt,data/texts/Lettres_persanes.txt -o poesie.idx -K 31 -z 3 -b 10000000 -t text
 
 # querying a text
-./bin/findere_query -i poesie.idx -q data/texts/AndromaqueAndHorace.txt -t text
-```
+./bin/findere_query -i poesie.idx -q data/texts/AndromaqueAndHorace.txt -t text```
 
 This outputs simply the number of shared K-mers.
 ```bash
-Files data/texts/AndromaqueAndHorace.txt shares 24434 31-mer(s) among 100509 with the indexed bank (poesie.idx)
+File data/texts/AndromaqueAndHorace.txt shares 1509 31-mer(s) among 100509 with the indexed bank (poesie.idx)
 ```
 
 The code may be modified in order to make further analyses using these shared K-mers.

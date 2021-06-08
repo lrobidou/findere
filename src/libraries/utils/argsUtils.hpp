@@ -184,12 +184,12 @@ std::tuple<std::string, std::string, unsigned long long, unsigned long long, std
     if (displayHelp) {
         std::cout << "findere_query: query Kmers using kmers (K>k) indexed in an Approximate Membership Query data structure (a Bloom filter in this implementation) stored on a disk." << std::endl;
         std::cout << "Usage:" << std::endl;
-        std::cout << "    ./bin/findere_index -i <index> -q <queyFileName> -K <K> -z <z> -b <bits> [-t type] [-c]" << std::endl;
+        std::cout << "    ./bin/findere_query -i <index> -q <queyFileName> [-K <K>] [-z <z>] -b <bits> [-t type] [-c]" << std::endl;
         std::cout << "Options:" << std::endl;
         std::cout << "    -i: the input index you want to query, that you created with ./bin/index." << std::endl;
         std::cout << "    -q: the file you want to query against the index. May be gzipped." << std::endl;
-        std::cout << "    -K: the value for K: size of the Kmers queried by findere_query. Default=31" << std::endl;
-        std::cout << "    -z: the value for z. findere indexes kmers of size K-z. Default=3" << std::endl;
+        std::cout << "    -K: the value for K: size of the Kmers queried by findere_query. Default=what was used at indexation (findere remembers it)" << std::endl;
+        std::cout << "    -z: the value for z. findere indexes kmers of size K-z. Default=what was used at indexation (findere remembers it)" << std::endl;
         std::cout << "    -t: type of data [bio/text]. Default=bio" << std::endl;
         std::cout << "    -c: index canonical Kmers if type of data is bio." << std::endl;
         std::cout << "Example:" << std::endl;
@@ -214,7 +214,7 @@ std::tuple<std::string, std::string, unsigned long long, unsigned long long, std
         std::cerr << "You must pass either (K and z) or nothing" << std::endl;
         exit(1);
     }
-    const double threshold = getOneArgOptional<double>(arguments, json, "threshold", 80);  
+    const double threshold = getOneArgOptional<double>(arguments, json, "threshold", 80);
     std::string typeInput = getOneArgOptional<std::string>(arguments, json, "type", "bio");
 
     return {input_filename, query_filename, K, z, typeInput, threshold, canonical, !isKdefaultValue, !iscanonicaldefaultValue};
