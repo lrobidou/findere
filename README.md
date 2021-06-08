@@ -14,6 +14,7 @@ A library is proposed, hence `findere` can be easily adapted to any other AMQ, f
 - [Install](#install)
   - [Dependencies](#dependencies)
   - [Install findere](#install-findere)
+  - [Reproduce paper results](#reproduce-paper-results)
 - [Running](#running)
   - [Overview](#overview)
   - [Exemple on natural text file](#exemple-on-natural-text-file)
@@ -41,6 +42,11 @@ git submodule update --init --recursive
 chmod +x build.sh
 ./build.sh
 ```
+
+## Reproduce paper results
+The paper results can be reproduced on the branch `paper`. 
+Use only this branch (`git ckeckout paper` and latter `git submodule update --init --recursive`) in order to reproduce these results. Please use this branche only for this purpose as recent developments do not impact this `paper` branch.
+
 # Running
 
 **NOTE**: 
