@@ -6,11 +6,11 @@
 #include <string>
 
 #include "libraries/evaluation/evaluation.hpp"
+#include "libraries/evaluation/indexer.hpp"
+#include "libraries/evaluation/querier.hpp"
 #include "libraries/findere/customAMQ.hpp"
 #include "libraries/findere/customResponse.hpp"
 #include "libraries/findere/indexer.hpp"
-#include "libraries/indexer/indexer.hpp"
-#include "libraries/querier/querier.hpp"
 #include "libraries/utils/argsUtils.hpp"
 #include "libraries/utils/utils.hpp"
 
@@ -40,12 +40,12 @@ class bfAMQ : public customAMQ {
     //that's all folks
 };
 
-class ResultPrinter : public customResponse {
+class BioPrinter : public customResponse {
    private:
     double _threshold;
 
    public:
-    ResultPrinter(double threshold) : _threshold(threshold) {}
+    BioPrinter(double threshold) : _threshold(threshold) {}
 
     void processResult(const std::vector<bool>& res, const unsigned int& K, const std::string& current_header, const std::string& current_read) {
         long long nb_positions_covered = findere::get_nb_positions_covered(res, K);
@@ -61,6 +61,27 @@ class ResultPrinter : public customResponse {
                       << "%"
                       << std::endl;
         }
+    }
+};
+
+class NaturalPrinter : public customResponse {
+   private:
+    std::string _queryFilename;
+    std::string _filterFilenameName;
+
+   public:
+    NaturalPrinter(const std::string& query_filename, const std::string& filterFilenameName) : _queryFilename(query_filename), _filterFilenameName(filterFilenameName) {}
+
+    void processResult(const std::vector<bool>& res, const unsigned int& K, const std::string& current_header, const std::string& current_read) {
+        // long long nb_positions_covered = findere::get_nb_positions_covered(res, K);
+        // float ratio = (100 * nb_positions_covered) / float(current_read.length());
+        std::cout << "File " << _queryFilename
+                  << " shares " << std::count(res.begin(), res.end(), true)
+                  << " " << K << "-mer(s) among "
+                  << res.size()
+                  << " with the indexed bank ("
+                  << _filterFilenameName << ")"
+                  << std::endl;
     }
 };
 
@@ -138,18 +159,12 @@ int main(int argc, char* argv[]) {
     bfAMQ myAMQ = bfAMQ(filter);
     // the end.
 
-    ResultPrinter printer = ResultPrinter(threshold);
     if (typeInput == "bio") {
-        findere::query_all(query_filename, myAMQ, K, z, canonical, printer);
+        BioPrinter bioPrinter = BioPrinter(threshold);
+        findere::query_all(query_filename, myAMQ, K, z, canonical, bioPrinter);
     } else if (typeInput == "text") {
-        std::vector<bool> response = findere::query_text(extractContentFromText(query_filename), myAMQ, K, z, canonical);
-        std::cout<<"Files "<<query_filename
-            <<" shares "<<std::count(response.begin(), response.end(), true)
-            <<" "<<K<<"-mer(s) among "
-            << response.size()
-            <<" with the indexed bank ("
-            <<filterFilenameName<<")"
-            <<std::endl;
+        NaturalPrinter naturalPrinter = NaturalPrinter(query_filename, filterFilenameName);
+        findere::query_text(query_filename, myAMQ, K, z, canonical, naturalPrinter);
     } else {
         std::cerr << "The given type of input input '" << typeInput << "' is not recognised." << std::endl;
         exit(1);

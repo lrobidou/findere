@@ -110,10 +110,9 @@ inline void query_text(const std::string& filename, const customAMQ& amq, const 
     std::string content;
 
     while (std::getline(myfile, line)) {
-        if (line.length() > K) {
-            response.processResult(::findere_internal::queryFilterOrTruth(amq, line, K, z, canonical), K, "", line);
-        }
+        content += line;
     }
+    response.processResult(::findere_internal::queryFilterOrTruth(amq, content, K, z, canonical), K, "", content);
 }
 
 /**
