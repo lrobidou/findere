@@ -143,6 +143,13 @@ int main(int argc, char* argv[]) {
         findere::query_all(query_filename, myAMQ, K, z, canonical, printer);
     } else if (typeInput == "text") {
         std::vector<bool> response = findere::query_text(extractContentFromText(query_filename), myAMQ, K, z, canonical);
+        std::cout<<"Files "<<query_filename
+            <<" shares "<<std::count(response.begin(), response.end(), true)
+            <<" "<<K<<"-mer(s) among "
+            << response.size()
+            <<" with the indexed bank ("
+            <<filterFilenameName<<")"
+            <<std::endl;
     } else {
         std::cerr << "The given type of input input '" << typeInput << "' is not recognised." << std::endl;
         exit(1);

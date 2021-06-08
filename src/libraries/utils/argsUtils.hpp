@@ -214,7 +214,7 @@ std::tuple<std::string, std::string, unsigned long long, unsigned long long, std
         std::cerr << "You must pass either (K and z) or nothing" << std::endl;
         exit(1);
     }
-    const double threshold = getOneArgOptional<double>(arguments, json, "threshold", 0);  // TODO confirmer valeur thereshold
+    const double threshold = getOneArgOptional<double>(arguments, json, "threshold", 80);  
     std::string typeInput = getOneArgOptional<std::string>(arguments, json, "type", "bio");
 
     return {input_filename, query_filename, K, z, typeInput, threshold, canonical, !isKdefaultValue, !iscanonicaldefaultValue};
