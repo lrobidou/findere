@@ -85,27 +85,6 @@ class NaturalPrinter : public customResponse {
     }
 };
 
-void printCommon(std::vector<bool> response, std::string querySeq, int k) {
-    unsigned long long j = 0;
-    bool stretch = false;
-    unsigned long long size = response.size();
-    while (j < size) {
-        if (response[j] == true) {
-            std::cout << querySeq[j];
-            stretch = true;
-        } else {
-            if (stretch) {
-                for (int i = 0; i < k - 1; i++) {
-                    std::cout << querySeq[j + i];
-                }
-                std::cout << std::endl;
-                stretch = false;
-            }
-        }
-        j++;
-    }
-}
-
 int main(int argc, char* argv[]) {
     const unsigned numHashes = 1;  // number of hash functions
     std::string querySeq;
@@ -158,7 +137,6 @@ int main(int argc, char* argv[]) {
     // look no further, there we go:
     bfAMQ myAMQ = bfAMQ(filter);
     // the end.
-
 
     if (typeInput == "bio") {
         BioPrinter bioPrinter = BioPrinter(threshold);
