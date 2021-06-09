@@ -159,6 +159,7 @@ int main(int argc, char* argv[]) {
     bfAMQ myAMQ = bfAMQ(filter);
     // the end.
 
+
     if (typeInput == "bio") {
         BioPrinter bioPrinter = BioPrinter(threshold);
         findere::query_all(query_filename, myAMQ, K, z, canonical, bioPrinter);

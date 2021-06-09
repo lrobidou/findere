@@ -1,5 +1,5 @@
 
-jpeg(file="fpr_simple.jpg",width=11,height=8)
+jpeg(file="fpr_simple.png",width=11,height=8)
 resetPar <- function() {
   dev.new()
   op <- par(no.readonly = TRUE)

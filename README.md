@@ -2,6 +2,12 @@
 
 [![License](http://img.shields.io/:license-affero-blue.svg)](http://www.gnu.org/licenses/agpl-3.0.en.html)
 
+## Note: if you look for the results showed in the paper
+The paper can be repoduced on the branch [paper](https://github.com/lrobidou/findere/tree/paper). The branch master is likely to introduce changes that may prevent the executables used to plot the graphs from compiling.
+
+Just do a `git ckeckout paper` to prevent any problem that may arise in the future.
+* * *
+
 `findere` is a simple strategy for speeding up queries and for reducing false positive calls from any Approximate Membership Query data structure (AMQ). With no drawbacks, queries are two times faster with two orders of magnitudes less false positive calls.
 
 <img src="paper_companion/HMP_analyses/fpr_wrt_z/fpr_simple.png" alt="fpr" width="600"/>
