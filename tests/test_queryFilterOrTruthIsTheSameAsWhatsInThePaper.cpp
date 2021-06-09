@@ -136,7 +136,7 @@ TEST(TestFindere, TestQueryFilterOrTruthIsSameAsInPaper) {
     const unsigned numHashes = 1;         // number of hash functions
     unsigned long long bits = 284257904;  // size of the filter for a FPR of 5%
     std::vector<std::string> input_filenames = {"data/ecoli2.fasta", "data/ecoli3.fasta", "data/Listeria phage.fasta", "data/Penicillium chrysogenum.fasta"};
-    std::string query_filename = "data/Salmonella enterica2.fasta";
+    std::string query_filename = "data/Salmonella enterica.fasta";
 
     const auto& [filtercomp, time, size] = findere::indexBioGivenBits(input_filenames, numHashes, K, z, bits);
 
