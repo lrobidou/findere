@@ -94,7 +94,7 @@ T getOneArgOptional(const cxxopts::ParseResult& arguments, const nlohmann::json&
             }
 
         } else {
-            std::cout << "using default value for " << argName << " = " << defaultvalue << std::endl;
+            // std::cout << "using default value for " << argName << " = " << defaultvalue << std::endl; // commented by pierre as it prints this message for the threshold parameter even when used with text files. This is very confusing.
             return defaultvalue;
         }
     }
@@ -191,7 +191,9 @@ std::tuple<std::string, std::string, unsigned long long, unsigned long long, std
         std::cout << "    -K: the value for K: size of the Kmers queried by findere_query. Default=what was used at indexation (findere remembers it)" << std::endl;
         std::cout << "    -z: the value for z. findere indexes kmers of size K-z. Default=what was used at indexation (findere remembers it)" << std::endl;
         std::cout << "    -t: type of data [bio/text]. Default=bio" << std::endl;
-        std::cout << "    -c: index canonical Kmers if type of data is bio." << std::endl;
+        std::cout << "    Options used with biological data (-t bio)" << std::endl;
+        std::cout << "      -c: index canonical Kmers (default: index Kmers as they are read" << std::endl;
+        std::cout << "      --threshold: output only reads for which the percentage of positions covered by at least one indexed Kmer is higher than this threshold" << std::endl;
         std::cout << "Example:" << std::endl;
         std::cout << "    ./bin/findere_query -i indexedFastas -q \"data/Listeria phage.fasta\" -K 31 -z 3 -t bio" << std::endl;
         exit(0);

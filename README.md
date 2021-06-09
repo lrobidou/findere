@@ -2,13 +2,9 @@
 
 [![License](http://img.shields.io/:license-affero-blue.svg)](http://www.gnu.org/licenses/agpl-3.0.en.html)
 
-## Note: if you look for the results showed in the paper
-The paper can be repoduced on the branch [paper](https://github.com/lrobidou/findere/tree/paper). The branch master is likely to introduce changes that may prevent the executables used to plot the graphs from compiling.
 
-Just do a `git ckeckout paper` to prevent any problem that may arise in the future.
-* * *
 
-`findere` is a simple strategy for speeding up queries and for reducing false positive calls from any Approximate Membership Query data structure (AMQ). With no drawbacks, queries are two times faster with two orders of magnitudes less false positive calls.
+`findere` is a simple strategy for speeding up queries and for reducing false positive calls from any Approximate Membership Query data structure (AMQ). With no drawbacks (in particular no false positive), queries are two times faster with two orders of magnitudes less false positive calls.
 
 <img src="paper_companion/HMP_analyses/fpr_wrt_z/fpr_simple.png" alt="fpr" width="600"/>
 
@@ -51,11 +47,11 @@ chmod +x build.sh
 
 ## Reproduce paper results
 The paper results can be reproduced on the branch `paper`. 
-Use only this branch (`git ckeckout paper` and latter `git submodule update --init --recursive`) in order to reproduce these results. Please use this branche only for this purpose as recent developments do not impact this `paper` branch.
+Use only this branch (`git ckeckout paper` and latter `git submodule update --init --recursive`) in order to reproduce these results. Please use the `paper` branch only for this purpose as recent developments do not impact this branch.
 
 # Running
 
-**NOTE**: 
+**WARNING NOTE**: 
 To date, the last version of the library we use for our Bloom filters has an unsolved bug (cf this [link](https://github.com/mavam/libbf/blob/5478275d8a4e9a5cc163b44c34517c515bd898ec/src/hash.cpp#L13)).
 
 For a high value of K, the hash function of Bloom filters crash. Thus, we experienced problems with a value of k > 36. Be carefull that K-z must be <= 36. If (K, z) is (37, 0) or (38, 1), findere_index will throw an exception. If (K, z) is (37, 1) or (38, 2), everything will be fine. 
@@ -63,10 +59,10 @@ For a high value of K, the hash function of Bloom filters crash. Thus, we experi
 ## Overview
 ```bash
 # indexing files
-./bin/findere_index -i <lists of files to index> -o <index_name> -b <size in bits> [ -K <K> -z <z> -t <type of data {bio/text}>]
+./bin/findere_index -i <lists of files to index> -o <index_name> -b <size in bits> [ -K <K> -z <z> -t <type of data {bio/text}> -c ]
 
 # querying a file
-./bin/findere_query -i <index_name> -q <your query file> -t <{bio/text}>
+./bin/findere_query -i <index_name> -q <your query file> [ -t <{bio/text}> -c --threshold <threshold> ]
 ```
 
 Type `./bin/findere_index -h` or `./bin/findere_query -h` for full list of options and default values.
