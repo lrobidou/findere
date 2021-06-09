@@ -169,5 +169,6 @@ int main(int argc, char* argv[]) {
         std::cerr << "The given type of input input '" << typeInput << "' is not recognised." << std::endl;
         exit(1);
     }
+    delete filter;
     return 0;
 }
