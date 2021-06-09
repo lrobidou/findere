@@ -11,8 +11,6 @@ The `findere` implementation proposed here uses a Bloom filter as AMQ. It propos
 A library is proposed, hence `findere` can be easily adapted to any other AMQ, for any usage.
 
 ## Table of content
-- [findere](#findere)
-  - [Table of content](#table-of-content)
 - [Install](#install)
   - [Dependencies](#dependencies)
   - [Install findere](#install-findere)
@@ -72,7 +70,8 @@ Type `./bin/findere_index -h` or `./bin/findere_query -h` for full list of optio
 ./bin/findere_index -i data/texts/contemplations.txt,data/texts/Horace.txt,data/texts/Le_Cid.txt,data/texts/Maastricht.txt,data/texts/Othon.txt,data/texts/Lettres_persanes.txt -o poesie.idx -K 31 -z 3 -b 10000000 -t text
 
 # querying a text
-./bin/findere_query -i poesie.idx -q data/texts/AndromaqueAndHorace.txt -t text```
+./bin/findere_query -i poesie.idx -q data/texts/AndromaqueAndHorace.txt -t text
+```
 
 This outputs simply the number of shared K-mers.
 ```bash
