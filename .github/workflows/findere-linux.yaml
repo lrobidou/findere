@@ -1,0 +1,22 @@
+name: findere-linux
+
+on: [push]
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Build
+        run: ./build.sh
+
+      - name: Test
+        shell: bash
+        working-directory: ${{runner.workspace}}/build
+        run: ./tests/QTF_tests
