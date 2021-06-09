@@ -53,22 +53,6 @@ inline std::vector<bool> queryFilterOrTruth(const customAMQ& amq, const std::str
 }  // namespace findere_internal
 
 namespace findere {
-// TODO not used once, should we remove it ?
-// /**
-//  * @brief Query only one read of the query using findere.
-//  * @param filename the name of the file to be queried
-//  * @param amq the amq wrapped within a customAMQ
-//  * @param k the value of (big) k
-//  * @param z the value of z
-//  * @return the result of findere's query applied on the first read
-//  */
-// std::vector<bool> inline query_one_sequence(const std::string& filename, const customAMQ& amq, const unsigned int& k, const unsigned long long& z) {
-//     FileManager read_files = FileManager();
-//     read_files.addFile(filename);
-//     std::string& current_read = read_files.get_next_read();
-//     return ::findere_internal::queryFilterOrTruth(amq, current_read, k, z);
-// }
-
 /**
  * @brief Computes the number of shared position between the query and the index given the response of findere.
  * @param bv The result of the query.
