@@ -12,21 +12,24 @@
 
 class forcedResponsebfAMQ : public customAMQ {
    private:
-    bf::basic_bloom_filter* _bf;
     std::vector<bool> _tab;
-    std::vector<std::string> v = {
-        "iuapnvpdrazhjrljjmviihwiojocn",
-        "uapnvpdrazhjrljjmviihwiojocns",
-        "apnvpdrazhjrljjmviihwiojocnsm",
-        "pnvpdrazhjrljjmviihwiojocnsmn",
-        "nvpdrazhjrljjmviihwiojocnsmnn",
-        "vpdrazhjrljjmviihwiojocnsmnnr",
-        "pdrazhjrljjmviihwiojocnsmnnrw",
-        "drazhjrljjmviihwiojocnsmnnrwi",
-        "razhjrljjmviihwiojocnsmnnrwii"};
+    std::vector<std::string> v;
 
    public:
-    forcedResponsebfAMQ(bf::basic_bloom_filter* bf, std::vector<bool> tab) : _bf(bf), _tab(tab) {
+    forcedResponsebfAMQ(const std::vector<bool>& tab) {
+        _tab = tab;
+        v = {
+            "iuapnvpdrazhjrljjmviihwiojocn",
+            "uapnvpdrazhjrljjmviihwiojocns",
+            "apnvpdrazhjrljjmviihwiojocnsm",
+            "pnvpdrazhjrljjmviihwiojocnsmn",
+            "nvpdrazhjrljjmviihwiojocnsmnn",
+            "vpdrazhjrljjmviihwiojocnsmnnr",
+            "pdrazhjrljjmviihwiojocnsmnnrw",
+            "drazhjrljjmviihwiojocnsmnnrwi",
+            "razhjrljjmviihwiojocnsmnnrwii",
+            "azhjrljjmviihwiojocnsmnnrwiiu",
+            "zhjrljjmviihwiojocnsmnnrwiiuc"};
     }
 
     bool contains(const std::string& x, const bool& canonical) const {
@@ -46,27 +49,28 @@ TEST(TestFindere, TestQueryFilterOrTruth) {
     robin_hood::unordered_set<std::string> truthPlusK;
     const unsigned K = 32;  // k-mer size
     const unsigned int z = 3;
-    std::string s = "iuapnvpdrazhjrljjmviihwiojocnsmnnrwii";  //ucjukescrreuhrpobpuquhuefuemylbtotnucfqlkdoubadmludmyzxthvgyzyv";
+    std::string s = "iuapnvpdrazhjrljjmviihwiojocnsmnnrwiiuc";  //ucjukescrreuhrpobpuquhuefuemylbtotnucfqlkdoubadmludmyzxthvgyzyv";
 
     auto filter = new bf::basic_bloom_filter(0.05, 10);
 
     std::vector<std::vector<bool>> inputs = {
-        {1, 1, 1, 1, 0, 0},
-        {1, 1, 1, 1, 0, 1},
-        {1, 1, 0, 1, 1, 0},
-        {1, 0, 1, 1, 1, 0}};
+        {1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0},
+        {1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0},
+        {1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0},
+        {1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0}};
 
     std::vector<std::vector<bool>> expectedResponses = {
-        {1, 0, 0, 0, 0, 0},
-        {1, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0}};
+        {1, 0, 0, 0, 0, 0, 0, 0},
+        {1, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0}};
 
     std::vector<std::vector<bool>> responses;
 
-    for (const auto input : inputs) {
-        responses.push_back(findere_internal::queryFilterOrTruth(forcedResponsebfAMQ(filter, input), s, K, z, false));
+    for (const std::vector<bool> input : inputs) {
+        responses.push_back(findere_internal::queryFilterOrTruth(forcedResponsebfAMQ(input), s, K, z, false));
     }
 
     ASSERT_EQ(responses, expectedResponses);
+    delete filter;
 }
