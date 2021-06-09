@@ -5,6 +5,12 @@
 
 namespace findere_internal {
 
+/**
+ * @brief Returns the number of TP, TN, FP and FN given the truth and the response.
+ * @param truth the result of the query against the truth
+ * @param queryResult the result of the query against the AMQ
+ * @return a tuple (TP, TN, FP, FN)
+ */
 inline std::tuple<int, int, int, int> getScore(const std::vector<bool>& truth, const std::vector<bool>& queryResult) {
     if (truth.size() != queryResult.size()) {
         std::cerr << "The vectors do not have the same size" << std::endl;
@@ -77,6 +83,14 @@ inline void printTime(std::chrono::system_clock::time_point t0,
     std::cout << "        }," << std::endl;
 }
 
+/**
+ * @brief Prints the score in a JSON format
+ * @param TP_TN_FP_FN a tuple (TP, TN, FP, FN)
+ * @param key a string to be used as a key in the json
+ * @param end is this the last object of your json ?
+ * @param long the size in bits of the filter.
+ * @return 
+ */
 inline void printScore(const std::tuple<int, int, int, int>& TP_TN_FP_FN, const std::string& key = "", bool end = false, unsigned long long sizeOfBloomFilterInBits = 0) {
     const auto& [TP, TN, FP, FN] = TP_TN_FP_FN;
     std::cout << "        \"" << key << "\": {" << std::endl;

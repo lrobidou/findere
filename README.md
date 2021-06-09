@@ -16,14 +16,30 @@ The `findere` implementation proposed here uses a Bloom filter as AMQ. It propos
 
 A library is proposed, hence `findere` can be easily adapted to any other AMQ, for any usage.
 
-# Installation and how to run
-## Installation
+## Table of content
+- [Install](#install)
+  - [Dependencies](#dependencies)
+  - [Install findere](#install-findere)
+  - [Reproduce paper results](#reproduce-paper-results)
+- [Running](#running)
+  - [Overview](#overview)
+  - [Exemple on natural text file](#exemple-on-natural-text-file)
+  - [Usage on genomic data (fastq or fasta file)](#usage-on-genomic-data-fastq-or-fasta-file)
+- [Using findere with a personnal Approximate Membership Query datastructure](#using-findere-with-a-personnal-approximate-membership-query-datastructure)
+- [Contacts](#contacts)
+- [Citation](#citation)
+# Install
+
+## Dependencies
+
 You must first install zlib. It is likely to be already installed, if not you can try:
 ```bash
 sudo apt update
 sudo apt-cache search zlib # This is zlib1g-dev on Ubuntu 20.04.
 sudo apt-get install zlib # or wathever you found with apt-cache search
 ```
+
+## Install findere
 
 ```bash
 git clone --recursive https://github.com/lrobidou/findere
@@ -32,28 +48,71 @@ git submodule update --init --recursive
 chmod +x build.sh
 ./build.sh
 ```
-## Running
+
+## Reproduce paper results
+The paper results can be reproduced on the branch `paper`. 
+Use only this branch (`git ckeckout paper` and latter `git submodule update --init --recursive`) in order to reproduce these results. Please use this branche only for this purpose as recent developments do not impact this `paper` branch.
+
+# Running
+
+**NOTE**: 
+To date, the last version of the library we use for our Bloom filters has an unsolved bug (cf this [link](https://github.com/mavam/libbf/blob/5478275d8a4e9a5cc163b44c34517c515bd898ec/src/hash.cpp#L13)).
+
+For a high value of K, the hash function of Bloom filters crash. Thus, we experienced problems with a value of k > 36. Be carefull that K-z must be <= 36. If (K, z) is (37, 0) or (38, 1), findere_index will throw an exception. If (K, z) is (37, 1) or (38, 2), everything will be fine. 
+
+## Overview
 ```bash
-./bin/findere_index -i <lists of files to index> -o <index output> -k <k> -z <z> -b <size in bits> -t <type of data you want to index>
-./bin/findere_query -i <the index> -q <your query file> -k <k> -z <z> -t <type of data you indexed>
+# indexing files
+./bin/findere_index -i <lists of files to index> -o <index_name> -b <size in bits> [ -K <K> -z <z> -t <type of data {bio/text}>]
+
+# querying a file
+./bin/findere_query -i <index_name> -q <your query file> -t <{bio/text}>
 ```
-### Exemple on text files
+
+Type `./bin/findere_index -h` or `./bin/findere_query -h` for full list of options and default values.
+## Exemple on natural text file
 ```bash
-./bin/findere_index -i data/texts/contemplations.txt,data/texts/Horace.txt,data/texts/Le_Cid.txt,data/texts/Maastricht.txt,data/texts/Othon.txt,data/texts/Lettres_persanes.txt -o poesie.bin -K 31 -z 5 -b 1000000 -t text
-./bin/findere_query -i poesie.bin -q data/texts/AndromaqueAndHorace.txt -K 31 -z 5 -t text
+# indexing some texts
+./bin/findere_index -i data/texts/contemplations.txt,data/texts/Horace.txt,data/texts/Le_Cid.txt,data/texts/Maastricht.txt,data/texts/Othon.txt,data/texts/Lettres_persanes.txt -o poesie.idx -K 31 -z 3 -b 10000000 -t text
+
+# querying a text
+./bin/findere_query -i poesie.idx -q data/texts/AndromaqueAndHorace.txt -t text
 ```
 
-### Running on fasta files
+This outputs simply the number of shared K-mers.
 ```bash
-./bin/findere_index -i "data/ecoli2.fasta","data/ecoli3.fasta","data/Listeria phage.fasta","data/Penicillium chrysogenum.fasta" -o indexFastas -K 31 -z 3 -b 10000000 5 -t fasta
-./bin/findere_query -i indexFastas -q data/Listeria\ phage.fasta -K 31 -z 3 -t fasta
+File data/texts/AndromaqueAndHorace.txt shares 1509 31-mer(s) among 100509 with the indexed bank (poesie.idx)
 ```
 
-Be sure that parameters K and z matches between findere_index and findere_query.
+The code may be modified in order to make further analyses using these shared K-mers.
 
-To date, the last version of the library we use for our Bloom filters has an unsolved bug (https://github.com/mavam/libbf/blob/5478275d8a4e9a5cc163b44c34517c515bd898ec/src/hash.cpp#L13). For a high value of K, the hash function of Bloom filters crash. Thus, we experienced problems with a value of k > 36. Be carefull that K-z must be <= 36. If (K, z) is (37, 0) or (38, 1), findere_index will throw an exception. If (K, z) is (37, 1) or (38, 2), everything will be fine. 
+## Usage on genomic data (fastq or fasta file)
+We propose a simple use case of `findere` on any genomic data stored in `fasta` or `fastq` files (gzipped or not). Please consider this feature as a demonstrator of the `findere` potential application.
 
-## Sweet, but I already have a great AMQ data structure. How can I use `findere` to query it ?
+From a bank composed of a file or a set of files, each K-mer is indexed. No counting is made, and all K-mers are indexed, even those occurring only once. It is possible to consider the canonical version of the K-mers.
+
+Once the index is created it can be queried with any `fasta` or `fastq` file (one unique file, gzipped or not). For each sequence (each read in the case of sequencing data), the percentage of positions of the sequence covered by at least one K-mer indexed in the bank is output. It is possible to output only sequences for which this percentage is higher than a user defined threshold (80% by default)
+
+```bash
+# Index a set of genomes in a ~120 Mo bloom filter.
+./bin/findere_index -i "data/ecoli2.fasta","data/ecoli3.fasta","data/Listeria phage.fasta","data/Penicillium chrysogenum.fasta" -o indexFastas.idx -b 1000000000
+
+# Query "reads_hmp.fasta"
+./bin/findere_query -i indexFastas.idx -q data/reads_hmp.fasta --threshold 30
+```
+
+This Outputs the header of reads whose percentage of positions of the sequence covered by at least one shared K-mer is higher than the given threshold.
+
+```
+>HWUSI-EAS712_103029392:3:100:11031:6837/1
+34 over 100 :34%
+>HWUSI-EAS712_103029392:3:100:11077:11965/1
+36 over 100 :36%
+>HWUSI-EAS712_103029392:3:100:11315:8086/1
+33 over 100 :33%
+```
+
+# Using findere with a personnal Approximate Membership Query datastructure
 
 If you want to use `findere` on another data structure (say, cuckoo filter), here is how you can do it:
 
@@ -118,12 +177,12 @@ bfAMQ myAMQ = bfAMQ(myFilterThatFindereDontKnowAnythingAboutfilter);
 std::vector<bool> response = findere::query(myAMQ, querySeq, k, z);
 ```
 
-## Contacts
+# Contacts
 
 Lucas Robidou: lucas.robidou@inria.fr
 
 Pierre Peterlongo: pierre.peterlongo@inria.fr
 
-## Citation
+# Citation
 
 Robidou L, Peterlongo P [findere: fast and precise approximate membership query](https://doi.org/10.1101/2021.05.31.446182)
