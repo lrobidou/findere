@@ -4,15 +4,14 @@
 
 #include <bf/all.hpp>
 #include <chrono>
+#include <findere_lib/indexer.hpp>
+#include <findere_lib/reader/file_manager.hpp>
+#include <findere_lib/utils.hpp>
 #include <fstream>
 #include <iostream>
 #include <string>
 #include <unordered_set>
 #include <zstr.hpp>
-
-#include "../findere/indexer.hpp"
-#include "../findere/reader/file_manager.hpp"
-#include "../findere/utils.hpp"
 
 namespace truth {
 

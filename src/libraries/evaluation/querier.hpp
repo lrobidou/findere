@@ -1,8 +1,9 @@
 #include <robin_hood.h>
 
 #include <bf/all.hpp>
+#include <findere_lib/querier.hpp>
+#include <findere_lib/utils.hpp>
 
-#include "../findere/querier.hpp"
 #include "../utils/utils.hpp"
 
 namespace noQTF {

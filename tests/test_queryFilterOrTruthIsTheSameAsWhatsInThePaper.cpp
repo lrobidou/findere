@@ -2,13 +2,13 @@
 #include <robin_hood.h>
 
 #include <bf/all.hpp>
+#include <findere_lib/indexer.hpp>
+#include <findere_lib/querier.hpp>
 #include <string>
 
 #include "../src/libraries/evaluation/evaluation.hpp"
 #include "../src/libraries/evaluation/indexer.hpp"
 #include "../src/libraries/evaluation/querier.hpp"
-#include "../src/libraries/findere/indexer.hpp"
-#include "../src/libraries/findere/querier.hpp"
 
 /**
  * @brief get the number of jumps doable before getting to the next kmer that is likely to be positive.

@@ -4,17 +4,15 @@ project(qtf VERSION 0.1.0)
 set(CONTACT "lucas.robidou@inria.fr")
 
 
-set(CMAKE_CXX_STANDARD 17)  # TODO: find why this does not work if I overwrite CMAKE_CXX_COMPILER (even before)
+set(CMAKE_CXX_STANDARD 17)
 
 if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
-option(CompileAll "full" OFF)
 option(CompileTest "full" ON)
 
-#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall --std=c++17")  # I have to specify the standard version here...
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Izlib-1.2.11 --std=c++17")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Izlib-1.2.11")
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
@@ -26,6 +24,7 @@ set(THIRDPARTY_DIR ${PROJECT_SOURCE_DIR}/thirdparty)
 set(THIRDPARTY_BUILD_DIR ${PROJECT_BINARY_DIR}/thirdparty)
 
 # include thridparty directories
+include_directories(SYSTEM thirdparty/findere_lib/include)
 include_directories(SYSTEM thirdparty/libbf)
 include_directories(SYSTEM thirdparty/json/include)
 include_directories(SYSTEM thirdparty/cxxopts/include)

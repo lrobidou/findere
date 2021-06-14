@@ -3,12 +3,12 @@
 
 #include <chrono>
 #include <cxxopts.hpp>
+#include <findere_lib/indexer.hpp>
 #include <string>
 
 #include "libraries/evaluation/evaluation.hpp"
 #include "libraries/evaluation/indexer.hpp"
 #include "libraries/evaluation/querier.hpp"
-#include "libraries/findere/indexer.hpp"
 #include "libraries/utils/argsUtils.hpp"
 #include "libraries/utils/utils.hpp"
 

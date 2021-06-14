@@ -3,16 +3,14 @@
 
 #include <chrono>
 #include <cxxopts.hpp>
+#include <findere_lib/customAMQ.hpp>
+#include <findere_lib/customResponse.hpp>
+#include <findere_lib/querier.hpp>
+#include <findere_lib/utils.hpp>
 #include <string>
 
 #include "libraries/evaluation/evaluation.hpp"
-#include "libraries/evaluation/indexer.hpp"
-#include "libraries/evaluation/querier.hpp"
-#include "libraries/findere/customAMQ.hpp"
-#include "libraries/findere/customResponse.hpp"
-#include "libraries/findere/indexer.hpp"
 #include "libraries/utils/argsUtils.hpp"
-#include "libraries/utils/utils.hpp"
 
 // magic trick to use findere with your own AMQ
 // exemple with a bloom filter:
