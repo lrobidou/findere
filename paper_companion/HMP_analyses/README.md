@@ -18,10 +18,6 @@ Theses samples contains respectively 4.2 million reads of average size 92 charac
 
 Note: only reads1 from each sample was used in our experiments.
 
-## Execute `findere` tests
-
-TODO Lucas
-
 ### Experiments with respect to the `z`value
 
 To execute the experiments, follow the instruction in the directory fpr_wrt_z.
