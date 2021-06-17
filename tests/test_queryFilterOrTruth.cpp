@@ -51,7 +51,7 @@ TEST(TestFindere, TestQueryFilterOrTruth) {
     const unsigned int z = 3;
     std::string s = "iuapnvpdrazhjrljjmviihwiojocnsmnnrwiiuc";  //ucjukescrreuhrpobpuquhuefuemylbtotnucfqlkdoubadmludmyzxthvgyzyv";
 
-    auto filter = new bf::basic_bloom_filter(0.05, 10);
+    auto filter = bf::make_filter(0.05, 10);
 
     std::vector<std::vector<bool>> inputs = {
         {1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0},
@@ -72,5 +72,4 @@ TEST(TestFindere, TestQueryFilterOrTruth) {
     }
 
     ASSERT_EQ(responses, expectedResponses);
-    delete filter;
 }

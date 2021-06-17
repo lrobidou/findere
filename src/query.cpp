@@ -84,7 +84,6 @@ class NaturalPrinter : public customResponse {
 };
 
 int main(int argc, char* argv[]) {
-    const unsigned numHashes = 1;  // number of hash functions
     std::string querySeq;
     cxxopts::ParseResult arguments = parseArgvQuerier(argc, argv);
     unsigned long long K;
@@ -96,7 +95,7 @@ int main(int argc, char* argv[]) {
     bool canonicalinfilter = false;
     bool filterhasKzandcanonicalvalues = false;
 
-    bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(bf::make_hasher(numHashes), filterFilenameName, filterhasKzandcanonicalvalues, Kinfilter, zinfilter, canonicalinfilter);
+    bf::basic_bloom_filter* filter = new bf::basic_bloom_filter(filterFilenameName, filterhasKzandcanonicalvalues, Kinfilter, zinfilter, canonicalinfilter);
     if (hasUserProvidedKandzvalue) {
         K = Kuser;
         z = zuser;
