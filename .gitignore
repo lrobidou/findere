@@ -2,6 +2,6 @@
 bin/
 build/
 *.json
-*.txt
+# *.txt
 *.bz2
 *.bin
