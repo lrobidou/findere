@@ -57,8 +57,9 @@ int main() {
     std::vector<unsigned long long> bits = {100000, 7410526, 15410526, 36410526, 66410526, 126410526, 226410526, 526410526, 1052721052, 1579031578, 2105342105, 2631652631, 3157963157, 3684273684, 4210584210, 4736894736, 5263205263, 5789515789, 6315826315, 6842136842, 7368447368, 7894757894, 8421068421, 8947378947, 9473689473, 10000000000};
     std::vector<std::string> input_filenames = {"data/ecoli2.fasta", "data/ecoli3.fasta", "data/Listeria phage.fasta", "data/Penicillium chrysogenum.fasta"};
     std::string query_filename = "data/ecoli1.fasta";
+    std::string prefixName = "K31z19_";
     const unsigned int K = 31;
-    const unsigned int z = 3;
+    const unsigned int z = 19;
     const bool canonical = false;
 
     robin_hood::unordered_set<std::string> truth = truth::indexBio(input_filenames, K, canonical);
@@ -68,7 +69,7 @@ int main() {
     /////////// hash: 1
     // findere: one hash function
     std::ofstream myfile;
-    myfile.open("findere1.txt");
+    myfile.open(prefixName + "findere1.txt");
     std::size_t numberOfHashFunctions = 1;
     for (unsigned long long bit : bits) {
         const auto& [filter, timeTakenMs, sizeOfBloomFilter] = findere::indexBioGivenBits(input_filenames, numberOfHashFunctions, K, z, bit, canonical);
@@ -85,7 +86,7 @@ int main() {
     myfile.close();
 
     // BF: one hash function
-    myfile.open("bf1.txt");
+    myfile.open(prefixName + "bf1.txt");
     for (unsigned long long bit : bits) {
         const auto& [filter, timeTakenMs, sizeOfBloomFilter] = findere::indexBioGivenBits(input_filenames, numberOfHashFunctions, K, 0, bit, canonical);
         ResultGetter getter = ResultGetter();
@@ -100,41 +101,54 @@ int main() {
     }
     myfile.close();
 
-    // /////////// hash: optimal
-    // // findere: optimal hash function
-    // bits = {100000, 12011080, 23922160, 35833240, 47744321, 59655401, 71566481, 83477562, 95388642, 107299722, 119210803, 131121883, 143032963, 154944044, 166855124, 178766204, 190677285, 202588365, 214499445, 226410526};
-    // myfile.open("findereopti.txt");
-    // for (unsigned long long bit : bits) {
-    //     size_t optimal_h = bf::basic_bloom_filter::k(bit, numberOfUniqueElements);
-    //     const auto& [filter, timeTakenMs, sizeOfBloomFilter] = findere::indexBioGivenBits(input_filenames, optimal_h, K, z, bit, canonical);
-    //     ResultGetter getter = ResultGetter();
-    //     findere::query_all(query_filename, bfAMQ(filter), K, z, false, getter);
-    //     std::vector<bool> responseQuery = getter.getResult();
-    //     delete filter;
+    /////////// hash: optimal
+    // findere: optimal hash function
+    bits = {100000, 12011080, 23922160, 35833240, 47744321, 59655401, 71566481, 83477562, 95388642, 107299722, 119210803, 131121883, 143032963, 154944044, 166855124, 178766204, 190677285, 202588365, 214499445, 226410526};
+    myfile.open(prefixName + "findereopti.txt");
+    std::ofstream myfileCfp;
+    myfileCfp.open(prefixName + "findereoptiCfp.txt");
+    for (unsigned long long bit : bits) {
+        size_t optimal_h = bf::basic_bloom_filter::k(bit, numberOfUniqueElements);
+        const auto& [filter, timeTakenMs, sizeOfBloomFilter] = findere::indexBioGivenBits(input_filenames, optimal_h, K, z, bit, canonical);
+        {
+            robin_hood::unordered_set<std::string> truthSmallK = truth::indexBio(input_filenames, K - z, canonical);
+            ResultGetter truthGetter = ResultGetter();
+            findere::query_all(query_filename, truthAMQ(truthSmallK), K, z, false, truthGetter);
+            std::vector<bool> responseTruth = truthGetter.getResult();
+            const auto& [TP, TN, FP, FN] = findere_internal::getScore(truthQuery, responseTruth);
+            double fpr = (double)(100 * FP) / (double)(FP + TN);
+            double fnr = (double)(100 * FN) / (double)(FN + TP);
+            myfileCfp << numberOfUniqueElements << " " << bit << " " << fpr << " " << fnr << std::endl;
+        }
+        ResultGetter getter = ResultGetter();
+        findere::query_all(query_filename, bfAMQ(filter), K, z, false, getter);
+        std::vector<bool> responseQuery = getter.getResult();
+        delete filter;
 
-    //     const auto& [TP, TN, FP, FN] = findere_internal::getScore(truthQuery, responseQuery);
-    //     double fpr = (double)(100 * FP) / (double)(FP + TN);
-    //     double fnr = (double)(100 * FN) / (double)(FN + TP);
-    //     myfile << numberOfUniqueElements << " " << bit << " " << fpr << " " << fnr << std::endl;
-    // }
-    // myfile.close();
+        const auto& [TP, TN, FP, FN] = findere_internal::getScore(truthQuery, responseQuery);
+        double fpr = (double)(100 * FP) / (double)(FP + TN);
+        double fnr = (double)(100 * FN) / (double)(FN + TP);
+        myfile << numberOfUniqueElements << " " << bit << " " << fpr << " " << fnr << std::endl;
+    }
+    myfileCfp.close();
+    myfile.close();
 
-    // // BF: optimal hash function
-    // myfile.open("bfopti.txt");
-    // for (unsigned long long bit : bits) {
-    //     size_t optimal_h = bf::basic_bloom_filter::k(bit, numberOfUniqueElements);
-    //     const auto& [filter, timeTakenMs, sizeOfBloomFilter] = findere::indexBioGivenBits(input_filenames, optimal_h, K, 0, bit, canonical);
-    //     ResultGetter getter = ResultGetter();
-    //     findere::query_all(query_filename, bfAMQ(filter), K, 0, false, getter);
-    //     std::vector<bool> responseQuery = getter.getResult();
-    //     delete filter;
+    // BF: optimal hash function
+    myfile.open(prefixName + "bfopti.txt");
+    for (unsigned long long bit : bits) {
+        size_t optimal_h = bf::basic_bloom_filter::k(bit, numberOfUniqueElements);
+        const auto& [filter, timeTakenMs, sizeOfBloomFilter] = findere::indexBioGivenBits(input_filenames, optimal_h, K, 0, bit, canonical);
+        ResultGetter getter = ResultGetter();
+        findere::query_all(query_filename, bfAMQ(filter), K, 0, false, getter);
+        std::vector<bool> responseQuery = getter.getResult();
+        delete filter;
 
-    //     const auto& [TP, TN, FP, FN] = findere_internal::getScore(truthQuery, responseQuery);
-    //     double fpr = (double)(100 * FP) / (double)(FP + TN);
-    //     double fnr = (double)(100 * FN) / (double)(FN + TP);
-    //     myfile << numberOfUniqueElements << " " << bit << " " << fpr << " " << fnr << std::endl;
-    // }
-    // myfile.close();
+        const auto& [TP, TN, FP, FN] = findere_internal::getScore(truthQuery, responseQuery);
+        double fpr = (double)(100 * FP) / (double)(FP + TN);
+        double fnr = (double)(100 * FN) / (double)(FN + TP);
+        myfile << numberOfUniqueElements << " " << bit << " " << fpr << " " << fnr << std::endl;
+    }
+    myfile.close();
 
     return 0;
 }
