@@ -20,7 +20,9 @@ def get_nb_fp_nb_internal_fp_nb_fn(line_BF, line_truth, i):
         assert line_BF[local_pos] == "1"
         if line_truth[local_pos] == "0":
             nb_fp += 1
-    
+
+    return size_stretch, nb_fp, 0, nb_fn
+    ## USELESS FOR SIMPLE RESULTS (not checking the positions of the FP) - This explains the previous 'return' line
     pos_first_internal_tp = i
     for pos_in_stretch in range(size_stretch):
         local_pos = pos_in_stretch + i
@@ -68,13 +70,16 @@ def get_nb_tp_fp_fn_tn(line_truth, line_BF):
 
 
 def main():
+    if len(sys.argv) != 3:
+        sys.stderr.write(f"Usage: python {sys.argv[0]} file_truth file_BF\n")
+        sys.exit()
     filenameTruth = sys.argv[1]
-    # filenameTruth = "/Users/pierre/workspace/qtf/build/kmertruth.txt"
     filenameBF = sys.argv[2]
-    # filenameBF = "/Users/pierre/workspace/qtf/build/kmerBF.txt"
+
     size_stretcht_to_nb_FP = {}
     size_stretcht_to_nb_internalFP = {}
     size_stretcht_to_nb_FN = {}
+    
     sum_nb_tp = sum_nb_fp = sum_nb_fn = sum_nb_tn = n = 0
     size_stretch_to_nb = {}
     with open(filenameTruth, "r") as file_truth, open(filenameBF, "r") as file_BF:
@@ -90,12 +95,14 @@ def main():
             while i<n:
                 if line_BF[i] == "1":
                     size_stretch, nb_fp, nb_internal_fp, nb_fn = get_nb_fp_nb_internal_fp_nb_fn(line_BF, line_truth, i)
+                    # init results for this `size_stretch`:
                     if size_stretch not in size_stretcht_to_nb_FP:
                         size_stretcht_to_nb_FP[size_stretch] = 0
                     if size_stretch not in size_stretcht_to_nb_internalFP:
                         size_stretcht_to_nb_internalFP[size_stretch] = 0
                     if size_stretch not in size_stretcht_to_nb_FN:
                         size_stretcht_to_nb_FN[size_stretch] = 0
+                    # update results for this `size_stretch`:
                     size_stretcht_to_nb_FP[size_stretch] += nb_fp
                     size_stretcht_to_nb_internalFP[size_stretch] += nb_internal_fp
                     size_stretcht_to_nb_FN[size_stretch] += nb_fn
@@ -110,52 +117,10 @@ def main():
                 
     if n == 0: exit(0)
     
-    # sum_nb_tn = n-sum_nb_tp+sum_nb_fp-sum_nb_fn
-    
-    # pratical_epsilon = sum_nb_fp/float(sum_nb_tn+sum_nb_fp)
-    # print(f"Query size: {n}")
-    # print("Original BF:")
-    # print(f" TP: {sum_nb_tp}")
-    # print(f" FP: {sum_nb_fp}")
-    # print(f" FN: {sum_nb_fn}")
-    # print(f" TN: {sum_nb_tn}")
-    # print(f" FPR = {round(100*pratical_epsilon,5)}%")
-    
-    # print("SizeStretch\tNbFp\t%ofRemovedFP\t%epsilonWithQTF\tNbInternalFP\tNbFn\t%cumulatedFN")
-    # sum_fp = sum(size_stretcht_to_nb_FP.values())
-    # sum_internal_fp = sum(size_stretcht_to_nb_internalFP.values())
-    
-    
-    # fp_seen = 0
-    # fn_seen = 0
-    # for i in range(max_size_stretch+1):
-    #     if i in size_stretcht_to_nb_FP:
-    #         NbFp = size_stretcht_to_nb_FP[i]
-    #         fp_seen += NbFp
-    #         NbFn = size_stretcht_to_nb_FN[i]
-    #         fn_seen += NbFn
-    #         NbInternalFP = 0
-    #         if i in size_stretcht_to_nb_internalFP:
-    #             NbInternalFP = size_stretcht_to_nb_internalFP[i]
-    #         FP_with_QTF = (1-fp_seen/float(sum_fp))*pratical_epsilon
-    #         remaining_FP_with_QTF = sum_nb_fp - fp_seen
-            
-    #         remaining_FPrate_with_QTF = 100*remaining_FP_with_QTF//float(sum_nb_tn+sum_nb_fp)
-    #         print(f"{i}\t\t{NbFp}\t\t{round(100*fp_seen/float(sum_fp),3)}\t{round(remaining_FPrate_with_QTF, 3)}\t{NbInternalFP}\t{NbFn}\t{round(100*fn_seen/float(sum_nb_tp+sum_nb_fn),3)}")
-        
-        
-    
     
     print(f"Query size: {n}")
-    # print("Original BF:")
-    # print(f" TP: {sum_nb_tp}")
-    # print(f" FP: {sum_nb_fp}")
-    # print(f" FN: {sum_nb_fn}")
-    # print(f" TN: {sum_nb_tn}")
     FPR = 100*sum_nb_fp/float(sum_nb_tn+sum_nb_fp)
     FNR = 100*sum_nb_fn/float(sum_nb_tp+sum_nb_fn)
-    # print(f" FPR = {round(FPR,5)}%")
-    # print(f" FNR = {round(FNR,5)}%")
     
     print("z\t#strch\t#TP\t#FP\t#FN\t#TN\tFPR%\tFNR%\t")
     print(f"0\tNA\t{sum_nb_tp}\t{sum_nb_fp}\t{sum_nb_fn}\t{sum_nb_tn}\t{round(FPR,5)}\t{round(FNR,5)}")
@@ -167,12 +132,14 @@ def main():
         if i in size_stretcht_to_nb_FP:
             nb_stretches = size_stretch_to_nb[i]
             QTF_FP -= size_stretcht_to_nb_FP[i]
-            QTF_FN += size_stretcht_to_nb_FN[i]
-            QTF_TP = n - (QTF_FP+QTF_FN+QTF_TN)
+            QTF_TN += size_stretcht_to_nb_FP[i] # one new FP removes one TN
+            QTF_FN += size_stretcht_to_nb_FN[i] 
+            QTF_TP = n - (QTF_FP+QTF_FN+QTF_TN) # finaly
             
             QTF_FPR = 100*QTF_FP/float(QTF_TN+QTF_FP)
             QTF_FNR = 100*QTF_FN/float(QTF_TP+QTF_FN)
             print(f"{i}\t{nb_stretches}\t{QTF_TP}\t{QTF_FP}\t{QTF_FN}\t{QTF_TN}\t{round(QTF_FPR,5)}\t{round(QTF_FNR,5)}")
+            
 
     
 main()
