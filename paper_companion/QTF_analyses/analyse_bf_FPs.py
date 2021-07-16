@@ -132,7 +132,7 @@ def main():
         if i in size_stretcht_to_nb_FP:
             nb_stretches = size_stretch_to_nb[i]
             QTF_FP -= size_stretcht_to_nb_FP[i]
-            QTF_TN += size_stretcht_to_nb_FP[i] # one new FP removes one TN
+            QTF_TN += size_stretcht_to_nb_FP[i] # one FP removed removes one TN
             QTF_FN += size_stretcht_to_nb_FN[i] 
             QTF_TP = n - (QTF_FP+QTF_FN+QTF_TN) # finaly
             
