@@ -47,7 +47,7 @@ chmod +x build.sh
 
 ## Reproduce paper results
 The paper results can be reproduced on the branch `paper`. 
-Use only this branch (`git ckeckout paper` and latter `git submodule update --init --recursive`) in order to reproduce these results. Please use the `paper` branch only for this purpose as recent developments do not impact this branch.
+Use only this branch (`git checkout paper` and latter `git submodule update --init --recursive`) in order to reproduce these results. Please use the `paper` branch only for this purpose as recent developments do not impact this branch.
 
 # Running
 
