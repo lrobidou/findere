@@ -180,5 +180,16 @@ Lucas Robidou: lucas.robidou@inria.fr
 Pierre Peterlongo: pierre.peterlongo@inria.fr
 
 # Citation
+Robidou, L., & Peterlongo, P. (2021). [findere: fast and precise approximate membership query](https://www.biorxiv.org/content/10.1101/2021.05.31.446182.full.pdf). In String Processing and Information Retrieval: 28th International Symposium, SPIRE 2021, Lille, France, October 4–6, 2021, Proceedings 28 (pp. 151-163). Springer International Publishing.
 
-Robidou L, Peterlongo P [findere: fast and precise approximate membership query](https://doi.org/10.1101/2021.05.31.446182) - SPIRE 2021
+bibtex
+```
+@inproceedings{robidou2021findere,
+  title={findere: fast and precise approximate membership query},
+  author={Robidou, Lucas and Peterlongo, Pierre},
+  booktitle={String Processing and Information Retrieval: 28th International Symposium, SPIRE 2021, Lille, France, October 4--6, 2021, Proceedings 28},
+  pages={151--163},
+  year={2021},
+  organization={Springer}
+}
+```
